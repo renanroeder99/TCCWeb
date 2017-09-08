@@ -14,7 +14,7 @@ import java.sql.Statement;
 import model.Emissor;
 
 /**
- *
+ * Comentario de teste
  * @author Renan Roeder, 08-23-2017
  */
 public class EmissorDAO {
