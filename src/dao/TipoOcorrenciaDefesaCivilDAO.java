@@ -45,7 +45,7 @@ public class TipoOcorrenciaDefesaCivilDAO {
             String sql = "UPDATE tipo_ocorrencias_defesa_civil SET"
                     + " descricao = ?, "
                     + " localizacao = ?"
-                    + "WHERE codigo = ?";
+                    + "WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             
             ps.setString(1, defesaCivil.getDescricao());
@@ -94,7 +94,7 @@ public class TipoOcorrenciaDefesaCivilDAO {
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
                 defesaCivil = new TipoOcorrenciaDefesaCivil();
-                defesaCivil.setCodigo(codigo);
+                defesaCivil.setId(codigo);
                 defesaCivil.setDescricao(rs.getString("descricao"));
                 defesaCivil.setLocalizacao(rs.getString("localizacao"));
                 defesaCivil.setChamarAmbulancia(rs.getBoolean("chamar_ambulancia"));

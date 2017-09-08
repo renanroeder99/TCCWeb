@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 
-import dao.TesteEmissor;
-import dao.TesteOcorrenciaPolicial;
+import dao.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -16,7 +15,13 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         TesteEmissor.class,
-        TesteOcorrenciaPolicial.class
+        TesteOcorrenciaPolicial.class,
+        TesteOcorrenciaMedica.class,
+        TesteReceptor.class,
+        TesteTipoOcorrenciaBombeiro.class,
+        TesteTipoOcorrenciaDefesaCivil.class,
+        TesteTipoOcorrenciaMedica.class,
+        TesteTipoOcorrenciaPolicial.class
 
 })
 public class NewTestSuite {

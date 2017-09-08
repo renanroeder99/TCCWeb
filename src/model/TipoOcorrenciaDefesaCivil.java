@@ -8,14 +8,14 @@ public class TipoOcorrenciaDefesaCivil {
     private String
             localizacao, acontecimento, descricao;
      private boolean chamarAmbulancia;
-     private int codigo;
+     private int id;
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int codigo) {
+        this.id = id;
     }
 
     public boolean isChamarAmbulancia() {

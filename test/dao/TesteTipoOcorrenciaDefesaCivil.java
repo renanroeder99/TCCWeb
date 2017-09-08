@@ -31,13 +31,13 @@ public class TesteTipoOcorrenciaDefesaCivil {
    defesaCivil.setDescricao("edg");
    defesaCivil.setLocalizacao("weqree");
    defesaCivil.setChamarAmbulancia(true);
-   defesaCivil.setCodigo(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
+   defesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
    
-   assertEquals(1, defesaCivil.getCodigo());
+   assertEquals(1, defesaCivil.getId());
    
-   TipoOcorrenciaDefesaCivil codigoInserido = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(defesaCivil.getCodigo());
+   TipoOcorrenciaDefesaCivil codigoInserido = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(defesaCivil.getId());
    
-   assertEquals(defesaCivil.getCodigo(), codigoInserido.getCodigo());
+   assertEquals(defesaCivil.getId(), codigoInserido.getId());
    assertEquals(defesaCivil.getLocalizacao(), codigoInserido.getLocalizacao());
    
    }
@@ -50,22 +50,22 @@ public class TesteTipoOcorrenciaDefesaCivil {
        defesaCivil.setDescricao("abcabc");
        defesaCivil.setLocalizacao("abcabc");
        defesaCivil.setChamarAmbulancia(true);
-       defesaCivil.setCodigo(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
+       defesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
        
-       assertEquals(1, defesaCivil.getCodigo());
+       assertEquals(1, defesaCivil.getId());
        
        defesaCivil.setDescricao("adc");
        defesaCivil.setLocalizacao("adcd");
        defesaCivil.setChamarAmbulancia(false);
-       defesaCivil.setCodigo(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
+       defesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
                
-       TipoOcorrenciaDefesaCivil cadastroBD = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(defesaCivil.getCodigo());
+       TipoOcorrenciaDefesaCivil cadastroBD = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(defesaCivil.getId());
        
        assertEquals(cadastroBD.getDescricao(), defesaCivil.getDescricao());
        assertEquals(cadastroBD.getLocalizacao(), defesaCivil.getLocalizacao());
        assertEquals(cadastroBD.isChamarAmbulancia(), defesaCivil.isChamarAmbulancia());
        
-       assertNotEquals(0, defesaCivil.getCodigo());
+       assertNotEquals(0, defesaCivil.getId());
        
    }
 }
