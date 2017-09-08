@@ -1,27 +1,29 @@
 package dao;
 
 import database.Conexao;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import model.TipoOcorrenciaDefesaCivil;
 
 /**
- *
  * @author 98930
  */
 public class TipoOcorrenciaDefesaCivilDAO {
 
-    public static int chamarDefesaCivil(TipoOcorrenciaDefesaCivil defesaCivil) {
-        String sql = "INSERT INTO tipo_ocorrencias_defesa_civil (descricao, localizacao, chamar_ambulancia) VALUES (?,?,?);";
+
+    public static int inserir(TipoOcorrenciaDefesaCivil defesaCivil) {
+        String sql = "INSERT INTO tipo_ocorrencias_defesa_civil (tipo, descricao) VALUES (?,?);";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, defesaCivil.getDescricao());
-            ps.setString(2, defesaCivil.getLocalizacao());
-            ps.setBoolean(3, defesaCivil.isChamarAmbulancia());
+            ps.setString(1, defesaCivil.getTipo());
+            ps.setString(2, defesaCivil.getDescricao());
+
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -42,16 +44,13 @@ public class TipoOcorrenciaDefesaCivilDAO {
     public static int alterar(TipoOcorrenciaDefesaCivil defesaCivil) throws SQLException {
         Conexao conexao = new Conexao();
         try {
-            String sql = "UPDATE tipo_ocorrencias_defesa_civil SET"
-                    + " descricao = ?, "
-                    + " localizacao = ?"
-                    + "WHERE id = ?";
+            String sql = "UPDATE tipo_ocorrencias_defesa_civil SET  tipo = ?, descricao = ? WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
-            
-            ps.setString(1, defesaCivil.getDescricao());
-            ps.setString(2, defesaCivil.getLocalizacao());
-            ps.setBoolean(3, defesaCivil.isChamarAmbulancia());
-            
+
+            ps.setString(1, defesaCivil.getTipo());
+            ps.setString(2, defesaCivil.getDescricao());
+            ps.setInt(3, defesaCivil.getId());
+
             int resultado = ps.executeUpdate();
             return resultado;
 
@@ -71,7 +70,7 @@ public class TipoOcorrenciaDefesaCivilDAO {
             stt.execute(sql);
             ResultSet resultado = stt.getResultSet();
             if (resultado.next()) {
-                return resultado.getInt("quantidades");
+                return resultado.getInt("quantidade");
             }
 
         } catch (SQLException ex) {
@@ -82,9 +81,9 @@ public class TipoOcorrenciaDefesaCivilDAO {
         return -1;
     }
 
-    public static TipoOcorrenciaDefesaCivil buscarDCPorId(int codigo) {
+    public static TipoOcorrenciaDefesaCivil buscarDefesaCivilPorId(int codigo) {
         TipoOcorrenciaDefesaCivil defesaCivil = null;
-        String sql = "SELECT descricao, localizacao, chamar_ambulancia FROM tipo_ocorrencias_defesa_civil WHERE id = ?";
+        String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_defesa_civil WHERE id = ?";
 
         Conexao conexao = new Conexao();
         try {
@@ -95,9 +94,9 @@ public class TipoOcorrenciaDefesaCivilDAO {
             while (rs.next()) {
                 defesaCivil = new TipoOcorrenciaDefesaCivil();
                 defesaCivil.setId(codigo);
+                defesaCivil.setTipo(rs.getString("tipo"));
                 defesaCivil.setDescricao(rs.getString("descricao"));
-                defesaCivil.setLocalizacao(rs.getString("localizacao"));
-                defesaCivil.setChamarAmbulancia(rs.getBoolean("chamar_ambulancia"));
+
 
             }
 
