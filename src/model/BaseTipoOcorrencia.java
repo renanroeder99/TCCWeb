@@ -1,12 +1,18 @@
 package model;
 
-/**
- *
- * @author Daiane Machado, date = 08/29/17
- */
-public class TipoOcorrenciaCorpoDeBombeiros {
-private String tipo, descricao;
-private int id;
+public class BaseTipoOcorrencia {
+
+    private String tipo,descricao;
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTipo() {
         return tipo;
@@ -24,14 +30,4 @@ private int id;
         this.descricao = descricao;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 }
-
-

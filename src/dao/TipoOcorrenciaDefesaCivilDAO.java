@@ -1,13 +1,12 @@
 package dao;
 
 import database.Conexao;
+import model.BaseTipoOcorrencia;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import model.TipoOcorrenciaDefesaCivil;
 
 /**
  * @author 98930
@@ -15,14 +14,14 @@ import model.TipoOcorrenciaDefesaCivil;
 public class TipoOcorrenciaDefesaCivilDAO {
 
 
-    public static int inserir(TipoOcorrenciaDefesaCivil defesaCivil) {
+    public static int inserir(BaseTipoOcorrencia baseTipoOcorrencia) {
         String sql = "INSERT INTO tipo_ocorrencias_defesa_civil (tipo, descricao) VALUES (?,?);";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, defesaCivil.getTipo());
-            ps.setString(2, defesaCivil.getDescricao());
+            ps.setString(1, baseTipoOcorrencia.getTipo());
+            ps.setString(2, baseTipoOcorrencia.getDescricao());
 
 
             ps.execute();
@@ -41,15 +40,15 @@ public class TipoOcorrenciaDefesaCivilDAO {
         return -1;
     }
 
-    public static int alterar(TipoOcorrenciaDefesaCivil defesaCivil) throws SQLException {
+    public static int alterar(BaseTipoOcorrencia baseTipoOcorrencia) throws SQLException {
         Conexao conexao = new Conexao();
         try {
             String sql = "UPDATE tipo_ocorrencias_defesa_civil SET  tipo = ?, descricao = ? WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
-            ps.setString(1, defesaCivil.getTipo());
-            ps.setString(2, defesaCivil.getDescricao());
-            ps.setInt(3, defesaCivil.getId());
+            ps.setString(1, baseTipoOcorrencia.getTipo());
+            ps.setString(2, baseTipoOcorrencia.getDescricao());
+            ps.setInt(3, baseTipoOcorrencia.getId());
 
             int resultado = ps.executeUpdate();
             return resultado;
@@ -81,8 +80,8 @@ public class TipoOcorrenciaDefesaCivilDAO {
         return -1;
     }
 
-    public static TipoOcorrenciaDefesaCivil buscarDefesaCivilPorId(int codigo) {
-        TipoOcorrenciaDefesaCivil defesaCivil = null;
+    public static BaseTipoOcorrencia buscarDefesaCivilPorId(int codigo) {
+        BaseTipoOcorrencia defesaCivil = null;
         String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_defesa_civil WHERE id = ?";
 
         Conexao conexao = new Conexao();
@@ -92,7 +91,7 @@ public class TipoOcorrenciaDefesaCivilDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
-                defesaCivil = new TipoOcorrenciaDefesaCivil();
+                defesaCivil = new BaseTipoOcorrencia();
                 defesaCivil.setId(codigo);
                 defesaCivil.setTipo(rs.getString("tipo"));
                 defesaCivil.setDescricao(rs.getString("descricao"));

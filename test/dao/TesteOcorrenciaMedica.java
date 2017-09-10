@@ -8,8 +8,6 @@ package dao;
 import database.Limpeza;
 import java.sql.SQLException;
 import model.Emissor;
-import model.OcorrenciaMedica;
-import model.TipoOcorrenciaMedica;
 import org.junit.Test;
 import static org.junit.Assert.*;
 /**

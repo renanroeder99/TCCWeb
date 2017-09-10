@@ -1,11 +1,12 @@
 package dao;
 
-import com.mysql.jdbc.Statement;
 import database.Conexao;
+import model.BaseTipoOcorrencia;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import model.TipoOcorrenciaPolicial;
+import java.sql.Statement;
 
 /**
  *
@@ -13,13 +14,13 @@ import model.TipoOcorrenciaPolicial;
  */
 public class TipoOcorrenciaPolicialDAO {
 
-    public static int inserir(TipoOcorrenciaPolicial tipoOcorrenciaPolicial) {
+    public static int inserir(BaseTipoOcorrencia baseTipoOcorrencia) {
         String sql = "INSERT INTO tipo_ocorrencias_policiais (tipo, descricao) VALUES (?,?);";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, tipoOcorrenciaPolicial.getTipo());
-            ps.setString(2, tipoOcorrenciaPolicial.getDescricao());
+            ps.setString(1, baseTipoOcorrencia.getTipo());
+            ps.setString(2, baseTipoOcorrencia.getDescricao());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -37,7 +38,7 @@ public class TipoOcorrenciaPolicialDAO {
 
     }
 
-    public static int alterar(TipoOcorrenciaPolicial ocorrenciaPolicial) {
+    public static int alterar(BaseTipoOcorrencia baseTipoOcorrencia) {
         Conexao conexao = new Conexao();
         try {
             String sql = "UPDATE tipo_ocorrencias_policiais SET tipo = ?,"
@@ -46,9 +47,9 @@ public class TipoOcorrenciaPolicialDAO {
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
-            ps.setString(1, ocorrenciaPolicial.getTipo());
-            ps.setString(2, ocorrenciaPolicial.getDescricao());
-            ps.setInt(3, ocorrenciaPolicial.getId());
+            ps.setString(1, baseTipoOcorrencia.getTipo());
+            ps.setString(2, baseTipoOcorrencia.getDescricao());
+            ps.setInt(3, baseTipoOcorrencia.getId());
             int resultado = ps.executeUpdate();
             return resultado;
 
@@ -79,8 +80,8 @@ public class TipoOcorrenciaPolicialDAO {
         return -1;
     }
 
-    public static TipoOcorrenciaPolicial buscarOPPorID(int codigo) {
-        TipoOcorrenciaPolicial tipoOcorrenciaPolicial = null;
+    public static BaseTipoOcorrencia buscarOPPorID(int codigo) {
+        BaseTipoOcorrencia tipoOcorrenciaPolicial = null;
         String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_policiais WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
@@ -89,7 +90,7 @@ public class TipoOcorrenciaPolicialDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
-                tipoOcorrenciaPolicial = new TipoOcorrenciaPolicial();
+                tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
                 tipoOcorrenciaPolicial.setId(codigo);
                 tipoOcorrenciaPolicial.setTipo(rs.getString("tipo"));
                 tipoOcorrenciaPolicial.setDescricao(rs.getString("descricao"));
