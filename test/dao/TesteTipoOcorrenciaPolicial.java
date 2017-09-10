@@ -7,7 +7,7 @@ package dao;
 
 import database.Limpeza;
 import java.sql.SQLException;
-import model.TipoOcorrenciaPolicial;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

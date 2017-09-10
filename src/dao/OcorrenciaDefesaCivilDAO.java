@@ -6,11 +6,12 @@
 package dao;
 
 import database.Conexao;
+import model.BaseOcorrencia;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import model.OcorrenciaDefesaCivil;
 
 /**
  *
@@ -18,14 +19,14 @@ import model.OcorrenciaDefesaCivil;
  */
 public class OcorrenciaDefesaCivilDAO {
 
-    public static int inserir(OcorrenciaDefesaCivil ocorrenciaDefesaCivil){
+    public static int inserir(BaseOcorrencia ocorrenciaDefesaCivil){
         String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?);";
 
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setInt(1, ocorrenciaDefesaCivil.getTipoOcorrenciaDefesaCivil().getId());
+            ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaDefesaCivil.getEmissor().getId());
             ps.setInt(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
@@ -48,7 +49,7 @@ public class OcorrenciaDefesaCivilDAO {
 
     }
 
-    public static int alterar(OcorrenciaDefesaCivil ocorrenciaDefesaCivil){
+    public static int alterar(BaseOcorrencia ocorrenciaDefesaCivil){
         Conexao conexao = new Conexao();
 
         try{
@@ -56,7 +57,7 @@ public class OcorrenciaDefesaCivilDAO {
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
-            ps.setInt(1, ocorrenciaDefesaCivil.getTipoOcorrenciaDefesaCivil().getId());
+            ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaDefesaCivil.getEmissor().getId());
             ps.setInt(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
@@ -93,8 +94,8 @@ public class OcorrenciaDefesaCivilDAO {
         return -1;
     }
 
-    public static OcorrenciaDefesaCivil buscarOcorrenciaDefesaCivilPorId(int codigo){
-        OcorrenciaDefesaCivil ocorrenciaDefesaCivil = null;
+    public static BaseOcorrencia buscarOcorrenciaDefesaCivilPorId(int codigo){
+        BaseOcorrencia ocorrenciaDefesaCivil = null;
         String sql = "SELECT id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_defesa_civil WHERE id = ?";
         Conexao conexao = new Conexao();
         try{
@@ -103,9 +104,9 @@ public class OcorrenciaDefesaCivilDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while (rs.next()){
-                ocorrenciaDefesaCivil = new OcorrenciaDefesaCivil();
+                ocorrenciaDefesaCivil = new BaseOcorrencia();
                 ocorrenciaDefesaCivil.setId(codigo);
-                ocorrenciaDefesaCivil.setTipoOcorrenciaDefesaCivil(TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
+                ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
                 ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarUsuarioPorID(rs.getInt("id_emissor")));
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));

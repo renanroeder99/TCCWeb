@@ -7,7 +7,7 @@ package dao;
 
 import database.Limpeza;
 import java.sql.SQLException;
-import model.TipoOcorrenciaMedica;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,29 +20,29 @@ public class TesteTipoOcorrenciaMedica {
     @Test
     public void testarCriacao () throws SQLException{
         Limpeza.truncateTabelas();
-        TipoOcorrenciaMedica ocorrenciaMedica = new TipoOcorrenciaMedica();
-        ocorrenciaMedica.setTipo("Infarto");
-        ocorrenciaMedica.setDescricao("Blabla");
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
+        baseTipoOcorrencia.setTipo("Infarto");
+        baseTipoOcorrencia.setDescricao("Blabla");
         
-        int codigoInserido = TipoOcorrenciaMedicaDAO.inserir(ocorrenciaMedica);
+        int codigoInserido = TipoOcorrenciaMedicaDAO.inserir(baseTipoOcorrencia);
         assertEquals(1, codigoInserido);
     }
     
     @Test
     public void testarBuscarTipoOcorrenciaMedicaPorID() throws SQLException{
         Limpeza.truncateTabelas();
-        TipoOcorrenciaMedica ocorrenciaMedica = new TipoOcorrenciaMedica();
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
         ocorrenciaMedica.setTipo("Infarto");
         ocorrenciaMedica.setDescricao("Blabla");
         ocorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
         
         assertEquals(1, ocorrenciaMedica.getId());
-        
-        TipoOcorrenciaMedica codigoInserido = TipoOcorrenciaMedicaDAO.buscarOMPorID(ocorrenciaMedica.getId());
-        
-        assertEquals(ocorrenciaMedica.getId(), codigoInserido.getId());
-        assertEquals(ocorrenciaMedica.getTipo(), codigoInserido.getTipo());
-        assertEquals(ocorrenciaMedica.getDescricao(), codigoInserido.getDescricao());
+
+        BaseTipoOcorrencia codigoInserido = TipoOcorrenciaMedicaDAO.buscarOMPorID(baseTipoOcorrencia.getId());
+
+        assertEquals(baseTipoOcorrencia.getId(), codigoInserido.getId());
+        assertEquals(baseTipoOcorrencia.getTipo(), codigoInserido.getTipo());
+        assertEquals(baseTipoOcorrencia.getDescricao(), codigoInserido.getDescricao());
         
         
     }
@@ -50,25 +50,25 @@ public class TesteTipoOcorrenciaMedica {
     @Test
     public void testarAlterar() throws SQLException{
         Limpeza.truncateTabelas();
-        TipoOcorrenciaMedica ocorrenciaMedica = new TipoOcorrenciaMedica();
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
+
+        baseTipoOcorrencia.setTipo("Infarto");
+        baseTipoOcorrencia.setDescricao("Blabla");
+        baseTipoOcorrencia.setId(TipoOcorrenciaMedicaDAO.inserir(baseTipoOcorrencia));
         
-        ocorrenciaMedica.setTipo("Infarto");
-        ocorrenciaMedica.setDescricao("Blabla");
-        ocorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
+        assertEquals(1, baseTipoOcorrencia.getId());
+
+        baseTipoOcorrencia.setTipo("Derrame");
+        baseTipoOcorrencia.setDescricao("Blablabla");
+        baseTipoOcorrencia.setId(TipoOcorrenciaMedicaDAO.alterar(baseTipoOcorrencia));
         
-        assertEquals(1, ocorrenciaMedica.getId());
+        TipoOcorrenciaMedica cadastroBD = TipoOcorrenciaMedicaDAO.buscarOMPorID(baseTipoOcorrencia.getId());
         
-        ocorrenciaMedica.setTipo("Derrame");
-        ocorrenciaMedica.setDescricao("Blablabla");
-        ocorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.alterar(ocorrenciaMedica));
+        assertEquals(cadastroBD.getId(), baseTipoOcorrencia.getId());
+        assertEquals(cadastroBD.getTipo(), baseTipoOcorrencia.getTipo());
+        assertEquals(cadastroBD.getDescricao(), baseTipoOcorrencia.getDescricao());
         
-        TipoOcorrenciaMedica cadastroBD = TipoOcorrenciaMedicaDAO.buscarOMPorID(ocorrenciaMedica.getId());
-        
-        assertEquals(cadastroBD.getId(), ocorrenciaMedica.getId());
-        assertEquals(cadastroBD.getTipo(), ocorrenciaMedica.getTipo());
-        assertEquals(cadastroBD.getDescricao(), ocorrenciaMedica.getDescricao());
-        
-        assertNotEquals(0, ocorrenciaMedica.getId());
+        assertNotEquals(0, baseTipoOcorrencia.getId());
         
     }
 }

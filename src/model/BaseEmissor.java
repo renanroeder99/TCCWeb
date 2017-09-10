@@ -1,37 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author Wanderson Ferreira
- */
-public class OcorrenciaPolicial {
+public class BaseEmissor {
 
-    private TipoOcorrenciaPolicial tipoOcorrenciaPolicial;
     private Emissor emissor;
     private int cep, numeroResidencia, id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     private String rua, logradouro;
-
-    public TipoOcorrenciaPolicial getTipoOcorrenciaPolicial() {
-        return tipoOcorrenciaPolicial;
-    }
-
-    public void setTipoOcorrenciaPolicial(TipoOcorrenciaPolicial tipoOcorrenciaPolicial) {
-        this.tipoOcorrenciaPolicial = tipoOcorrenciaPolicial;
-    }
 
     public Emissor getEmissor() {
         return emissor;
@@ -57,6 +30,14 @@ public class OcorrenciaPolicial {
         this.numeroResidencia = numeroResidencia;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getRua() {
         return rua;
     }
@@ -72,5 +53,4 @@ public class OcorrenciaPolicial {
     public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
     }
-
 }

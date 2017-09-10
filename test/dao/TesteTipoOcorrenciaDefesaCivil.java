@@ -2,7 +2,7 @@ package dao;
 
 import database.Limpeza;
 import java.sql.SQLException;
-import model.TipoOcorrenciaDefesaCivil;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,11 +16,12 @@ public class TesteTipoOcorrenciaDefesaCivil {
    public void testarCriacao(){
         Limpeza.truncateTabelas();
         TipoOcorrenciaDefesaCivil defesaCivil = new TipoOcorrenciaDefesaCivil();
-        defesaCivil.setDescricao("abcabc");
-        defesaCivil.setLocalizacao("abcabc");
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
+        baseTipoOcorrencia.setDescricao("abcabc");
+        baseTipoOcorrencia.setLocalizacao("abcabc");
         defesaCivil.setChamarAmbulancia(true);
         
-        int codigoInserido = TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil);
+        int codigoInserido = TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(baseTipoOcorrencia);
         assertEquals(1, codigoInserido);
    } 
    
@@ -28,44 +29,47 @@ public class TesteTipoOcorrenciaDefesaCivil {
    public void testarBuscarDCPorID() {
    Limpeza.truncateTabelas();
    TipoOcorrenciaDefesaCivil defesaCivil = new TipoOcorrenciaDefesaCivil();
-   defesaCivil.setDescricao("edg");
-   defesaCivil.setLocalizacao("weqree");
+       BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
+
+       baseTipoOcorrencia.setDescricao("edg");
+       baseTipoOcorrencia.setLocalizacao("weqree");
    defesaCivil.setChamarAmbulancia(true);
-   defesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
+       baseTipoOcorrencia.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(baseTipoOcorrencia));
    
-   assertEquals(1, defesaCivil.getId());
+   assertEquals(1, baseTipoOcorrencia.getId());
+
+       BaseTipoOcorrencia codigoInserido = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(baseTipoOcorrencia.getId());
    
-   TipoOcorrenciaDefesaCivil codigoInserido = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(defesaCivil.getId());
-   
-   assertEquals(defesaCivil.getId(), codigoInserido.getId());
-   assertEquals(defesaCivil.getLocalizacao(), codigoInserido.getLocalizacao());
+   assertEquals(baseTipoOcorrencia.getId(), codigoInserido.getId());
+   assertEquals(baseTipoOcorrencia.getLocalizacao(), codigoInserido.getLocalizacao());
    
    }
    
    @Test
    public void testarAlterar()throws SQLException{
        Limpeza.truncateTabelas();
+       BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
        TipoOcorrenciaDefesaCivil defesaCivil = new TipoOcorrenciaDefesaCivil();
-       
-       defesaCivil.setDescricao("abcabc");
-       defesaCivil.setLocalizacao("abcabc");
+
+       baseTipoOcorrencia.setDescricao("abcabc");
+       baseTipoOcorrencia.setLocalizacao("abcabc");
        defesaCivil.setChamarAmbulancia(true);
-       defesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
+       baseTipoOcorrencia.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(baseTipoOcorrencia));
        
-       assertEquals(1, defesaCivil.getId());
-       
-       defesaCivil.setDescricao("adc");
-       defesaCivil.setLocalizacao("adcd");
+       assertEquals(1, baseTipoOcorrencia.getId());
+
+       baseTipoOcorrencia.setDescricao("adc");
+       baseTipoOcorrencia.setLocalizacao("adcd");
        defesaCivil.setChamarAmbulancia(false);
-       defesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(defesaCivil));
+       baseTipoOcorrencia.setId(TipoOcorrenciaDefesaCivilDAO.chamarDefesaCivil(baseTipoOcorrencia));
                
-       TipoOcorrenciaDefesaCivil cadastroBD = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(defesaCivil.getId());
+       TipoOcorrenciaDefesaCivil cadastroBD = TipoOcorrenciaDefesaCivilDAO.buscarDCPorId(baseTipoOcorrencia.getId());
        
-       assertEquals(cadastroBD.getDescricao(), defesaCivil.getDescricao());
-       assertEquals(cadastroBD.getLocalizacao(), defesaCivil.getLocalizacao());
+       assertEquals(cadastroBD.getDescricao(), baseTipoOcorrencia.getDescricao());
+       assertEquals(cadastroBD.getLocalizacao(), baseTipoOcorrencia.getLocalizacao());
        assertEquals(cadastroBD.isChamarAmbulancia(), defesaCivil.isChamarAmbulancia());
        
-       assertNotEquals(0, defesaCivil.getId());
+       assertNotEquals(0, baseTipoOcorrencia.getId());
        
    }
 }

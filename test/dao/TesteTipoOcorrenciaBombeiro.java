@@ -1,7 +1,6 @@
 package dao;
 
 import database.Limpeza;
-import model.TipoOcorrenciaCorpoDeBombeiros;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,53 +13,53 @@ public class TesteTipoOcorrenciaBombeiro {
     @Test
     public void testarCriacao() {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaCorpoDeBombeiros corpoDeBombeiros = new TipoOcorrenciaCorpoDeBombeiros();
-        corpoDeBombeiros.setTipo("tdxtrtrtrf");
-        corpoDeBombeiros.setDescricao("por ai");
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
+        baseTipoOcorrencia.setTipo("tdxtrtrtrf");
+        baseTipoOcorrencia.setDescricao("por ai");
 
-        int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(corpoDeBombeiros);
-        assertEquals(1, codigoInserido);
+        int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia);
+        assertEquals(1, baseTipoOcorrencia);
 
     }
 
     @Test
     public void testarBuscarCBPorPorID() {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaCorpoDeBombeiros corpoDeBombeiros = new TipoOcorrenciaCorpoDeBombeiros();
-        corpoDeBombeiros.setTipo("wad");
-        corpoDeBombeiros.setDescricao("eeey5ty");
-        corpoDeBombeiros.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(corpoDeBombeiros));
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
+        baseTipoOcorrencia.setTipo("wad");
+        baseTipoOcorrencia.setDescricao("eeey5ty");
+        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia));
         
-        assertEquals(1, corpoDeBombeiros.getId());
+        assertEquals(1, baseTipoOcorrencia.getId());
 
-        TipoOcorrenciaCorpoDeBombeiros codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(corpoDeBombeiros.getId());
+        BaseTipoOcorrencia codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(baseTipoOcorrencia.getId());
 
-        assertEquals(corpoDeBombeiros.getId(), codigoInserido.getId());
-        assertEquals(corpoDeBombeiros.getTipo(), codigoInserido.getTipo());
+        assertEquals(baseTipoOcorrencia.getId(), codigoInserido.getId());
+        assertEquals(baseTipoOcorrencia.getTipo(), codigoInserido.getTipo());
     }
 
     @Test
     public void testarAlterar() {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaCorpoDeBombeiros corpoDeBombeiros = new TipoOcorrenciaCorpoDeBombeiros();
+        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
 
-        corpoDeBombeiros.setTipo("abc");
-        corpoDeBombeiros.setDescricao("por aqui");
-        corpoDeBombeiros.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(corpoDeBombeiros));
+        baseTipoOcorrencia.setTipo("abc");
+        baseTipoOcorrencia.setDescricao("por aqui");
+        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia));
 
-        assertEquals(1, corpoDeBombeiros.getId());
-        
-        corpoDeBombeiros.setTipo("diferente");
-        corpoDeBombeiros.setDescricao("tambem");
-        corpoDeBombeiros.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(corpoDeBombeiros));
+        assertEquals(1, baseTipoOcorrencia.getId());
 
-        TipoOcorrenciaCorpoDeBombeiros cadastroBD = TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(corpoDeBombeiros.getId());
+        baseTipoOcorrencia.setTipo("diferente");
+        baseTipoOcorrencia.setDescricao("tambem");
+        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia));
 
-        assertEquals(cadastroBD.getId(), corpoDeBombeiros.getId());
-        assertEquals(cadastroBD.getTipo(), corpoDeBombeiros.getTipo());
-        assertEquals(cadastroBD.getDescricao(), corpoDeBombeiros.getDescricao());
+        BaseTipoOcorrencia cadastroBD = TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(baseTipoOcorrencia.getId());
 
-        assertNotEquals(0, corpoDeBombeiros.getId());
+        assertEquals(cadastroBD.getId(), baseTipoOcorrencia.getId());
+        assertEquals(cadastroBD.getTipo(), baseTipoOcorrencia.getTipo());
+        assertEquals(cadastroBD.getDescricao(), baseTipoOcorrencia.getDescricao());
+
+        assertNotEquals(0, baseTipoOcorrencia.getId());
 
     }
 }

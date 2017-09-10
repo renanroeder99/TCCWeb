@@ -2,8 +2,6 @@ package dao;
 
 import database.Limpeza;
 import model.Emissor;
-import model.OcorrenciaDefesaCivil;
-import model.TipoOcorrenciaDefesaCivil;
 import org.junit.Test;
 
 import java.sql.SQLException;
