@@ -41,6 +41,7 @@ public class OcorrenciaMedicaDAO {
             }
         }catch(SQLException ex){
             ex.printStackTrace();
+            return 0;
         }finally{
             conexao.desconectar();
         }

@@ -51,6 +51,7 @@ public class TesteOcorrenciaPolicial {
         ocorrenciaPolicial.setBaseTipoOcorrencia(tipoOcorrenciaPolicial);
         ocorrenciaPolicial.setEmissor(emissor);
         ocorrenciaPolicial.setId(OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial));
+
         assertEquals(1, ocorrenciaPolicial.getId());
 
     }

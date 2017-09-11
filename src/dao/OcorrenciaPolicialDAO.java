@@ -42,6 +42,7 @@ public class OcorrenciaPolicialDAO {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return 0;
         } finally {
             conexao.desconectar();
         }

@@ -14,7 +14,7 @@ import java.sql.Statement;
  */
 public class TipoOcorrenciaCorpoDeBombeirosDAO {
 
-    public static int chamadoBombeiros(BaseTipoOcorrencia baseTipoOcorrencia) {
+    public static int inserir(BaseTipoOcorrencia baseTipoOcorrencia) {
         String sql = "INSERT INTO tipo_ocorrencias_bombeiros (tipo, descricao) VALUES (?, ?);";
         Conexao conexao = new Conexao();
         try {

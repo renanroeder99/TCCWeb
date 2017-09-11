@@ -10,12 +10,14 @@ import org.junit.runners.Suite;
 
 /**
  *
- * @author 98930
+ * @author Renan Roeder 09-11-2017
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+
         TesteEmissor.class,
         TesteOcorrenciaPolicial.class,
+        OcorrenciaDefesaCivilTest.class,
         TesteOcorrenciaMedica.class,
         TesteReceptor.class,
         TesteTipoOcorrenciaBombeiro.class,
