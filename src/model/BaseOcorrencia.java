@@ -7,6 +7,8 @@ public class BaseOcorrencia {
     private String rua, logradouro;
     private int cep;
     private int numeroResidencia;
+    private int id;
+
 
     public int getId() {
         return id;
@@ -16,7 +18,7 @@ public class BaseOcorrencia {
         this.id = id;
     }
 
-    private int id;
+
 
     public BaseTipoOcorrencia getBaseTipoOcorrencia() {
         return baseTipoOcorrencia;

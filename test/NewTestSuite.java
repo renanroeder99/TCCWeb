@@ -14,7 +14,6 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        OcorrenciaDefesaCivilTest.class,
         TesteEmissor.class,
         TesteOcorrenciaPolicial.class,
         TesteOcorrenciaMedica.class,

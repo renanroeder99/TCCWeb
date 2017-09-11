@@ -8,6 +8,7 @@ package dao;
 import database.Limpeza;
 import java.sql.SQLException;
 
+import model.BaseTipoOcorrencia;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -24,7 +25,7 @@ public class TesteTipoOcorrenciaPolicial {
     @Test
     public void testarCriacao() {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaPolicial tipoOcorrenciaPolicial = new TipoOcorrenciaPolicial();
+        BaseTipoOcorrencia tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
         tipoOcorrenciaPolicial.setTipo("latrocinio");
         tipoOcorrenciaPolicial.setDescricao("Morte cerebral");
 
@@ -36,7 +37,7 @@ public class TesteTipoOcorrenciaPolicial {
     @Test
     public void testarAlterar() throws SQLException {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaPolicial testeTipoOcorrenciaPolicial = new TipoOcorrenciaPolicial();
+        BaseTipoOcorrencia testeTipoOcorrenciaPolicial = new BaseTipoOcorrencia();
 
         testeTipoOcorrenciaPolicial.setTipo("latrocinio");
         testeTipoOcorrenciaPolicial.setDescricao("Morte cerebral");
@@ -49,7 +50,7 @@ public class TesteTipoOcorrenciaPolicial {
 
         testeTipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.alterar(testeTipoOcorrenciaPolicial));
 
-        TipoOcorrenciaPolicial cadastroBD = TipoOcorrenciaPolicialDAO.buscarOPPorID(testeTipoOcorrenciaPolicial.getId());
+        BaseTipoOcorrencia cadastroBD = TipoOcorrenciaPolicialDAO.buscarOPPorID(testeTipoOcorrenciaPolicial.getId());
 
         assertEquals(cadastroBD.getId(), testeTipoOcorrenciaPolicial.getId());
 

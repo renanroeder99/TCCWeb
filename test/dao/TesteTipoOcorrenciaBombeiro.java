@@ -1,6 +1,7 @@
 package dao;
 
 import database.Limpeza;
+import model.BaseTipoOcorrencia;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,7 +19,7 @@ public class TesteTipoOcorrenciaBombeiro {
         baseTipoOcorrencia.setDescricao("por ai");
 
         int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia);
-        assertEquals(1, baseTipoOcorrencia);
+        assertEquals(1, baseTipoOcorrencia.getId());
 
     }
 

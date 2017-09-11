@@ -7,6 +7,9 @@ package dao;
 
 import database.Limpeza;
 import java.sql.SQLException;
+
+import model.BaseOcorrencia;
+import model.BaseTipoOcorrencia;
 import model.Emissor;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -27,7 +30,7 @@ public class TesteOcorrenciaMedica {
     public void testarCriacao() throws SQLException {
         Limpeza.truncateTabelas();
 
-        TipoOcorrenciaMedica tipoOcorrenciaMedica = new TipoOcorrenciaMedica();
+        BaseTipoOcorrencia tipoOcorrenciaMedica = new BaseTipoOcorrencia();
         tipoOcorrenciaMedica.setTipo("avc");
         tipoOcorrenciaMedica.setDescricao("Morte cerebral");
         tipoOcorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(tipoOcorrenciaMedica));
@@ -45,13 +48,13 @@ public class TesteOcorrenciaMedica {
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
-        OcorrenciaMedica ocorrenciaMedica = new OcorrenciaMedica();
+        BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
         ocorrenciaMedica.setCep(145444);
         ocorrenciaMedica.setNumeroResidencia(1004);
         ocorrenciaMedica.setRua("Pqp ");
         ocorrenciaMedica.setLogradouro("casa");
 
-        ocorrenciaMedica.setTipoOcorrenciaMedica(tipoOcorrenciaMedica);
+        ocorrenciaMedica.setBaseTipoOcorrencia(tipoOcorrenciaMedica);
         ocorrenciaMedica.setEmissor(emissor);
         ocorrenciaMedica.setId(OcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
         assertEquals(1, ocorrenciaMedica.getId());
@@ -61,7 +64,7 @@ public class TesteOcorrenciaMedica {
     @Test
     public void testarAlterar() throws SQLException {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaMedica tipoOcorrenciaMedica = new TipoOcorrenciaMedica();
+        BaseTipoOcorrencia tipoOcorrenciaMedica = new BaseTipoOcorrencia();
         tipoOcorrenciaMedica.setTipo("latrocinio");
         tipoOcorrenciaMedica.setDescricao("Morte cerebral");
         tipoOcorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(tipoOcorrenciaMedica));
@@ -79,9 +82,9 @@ public class TesteOcorrenciaMedica {
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
-        OcorrenciaMedica ocorrenciaMedica = new OcorrenciaMedica();
+        BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
         ocorrenciaMedica.setEmissor(emissor);
-        ocorrenciaMedica.setTipoOcorrenciaMedica(tipoOcorrenciaMedica);
+        ocorrenciaMedica.setBaseTipoOcorrencia(tipoOcorrenciaMedica);
         ocorrenciaMedica.setCep(145444);
         ocorrenciaMedica.setNumeroResidencia(1004);
         ocorrenciaMedica.setRua("Pqp ");
@@ -95,10 +98,10 @@ public class TesteOcorrenciaMedica {
         ocorrenciaMedica.setLogradouro("");
         OcorrenciaMedicaDAO.alterar(ocorrenciaMedica);
 
-        OcorrenciaMedica ocorrenciaMedicaBuscada = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(ocorrenciaMedica.getId());
+        BaseOcorrencia ocorrenciaMedicaBuscada = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(ocorrenciaMedica.getId());
 
-        assertEquals(ocorrenciaMedicaBuscada.getTipoOcorrenciaMedica().getTipo(), ocorrenciaMedica.getTipoOcorrenciaMedica().getTipo());
-        assertEquals(ocorrenciaMedicaBuscada.getTipoOcorrenciaMedica().getDescricao(), ocorrenciaMedica.getTipoOcorrenciaMedica().getDescricao());
+        assertEquals(ocorrenciaMedicaBuscada.getBaseTipoOcorrencia().getTipo(), ocorrenciaMedica.getBaseTipoOcorrencia().getTipo());
+        assertEquals(ocorrenciaMedicaBuscada.getBaseTipoOcorrencia().getDescricao(), ocorrenciaMedica.getBaseTipoOcorrencia().getDescricao());
         assertEquals(ocorrenciaMedicaBuscada.getEmissor().getNome(), ocorrenciaMedica.getEmissor().getNome());
         assertEquals(ocorrenciaMedicaBuscada.getEmissor().getUsuario(), ocorrenciaMedica.getEmissor().getUsuario());
         assertEquals(ocorrenciaMedicaBuscada.getEmissor().getEmail(), ocorrenciaMedica.getEmissor().getEmail());

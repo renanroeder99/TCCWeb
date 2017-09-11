@@ -7,6 +7,9 @@ package dao;
 
 import database.Limpeza;
 import java.sql.SQLException;
+
+import model.BaseOcorrencia;
+import model.BaseTipoOcorrencia;
 import model.Emissor;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -21,7 +24,7 @@ public class TesteOcorrenciaPolicial {
     public void testarCriacao() throws SQLException {
         Limpeza.truncateTabelas();
 
-        TipoOcorrenciaPolicial tipoOcorrenciaPolicial = new TipoOcorrenciaPolicial();
+        BaseTipoOcorrencia tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
         tipoOcorrenciaPolicial.setTipo("latrocinio");
         tipoOcorrenciaPolicial.setDescricao("Morte cerebral");
         tipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.inserir(tipoOcorrenciaPolicial));
@@ -39,13 +42,13 @@ public class TesteOcorrenciaPolicial {
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
-        OcorrenciaPolicial ocorrenciaPolicial = new OcorrenciaPolicial();
+        BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
         ocorrenciaPolicial.setCep(145444);
         ocorrenciaPolicial.setNumeroResidencia(1004);
         ocorrenciaPolicial.setRua("Pqp ");
         ocorrenciaPolicial.setLogradouro("casa");
 
-        ocorrenciaPolicial.setTipoOcorrenciaPolicial(tipoOcorrenciaPolicial);
+        ocorrenciaPolicial.setBaseTipoOcorrencia(tipoOcorrenciaPolicial);
         ocorrenciaPolicial.setEmissor(emissor);
         ocorrenciaPolicial.setId(OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial));
         assertEquals(1, ocorrenciaPolicial.getId());
@@ -55,7 +58,7 @@ public class TesteOcorrenciaPolicial {
     @Test
     public void testarAlterar() throws SQLException {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaPolicial tipoOcorrenciaPolicial = new TipoOcorrenciaPolicial();
+        BaseTipoOcorrencia tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
         tipoOcorrenciaPolicial.setTipo("latrocinio");
         tipoOcorrenciaPolicial.setDescricao("Morte cerebral");
         tipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.inserir(tipoOcorrenciaPolicial));
@@ -73,9 +76,9 @@ public class TesteOcorrenciaPolicial {
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
-        OcorrenciaPolicial ocorrenciaPolicial = new OcorrenciaPolicial();
+        BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
         ocorrenciaPolicial.setEmissor(emissor);
-        ocorrenciaPolicial.setTipoOcorrenciaPolicial(tipoOcorrenciaPolicial);
+        ocorrenciaPolicial.setBaseTipoOcorrencia(tipoOcorrenciaPolicial);
         ocorrenciaPolicial.setCep(145444);
         ocorrenciaPolicial.setNumeroResidencia(1004);
         ocorrenciaPolicial.setRua("Pqp ");
@@ -89,10 +92,10 @@ public class TesteOcorrenciaPolicial {
         ocorrenciaPolicial.setLogradouro("");
         OcorrenciaPolicialDAO.alterar(ocorrenciaPolicial);
 
-        OcorrenciaPolicial ocorrenciaPolicialBuscada = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(ocorrenciaPolicial.getId());
+        BaseOcorrencia ocorrenciaPolicialBuscada = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(ocorrenciaPolicial.getId());
 
-        assertEquals(ocorrenciaPolicialBuscada.getTipoOcorrenciaPolicial().getTipo(), ocorrenciaPolicial.getTipoOcorrenciaPolicial().getTipo());
-        assertEquals(ocorrenciaPolicialBuscada.getTipoOcorrenciaPolicial().getDescricao(), ocorrenciaPolicial.getTipoOcorrenciaPolicial().getDescricao());
+        assertEquals(ocorrenciaPolicialBuscada.getBaseTipoOcorrencia().getTipo(), ocorrenciaPolicial.getBaseTipoOcorrencia().getTipo());
+        assertEquals(ocorrenciaPolicialBuscada.getBaseTipoOcorrencia().getDescricao(), ocorrenciaPolicial.getBaseTipoOcorrencia().getDescricao());
         assertEquals(ocorrenciaPolicialBuscada.getEmissor().getNome(), ocorrenciaPolicial.getEmissor().getNome());
         assertEquals(ocorrenciaPolicialBuscada.getEmissor().getUsuario(), ocorrenciaPolicial.getEmissor().getUsuario());
         assertEquals(ocorrenciaPolicialBuscada.getEmissor().getEmail(), ocorrenciaPolicial.getEmissor().getEmail());

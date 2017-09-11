@@ -1,6 +1,8 @@
 package dao;
 
 import database.Limpeza;
+import model.BaseOcorrencia;
+import model.BaseTipoOcorrencia;
 import model.Emissor;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ public class OcorrenciaDefesaCivilTest {
     @Test
     public void testarCriacao() throws SQLException {
         Limpeza.truncateTabelas();
-        TipoOcorrenciaDefesaCivil tipoOcorrenciaDefesaCivil = new TipoOcorrenciaDefesaCivil();
+        BaseTipoOcorrencia tipoOcorrenciaDefesaCivil = new BaseTipoOcorrencia();
 
         tipoOcorrenciaDefesaCivil.setTipo("Enchente");
         tipoOcorrenciaDefesaCivil.setDescricao("Enchente na rua 7 de setembro");
@@ -32,13 +34,13 @@ public class OcorrenciaDefesaCivilTest {
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
-        OcorrenciaDefesaCivil ocorrenciaDefesaCivil = new OcorrenciaDefesaCivil();
+        BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
         ocorrenciaDefesaCivil.setCep(145444);
         ocorrenciaDefesaCivil.setNumeroResidencia(1004);
         ocorrenciaDefesaCivil.setRua("Pqp ");
         ocorrenciaDefesaCivil.setLogradouro("casa");
 
-        ocorrenciaDefesaCivil.setTipoOcorrenciaDefesaCivil(tipoOcorrenciaDefesaCivil);
+        ocorrenciaDefesaCivil.setBaseTipoOcorrencia(tipoOcorrenciaDefesaCivil);
         ocorrenciaDefesaCivil.setEmissor(emissor);
         ocorrenciaDefesaCivil.setId(OcorrenciaDefesaCivilDAO.inserir(ocorrenciaDefesaCivil));
         assertEquals(1, ocorrenciaDefesaCivil.getId());
