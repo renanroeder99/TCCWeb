@@ -34,7 +34,7 @@ public class EmissorDAO {
             ps.setString(6, cadastroUsuario.getEndereco());
             ps.setInt(7, cadastroUsuario.getTelefone());
             ps.setString(8, cadastroUsuario.getEmail());
-            ps.setString(9, cadastroUsuario.getCep());
+            ps.setInt(9, cadastroUsuario.getCep());
             ps.setInt(10, cadastroUsuario.getTrote());
 
             ps.execute();
@@ -76,7 +76,7 @@ public class EmissorDAO {
             ps.setString(6, usuario.getEndereco());
             ps.setInt(7, usuario.getTelefone());
             ps.setString(8, usuario.getEmail());
-            ps.setString(9, usuario.getCep());
+            ps.setInt(9, usuario.getCep());
             ps.setInt(10, usuario.getTrote());
             ps.setInt(11, usuario.getId());
             int resultado = ps.executeUpdate();
@@ -145,7 +145,7 @@ public class EmissorDAO {
                 cadastroUsuario.setTelefone(rs.getInt("telefone_celular"));
                 cadastroUsuario.setEmail(rs.getString("email"));
                 cadastroUsuario.setTrote(rs.getInt("trotes"));
-                cadastroUsuario.setCep(rs.getString("cep"));
+                cadastroUsuario.setCep(rs.getInt("cep"));
             }
 
         } catch (SQLException ex) {
