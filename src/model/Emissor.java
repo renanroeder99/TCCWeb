@@ -154,5 +154,8 @@ public class Emissor {
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    
+
+    public int getCep() {
+        return cep;
+    }
 }

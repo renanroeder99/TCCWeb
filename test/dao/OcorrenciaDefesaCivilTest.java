@@ -29,7 +29,7 @@ public class OcorrenciaDefesaCivilTest {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep("89070-730");
+        emissor.setCep(89070-730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));

@@ -28,14 +28,6 @@ public class BaseOcorrencia {
     }
 
 
-    public BaseEmissor getBaseEmissor() {
-        return baseEmissor;
-    }
-
-    public void setBaseEmissor(BaseEmissor baseEmissor) {
-        this.baseEmissor = baseEmissor;
-    }
-
     public BaseTipoOcorrencia getBaseTipoOcorrencia() {
         return baseTipoOcorrencia;
     }

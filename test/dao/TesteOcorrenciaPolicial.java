@@ -38,7 +38,7 @@ public class TesteOcorrenciaPolicial {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep("89070-730");
+        emissor.setCep(89070-730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
@@ -51,7 +51,7 @@ public class TesteOcorrenciaPolicial {
         ocorrenciaPolicial.setLogradouro("casa");
 
         ocorrenciaPolicial.setBaseTipoOcorrencia(tipoOcorrenciaPolicial);
-        ocorrenciaPolicial.setBaseEmissor(ocorrenciaPolicial.getBaseEmissor());
+        ocorrenciaPolicial.setEmissor(ocorrenciaPolicial.getEmissor());
         ocorrenciaPolicial.setId(OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial));
 
         assertEquals(1, ocorrenciaPolicial.getId());
@@ -74,13 +74,13 @@ public class TesteOcorrenciaPolicial {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep("89070-730");
+        emissor.setCep(89070-730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
-        ocorrenciaPolicial.setBaseEmissor(ocorrenciaPolicial.getBaseEmissor());
+        ocorrenciaPolicial.setEmissor(ocorrenciaPolicial.getEmissor());
         ocorrenciaPolicial.setBaseTipoOcorrencia(tipoOcorrenciaPolicial);
         ocorrenciaPolicial.setCep(145444);
         ocorrenciaPolicial.setNumeroResidencia(1004);
@@ -99,16 +99,16 @@ public class TesteOcorrenciaPolicial {
 
         assertEquals(ocorrenciaPolicialBuscada.getBaseTipoOcorrencia().getTipo(), ocorrenciaPolicial.getBaseTipoOcorrencia().getTipo());
         assertEquals(ocorrenciaPolicialBuscada.getBaseTipoOcorrencia().getDescricao(), ocorrenciaPolicial.getBaseTipoOcorrencia().getDescricao());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getNome(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getNome());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getUsuario(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getUsuario());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getEmail(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getEmail());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getSenha(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getSenha());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getCpf(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getCpf());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getRg(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getRg());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getEndereco(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getEndereco());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getCep(), ocorrenciaPolicial.getBaseEmissor().getCep());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getTelefone(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getTelefone());
-        assertEquals(ocorrenciaPolicialBuscada.getBaseEmissor().getEmissor().getTrote(), ocorrenciaPolicial.getBaseEmissor().getEmissor().getTrote());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getNome(), ocorrenciaPolicial.getEmissor().getNome());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getUsuario(), ocorrenciaPolicial.getEmissor().getUsuario());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getEmail(), ocorrenciaPolicial.getEmissor().getEmail());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getSenha(), ocorrenciaPolicial.getEmissor().getSenha());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getCpf(), ocorrenciaPolicial.getEmissor().getCpf());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getRg(), ocorrenciaPolicial.getEmissor().getRg());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getEndereco(), ocorrenciaPolicial.getEmissor().getEndereco());
+        assertEquals(ocorrenciaPolicialBuscada.getCep(), ocorrenciaPolicial.getCep());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getTelefone(), ocorrenciaPolicial.getEmissor().getTelefone());
+        assertEquals(ocorrenciaPolicialBuscada.getEmissor().getTrote(), ocorrenciaPolicial.getEmissor().getTrote());
 
         assertEquals(ocorrenciaPolicialBuscada.getCep(), ocorrenciaPolicial.getCep());
         assertEquals(ocorrenciaPolicialBuscada.getNumeroResidencia(), ocorrenciaPolicial.getNumeroResidencia());

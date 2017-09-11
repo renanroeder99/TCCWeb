@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.BaseEmissor;
 import model.BaseOcorrencia;
 
 /**
@@ -21,7 +20,6 @@ import model.BaseOcorrencia;
 public class OcorrenciaPolicialDAO {
     
     public static int inserir(BaseOcorrencia ocorrenciaPolicial) {
-        BaseEmissor baseEmissor = new BaseEmissor();
         String sql = "INSERT INTO ocorrencias_policiais (id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?);";
         Conexao conexao = new Conexao();
         try {
@@ -29,9 +27,9 @@ public class OcorrenciaPolicialDAO {
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
             ps.setInt(3, ocorrenciaPolicial.getCep());
-            ps.setString(4, baseEmissor.getRua());
-            ps.setInt(5, baseEmissor.getNumeroResidencia());
-            ps.setString(6, baseEmissor.getLogradouro());
+            ps.setString(4, ocorrenciaPolicial.getEmissor().getRua());
+            ps.setInt(5, ocorrenciaPolicial.getEmissor().getNumeroResidencia());
+            ps.setString(6, ocorrenciaPolicial.getEmissor().getLogradouro());
             
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -52,19 +50,18 @@ public class OcorrenciaPolicialDAO {
     
     public static int alterar(BaseOcorrencia ocorrenciaPolicial) {
         Conexao conexao = new Conexao();
-        BaseEmissor baseEmissor = new BaseEmissor();
         try {
             String sql = "UPDATE ocorrencias_policiais SET id_tipo_ocorrencias_policiais = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, logradouro = ? WHERE id = ?  ";
             
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
-            ps.setInt(3, baseEmissor.getCep());
-            ps.setString(4, baseEmissor.getRua());
-            ps.setInt(5, baseEmissor.getNumeroResidencia());
-            ps.setString(6, baseEmissor.getLogradouro());
-            ps.setInt(7, baseEmissor.getId());
+            ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
+            ps.setInt(3, ocorrenciaPolicial.getEmissor().getCep());
+            ps.setString(4, ocorrenciaPolicial.getEmissor().getRua());
+            ps.setInt(5, ocorrenciaPolicial.getEmissor().getNumeroResidencia());
+            ps.setString(6, ocorrenciaPolicial.getEmissor().getLogradouro());
+            ps.setInt(7, ocorrenciaPolicial.getId());
             int resultado = ps.executeUpdate();
             return resultado;
             
@@ -97,7 +94,6 @@ public class OcorrenciaPolicialDAO {
     
     public static BaseOcorrencia buscarOcorrenciaPolicialPorID(int codigo) {
         BaseOcorrencia ocorrenciaPolicial = null;
-        BaseEmissor baseEmissor = new BaseEmissor();
 
         String sql = "SELECT id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_policiais WHERE id = ?";
         Conexao conexao = new Conexao();
@@ -108,13 +104,13 @@ public class OcorrenciaPolicialDAO {
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
                 ocorrenciaPolicial = new BaseOcorrencia();
-                baseEmissor.setId(codigo);
                 ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
-                baseEmissor.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                baseEmissor.setCep(rs.getInt("cep"));
-                baseEmissor.setRua(rs.getString("rua"));
-                baseEmissor.setNumeroResidencia(rs.getInt("numero_residencia"));
-                baseEmissor.setLogradouro(rs.getString("logradouro"));
+                ocorrenciaPolicial.setId(codigo);
+                ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaPolicial.setCep(rs.getInt("cep"));
+                ocorrenciaPolicial.setRua(rs.getString("rua"));
+                ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaPolicial.setLogradouro(rs.getString("logradouro"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
