@@ -65,7 +65,7 @@ public class TesteEmissor {
         emissor.setTrote(Integer.parseInt("1"));
         emissor.setId(EmissorDAO.alterar(emissor));
 
-        Emissor cadastroBD = EmissorDAO.buscarUsuarioPorID(emissor.getId());
+        Emissor cadastroBD = EmissorDAO.buscarEmissorPorID(emissor.getId());
         
         assertEquals(cadastroBD.getId(), emissor.getId());
         assertEquals(cadastroBD.getNome(), emissor.getNome());
@@ -99,7 +99,7 @@ public class TesteEmissor {
         emissor.setId(EmissorDAO.cadastrar(emissor));
         emissor.setTrote(Integer.parseInt("0"));
         EmissorDAO.excluir(emissor.getId());
-        assertNull(EmissorDAO.buscarUsuarioPorID(emissor.getId()));
+        assertNull(EmissorDAO.buscarEmissorPorID(emissor.getId()));
 
     }
 

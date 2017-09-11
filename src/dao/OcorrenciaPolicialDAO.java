@@ -27,8 +27,8 @@ public class OcorrenciaPolicialDAO {
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
-            ps.setInt(3, baseEmissor.getCep());
+            ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
+            ps.setInt(3, ocorrenciaPolicial.getCep());
             ps.setString(4, baseEmissor.getRua());
             ps.setInt(5, baseEmissor.getNumeroResidencia());
             ps.setString(6, baseEmissor.getLogradouro());
@@ -110,7 +110,7 @@ public class OcorrenciaPolicialDAO {
                 ocorrenciaPolicial = new BaseOcorrencia();
                 baseEmissor.setId(codigo);
                 ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
-                baseEmissor.setEmissor(EmissorDAO.buscarUsuarioPorID(rs.getInt("id_emissor")));
+                baseEmissor.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 baseEmissor.setCep(rs.getInt("cep"));
                 baseEmissor.setRua(rs.getString("rua"));
                 baseEmissor.setNumeroResidencia(rs.getInt("numero_residencia"));

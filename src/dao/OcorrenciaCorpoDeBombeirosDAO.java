@@ -109,7 +109,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
                 ocorrenciaBombeiro = new BaseOcorrencia();
                 baseEmissor.setId(codigo);
                 ocorrenciaBombeiro.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
-                baseEmissor.setEmissor(EmissorDAO.buscarUsuarioPorID(rs.getInt("id_emissor")));
+                baseEmissor.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 baseEmissor.setCep(rs.getInt("cep"));
                 baseEmissor.setRua(rs.getString("rua"));
                 baseEmissor.setNumeroResidencia(rs.getInt("numero_residencia"));

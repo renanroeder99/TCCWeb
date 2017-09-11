@@ -26,7 +26,7 @@ public class OcorrenciaMedicaDAO {
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
+            ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
             ps.setInt(3, baseEmissor.getCep());
             ps.setString(4, baseEmissor.getRua());
             ps.setInt(5, baseEmissor.getNumeroResidencia());
@@ -57,7 +57,7 @@ public class OcorrenciaMedicaDAO {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
+            ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
             ps.setInt(3, baseEmissor.getCep());
             ps.setString(4, baseEmissor.getRua());
             ps.setInt(5, baseEmissor.getNumeroResidencia());
@@ -108,7 +108,7 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica = new BaseOcorrencia();
                 baseEmissor.setId(codigo);
                 ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOMPorID(rs.getInt("id_tipo_ocorrencia_medica")));
-                baseEmissor.setEmissor(EmissorDAO.buscarUsuarioPorID(rs.getInt("id_emissor")));
+                baseEmissor.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 baseEmissor.setCep(rs.getInt("cep"));
                 baseEmissor.setRua(rs.getString("rua"));
                 baseEmissor.setNumeroResidencia(rs.getInt("numero_residencia"));

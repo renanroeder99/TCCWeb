@@ -123,7 +123,7 @@ public class EmissorDAO {
         return -1;
     }
 
-    public static Emissor buscarUsuarioPorID(int codigo) {
+    public static Emissor buscarEmissorPorID(int codigo) {
         Emissor cadastroUsuario = null;
         String sql = "SELECT id, usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, trotes FROM emissores WHERE id = ?";
 

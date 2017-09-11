@@ -12,9 +12,50 @@ import java.sql.Date;
  * @author Renan Roeder, 08-22-2017
  */
 public class Emissor {
-    private String nome, usuario, email, confirmarEmail, senha, cpf, cep, endereco;
-    private int id, rg, telefone, trote;
+    private String nome, usuario, email, confirmarEmail, senha, cpf, endereco;
+    private int rg, telefone, trote;
+    private Emissor emissor;
+    private int cep, numeroResidencia, id;
+    private String rua, logradouro;
 
+    public Emissor getEmissor() {
+        return emissor;
+    }
+
+    public void setEmissor(Emissor emissor) {
+        this.emissor = emissor;
+    }
+
+
+    public void setCep(int cep) {
+        this.cep = cep;
+    }
+
+    public int getNumeroResidencia() {
+        return numeroResidencia;
+    }
+
+    public void setNumeroResidencia(int numeroResidencia) {
+        this.numeroResidencia = numeroResidencia;
+    }
+
+
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
     public int getTrote() {
         return trote;
     }
@@ -89,13 +130,6 @@ public class Emissor {
         this.cpf = cpf;
     }
 
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
 
     public String getEndereco() {
         return endereco;

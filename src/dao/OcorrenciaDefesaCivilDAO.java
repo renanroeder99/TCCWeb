@@ -27,7 +27,7 @@ public class OcorrenciaDefesaCivilDAO {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, ocorrenciaDefesaCivil.getEmissor().getId());
+            ps.setInt(2, ocorrenciaDefesaCivil.getBaseEmissor().getId());
             ps.setInt(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
             ps.setInt(5, ocorrenciaDefesaCivil.getNumeroResidencia());
@@ -58,7 +58,7 @@ public class OcorrenciaDefesaCivilDAO {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
             ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, ocorrenciaDefesaCivil.getEmissor().getId());
+            ps.setInt(2, ocorrenciaDefesaCivil.getBaseEmissor().getId());
             ps.setInt(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
             ps.setInt(5, ocorrenciaDefesaCivil.getNumeroResidencia());
@@ -107,7 +107,7 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil = new BaseOcorrencia();
                 ocorrenciaDefesaCivil.setId(codigo);
                 ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
-                ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarUsuarioPorID(rs.getInt("id_emissor")));
+                ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));

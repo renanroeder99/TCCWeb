@@ -10,7 +10,8 @@ import org.junit.runners.Suite;
 
 /**
  *
- * @author Renan Roeder 09-11-2017
+ * @author Renan Roeder 09
+ * -11-2017
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
