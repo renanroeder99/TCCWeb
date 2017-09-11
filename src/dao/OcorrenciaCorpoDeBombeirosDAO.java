@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.BaseEmissor;
 import model.BaseOcorrencia;
 
 /**
@@ -22,17 +21,16 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static int inserir(BaseOcorrencia ocorrenciaBombeiros){
         String sql = "INSERT INTO ocorrencias_bombeiros (id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?);";
-        BaseEmissor baseEmissor = new BaseEmissor();
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setInt(1, ocorrenciaBombeiros.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
-            ps.setInt(3, baseEmissor.getCep());
-            ps.setString(4, baseEmissor.getRua());
-            ps.setInt(5, baseEmissor.getNumeroResidencia());
-            ps.setString(6, baseEmissor.getLogradouro());
+            ps.setInt(2, ocorrenciaBombeiros.getEmissor().getId());
+            ps.setInt(3, ocorrenciaBombeiros.getCep());
+            ps.setString(4, ocorrenciaBombeiros.getRua());
+            ps.setInt(5, ocorrenciaBombeiros.getNumeroResidencia());
+            ps.setString(6, ocorrenciaBombeiros.getLogradouro());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
