@@ -55,11 +55,11 @@ public class OcorrenciaMedicaDAO {
             
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
-            ps.setInt(3, ocorrenciaMedica.getEmissor().getCep());
-            ps.setString(4, ocorrenciaMedica.getEmissor().getRua());
-            ps.setInt(5, ocorrenciaMedica.getEmissor().getNumeroResidencia());
-            ps.setString(6, ocorrenciaMedica.getEmissor().getLogradouro());
-            ps.setInt(7, ocorrenciaMedica.getEmissor().getId());
+            ps.setInt(3, ocorrenciaMedica.getCep());
+            ps.setString(4, ocorrenciaMedica.getRua());
+            ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
+            ps.setString(6, ocorrenciaMedica.getLogradouro());
+            ps.setInt(7, ocorrenciaMedica.getId());
             int resultado = ps.executeUpdate();
             return resultado;
             
@@ -103,13 +103,13 @@ public class OcorrenciaMedicaDAO {
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
                 ocorrenciaMedica = new BaseOcorrencia();
-                emissor.setId(codigo);
+                ocorrenciaMedica.setId(codigo);
                 ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOMPorID(rs.getInt("id_tipo_ocorrencia_medica")));
-                emissor.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                emissor.setCep(rs.getInt("cep"));
-                emissor.setRua(rs.getString("rua"));
-                emissor.setNumeroResidencia(rs.getInt("numero_residencia"));
-                emissor.setLogradouro(rs.getString("logradouro"));
+                ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaMedica.setCep(rs.getInt("cep"));
+                ocorrenciaMedica.setRua(rs.getString("rua"));
+                ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaMedica.setLogradouro(rs.getString("logradouro"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

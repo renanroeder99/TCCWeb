@@ -19,7 +19,7 @@ public class TesteTipoOcorrenciaBombeiro {
         baseTipoOcorrencia.setDescricao("por ai");
 
         int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia);
-        assertEquals(1, baseTipoOcorrencia.getId());
+        assertEquals(1, codigoInserido);
 
     }
 

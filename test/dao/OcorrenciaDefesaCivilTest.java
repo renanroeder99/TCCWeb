@@ -46,5 +46,59 @@ public class OcorrenciaDefesaCivilTest {
         assertEquals(1, ocorrenciaDefesaCivil.getId());
 
     }
+    @Test
+    public void testarAlterar() throws SQLException{
+        Limpeza.truncateTabelas();
+
+        BaseTipoOcorrencia tipoOcorrenciaDefesaCivil = new BaseTipoOcorrencia();
+
+        tipoOcorrenciaDefesaCivil.setTipo("Enchente");
+        tipoOcorrenciaDefesaCivil.setDescricao("Enchente na rua 7 de setembro");
+        tipoOcorrenciaDefesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.inserir(tipoOcorrenciaDefesaCivil));
+
+        Emissor emissor = new Emissor();
+        emissor.setNome("Renan Roeder");
+        emissor.setUsuario("renanroeder");
+        emissor.setEmail("renanroeder@hotmail.com");
+        emissor.setSenha("123456789");
+        emissor.setCpf("11227235984");
+        emissor.setRg(Integer.parseInt("5884763"));
+        emissor.setEndereco("Avenida Brasil do Ipiranga");
+        emissor.setCep(89070730);
+        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setTrote(0);
+        emissor.setId(EmissorDAO.cadastrar(emissor));
+
+        BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
+        ocorrenciaDefesaCivil.setCep(145444);
+        ocorrenciaDefesaCivil.setNumeroResidencia(1004);
+        ocorrenciaDefesaCivil.setRua("Pqp ");
+        ocorrenciaDefesaCivil.setLogradouro("casa");
+        ocorrenciaDefesaCivil.setId(OcorrenciaDefesaCivilDAO.inserir(ocorrenciaDefesaCivil));
+        assertEquals(1, ocorrenciaDefesaCivil.getId());
+
+        ocorrenciaDefesaCivil.setCep(44444);
+        ocorrenciaDefesaCivil.setNumeroResidencia(104);
+        ocorrenciaDefesaCivil.setRua("Pzxd");
+        ocorrenciaDefesaCivil.setLogradouro("dfdfcf");
+        OcorrenciaDefesaCivilDAO.alterar(ocorrenciaDefesaCivil);
+
+        BaseOcorrencia ocorrenciaDefesaCivilBuscada = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(ocorrenciaDefesaCivil.getId());
+
+
+
+        assertEquals(ocorrenciaDefesaCivilBuscada.getEmissor().getId(), ocorrenciaDefesaCivil.getEmissor().getId());
+        assertEquals(ocorrenciaDefesaCivilBuscada.getBaseTipoOcorrencia().getId(), ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
+
+
+        assertEquals(ocorrenciaDefesaCivilBuscada.getCep(), ocorrenciaDefesaCivil.getCep());
+        assertEquals(ocorrenciaDefesaCivilBuscada.getNumeroResidencia(), ocorrenciaDefesaCivil.getNumeroResidencia());
+        assertEquals(ocorrenciaDefesaCivilBuscada.getRua(), ocorrenciaDefesaCivil.getRua());
+        assertEquals(ocorrenciaDefesaCivilBuscada.getLogradouro(), ocorrenciaDefesaCivil.getLogradouro());
+
+
+
+    }
+
 
 }

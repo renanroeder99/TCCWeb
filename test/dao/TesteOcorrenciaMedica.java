@@ -95,29 +95,19 @@ public class TesteOcorrenciaMedica {
         ocorrenciaMedica.setCep(12345678);
         ocorrenciaMedica.setNumeroResidencia(291);
         ocorrenciaMedica.setRua("Rua das Velhas com Cabelos Laranjas");
-        ocorrenciaMedica.setLogradouro("");
+        ocorrenciaMedica.setLogradouro("tcfu");
         OcorrenciaMedicaDAO.alterar(ocorrenciaMedica);
 
         BaseOcorrencia ocorrenciaMedicaBuscada = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(ocorrenciaMedica.getId());
 
-        assertEquals(ocorrenciaMedicaBuscada.getBaseTipoOcorrencia().getTipo(), ocorrenciaMedica.getBaseTipoOcorrencia().getTipo());
-        assertEquals(ocorrenciaMedicaBuscada.getBaseTipoOcorrencia().getDescricao(), ocorrenciaMedica.getBaseTipoOcorrencia().getDescricao());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getNome(), ocorrenciaMedica.getEmissor().getNome());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getUsuario(), ocorrenciaMedica.getEmissor().getUsuario());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getEmail(), ocorrenciaMedica.getEmissor().getEmail());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getSenha(), ocorrenciaMedica.getEmissor().getSenha());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getCpf(), ocorrenciaMedica.getEmissor().getCpf());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getRg(), ocorrenciaMedica.getEmissor().getRg());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getEndereco(), ocorrenciaMedica.getEmissor().getEndereco());
-        assertEquals(ocorrenciaMedicaBuscada.getCep(), ocorrenciaMedica.getCep());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getTelefone(), ocorrenciaMedica.getEmissor().getTelefone());
-        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getTrote(), ocorrenciaMedica.getEmissor().getTrote());
+        assertEquals(ocorrenciaMedicaBuscada.getBaseTipoOcorrencia().getId(), ocorrenciaMedica.getBaseTipoOcorrencia().getId());
+        assertEquals(ocorrenciaMedicaBuscada.getEmissor().getId(), ocorrenciaMedica.getEmissor().getId());
 
         assertEquals(ocorrenciaMedicaBuscada.getCep(), ocorrenciaMedica.getCep());
         assertEquals(ocorrenciaMedicaBuscada.getNumeroResidencia(), ocorrenciaMedica.getNumeroResidencia());
         assertEquals(ocorrenciaMedicaBuscada.getRua(), ocorrenciaMedica.getRua());
         assertEquals(ocorrenciaMedicaBuscada.getLogradouro(), ocorrenciaMedica.getLogradouro());
-        assertNotEquals(0, emissor.getId());
+
 
     }
 
