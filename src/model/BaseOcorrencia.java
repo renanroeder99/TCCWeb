@@ -1,9 +1,11 @@
 package model;
 
 public class BaseOcorrencia {
-
+    private String rua, logradouro;
+    private int cep;
+    private int numeroResidencia;
+    private int id;
     private BaseTipoOcorrencia baseTipoOcorrencia;
-
     private Emissor emissor;
 
     public Emissor getEmissor() {
@@ -14,11 +16,6 @@ public class BaseOcorrencia {
         this.emissor = emissor;
     }
 
-    private String rua, logradouro;
-    private int cep;
-    private int numeroResidencia;
-    private int id;
-
     public int getId() {
         return id;
     }
@@ -27,7 +24,6 @@ public class BaseOcorrencia {
         this.id = id;
     }
 
-
     public BaseTipoOcorrencia getBaseTipoOcorrencia() {
         return baseTipoOcorrencia;
     }
@@ -35,7 +31,6 @@ public class BaseOcorrencia {
     public void setBaseTipoOcorrencia(BaseTipoOcorrencia baseTipoOcorrencia) {
         this.baseTipoOcorrencia = baseTipoOcorrencia;
     }
-
 
     public String getRua() {
         return rua;

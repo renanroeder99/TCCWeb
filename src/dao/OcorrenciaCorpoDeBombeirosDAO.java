@@ -50,19 +50,18 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static int alterar(BaseOcorrencia ocorrenciasBombeiros){
         Conexao conexao = new Conexao();
-        BaseEmissor baseEmissor = new BaseEmissor();
         try{
             String sql = "UPDATE ocorrencias_bombeiros SET id_tipo_ocorrencias_bombeiros = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, logradouro = ? WHERE id = ? ";
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
             ps.setInt(1, ocorrenciasBombeiros.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
-            ps.setInt(3, baseEmissor.getCep());
-            ps.setString(4, baseEmissor.getRua());
-            ps.setInt(5, baseEmissor.getNumeroResidencia());
-            ps.setString(6, baseEmissor.getLogradouro());
-            ps.setInt(7, baseEmissor.getId());
+            ps.setInt(2, ocorrenciasBombeiros.getEmissor().getId());
+            ps.setInt(3, ocorrenciasBombeiros.getCep());
+            ps.setString(4, ocorrenciasBombeiros.getRua());
+            ps.setInt(5, ocorrenciasBombeiros.getNumeroResidencia());
+            ps.setString(6, ocorrenciasBombeiros.getLogradouro());
+            ps.setInt(7, ocorrenciasBombeiros.getId());
 
             int resultado = ps.executeUpdate();
             return resultado;
@@ -94,8 +93,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
     }
 
     public static BaseOcorrencia buscarOcorrenciaBombeiroPorId(int codigo){
-        BaseOcorrencia ocorrenciaBombeiro = null;
-        BaseEmissor baseEmissor = new BaseEmissor();
+        BaseOcorrencia ocorrenciasBombeiros = null;
         String sql = "SELECT id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros WHERE id = ?";
         Conexao conexao = new Conexao();
         try{
@@ -104,14 +102,14 @@ public class OcorrenciaCorpoDeBombeirosDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while (rs.next()){
-                ocorrenciaBombeiro = new BaseOcorrencia();
-                baseEmissor.setId(codigo);
-                ocorrenciaBombeiro.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
-                baseEmissor.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                baseEmissor.setCep(rs.getInt("cep"));
-                baseEmissor.setRua(rs.getString("rua"));
-                baseEmissor.setNumeroResidencia(rs.getInt("numero_residencia"));
-                baseEmissor.setLogradouro(rs.getString("logradouro"));
+                ocorrenciasBombeiros = new BaseOcorrencia();
+                ocorrenciasBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
+                ocorrenciasBombeiros.setId(codigo);
+                ocorrenciasBombeiros.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciasBombeiros.setCep(rs.getInt("cep"));
+                ocorrenciasBombeiros.setRua(rs.getString("rua"));
+                ocorrenciasBombeiros.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciasBombeiros.setLogradouro(rs.getString("logradouro"));
             }
 
         } catch (SQLException ex) {
@@ -119,7 +117,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
         } finally {
             conexao.desconectar();
         }
-        return ocorrenciaBombeiro;
+        return ocorrenciasBombeiros;
     }
 
 

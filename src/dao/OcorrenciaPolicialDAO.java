@@ -20,15 +20,15 @@ import model.BaseOcorrencia;
 public class OcorrenciaPolicialDAO {
     
     public static int inserir(BaseOcorrencia ocorrenciaPolicial) {
-        String sql = "INSERT INTO ocorrencias_policiais (id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?);";
+        String sql = "INSERT INTO ocorrencias_policiais (id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?)";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
             ps.setInt(3, ocorrenciaPolicial.getCep());
-            ps.setString(4, ocorrenciaPolicial.getEmissor().getRua());
-            ps.setInt(5, ocorrenciaPolicial.getEmissor().getNumeroResidencia());
+            ps.setString(4, ocorrenciaPolicial.getRua());
+            ps.setInt(5, ocorrenciaPolicial.getNumeroResidencia());
             ps.setString(6, ocorrenciaPolicial.getEmissor().getLogradouro());
             
             ps.execute();
@@ -57,10 +57,10 @@ public class OcorrenciaPolicialDAO {
             
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
-            ps.setInt(3, ocorrenciaPolicial.getEmissor().getCep());
-            ps.setString(4, ocorrenciaPolicial.getEmissor().getRua());
-            ps.setInt(5, ocorrenciaPolicial.getEmissor().getNumeroResidencia());
-            ps.setString(6, ocorrenciaPolicial.getEmissor().getLogradouro());
+            ps.setInt(3, ocorrenciaPolicial.getCep());
+            ps.setString(4, ocorrenciaPolicial.getRua());
+            ps.setInt(5, ocorrenciaPolicial.getNumeroResidencia());
+            ps.setString(6, ocorrenciaPolicial.getLogradouro());
             ps.setInt(7, ocorrenciaPolicial.getId());
             int resultado = ps.executeUpdate();
             return resultado;
