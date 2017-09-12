@@ -10,6 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 import model.BaseOcorrencia;
 import model.Emissor;
 
@@ -118,6 +121,33 @@ public class OcorrenciaMedicaDAO {
         }
         return ocorrenciaMedica;
     }
-    
+
+    public List<BaseOcorrencia> retornarOcorrenciaMedica(){
+        List<BaseOcorrencia> tabelaOcorrenciaMedica = new ArrayList<>();
+        String sql = "SELFCT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_medicas";
+        Conexao conexao = new Conexao();
+        try {
+            Statement stt = conexao.conectar().createStatement();
+            stt.execute(sql);
+            ResultSet rs = stt.getResultSet();
+            while (rs.next()){
+                BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
+                ocorrenciaMedica.setId(rs.getInt("id"));
+                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
+                //Tipo de ocorrencia
+                ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaMedica.setCep(rs.getInt("cep"));
+                ocorrenciaMedica.setRua(rs.getString("rua"));
+                ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaMedica.setLogradouro(rs.getString("logradouro"));
+                tabelaOcorrenciaMedica.add(ocorrenciaMedica);
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally {
+            conexao.desconectar();
+        }
+        return tabelaOcorrenciaMedica;
+    }
 }
 

@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *blablabla
@@ -123,5 +125,32 @@ public class OcorrenciaDefesaCivilDAO {
         return ocorrenciaDefesaCivil;
     }
 
+    public List<BaseOcorrencia> retornarOcorrenciaDefesaCivil(){
+        List<BaseOcorrencia> tabelaOcorrenciaDefesaCivil = new ArrayList<>();
+        String sql = "SELFCT id, id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_defesa_civil";
+        Conexao conexao = new Conexao();
+        try {
+            Statement stt = conexao.conectar().createStatement();
+            stt.execute(sql);
+            ResultSet rs = stt.getResultSet();
+            while (rs.next()){
+                BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
+                ocorrenciaDefesaCivil.setId(rs.getInt("id"));
+                ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
+                //Tipo de ocorrencia
+                ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
+                ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
+                ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaDefesaCivil.setLogradouro(rs.getString("logradouro"));
+                tabelaOcorrenciaDefesaCivil.add(ocorrenciaDefesaCivil);
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally {
+            conexao.desconectar();
+        }
+        return tabelaOcorrenciaDefesaCivil;
+    }
 
 }

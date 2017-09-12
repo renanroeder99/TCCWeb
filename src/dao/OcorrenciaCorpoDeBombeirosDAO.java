@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.BaseOcorrencia;
 
@@ -120,5 +122,32 @@ public class OcorrenciaCorpoDeBombeirosDAO {
         return ocorrenciasBombeiros;
     }
 
+    public List<BaseOcorrencia> retornarOcorrenciaBombeiro(){
+        List<BaseOcorrencia> tabelaOcorrenciaBombeiro = new ArrayList<>();
+        String sql = "SELFCT id, id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros";
+        Conexao conexao = new Conexao();
+        try {
+            Statement stt = conexao.conectar().createStatement();
+            stt.execute(sql);
+            ResultSet rs = stt.getResultSet();
+            while (rs.next()){
+                BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
+                ocorrenciaPolicial.setId(rs.getInt("id"));
+                ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
+                //Tipo de ocorrencia
+                ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaPolicial.setCep(rs.getInt("cep"));
+                ocorrenciaPolicial.setRua(rs.getString("rua"));
+                ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaPolicial.setLogradouro(rs.getString("logradouro"));
+                tabelaOcorrenciaBombeiro.add(ocorrenciaPolicial);
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally {
+            conexao.desconectar();
+        }
+        return tabelaOcorrenciaBombeiro;
+    }
 
 }
