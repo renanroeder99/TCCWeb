@@ -155,4 +155,25 @@ public class EmissorDAO {
         }
         return cadastroUsuario;
     }
+
+    public static boolean realizarLogin(String email, String senha) {
+        String sql = "SELECT id FROM emissor WHERE email = ? AND senha = ?";
+        Conexao conexao = new Conexao();
+        try {
+            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, senha);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            conexao.desconectar();
+        }
+        return false;
+    }
 }
+
