@@ -12,7 +12,23 @@ import java.sql.Date;
  * @author Renan Roeder, 08-22-2017
  */
 public class Emissor {
-    private String nome, usuario, email, confirmarEmail, senha, cpf, endereco;
+    private String nome;
+    private String usuario;
+    private String email;
+    private String confirmarEmail;
+    private String senha;
+    private String cpf;
+    private String endereco;
+
+    public String getConfirmarSenha() {
+        return confirmarSenha;
+    }
+
+    public void setConfirmarSenha(String confirmarSenha) {
+        this.confirmarSenha = confirmarSenha;
+    }
+
+    private String confirmarSenha;
     private int rg, telefone, trote;
     private Emissor emissor;
     private int cep, numeroResidencia, id;
@@ -158,4 +174,6 @@ public class Emissor {
     public int getCep() {
         return cep;
     }
+
+
 }
