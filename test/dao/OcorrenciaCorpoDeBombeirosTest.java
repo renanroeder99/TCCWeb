@@ -18,8 +18,9 @@ public class OcorrenciaCorpoDeBombeirosTest {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia baseOcorrencia = new BaseTipoOcorrencia();
         baseOcorrencia.setDescricao("grtgtrgrt");
-        baseOcorrencia.setId(554);
+
         baseOcorrencia.setTipo("rtjgrg");
+        baseOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrencia));
 
         Emissor emissor = new Emissor();
         emissor.setNome("Daiane Machado");
@@ -42,7 +43,7 @@ public class OcorrenciaCorpoDeBombeirosTest {
         baseOcorrenciaCorpoDeBombeiros.setBaseTipoOcorrencia(baseOcorrencia);
         baseOcorrenciaCorpoDeBombeiros.setEmissor(emissor);
         baseOcorrenciaCorpoDeBombeiros.setId(OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrenciaCorpoDeBombeiros));
-        assertEquals(1, baseOcorrenciaCorpoDeBombeiros);
+        assertEquals(1, baseOcorrenciaCorpoDeBombeiros.getId());
 
     }
 

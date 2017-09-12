@@ -21,6 +21,7 @@ import org.junit.runners.Suite;
         OcorrenciaDefesaCivilTest.class,
         TesteOcorrenciaMedica.class,
         TesteReceptor.class,
+        OcorrenciaCorpoDeBombeirosTest.class,
         TesteTipoOcorrenciaBombeiro.class,
         TesteTipoOcorrenciaDefesaCivil.class,
         TesteTipoOcorrenciaMedica.class,
