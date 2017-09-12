@@ -20,7 +20,7 @@ import java.sql.Statement;
 public class OcorrenciaDefesaCivilDAO {
 
     public static int inserir(BaseOcorrencia ocorrenciaDefesaCivil){
-        String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?);";
+        String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?)";
 
         Conexao conexao = new Conexao();
         try{
@@ -42,6 +42,7 @@ public class OcorrenciaDefesaCivilDAO {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return 0;
         } finally {
             conexao.desconectar();
         }
