@@ -17,7 +17,7 @@ import model.BaseOcorrencia;
 
 /**
  *
- * @author Renan Roeder 09/09/2017
+ * @author Daiane Machado, date = 31/08/17
  */
 public class OcorrenciaCorpoDeBombeirosDAO {
 
