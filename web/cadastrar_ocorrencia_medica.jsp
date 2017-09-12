@@ -11,6 +11,31 @@
     <title>$Title$</title>
 </head>
 <body>
-$END$
+<jsp:include page="menu_superior.jsp"/>
+
+<form action="ocorrencia_medica.jsp" method="POST">
+
+    <div>
+        <label for="ocorrencia_medica_logradouro">Logradouro</label>
+        <input type="text" id="ocorrencia_medica_logradouro" name="ocorrencia_medica_logradouro">
+    </div>
+
+    <div>
+        <label for="ocorrencia_medica_rua">Rua</label>
+        <input type="text" id="ocorrencia_medica_rua" name="ocorrencia_medica_rua">
+    </div>
+
+    <div>
+        <label for="ocorrencia_medica_cep">CEP</label>
+        <input type="text" id="ocorrencia_medica_cep" name="ocorrencia_medica_cep">
+    </div>
+
+    <div>
+        <label for="ocorrencia_medica_numero_residencia">Numero Residência</label>
+        <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
+    </div>
+
+    <button type="submit">Cadastrar</button>
+</form>
 </body>
 </html>

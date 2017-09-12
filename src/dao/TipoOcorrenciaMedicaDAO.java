@@ -89,7 +89,7 @@ public class TipoOcorrenciaMedicaDAO {
         return -1;
     }
 
-    public static BaseTipoOcorrencia buscarOMPorID(int id) {
+    public static BaseTipoOcorrencia buscarOcorrenciaMedicaPorID(int id) {
         BaseTipoOcorrencia ocorrenciaMedica = null;
         String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_medicas WHERE id = ?";
 
