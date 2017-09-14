@@ -8,7 +8,7 @@
 
 <%
     if (session.getAttribute("email") != null) {
-        response.sendRedirect("usuario_escolher_ocorrencia.jsp");
+        response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
     }%>
 
 
@@ -21,8 +21,8 @@
     <div>
         <form action="tela_acao_login.jsp" method="post">
             <div>
-                <label for="usuario-email">E-Mail</label>
-                <input type="usuario-email" name="usuario-email" id="usuario-email">
+                <label for="usuario-username">Nome de usuário</label>
+                <input type="usuario-username" name="usuario-username" id="usuario-username">
             </div>
             <div>
                 <label for="usuario-senha">Senha</label>
