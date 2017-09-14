@@ -14,9 +14,21 @@
 <jsp:include page="menu_superior.jsp"/>
 <form action="ocorrencia_defesa_civil.jsp" method="POST">
     <div>
-        <label for="ocorrencia-rua">Rua</label>
-        <input type="text" id="ocorrencia-rua" name="ocorrencia-rua">
+        <label for="ocorrencia-cep">Cep</label>
+        <input type="text" id="ocorrencia-cep" name="ocorrencia-rua">
     </div>
+
+    <div>
+        <label for="ocorrencia-rua">Rua</label>
+        <input type="text" id="ocorrencia-rua" name="ocorrencia_defesa_civil">
+    </div>
+
+    <div>
+        <label for="ocorrencia-numero-residencia">Numero Residência</label>
+        <input type="text" id="ocorrencia-numero-residencia" name="ocorrencia_defesa_civil_numero_residencia">
+    </div>
+
+    <button type="submit">Cadastrar</button>
 
 
 </form>
