@@ -1,4 +1,6 @@
-<%--
+<%@ page import="model.BaseTipoOcorrencia" %>
+<%@ page import="dao.TipoOcorrenciaPolicialDAO" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 98961
   Date: 14/09/2017
@@ -27,6 +29,19 @@
         <label for="ocorrencia-policial-numero-residencia">Número Residência</label>
         <input type="text" id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia">
     </div>
+
+    <div>
+        <label>Tipo Ocorrencia</label>
+        <select>
+            <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaPolicialDAO.buscarOcorrenciaPolicial();%>
+            <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
+            <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
+            </option>
+            <% } %>
+        </select>
+    </div>
+
+
 
 
 

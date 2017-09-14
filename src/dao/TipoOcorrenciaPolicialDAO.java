@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -101,5 +102,30 @@ public class TipoOcorrenciaPolicialDAO {
             conexao.desconectar();
         }
         return tipoOcorrenciaPolicial;
+    }
+
+    public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaPolicial() {
+
+            ArrayList<BaseTipoOcorrencia> ocorrenciasPoliciais = new ArrayList<>();
+            String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_policiais";
+
+            Conexao conexao = new Conexao();
+            try {
+                Statement ps = conexao.conectar().createStatement();
+                ps.execute(sql);
+                ResultSet rs = ps.getResultSet();
+                while (rs.next()) {
+                    BaseTipoOcorrencia ocorrenciaPolicial = new BaseTipoOcorrencia();
+                    ocorrenciaPolicial.setId(rs.getInt("id"));
+                    ocorrenciaPolicial.setTipo(rs.getString("tipo"));
+                    ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
+                    ocorrenciasPoliciais.add(ocorrenciaPolicial);
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                conexao.desconectar();
+            }
+            return ocorrenciasPoliciais;
     }
 }
