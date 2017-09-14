@@ -41,8 +41,20 @@
         </select>
     </div>
 
+    <div>
+        <label for="ocorrencia-policial-descricao">Descrição</label>
+
+    </div>
+    <div>
+
+        <textarea name="Descrição" id="ocorrencia-policial-descricao" cols="30" rows="10"></textarea>
 
 
+
+    <button type="submit">Concluir</button>
+
+
+    </div>
 
 
     
