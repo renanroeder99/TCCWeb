@@ -40,7 +40,12 @@
             </option>
             <% } %>
         </select>
+</div>
     </div>
+    <label for="descricao">Descricao</label>
+    <div>
+    </div>
+    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
     <button type="submit">Cadastrar</button>
 </form>
 </body>
