@@ -7,6 +7,7 @@
 --%>
 
 <%@ page import="model.Receptor" %>
+<%@ page import="dao.ReceptorDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
@@ -27,6 +28,7 @@
     receptor.setEndereco(request.getParameter("receptor-enderenco"));
     receptor.setCep(request.getParameter("receptor-cep"));
     receptor.setCargo(request.getParameter("receptor-cargo"));
+    ReceptorDAO.cadastrar(receptor);
 %>
 </body>
 </html>
