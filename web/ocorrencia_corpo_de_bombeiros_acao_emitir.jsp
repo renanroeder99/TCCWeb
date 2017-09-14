@@ -1,6 +1,7 @@
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.TipoOcorrenciaCorpoDeBombeirosDAO" %>
-<%@ page import="dao.EmissorDAO" %><%--
+<%@ page import="dao.EmissorDAO" %>
+<%@ page import="dao.OcorrenciaCorpoDeBombeirosDAO" %><%--
   Created by IntelliJ IDEA.
   User: Daiane Machado
   Date: 14/09/2017
@@ -17,6 +18,6 @@
     baseOcorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia_corpo_de_bombeiros_numero_residencia")));
     baseOcorrencia.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(Integer.parseInt(request.getParameter("ocorrencia_corpo_de_bombeiros"))));
     baseOcorrencia.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("ocorrencia_corpo_de_bombeiros_emissor"))));
-    }
+    OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrencia);
 %>
 
