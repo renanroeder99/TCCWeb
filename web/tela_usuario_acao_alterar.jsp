@@ -16,7 +16,7 @@
         <label for="usuario-nome">Nome</label>
         <select name = "usuario-nome" id="usuario-nome">
             <option value=""></option>
-        </select>
+            /select>
     </div>
 </form>
 </body>

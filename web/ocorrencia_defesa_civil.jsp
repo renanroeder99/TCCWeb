@@ -2,8 +2,7 @@
 <%@ page import="model.Emissor" %>
 <%@ page import="dao.EmissorDAO" %>
 <%@ page import="dao.TipoOcorrenciaDefesaCivilDAO" %>
-<%@ page import="model.BaseTipoOcorrencia" %>
-<%@ page import="dao.OcorrenciaDefesaCivilDAO" %><%--
+<%@ page import="model.BaseTipoOcorrencia" %><%--
   Created by IntelliJ IDEA.
   User: Antony Henrique Vogel
   Date: 12/09/2017
@@ -24,8 +23,7 @@
     ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
     ocorrencia.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-tipo-ocorrencia"))));
     ocorrencia.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("emissor"))));
-    ocorrencia.setId(Integer.parseInt(request.getParameter("ocorrencia-id")));
-    OcorrenciaDefesaCivilDAO.inserir(ocorrencia);
+    ocorrencia.setId(Integer.parseInt(request.getParameter("ocorrenia-id")));
 %>
 
 </body>

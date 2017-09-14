@@ -12,26 +12,5 @@
 </head>
 <body>
 
-
-<table border="1">
-    <thead>
-    <tr>
-        <th>Ocorrencia</th>
-        <th>CEP</th>
-        <th>Endereço</th>
-        <th>Emissor</th>
-    </tr>
-    </thead>
-    <tfoot>
-    <tr>
-        <th>Ocorrencia</th>
-        <th>CEP</th>
-        <th>Endereço</th>
-        <th>Emissor</th>
-    </tr>
-    </tfoot>
-</table>
-
-
 </body>
 </html>

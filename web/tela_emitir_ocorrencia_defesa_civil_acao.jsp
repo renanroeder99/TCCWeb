@@ -12,7 +12,7 @@
 </head>
 <body>
 <jsp:include page="menu_superior.jsp"/>
-<form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
+<form action="ocorrencia_defesa_civil.jsp" method="POST">
     <div>
         <label for="ocorrencia-cep">Cep</label>
         <input type="text" id="ocorrencia-cep" name="ocorrencia-rua">
@@ -28,7 +28,7 @@
         <input type="text" id="ocorrencia-numero-residencia" name="ocorrencia_defesa_civil_numero_residencia">
     </div>
 
-    <button type="submit">Emitir</button>
+    <button type="submit">Cadastrar</button>
 
 
 </form>

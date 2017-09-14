@@ -9,7 +9,6 @@
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.TipoOcorrenciaMedicaDAO" %>
 <%@ page import="dao.EmissorDAO" %>
-<%@ page import="dao.OcorrenciaMedicaDAO" %>
 
 <%
     BaseOcorrencia baseOcorrencia = new BaseOcorrencia();
@@ -19,6 +18,5 @@
     baseOcorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia_medica_numero_residencia")));
     baseOcorrencia.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(Integer.parseInt(request.getParameter("ocorrencia_medica_id_tipo_ocorrencia"))));
     baseOcorrencia.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("ocorrencia_medica_id_emissor"))));
-    OcorrenciaMedicaDAO.inserir(baseOcorrencia);
 
 %>
