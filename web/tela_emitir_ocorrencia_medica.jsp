@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.TipoOcorrenciaMedicaDAO" %>
+<%@ page import="model.BaseTipoOcorrencia" %><%--
   Created by IntelliJ IDEA.
   User: Felipe de Jesus Cazagranda
   Date: 14/09/2017
@@ -33,6 +35,17 @@
     <div>
         <label for="ocorrencia_medica_numero_residencia">Numero Residência</label>
         <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
+    </div>
+
+    <div>
+        <label>Tipo Ocorrencia</label>
+        <select>
+            <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
+            <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
+            <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
+            </option>
+            <% } %>
+        </select>
     </div>
 
     <button type="submit">Cadastrar</button>
