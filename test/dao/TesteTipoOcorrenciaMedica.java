@@ -39,7 +39,7 @@ public class TesteTipoOcorrenciaMedica {
         
         assertEquals(1, ocorrenciaMedica.getId());
 
-        BaseTipoOcorrencia codigoInserido = TipoOcorrenciaMedicaDAO.buscarOMPorID(ocorrenciaMedica.getId());
+        BaseTipoOcorrencia codigoInserido = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(ocorrenciaMedica.getId());
 
         assertEquals(ocorrenciaMedica.getId(), codigoInserido.getId());
         assertEquals(ocorrenciaMedica.getTipo(), codigoInserido.getTipo());
@@ -63,7 +63,7 @@ public class TesteTipoOcorrenciaMedica {
         baseTipoOcorrencia.setDescricao("Blablabla");
         baseTipoOcorrencia.setId(TipoOcorrenciaMedicaDAO.alterar(baseTipoOcorrencia));
         
-        BaseTipoOcorrencia cadastroBD = TipoOcorrenciaMedicaDAO.buscarOMPorID(baseTipoOcorrencia.getId());
+        BaseTipoOcorrencia cadastroBD = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(baseTipoOcorrencia.getId());
         
         assertEquals(cadastroBD.getId(), baseTipoOcorrencia.getId());
         assertEquals(cadastroBD.getTipo(), baseTipoOcorrencia.getTipo());
