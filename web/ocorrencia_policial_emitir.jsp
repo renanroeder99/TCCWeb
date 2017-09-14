@@ -27,24 +27,9 @@
         <label for="ocorrencia-policial-numero-residencia">Número Residência</label>
         <input type="text" id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia">
     </div>
-    <div>
-        <select name="crimes" id="crimes"></select>
-        <option value="Assédio">Assédio</option>
-        <option value="Furto">Furto</option>
-        <option value="Vandalismo"></option>
-        <option value="Perturbação à ordem pública">Perturbação à ordem pública</option>
-        <option value="Assalto">Assalto</option>
-        <option value="Roubo">Roubo</option>
-        <option value="Agressão física">Agressão Física</option>
-        <option value="Violência Domestica">Violência Domestica</option>
-        <option value="Homicídio">Homicídio</option>
-        <option value="Latrocínio">Latrocínio</option>
-        <option value="Sequestro">Sequestro</option>
-        <option value="Estupro">Estupro</option>
-        <option value="Abuso de menor">Abuso de Menor</option>
-        
 
-    </div>
+
+
     
 </form>
 

@@ -64,6 +64,12 @@
     <label for="receptor-cargo">Cargo</label>
     <input type="text" id="receptor-cargo" name="receptor-cargo">
     </div>
+  <div>
+
+  <button type="submit">Cadastrar</button>
+
+  </div>
+
 
 </form>
 </body>
