@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="menu_superior.jsp"/>
 
- <
+
 <form action="receptor_acao_cadastrar.jsp" method="POST">
     <div>
         <label for="receptor-nome">Nome Completo</label>
