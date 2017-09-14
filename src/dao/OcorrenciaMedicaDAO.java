@@ -18,7 +18,8 @@ import model.Emissor;
 
 /**
  *
- * @author Renan Roeder, 09-08-2017
+ * @author(Felipe de Jesus Cazagranda, date = 09-30-2017)
+ *
  */
 public class OcorrenciaMedicaDAO {
     public static int inserir(BaseOcorrencia ocorrenciaMedica){
