@@ -1,12 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Felipe de Jesus Cazagra
-  Date: 30/09/2017
+  User: Felipe de Jesus Cazagranda
+  Date: 14/09/2017
   Time: 15:58
   To change this template use File | Settings | File Templates.
 --%>
 <$@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import ="model.BaseOcorrencia" %>
+<%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.TipoOcorrenciaMedicaDAO" %>
 <%@ page import="dao.EmissorDAO" %>
 

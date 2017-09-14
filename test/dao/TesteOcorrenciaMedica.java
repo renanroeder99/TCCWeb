@@ -15,7 +15,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 /**
  *
- * @author(Felipe de Jesus Cazagranda, date = 09-30-2017)
+ * @author(Felipe de Jesus Cazagranda, date = 09-14-2017)
  *
  */
 public class TesteOcorrenciaMedica {
