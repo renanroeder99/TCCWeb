@@ -1,4 +1,6 @@
-<%--
+<%@ page import="model.BaseTipoOcorrencia" %>
+<%@ page import="dao.TipoOcorrenciaCorpoDeBombeirosDAO" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Daiane Machado
   Date: 14/09/2017
