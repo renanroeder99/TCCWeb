@@ -123,8 +123,8 @@ public class OcorrenciaMedicaDAO {
         return ocorrenciaMedica;
     }
 
-    public List<BaseOcorrencia> retornarOcorrenciaMedica(){
-        List<BaseOcorrencia> tabelaOcorrenciaMedica = new ArrayList<>();
+    public static ArrayList<BaseOcorrencia> retornarOcorrenciasMedica(){
+        ArrayList<BaseOcorrencia> tabelaOcorrenciaMedica = new ArrayList<>();
         String sql = "SELFCT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_medicas";
         Conexao conexao = new Conexao();
         try {
