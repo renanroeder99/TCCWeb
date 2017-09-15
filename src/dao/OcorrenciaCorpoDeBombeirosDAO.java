@@ -124,7 +124,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciaBombeiro(){
         ArrayList<BaseOcorrencia> tabelaOcorrenciaBombeiro = new ArrayList<>();
-        String sql = "SELFCT id, id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros";
+        String sql = "SELECT id, id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
