@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.BaseOcorrencia" %>
+<%@ page import="dao.OcorrenciaMedicaDAO" %><%--
   Created by IntelliJ IDEA.
   User: 98930
   Date: 14/09/2017
@@ -11,14 +13,27 @@
     <title>Ocorrencias Médicas</title>
 </head>
 <body>
-<thead>
-<tr>
-    <td>Código</td>
-    <td>Ocorrencia</td>
-    <td>Endereço</td>
-    <td>Emissor</td>
+<table>
+    <thead>
+        <tr>
+            <td>Código</td>
+            <td>Ocorrencia</td>
+            <td>Endereço</td>
+            <td>Emissor</td>
 
+        </tr>
+    </thead>
+<tbody>
+<% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaMedicaDAO.retornarOcorrenciasMedica(); %>
+<% for (BaseOcorrencia ocorrencia: ocorrencias) { %>
+<tr>
+    <td><%= ocorrencia.getId()%></td>
+    <td><%= ocorrencia.getBaseTipoOcorrencia()%></td>
+    <td><%= ocorrencia.endereco()%></td>
+    <td><%= ocorrencia.getEmissor()%></td>
 </tr>
-</thead>
+<% } %>
+</tbody>
+</table>
 </body>
 </html>
