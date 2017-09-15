@@ -28,7 +28,12 @@
     receptor.setEndereco(request.getParameter("receptor-enderenco"));
     receptor.setCep(request.getParameter("receptor-cep"));
     receptor.setCargo(request.getParameter("receptor-cargo"));
-    ReceptorDAO.cadastrar(receptor);
+    int codigo = ReceptorDAO.cadastrar(receptor);
+    if(codigo > 0){
+        response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
+    }else{
+
+    }
 %>
 </body>
 </html>

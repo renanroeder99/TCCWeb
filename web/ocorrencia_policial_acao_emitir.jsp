@@ -26,6 +26,13 @@
     ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("emissor"))));
     ocorrenciaPolicial.setId(Integer.parseInt(request.getParameter("ocorrenia-id")));
     OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial);
+
+    int codigo = OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial);
+    if(codigo > 0){
+        response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
+    }else{
+
+    }
 %>
 
 </body>
