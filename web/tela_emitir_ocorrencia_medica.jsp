@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>$Title$</title>
+    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
 </head>
 <body>
 <jsp:include page="menu_superior.jsp"/>
