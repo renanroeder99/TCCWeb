@@ -11,6 +11,10 @@
     <title>Ocorrências</title>
 </head>
 <body>
+<button type="submit" onclick=window.open("tela_emitir_ocorrencia_medica.jsp")>Ambulância Hospitalar</button>
 
+<button type="submit" onclick=window.open("tela_emitir_ocorrencia_policial.jsp")>Polícia</button>
+<button type="submit" onclick=window.open("tela_emitir_ocorrencia_corpo_de_bombeiros.jsp")>Corpo de Bombeiros</button>
+<button type="submit" onclick=window.open("tela_emitir_ocorrencia_defesa_civil.jsp")>Defesa Civil</button>
 </body>
 </html>
