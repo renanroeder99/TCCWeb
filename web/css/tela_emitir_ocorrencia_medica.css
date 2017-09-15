@@ -1,5 +1,20 @@
-.{
-    border: 3px yellow solid;
-    border-radius: 10px;
-    background-color: black; color: white;
+.logradouro_medico{
+    font-size: 20px;
+    color: black;
+}
+.rua_medica{
+    font-size: 20px;
+    color: black;
+}
+.cep_medico{
+    font-size: 20px;
+    color: black;
+}
+.numero_residencia_medica{
+    font-size: 20px;
+    color: black;
+}
+.tipo_medico{
+    font-size: 20px;
+    color: black;
 }
