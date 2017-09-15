@@ -67,7 +67,7 @@
         <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required">
     </div>
 
-    <button type="submit" onclick="" value="submit">Cadastrar</button>
+    <a href="tela_usuario_alterar.jsp?id=">Cadastrar</a>
 
 </form>
 </body>

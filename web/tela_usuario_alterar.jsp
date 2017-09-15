@@ -22,12 +22,11 @@
     </div>
     <div>
         <label for="usuario-username">Nome de usuário</label>
-        <input type="text" id="usuario-username" name="usuario-username" required="required"
-               value="<%= emissor.getUsuario() %>">
+        <input type="text" id="usuario-username" name="usuario-username" required="required" value="<%= emissor.getUsuario() %>">
     </div>
     <div>
         <label for="usuario-data-nascimento">Data de nascimento</label>
-        <input type="date" id="usuario-data-nascimento" name="usuario-data-nascimento" required="required">
+        <input type="date" id="usuario-data-nascimento" name="usuario-data-nascimento" required="required" value="<%= emissor.getDataNascimento()%>">
     </div>
     <div>
         <label for="usuario-email">Email</label>
@@ -35,39 +34,39 @@
     </div>
     <div>
         <label for="usuario-confirmar-email">Confirmar email</label>
-        <input type="email" id="usuario-confirmar-email" name="usuario-confirmar-email" required="required">
+        <input type="email" id="usuario-confirmar-email" name="usuario-confirmar-email" required="required" value="<%= emissor.getConfirmarEmail() %>">
     </div>
     <div>
         <label for="usuario-senha">Senha</label>
-        <input type="password" id="usuario-senha" name="usuario-senha" required="required">
+        <input type="password" id="usuario-senha" name="usuario-senha" required="required" value="<%= emissor.getSenha()%>">
     </div>
     <div>
-        <label for="usuario-confirmar-senha">Confirmar senha</label>
-        <input type="password" id="usuario-confirmar-senha" name="usuario-confirmar-senha" required="required">
+        <label for="usuario-confirmar-senha">Confirmar Senha</label>
+        <input type="password" id="usuario-confirmar-senha" name="usuario-confirmar-senha" required="required" value="<%= emissor.getConfirmarSenha() %>">
     </div>
     <div>
         <label for="usuario-rg">RG</label>
-        <input type="number" id="usuario-rg" name="usuario-rg" required="required">
+        <input type="number" id="usuario-rg" name="usuario-rg" required="required" value="<%= emissor.getRg()%>">
     </div>
     <div>
         <label for="usuario-cpf">CPF</label>
-        <input type="text" id="usuario-cpf" name="usuario-cpf" required="required">
+        <input type="text" id="usuario-cpf" name="usuario-cpf" required="required" value="<%= emissor.getCpf()%>">
     </div>
     <div>
         <label for="usuario-cep">CEP</label>
-        <input type="text" id="usuario-cep" name="usuario-cep" required="required">
+        <input type="text" id="usuario-cep" name="usuario-cep" required="required" value="<%= emissor.getCep()%>">
     </div>
     <div>
         <label for="usuario-telefone">Telefone</label>
-        <input type="text" id="usuario-telefone" name="usuario-telefone" required="required">
+        <input type="text" id="usuario-telefone" name="usuario-telefone" required="required" value="<%= emissor.getTelefone()%>">
     </div>
     <div>
         <label for="usuario-endereco">Endereco</label>
-        <input type="text" id="usuario-endereco" name="usuario-endereco" required="required">
+        <input type="text" id="usuario-endereco" name="usuario-endereco" required="required" value="<%= emissor.getEndereco()%>">
     </div>
     <div>
         <label for="usuario-numero-residencia">Número de residência</label>
-        <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required">
+        <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required" value="<%= emissor.getNumeroResidencia()%>">
     </div>
 
     <button type="submit" onclick="" value="submit">Cadastrar</button>
