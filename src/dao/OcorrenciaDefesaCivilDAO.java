@@ -16,16 +16,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *blablabla
+ * blablabla
+ *
  * @author Wanderson Ferreira 08/09/2017
  */
 public class OcorrenciaDefesaCivilDAO {
 
-    public static int inserir(BaseOcorrencia ocorrenciaDefesaCivil){
+    public static int inserir(BaseOcorrencia ocorrenciaDefesaCivil) {
         String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?)";
 
         Conexao conexao = new Conexao();
-        try{
+        try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
@@ -52,10 +53,10 @@ public class OcorrenciaDefesaCivilDAO {
 
     }
 
-    public static int alterar(BaseOcorrencia ocorrenciaDefesaCivil){
+    public static int alterar(BaseOcorrencia ocorrenciaDefesaCivil) {
         Conexao conexao = new Conexao();
 
-        try{
+        try {
             String sql = "UPDATE ocorrencias_defesa_civil SET id_tipo_ocorrencias_defesa_civil = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, logradouro = ? WHERE id = ? ";
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
@@ -97,16 +98,16 @@ public class OcorrenciaDefesaCivilDAO {
         return -1;
     }
 
-    public static BaseOcorrencia buscarOcorrenciaDefesaCivilPorId(int codigo){
+    public static BaseOcorrencia buscarOcorrenciaDefesaCivilPorId(int codigo) {
         BaseOcorrencia ocorrenciaDefesaCivil = null;
         String sql = "SELECT id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_defesa_civil WHERE id = ?";
         Conexao conexao = new Conexao();
-        try{
+        try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
             ps.setInt(1, codigo);
             ps.execute();
             ResultSet rs = ps.getResultSet();
-            while (rs.next()){
+            while (rs.next()) {
                 ocorrenciaDefesaCivil = new BaseOcorrencia();
                 ocorrenciaDefesaCivil.setId(codigo);
                 ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
@@ -125,15 +126,15 @@ public class OcorrenciaDefesaCivilDAO {
         return ocorrenciaDefesaCivil;
     }
 
-    public List<BaseOcorrencia> retornarOcorrenciaDefesaCivil(){
-        List<BaseOcorrencia> tabelaOcorrenciaDefesaCivil = new ArrayList<>();
+    public static ArrayList<BaseOcorrencia> retornarOcorrenciasDefesaCivil() {
+        ArrayList<BaseOcorrencia> tabelaOcorrenciaDefesaCivil = new ArrayList<>();
         String sql = "SELFCT id, id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_defesa_civil";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
             stt.execute(sql);
             ResultSet rs = stt.getResultSet();
-            while (rs.next()){
+            while (rs.next()) {
                 BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
                 ocorrenciaDefesaCivil.setId(rs.getInt("id"));
                 ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
@@ -145,12 +146,13 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setLogradouro(rs.getString("logradouro"));
                 tabelaOcorrenciaDefesaCivil.add(ocorrenciaDefesaCivil);
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
-        }finally {
+        } finally {
             conexao.desconectar();
         }
         return tabelaOcorrenciaDefesaCivil;
     }
+
 
 }

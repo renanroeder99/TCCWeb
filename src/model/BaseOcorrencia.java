@@ -63,4 +63,9 @@ public class BaseOcorrencia {
     public void setNumeroResidencia(int numeroResidencia) {
         this.numeroResidencia = numeroResidencia;
     }
+
+    public String endereco(){
+        return cep + " - " +logradouro + " - " + numeroResidencia ;
+    }
+
 }

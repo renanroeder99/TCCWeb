@@ -11,6 +11,15 @@
     <title>Ocorrencias Policiais</title>
 </head>
 <body>
+<thead>
+<tr>
+    <td>Código</td>
+    <td>Ocorrencia</td>
+    <td>Endereço</td>
+    <td>Emissor</td>
+
+</tr>
+</thead>
 
 </body>
 </html>

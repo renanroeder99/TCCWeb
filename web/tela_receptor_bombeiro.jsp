@@ -11,6 +11,16 @@
     <title>Ocorrencias Bombeiros</title>
 </head>
 <body>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Código</td>
+            <td>Ocorrencia</td>
+            <td>Endereço</td>
+            <td>Emissor</td>
 
+        </tr>
+    </thead>
+</table>
 </body>
 </html>
