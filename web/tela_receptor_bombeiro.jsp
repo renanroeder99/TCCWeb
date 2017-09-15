@@ -29,6 +29,7 @@
 <tr>
     <td><%= ocorrencia.getId()%></td>
     <td><%= ocorrencia.getBaseTipoOcorrencia()%></td>
+    <td><%= ocorrencia.endereco()%></td>
     <td><%= ocorrencia.getEmissor()%></td>
 </tr>
 <% } %>

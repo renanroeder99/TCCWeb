@@ -56,7 +56,7 @@
     </div>
     <div>
         <label for="usuario-telefone">Telefone</label>
-        <input type="text" id="usuario-telefone" name="usuario-telefone">
+        <input type="text" id="usuario-telefone" name="usuario-telefone" required="required">
     </div>
     <div>
         <label for="usuario-endereco">Endereco</label>
