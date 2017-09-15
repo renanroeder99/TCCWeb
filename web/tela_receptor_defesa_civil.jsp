@@ -12,7 +12,7 @@
 <head>
     <title>Ocorrencias Defesa Civil</title>
 </head>
-<body>
+<tbody>
 <table>
     <thead>
     <tr>
@@ -35,5 +35,5 @@
     </tbody>
 </table>
 
-</body>
+</tbody>
 </html>

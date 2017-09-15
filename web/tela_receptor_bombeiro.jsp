@@ -12,7 +12,7 @@
 <head>
     <title>Ocorrencias Bombeiros</title>
 </head>
-<tbody>
+<body>
 <table>
     <thead>
     <tr>
@@ -22,8 +22,9 @@
             <th>Emissor</th>
         </tr>
     </thead>
-</table>
+
 <tbody>
+
 <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaCorpoDeBombeirosDAO.retornarOcorrenciaBombeiro(); %>
 <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
 <tr>
