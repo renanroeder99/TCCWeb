@@ -60,10 +60,26 @@
         <input type="text" id="receptor-cep" name="receptor-cep">
     </div>
 
-    <div>
-    <label for="receptor-cargo">Cargo</label>
-    <input type="text" id="receptor-cargo" name="receptor-cargo">
-    </div>
+
+        <div>
+
+            <input type="radio" id="receptor-medico" name="cadastro-cargo">
+            <label for="receptor-medico">Médico   (MED_seuusename)</label><br>
+
+            <input type="radio" id="receptor-bombeiros" name="cadastro-cargo">
+            <label for="receptor-bombeiros">Bombeiros   (CDB_seuusername)</label><br>
+
+            <input type="radio" id="receptor-defesa-civil" name="cadastro-cargo">
+            <label for="receptor-defesa-civil">Defesa Civil   (DFC_seuusername)</label><br>
+
+            <input type="radio" id="receptor-policial" name="cadastro-cargo">
+            <label for="receptor-policial">Policial   (POL_seuusername)</label><br>
+
+        </div>
+
+
+
+
   <div>
 
   <button type="submit">Cadastrar</button>
