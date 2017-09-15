@@ -1,7 +1,28 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 98930
-  Date: 14/09/2017
-  Time: 14:18
-  To change this template use File | Settings | File Templates.
---%>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import ="model.Emissor"%>
+<%@ page import="dao.EmissorDAO" %>
+<%@ page import="java.sql.Date" %>
+
+<%
+    Emissor emissor = new Emissor();
+    emissor.setNome(request.getParameter("usuario-nome"));
+    emissor.setUsuario(request.getParameter("usuario-username"));
+    emissor.setDataNascimento(Date.valueOf(request.getParameter("usuario-data-nascimento")));
+    emissor.setEmail(request.getParameter("usuario-email"));
+    emissor.setConfirmarEmail(request.getParameter("usuario-confirmar-email"));
+    emissor.setSenha(request.getParameter("usuario-senha"));
+    emissor.setConfirmarSenha(request.getParameter("usuario-confirmar-senha"));
+    emissor.setRg(Integer.parseInt(request.getParameter("usuario-rg")));
+    emissor.setCpf(request.getParameter("usuario-cpf"));
+    emissor.setCep(Integer.parseInt(request.getParameter("usuario-cep")));
+    emissor.setTelefone(Integer.parseInt(request.getParameter("usuario-telefone")));
+    emissor.setEndereco(request.getParameter("usuario-endereco"));
+    emissor.setNumeroResidencia(Integer.parseInt(request.getParameter("usuario-numero-residencia")));
+    int codigo = EmissorDAO.alterar(emissor);
+    if(codigo > 0){
+        response.sendRedirect("tela_usuario_alterar.jsp?id=" + codigo);
+    }else{
+
+    }
+%>

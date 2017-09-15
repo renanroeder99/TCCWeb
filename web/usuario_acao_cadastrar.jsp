@@ -21,7 +21,7 @@
     emissor.setNumeroResidencia(Integer.parseInt(request.getParameter("usuario-numero-residencia")));
 int codigo = EmissorDAO.cadastrar(emissor);
 if(codigo > 0){
-    response.sendRedirect("usuario_alterar.jsp?id=" + codigo);
+    response.sendRedirect("tela_usuario_alterar.jsp?id=" + codigo);
 }else{
 
 }

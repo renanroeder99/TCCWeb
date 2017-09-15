@@ -13,7 +13,7 @@
     <title>Ocorrencias Bombeiros</title>
 </head>
 <body>
-<table>
+<table border="1">
     <thead>
     <tr>
             <th>Código</th>
