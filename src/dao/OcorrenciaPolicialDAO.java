@@ -125,8 +125,8 @@ public class OcorrenciaPolicialDAO {
         return ocorrenciaPolicial;
     }
 
-    public List<BaseOcorrencia> retornarOcorrenciaPolicial(){
-        List<BaseOcorrencia> tabelaOcorrenciaPolicial = new ArrayList<>();
+    public static ArrayList<BaseOcorrencia> retornarOcorrenciaPolicial(){
+        ArrayList<BaseOcorrencia> tabelaOcorrenciaPolicial = new ArrayList<>();
         String sql = "SELFCT id, id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_policiais";
         Conexao conexao = new Conexao();
         try {
