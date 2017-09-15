@@ -1,6 +1,8 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.BaseOcorrencia" %>
+<%@ page import="dao.OcorrenciaCorpoDeBombeirosDAO" %><%--
   Created by IntelliJ IDEA.
-  User: 98930
+  User: Daiane Machado
   Date: 14/09/2017
   Time: 14:54
   To change this template use File | Settings | File Templates.
@@ -18,9 +20,9 @@
             <td>Ocorrencia</td>
             <td>Endereço</td>
             <td>Emissor</td>
-
         </tr>
     </thead>
 </table>
 </body>
-</html>
+<% ArrayList<BaseOcorrencia> baseOcorrencias = OcorrenciaCorpoDeBombeirosDAO.r
+    /html>
