@@ -1,6 +1,7 @@
 package dao;
 
 import database.Conexao;
+import model.BaseOcorrencia;
 import model.BaseTipoOcorrencia;
 
 import java.sql.PreparedStatement;
@@ -106,26 +107,56 @@ public class TipoOcorrenciaPolicialDAO {
 
     public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaPolicial() {
 
-            ArrayList<BaseTipoOcorrencia> ocorrenciasPoliciais = new ArrayList<>();
-            String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_policiais";
+        ArrayList<BaseTipoOcorrencia> ocorrenciasPoliciais = new ArrayList<>();
+        String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_policiais";
 
-            Conexao conexao = new Conexao();
-            try {
-                Statement ps = conexao.conectar().createStatement();
-                ps.execute(sql);
-                ResultSet rs = ps.getResultSet();
-                while (rs.next()) {
-                    BaseTipoOcorrencia ocorrenciaPolicial = new BaseTipoOcorrencia();
-                    ocorrenciaPolicial.setId(rs.getInt("id"));
-                    ocorrenciaPolicial.setTipo(rs.getString("tipo"));
-                    ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
-                    ocorrenciasPoliciais.add(ocorrenciaPolicial);
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            } finally {
-                conexao.desconectar();
+        Conexao conexao = new Conexao();
+        try {
+            Statement ps = conexao.conectar().createStatement();
+            ps.execute(sql);
+            ResultSet rs = ps.getResultSet();
+            while (rs.next()) {
+                BaseTipoOcorrencia ocorrenciaPolicial = new BaseTipoOcorrencia();
+                ocorrenciaPolicial.setId(rs.getInt("id"));
+                ocorrenciaPolicial.setTipo(rs.getString("tipo"));
+                ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
+                ocorrenciasPoliciais.add(ocorrenciaPolicial);
             }
-            return ocorrenciasPoliciais;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            conexao.desconectar();
+        }
+        return ocorrenciasPoliciais;
+
+
     }
+    public static ArrayList<BaseOcorrencia> retornarOcorrenciaBombeiro(){
+        ArrayList<BaseOcorrencia> tabelaOcorrenciaPolicial = new ArrayList<>();
+        String sql = "SELECT id, id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_policiais";
+        Conexao conexao = new Conexao();
+        try {
+            Statement stt = conexao.conectar().createStatement();
+            stt.execute(sql);
+            ResultSet rs = stt.getResultSet();
+            while (rs.next()){
+                BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
+                ocorrenciaPolicial.setId(rs.getInt("id"));
+                ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
+                //Tipo de ocorrencia
+                ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaPolicial.setCep(rs.getInt("cep"));
+                ocorrenciaPolicial.setRua(rs.getString("rua"));
+                ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaPolicial.setLogradouro(rs.getString("logradouro"));
+                tabelaOcorrenciaPolicial.add(ocorrenciaPolicial);
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally {
+            conexao.desconectar();
+        }
+        return tabelaOcorrenciaPolicial;
+    }
+
 }
