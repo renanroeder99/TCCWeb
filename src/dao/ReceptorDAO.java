@@ -146,4 +146,7 @@ public class ReceptorDAO {
         }
         return administrador;
     }
+
+    public static boolean realizarLogin(String email, String senha) {
+    }
 }

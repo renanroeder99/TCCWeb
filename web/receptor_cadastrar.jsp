@@ -61,30 +61,28 @@
     </div>
 
 
-        <div>
+    <div>
 
-            <input type="radio" id="receptor-medico" name="cadastro-cargo">
-            <label for="receptor-medico">Médico   (MED_seuusename)</label><br>
+        <input type="radio" id="receptor-medico" name="cadastro-cargo" value="MED" required="required">
+        <label for="receptor-medico">Médico (MED_seuusename)</label><br>
 
-            <input type="radio" id="receptor-bombeiros" name="cadastro-cargo">
-            <label for="receptor-bombeiros">Bombeiros   (CDB_seuusername)</label><br>
+        <input type="radio" id="receptor-bombeiros" name="cadastro-cargo" value ="CDB" required="required">
+        <label for="receptor-bombeiros">Bombeiros (CDB_seuusername)</label><br>
 
-            <input type="radio" id="receptor-defesa-civil" name="cadastro-cargo">
-            <label for="receptor-defesa-civil">Defesa Civil   (DFC_seuusername)</label><br>
+        <input type="radio" id="receptor-defesa-civil" name="cadastro-cargo" value="DFC" required="required">
+        <label for="receptor-defesa-civil">Defesa Civil (DFC_seuusername)</label><br>
 
-            <input type="radio" id="receptor-policial" name="cadastro-cargo">
-            <label for="receptor-policial">Policial   (POL_seuusername)</label><br>
+        <input type="radio" id="receptor-policial" name="cadastro-cargo" value="POL" required="required">
+        <label for="receptor-policial">Policial (POL_seuusername)</label><br>
 
-        </div>
-
-
+    </div>
 
 
-  <div>
+    <div>
 
-  <button type="submit">Cadastrar</button>
+        <button type="submit" onclick="" value="submit">Cadastrar</button>
 
-  </div>
+    </div>
 
 
 </form>

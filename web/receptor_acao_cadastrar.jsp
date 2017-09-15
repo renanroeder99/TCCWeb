@@ -20,7 +20,27 @@
     Receptor receptor = new Receptor();
     receptor.setNome(request.getParameter("receptor-nome"));
     receptor.setCpf(request.getParameter("receptor-cpf"));
-    receptor.setLogin(request.getParameter("receptor-login"));
+    String tipo = request.getParameter("cadastro-cargo");
+    String login = "";
+    switch (tipo){
+        case "MED":
+             login = "MED_";
+            break;
+        case "CDB":
+            login = "CDB_";
+            break;
+        case "DFC":
+            login = "DFC_";
+            break;
+        case "POL":
+            login = "POL_";
+            break;
+    }
+    login += request.getParameter("receptor-login");
+    receptor.setLogin(login);
+
+
+
     receptor.setEmail(request.getParameter("receptor-email"));
     receptor.setConfirmarSenha(request.getParameter("receptor-confirmar-senha"));
     receptor.setSenha(request.getParameter("senha"));
