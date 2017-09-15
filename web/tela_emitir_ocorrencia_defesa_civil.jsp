@@ -11,22 +11,23 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil_acao.css">
 </head>
 <body>
 <jsp:include page="menu_superior.jsp"/>
 <form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
     <div>
-        <label for="ocorrencia-cep">Cep</label>
+        <label for="ocorrencia-cep" class="lab">Cep</label>
         <input type="text" id="ocorrencia-cep" name="ocorrencia-rua">
     </div>
 
     <div>
-        <label for="ocorrencia-rua">Rua</label>
+        <label for="ocorrencia-rua" class="labe">Rua</label>
         <input type="" id="ocorrencia-rua" name="ocorrencia_defesa_civil">
     </div>
 
     <div>
-        <label for="ocorrencia-numero-residencia">Numero Residência</label>
+        <label for="ocorrencia-numero-residencia"class="lab1">Numero Residência</label>
         <input type="text" id="ocorrencia-numero-residencia" name="ocorrencia_defesa_civil_numero_residencia">
     </div>
 
@@ -42,7 +43,7 @@
     </div>
 
     <div>
-        <label for="ocorrencia-descricao">Descrição</label>
+        <label for="ocorrencia-descricao" class="labe1">Descrição</label>
     </div>
     <div>
         <textarea name="ocorrencia-descricao" id="ocorrencia-descricao" cols="30" rows="10"></textarea>
