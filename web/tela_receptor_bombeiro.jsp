@@ -12,17 +12,28 @@
 <head>
     <title>Ocorrencias Bombeiros</title>
 </head>
-<body>
-<table border="1">
+<tbody>
+<table>
     <thead>
-        <tr>
-            <td>Código</td>
-            <td>Ocorrencia</td>
-            <td>Endereço</td>
-            <td>Emissor</td>
+    <tr>
+            <th>Código</th>
+            <th>Ocorrencia</th>
+            <th>Endereço</th>
+            <th>Emissor</th>
         </tr>
     </thead>
 </table>
+<tbody>
+<% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaCorpoDeBombeirosDAO.retornarOcorrenciaBombeiro(); %>
+<% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
+<tr>
+    <td><%= ocorrencia.getId()%></td>
+    <td><%= ocorrencia.getBaseTipoOcorrencia()%></td>
+    <td><%= ocorrencia.getEmissor()%></td>
+</tr>
+<% } %>
+</tbody>
+</table>
+
 </body>
-<% ArrayList<BaseOcorrencia> baseOcorrencias = OcorrenciaCorpoDeBombeirosDAO.r
-    /html>
+</html>
