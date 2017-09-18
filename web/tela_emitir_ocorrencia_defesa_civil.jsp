@@ -9,12 +9,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%
+<%--
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
-%>
+--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -29,25 +29,25 @@
 <form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
     <div>
         <br>
-        <label for="ocorrencia-cep" class="lab">Cep</label>
+        <label for="ocorrencia-cep" class="TelaDefesa">Cep</label>
         <input type="text" id="ocorrencia-cep" name="ocorrencia-rua">
     </div>
 
     <div>
         <br>
-        <label for="ocorrencia-rua" class="labe">Rua</label>
+        <label for="ocorrencia-rua" class="TelaDefesa">Rua</label>
         <input type="" id="ocorrencia-rua" name="ocorrencia_defesa_civil">
     </div>
 
     <div>
         <br>
-        <label for="ocorrencia-numero-residencia"class="lab1">Numero Residência</label>
+        <label for="ocorrencia-numero-residencia"class="TelaDefesa">Numero Residência</label>
         <input type="text" id="ocorrencia-numero-residencia" name="ocorrencia_defesa_civil_numero_residencia">
     </div>
 
     <div>
         <br>
-        <label class="label-ocorrencia">Tipo Ocorrencia</label>
+        <label class="TelaDefesa">Tipo Ocorrencia</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
@@ -59,7 +59,7 @@
 
     <div>
         <br>
-        <label for="ocorrencia-descricao" class="labe1">Descrição</label>
+        <label for="ocorrencia-descricao" class="TelaDefesa">Descrição</label>
     </div>
     <div>
         <textarea name="ocorrencia-descricao" id="ocorrencia-descricao" cols="30" rows="10"></textarea>
