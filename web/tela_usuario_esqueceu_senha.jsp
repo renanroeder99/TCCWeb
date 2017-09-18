@@ -1,11 +1,12 @@
-<%@ page import="model.Receptor" %><%--
+<%@ page import="model.Receptor" %>
+<%@ page import="model.Emissor" %><%--
   Created by IntelliJ IDEA.
   User: 98930
-  Date: 12/09/2017
-  Time: 16:39
+  Date: 18/09/2017
+  Time: 16:05
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     if(session.getAttribute("emissor") != null){
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
@@ -30,28 +31,33 @@
     }
 %>
 
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login de usuário</title>
+    <title>Title</title>
 </head>
 <body>
+<div>
     <div>
-        <form action="_usuario_acao_login.jsp" method="post">
-            <div>
-                <label for="usuario-username">Nome de usuário</label>
-                <input type="email" name="usuario-username" id="usuario-username">
-            </div>
-            <div>
-                <label for="usuario-senha">Senha</label>
-                <input type="password" name="usuario-senha" id="usuario-senha">
-            </div>
-            <button type="submit">Entrar</button>
-        </form>
+        <label for="usuario-nome">Nome completo</label>
+        <input type="text" id="usuario-nome" name="usuario-nome" required="required">
     </div>
-    <a href="tela_usuario_cadastrar.jsp">Cidadão novo? Cadastre-se</a>
+    <div>
+        <label for="usuario-username">Email</label>
+        <input type="text" id="usuario-username" name="usuario-username"  required="required">
+    </div>
+    <label for="usuario-email">Confirmar email</label>
+    <input type="email" id="usuario-email" name="usuario-email" required="required">
+</div>
 
-    <a href="tela_usuario_esqueceu_senha.jsp">Esqueceu sua senha?</a>
+<div>
+    <label for="usuario-rg">RG</label>
+    <input type="number" id="usuario-rg" name="usuario-rg" required="required">
+</div>
+<div>
+    <label for="usuario-cpf">CPF</label>
+    <input type="text" id="usuario-cpf" name="usuario-cpf" required="required">
+</div>
+
+<a href="tela_usuario_alterar.jsp?id=">Esqueci minha senha</a>
 </body>
 </html>
