@@ -19,34 +19,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
 </head>
 <body>
 <jsp:include page="menu_superior.jsp"/>
-
+<h1 align="center" class="titulo">Ocorrência Médica</h1>
 <form action="ocorrencia_medica.jsp" method="POST">
 
     <div>
-        <label for="ocorrencia_medica_logradouro" class="logradouro_medico">Logradouro</label>
+        <h2><label for="ocorrencia_medica_logradouro" class="logradouro_medico">Logradouro</label></h2>
         <input type="text" id="ocorrencia_medica_logradouro" name="ocorrencia_medica_logradouro">
     </div>
-    <div></div>
+    <br></br>
     <div>
         <label for="ocorrencia_medica_rua" class="rua_medica">Rua</label>
         <input type="text" id="ocorrencia_medica_rua" name="ocorrencia_medica_rua">
     </div>
-    <div></div>
+    <br></br>
     <div>
         <label for="ocorrencia_medica_cep" class="cep_medico">CEP</label>
         <input type="text" id="ocorrencia_medica_cep" name="ocorrencia_medica_cep">
     </div>
-    <div></div>
+    <br></br>
     <div>
         <label for="ocorrencia_medica_numero_residencia" class="numero_residencia_medica">Numero Residência</label>
         <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
     </div>
-    <div></div>
+    <br></br>
     <div>
         <label class="tipo_medico">Tipo Ocorrencia</label>
         <select>
@@ -57,8 +57,8 @@
             <% } %>
         </select>
     </div>
-
-    <button type="submit">Cadastrar</button>
+    <br></br>
+    <a href="tela_usuario_escolher_ocorrencia.jsp">Emitir</a>
 </form>
 </body>
 </html>
