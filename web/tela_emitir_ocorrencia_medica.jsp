@@ -28,7 +28,7 @@
 <form action="ocorrencia_medica.jsp" method="POST">
 
     <div>
-        <h2><label for="ocorrencia_medica_logradouro" class="logradouro_medico">Logradouro</label></h2>
+        <label for="ocorrencia_medica_logradouro" class="logradouro_medico">Logradouro</label>
         <input type="text" id="ocorrencia_medica_logradouro" name="ocorrencia_medica_logradouro">
     </div>
     <br></br>
