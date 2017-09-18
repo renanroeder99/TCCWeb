@@ -19,6 +19,10 @@ public class Emissor {
     private String senha;
     private String cpf;
     private String endereco;
+    private String confirmarSenha;
+    private int rg, telefone, trote;
+    private int cep, numeroResidencia, id;
+    private String rua, logradouro;
 
     public String getConfirmarSenha() {
         return confirmarSenha;
@@ -27,21 +31,6 @@ public class Emissor {
     public void setConfirmarSenha(String confirmarSenha) {
         this.confirmarSenha = confirmarSenha;
     }
-
-    private String confirmarSenha;
-    private int rg, telefone, trote;
-    private Emissor emissor;
-    private int cep, numeroResidencia, id;
-    private String rua, logradouro;
-
-    public Emissor getEmissor() {
-        return emissor;
-    }
-
-    public void setEmissor(Emissor emissor) {
-        this.emissor = emissor;
-    }
-
 
     public void setCep(int cep) {
         this.cep = cep;

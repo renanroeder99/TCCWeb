@@ -52,7 +52,7 @@ public class TesteEmissor {
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         assertEquals(1, emissor.getId());
-        
+
         emissor.setNome("Wanderson");
         emissor.setUsuario("wanwan");
         emissor.setEmail("wands@hotmail.com");
@@ -66,7 +66,7 @@ public class TesteEmissor {
         emissor.setId(EmissorDAO.alterar(emissor));
 
         Emissor cadastroBD = EmissorDAO.buscarEmissorPorID(emissor.getId());
-        
+
         assertEquals(cadastroBD.getId(), emissor.getId());
         assertEquals(cadastroBD.getNome(), emissor.getNome());
         assertEquals(cadastroBD.getUsuario(), emissor.getUsuario());
