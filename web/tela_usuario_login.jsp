@@ -32,6 +32,7 @@
         </form>
     </div>
     <a href="tela_usuario_cadastrar.jsp">Cidadão novo? Cadastre-se</a>
-    <a href="receptor_cadastrar.jsp">Agente novo? Cadastre-se</a>
+    <a href="tela_receptor_cadastrar.jsp">Agente novo? Cadastre-se</a>
+    <a href=""></a>
 </body>
 </html>
