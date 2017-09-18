@@ -1,12 +1,21 @@
 <%@ page import="model.BaseTipoOcorrencia" %>
 <%@ page import="dao.TipoOcorrenciaCorpoDeBombeirosDAO" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Emissor" %><%--
   Created by IntelliJ IDEA.
   User: Daiane Machado
   Date: 14/09/2017
   Time: 13:48
   To change this template use File | Settings | File Templates.
 --%>
+
+<%
+    if(session.getAttribute("emissor") == null){
+        response.sendRedirect("tela_usuario_login.jsp");
+    }
+    Emissor emissor = (Emissor) session.getAttribute("emissor");
+%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
