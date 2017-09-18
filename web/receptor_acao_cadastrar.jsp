@@ -50,7 +50,7 @@
     receptor.setCargo(request.getParameter("receptor-cargo"));
     int codigo = ReceptorDAO.cadastrar(receptor);
     if(codigo > 0){
-        response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
+        response.sendRedirect("tela_receptor");
     }else{
 
     }
