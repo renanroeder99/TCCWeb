@@ -1,35 +1,38 @@
+
 .lab {
+    font-size: 20px;
+    font-family: verdana;
     color: #030101;
-
 }
-
-.lab{ font-size: 30px;
-      font-family: verdana;}
-
 .labe {
-    font-size: 30px;
+    font-size: 20px;
     font-family: verdana;
-
-}
-.labe{
     color: #070a09;
 }
+
 .lab1 {
+    font-size: 20px;
+    font-family: verdana;
+    color: #030101;
+}
+.labe1 {
+    font-size: 20px;
+    font-family: verdana;
+    color: #030101;
+}
+
+.label-ocorrencia {
+    font-size: 20px;
+    font-family: verdana;
+    color: #070a09;
+
+}
+
+.labeltitulo {
+    font-size: 40px;
+    font-family: verdana;
     color: #030101;
 
 }
-
-.lab1{ font-size: 30px;
-    font-family: verdana;}
-
-.labe1 {
-    font-size: 30px;
-    font-family: verdana;
-
-}
-.labe1{
-    color: #070a09;
-}
-
 
 

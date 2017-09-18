@@ -14,7 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil_acao.css">
 </head>
 <body>
+
 <jsp:include page="menu_superior.jsp"/>
+<h1 align="center" class="labeltitulo">Ocorrencia Defesa Civil</h1>
 <form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
     <div>
         <label for="ocorrencia-cep" class="lab">Cep</label>
@@ -32,7 +34,7 @@
     </div>
 
     <div>
-        <label>Tipo Ocorrencia</label>
+        <label class="label-ocorrencia">Tipo Ocorrencia</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
