@@ -11,7 +11,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil_acao.css">
+    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
 </head>
 <body>
 
@@ -19,21 +19,25 @@
 <h1 align="center" class="labeltitulo">Ocorrencia Defesa Civil</h1>
 <form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
     <div>
+        <br>
         <label for="ocorrencia-cep" class="lab">Cep</label>
         <input type="text" id="ocorrencia-cep" name="ocorrencia-rua">
     </div>
 
     <div>
+        <br>
         <label for="ocorrencia-rua" class="labe">Rua</label>
         <input type="" id="ocorrencia-rua" name="ocorrencia_defesa_civil">
     </div>
 
     <div>
+        <br>
         <label for="ocorrencia-numero-residencia"class="lab1">Numero Residência</label>
         <input type="text" id="ocorrencia-numero-residencia" name="ocorrencia_defesa_civil_numero_residencia">
     </div>
 
     <div>
+        <br>
         <label class="label-ocorrencia">Tipo Ocorrencia</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
@@ -45,6 +49,7 @@
     </div>
 
     <div>
+        <br>
         <label for="ocorrencia-descricao" class="labe1">Descrição</label>
     </div>
     <div>
