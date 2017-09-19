@@ -19,15 +19,23 @@
 <head>
     <title>Ocorrências</title>
 </head>
-<body>
+<body >
+
 <%Emissor emissor = new Emissor();%>
 <h1 align="center">Bem Vindo <%=emissor.getNome()%></h1>
 <style>
+    body{
+        background-color: #e3e8e8;
+    }
     .botao {
-        right: 0;
-        bottom: 0;
-        position: absolute;
-
+        vertical-align: -15%;
+        font-size: 30px;
+        width: 200px;
+        height: 50px;
+        background-color: #8d9b9c;
+        color: #070a09;
+        opacity: 0.9;
+        border: 3px double #070a09;
     }
 </style>
 <a href="tela_emitir_ocorrencia_medica.jsp" class="botao">Chamado Médico</a>
