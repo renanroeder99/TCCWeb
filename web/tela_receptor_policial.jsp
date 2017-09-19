@@ -20,11 +20,12 @@
     <thead>
     <tr>
 
-        <form action=""></form>
+        <form ondblclick= "detalhes_ocorrencia_policial.jsp" method="get">
         <th>Código</th>
         <th>Ocorrencia</th>
         <th>Endereço</th>
         <th>Emissor</th>
+        </form>
     </tr>
     </thead>
 
@@ -42,6 +43,5 @@
 <% } %>
 </tbody>
 </table>
-
 </body>
 </html>
