@@ -27,3 +27,7 @@ menu-superior-item{
     justify-content: center;
     align-items: center;
 }
+
+.menu-superior-item:hover{
+    background-color: dimgrey;
+}
