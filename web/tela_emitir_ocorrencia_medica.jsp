@@ -30,7 +30,6 @@
 <jsp:include page="menu_superior_medico.jsp"/>
 
 <h1 align="center" class="titulo">Ocorrência Médica</h1>
->>>>>>> 137e24df68eb75f935dcd1601caf2a5ab9b10137
 
 <form action="ocorrencia_medica.jsp" method="POST">
 
