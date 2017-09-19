@@ -21,10 +21,16 @@
 <head>
     <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
+    <link rel="stylesheet" href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <h1 align="center">Ocorrência Médica</h1>
+
+<jsp:include page="menu_superior_medico.jsp"/>
+
+<h1 align="center" class="titulo">Ocorrência Médica</h1>
+>>>>>>> 137e24df68eb75f935dcd1601caf2a5ab9b10137
 
 <form action="ocorrencia_medica.jsp" method="POST">
 

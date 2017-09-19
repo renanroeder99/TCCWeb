@@ -19,7 +19,8 @@
 <h4>Telefone: <%ocorrencia.getEmissor().getTelefone();%></h4>
 <h4>RG: <%ocorrencia.getEmissor().getRg();%></h4>
 <h4>CPF: <%ocorrencia.getEmissor().getCpf();%></h4>
-<h4>Endereço: <%ocorrencia.getEmissor().getEndereco();%></h4>
+<h4>Endereço da ocorrencia: <%ocorrencia.endereco();%></h4>
+<h4>Endereço do emissor: <%ocorrencia.getEmissor().getEndereco();%></h4>
 <h4>Email: <%ocorrencia.getEmissor().getEmail();%></h4>
 <h4>Quantidade de trotes: <%ocorrencia.getEmissor().getTrote();%></h4>
 
