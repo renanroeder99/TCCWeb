@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import database.Utilitario;
 import model.Receptor;
 
 /**
@@ -21,11 +23,13 @@ public class ReceptorDAO {
     public static int cadastrar(Receptor cadastroAdministrador) throws SQLException {
         String sql = "INSERT INTO receptores (nome_completo, login, senha, cpf, cargo, endereco, telefone_celular, email, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
+        String senha = cadastroAdministrador.getSenha();
+
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, cadastroAdministrador.getNome());
             ps.setString(2, cadastroAdministrador.getLogin());
-            ps.setString(3, cadastroAdministrador.getSenha());
+            ps.setString(3, Utilitario.gerarHASH(cadastroAdministrador.getSenha()));
             ps.setString(4, cadastroAdministrador.getCpf());
             ps.setString(5, cadastroAdministrador.getCargo());
             ps.setString(6, cadastroAdministrador.getEndereco());
@@ -147,24 +151,24 @@ public class ReceptorDAO {
         return administrador;
     }
 
-    public static boolean realizarLogin(String email, String senha) {
-        String sql = "SELECT id FROM receptor WHERE email = ? AND senha = ?";
+    public static Receptor realizarLogin(String email, String senha) {
+        String sql = "SELECT id FROM receptores WHERE email = ? AND senha = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setString(1, email);
-            ps.setString(2, senha);
+            ps.setString(2, Utilitario.gerarHASH(senha));
             ps.execute();
             ResultSet rs = ps.getResultSet();
             if (rs.next()) {
-                return true;
+                    return buscarReceptorPorID(rs.getInt("id"))
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             conexao.desconectar();
         }
-        return false;
+        return null;
 
     }
 }

@@ -29,7 +29,7 @@ public class TesteReceptor {
         administrador.setLogin("FelipeCaz");
         administrador.setSenha("123123");
         administrador.setCpf("11333211254");
-        administrador.setCargo("Vagabundo");
+        administrador.setCargo("MED");
         administrador.setEndereco("Rua Alcebiades Reichert, 177");
         administrador.setTelefone(Integer.parseInt("88385618"));
         administrador.setEmail("felipecaz1113@gmail.com");
