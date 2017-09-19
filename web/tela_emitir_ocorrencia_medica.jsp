@@ -25,8 +25,6 @@
 </head>
 <body>
 
-<h1 align="center">Ocorrência Médica</h1>
-
 <jsp:include page="menu_superior_medico.jsp"/>
 
 <h1 align="center" class="titulo">Ocorrência Médica</h1>
