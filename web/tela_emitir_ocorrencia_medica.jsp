@@ -21,6 +21,7 @@
 <head>
     <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
+    <link rel="stylesheet" type="text/css" href="css/menu_superior_medico.css"
     <link rel="stylesheet" href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
