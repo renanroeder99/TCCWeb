@@ -6,11 +6,19 @@
 package dao;
 
 import database.Conexao;
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import database.Utilitario;
 import model.Emissor;
 
 /**
@@ -20,22 +28,24 @@ import model.Emissor;
  */
 public class EmissorDAO {
 
-    public static int cadastrar(Emissor cadastroUsuario) throws SQLException {
+    public static int cadastrar(Emissor emissor) throws SQLException {
         String sql = "INSERT INTO emissores (usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, trotes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
+        String senha = emissor.getSenha();
         try {
+
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, cadastroUsuario.getUsuario());
-            ps.setString(2, cadastroUsuario.getSenha());
-            ps.setString(3, cadastroUsuario.getNome());
-            ps.setString(4, cadastroUsuario.getCpf());
-            ps.setInt(5, cadastroUsuario.getRg());
-            ps.setString(6, cadastroUsuario.getEndereco());
-            ps.setInt(7, cadastroUsuario.getTelefone());
-            ps.setString(8, cadastroUsuario.getEmail());
-            ps.setInt(9, cadastroUsuario.getCep());
-            ps.setInt(10, cadastroUsuario.getTrote());
+            ps.setString(1, emissor.getUsuario());
+            ps.setString(2, Utilitario.gerarHASH(emissor.getSenha()));
+            ps.setString(3, emissor.getNome());
+            ps.setString(4, emissor.getCpf());
+            ps.setInt(5, emissor.getRg());
+            ps.setString(6, emissor.getEndereco());
+            ps.setInt(7, emissor.getTelefone());
+            ps.setString(8, emissor.getEmail());
+            ps.setInt(9, emissor.getCep());
+            ps.setInt(10, emissor.getTrote());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -45,6 +55,7 @@ public class EmissorDAO {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
+
         } finally {
             conexao.desconectar();
         }
@@ -162,7 +173,7 @@ public class EmissorDAO {
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setString(1, email);
-            ps.setString(2, senha);
+            ps.setString(2, Utilitario.gerarHASH(senha));
             ps.execute();
             ResultSet rs = ps.getResultSet();
             if (rs.next()) {
