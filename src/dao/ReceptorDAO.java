@@ -161,7 +161,7 @@ public class ReceptorDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             if (rs.next()) {
-                    return buscarReceptorPorID(rs.getInt("id"))
+                    return buscarReceptorPorID(rs.getInt("id"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

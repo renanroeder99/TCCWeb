@@ -12,7 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="menu_superior.jsp"/>
 <% Emissor emissor = EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("id"))); %>
 
 <form action="usuario_acao_alterar.jsp?id=" method="POST">

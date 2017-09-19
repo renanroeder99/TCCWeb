@@ -23,32 +23,29 @@
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
 </head>
 <body>
-<jsp:include page="menu_superior.jsp"/>
-<h1 align="center" class="titulo">Ocorrência Médica</h1>
+
+<h1 align="center">Ocorrência Médica</h1>
+
 <form action="ocorrencia_medica.jsp" method="POST">
 
     <div>
-        <label for="ocorrencia_medica_logradouro" class="logradouro_medico">Logradouro</label>
-        <input type="text" id="ocorrencia_medica_logradouro" name="ocorrencia_medica_logradouro">
-    </div>
-    <br></br>
-    <div>
-        <label for="ocorrencia_medica_rua" class="rua_medica">Rua</label>
+        <br>
+        <label for="ocorrencia_medica_rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia_medica_rua" name="ocorrencia_medica_rua">
     </div>
-    <br></br>
     <div>
-        <label for="ocorrencia_medica_cep" class="cep_medico">CEP</label>
+        <br>
+        <label for="ocorrencia_medica_cep" class="label-cadastro">CEP</label>
         <input type="text" id="ocorrencia_medica_cep" name="ocorrencia_medica_cep">
     </div>
-    <br></br>
     <div>
-        <label for="ocorrencia_medica_numero_residencia" class="numero_residencia_medica">Numero Residência</label>
+        <br>
+        <label for="ocorrencia_medica_numero_residencia" class="label-cadastro">Número da Residência</label>
         <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
     </div>
-    <br></br>
     <div>
-        <label class="tipo_medico">Tipo Ocorrencia</label>
+        <br>
+        <label class="label-cadastro">Tipo da Ocorrência</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
@@ -57,8 +54,12 @@
             <% } %>
         </select>
     </div>
-    <br></br>
-    <a href="tela_usuario_escolher_ocorrencia.jsp">Emitir</a>
+    <br>
+    <label for="descricao" class="label-cadastro">Descrição</label>
+    <div>
+    </div>
+    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+    <button type="submit">Emitir</button>
 </form>
 </body>
 </html>

@@ -8,7 +8,6 @@
     <title>Alterar cadastro</title>
 </head>
 <body>
-<jsp:include page="menu_superior.jsp"/>
 <% Emissor emissor = EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("id"))); %>
 <h2 class = "titulo">Atualizar dados de usuário</h2>
 <form method="post" action="usuario_acao_cadastrar.jsp?id=<%=emissor.getId()%>">

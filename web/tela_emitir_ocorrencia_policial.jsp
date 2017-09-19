@@ -18,28 +18,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Ocorrência Policial</title>
 </head>
 <body>
-<jsp:include page="menu_superior.jsp"/>
+<h1 align="center">Ocorrência Policial</h1>
 
-<form action="ocorrencia_policial_acao_emitir.jsp" method="POST">
+<form action="ocorrencia_policial.jsp" method="POST">
     <div>
-        <label for="ocorrencia-policial-cep">Cep</label>
-        <input type="text" id="ocorrencia-policial-cep" name="ocorrencia-policial-cep">
-    </div>
-    <div>
-        <label for="ocorrencia-policial-rua">Rua</label>
+        <label for="ocorrencia-policial-rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia-policial-rua" name="ocorrencia-policial-rua">
     </div>
-    
+    <br>
     <div>
-        <label for="ocorrencia-policial-numero-residencia">Número Residência</label>
+        <label for="ocorrencia-policial-cep">CEP</label>
+        <input type="text" id="ocorrencia-policial-cep" name="ocorrencia-policial-cep">
+    </div>
+    <br>
+    <div>
+        <label for="ocorrencia-policial-numero-residencia" class="label-cadastro">Número da Residência</label>
         <input type="text" id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia">
     </div>
-
+    <br>
     <div>
-        <label>Tipo Ocorrencia</label>
+        <label class="label-cadastro">Tipo da Ocorrência</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaPolicialDAO.buscarOcorrenciaPolicial();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
@@ -48,25 +49,15 @@
             <% } %>
         </select>
     </div>
-
+    <br>
     <div>
-        <label for="ocorrencia-policial-descricao">Descrição</label>
-
+        <label for="ocorrencia-policial-descricao" class="label-cadastro">Descrição</label>
     </div>
     <div>
-
         <textarea name="Descrição" id="ocorrencia-policial-descricao" cols="30" rows="10"></textarea>
 
-
-
-    <button type="submit">Concluir</button>
-
-
+        <button type="submit">Emitir</button>
     </div>
-
-
-    
 </form>
-
 </body>
 </html>
