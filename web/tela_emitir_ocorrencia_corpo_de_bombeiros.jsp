@@ -24,13 +24,12 @@
 </head>
 <body>
 
-<jsp:include page="menu_superior.jsp"/>
 <h1 align="center">Ocorrência Corpo de Bombeiros</h1>
-
 
 <form action="ocorrencia_corpo_de_bombeiros.jsp" method="POST">
 
     </div>
+    <br>
         <label for="ocorrencia_corpo_de_bombeiros_rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_rua" name="ocorrencia_corpo_de_bombeiros_rua">
     </div>
@@ -42,12 +41,12 @@
     </div>
     <br>
     <div>
-        <label for="ocorrencia_corpo_de_bombeiros_numero_residencia" class="label-cadastro">Número Residência</label>
+        <label for="ocorrencia_corpo_de_bombeiros_numero_residencia" class="label-cadastro">Número da Residência</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_numero_residencia" name="ocorrencia_corpo_de_bombeiros_numero_residencia">
     </div>
     <br>
     <div>
-        <label class="label-cadastro">Tipo Ocorrência</label>
+        <label class="label-cadastro">Tipo da Ocorrência</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaCorpoDeBombeiros();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
