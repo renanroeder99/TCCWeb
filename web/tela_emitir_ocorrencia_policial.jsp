@@ -19,19 +19,20 @@
 <html>
 <head>
     <title>Ocorrência Policial</title>
+    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
 </head>
 <body>
 <h1 align="center">Ocorrência Policial</h1>
-=======
 
 <form action="ocorrencia_policial.jsp" method="POST">
     <div>
+        <br>
         <label for="ocorrencia-policial-rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia-policial-rua" name="ocorrencia-policial-rua">
     </div>
     <br>
     <div>
-        <label for="ocorrencia-policial-cep">CEP</label>
+        <label for="ocorrencia-policial-cep" class="label-cadastro">CEP</label>
         <input type="text" id="ocorrencia-policial-cep" name="ocorrencia-policial-cep">
     </div>
     <br>
