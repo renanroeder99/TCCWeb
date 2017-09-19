@@ -19,6 +19,8 @@
 <table>
     <thead>
     <tr>
+
+        <form action=""></form>
         <th>Código</th>
         <th>Ocorrencia</th>
         <th>Endereço</th>

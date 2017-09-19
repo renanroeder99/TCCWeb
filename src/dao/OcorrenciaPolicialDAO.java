@@ -127,7 +127,7 @@ public class OcorrenciaPolicialDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciaPolicial(){
         ArrayList<BaseOcorrencia> tabelaOcorrenciaPolicial = new ArrayList<>();
-        String sql = "SELFCT id, id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_policiais";
+        String sql = "SELFCT id, id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_policiais ORDER BY tipo ASC";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();

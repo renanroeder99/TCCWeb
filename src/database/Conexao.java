@@ -16,16 +16,15 @@ import javax.swing.JOptionPane;
  * @author Renan Roeder 08-23-2017
  */
 public class Conexao {
-    private final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String HOST = "jdbc:mysql://localhost/denuncias";
-    private final String USUARIO = "root";
-    private final String SENHA = "";
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    public  static final String HOST = "jdbc:mysql://localhost/denuncias";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "";
     
     private static Connection conexao;
-    public static Properties properties;
-    public Connection conectar(){
+    public static Connection conectar(){
         try{
-            properties = new Properties();
+            Properties properties = new Properties();
             properties.setProperty("user", USUARIO);
             properties.setProperty("password", SENHA);
             Class.forName(DRIVER);
@@ -37,7 +36,7 @@ public class Conexao {
         }
     }
     
-    public void desconectar(){
+    public static void desconectar(){
         if(conexao != null){
             try{
                 conexao.close();

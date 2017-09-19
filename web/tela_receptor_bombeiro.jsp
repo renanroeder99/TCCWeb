@@ -1,6 +1,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.BaseOcorrencia" %>
-<%@ page import="dao.OcorrenciaCorpoDeBombeirosDAO" %><%--
+<%@ page import="dao.OcorrenciaCorpoDeBombeirosDAO" %>
+<%@ page import="javax.swing.*" %><%--
   Created by IntelliJ IDEA.
   User: Daiane Machado
   Date: 14/09/2017
@@ -14,6 +15,9 @@
 </head>
 <body>
 <table border="1">
+
+
+    <button disabled type="submit" onclick=window.open(<%%>)>Feedback de ocorrência</button>
     <thead>
     <tr>
             <th>Código</th>
