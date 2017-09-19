@@ -68,13 +68,14 @@ public class ReceptorDAO {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setString(1, cadastroAdministrador.getNome());
             ps.setString(2, cadastroAdministrador.getLogin());
-            ps.setString(3, cadastroAdministrador.getSenha());
+            ps.setString(3, Utilitario.gerarHASH(cadastroAdministrador.getSenha()));
             ps.setString(4, cadastroAdministrador.getCpf());
             ps.setString(5, cadastroAdministrador.getCargo());
             ps.setString(6, cadastroAdministrador.getEndereco());
             ps.setInt(7, cadastroAdministrador.getTelefone());
             ps.setString(8, cadastroAdministrador.getEmail());
             ps.setString(9, cadastroAdministrador.getCep());
+            ps.setInt(10, cadastroAdministrador.getId());
 
             int resultado = ps.executeUpdate();
             return resultado;
@@ -161,7 +162,7 @@ public class ReceptorDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             if (rs.next()) {
-                    return buscarReceptorPorID(rs.getInt("id"))
+                    return buscarReceptorPorID(rs.getInt("id"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

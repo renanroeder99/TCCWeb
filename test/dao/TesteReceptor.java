@@ -6,17 +6,20 @@
 package dao;
 
 import database.Limpeza;
+
 import java.sql.SQLException;
+
+import database.Utilitario;
 import model.Receptor;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
- *
  * @author 98930
  */
 public class TesteReceptor {
@@ -38,22 +41,22 @@ public class TesteReceptor {
         int codigoInserido = ReceptorDAO.cadastrar(administrador);
         assertEquals(1, codigoInserido);
     }
-    
+
     @Test
-    public void testarBuscarReceptorPorID() throws SQLException{
+    public void testarBuscarReceptorPorID() throws SQLException {
         Limpeza.truncateTabelas();
         Receptor receptor = new Receptor();
         receptor.setNome("wad");
         receptor.setLogin("eeey5ty");
         receptor.setSenha("1234556789");
         receptor.setCpf("651651561");
-        receptor.setCargo("eeey");
+        receptor.setCargo("MED");
         receptor.setEndereco("Rua asfopasfjioaopias");
         receptor.setEmail("eeey@ty");
         receptor.setCep("659896");
         receptor.setTelefone(Integer.parseInt("993456564"));
         receptor.setId(ReceptorDAO.cadastrar(receptor));
-        
+
         assertEquals(1, receptor.getId());
 
         Receptor codigoInserido = ReceptorDAO.buscarReceptorPorID(receptor.getId());
@@ -61,7 +64,7 @@ public class TesteReceptor {
         assertEquals(receptor.getId(), codigoInserido.getId());
         assertEquals(receptor.getNome(), codigoInserido.getNome());
         assertEquals(receptor.getLogin(), codigoInserido.getLogin());
-        assertEquals(receptor.getSenha(), codigoInserido.getSenha());
+        assertEquals(Utilitario.gerarHASH(receptor.getSenha()), codigoInserido.getSenha());
         assertEquals(receptor.getCpf(), codigoInserido.getCpf());
         assertEquals(receptor.getCargo(), codigoInserido.getCargo());
         assertEquals(receptor.getEndereco(), codigoInserido.getEndereco());
@@ -69,10 +72,8 @@ public class TesteReceptor {
         assertEquals(receptor.getCep(), codigoInserido.getCep());
         assertEquals(receptor.getTelefone(), codigoInserido.getTelefone());
     }
-    
-    
-    
-    
+
+
     @Test
     public void testarAlterar() throws SQLException {
         Limpeza.truncateTabelas();
@@ -94,19 +95,19 @@ public class TesteReceptor {
         receptor.setLogin("xtonyx");
         receptor.setSenha("123123123");
         receptor.setCpf("15216223467");
-        receptor.setCargo("Vagabundo");
+        receptor.setCargo("MED");
         receptor.setEndereco("Rua Georg Backman, 436");
         receptor.setTelefone(Integer.parseInt("96831219"));
         receptor.setEmail("antonyhenriquevogel@gmail.com");
         receptor.setCep("66666666");
-        receptor.setId(ReceptorDAO.cadastrar(receptor));
+        ReceptorDAO.alterar(receptor);
 
         Receptor cadastroBD = ReceptorDAO.buscarReceptorPorID(receptor.getId());
-        
+
         assertEquals(cadastroBD.getId(), receptor.getId());
         assertEquals(cadastroBD.getNome(), receptor.getNome());
         assertEquals(cadastroBD.getLogin(), receptor.getLogin());
-        assertEquals(cadastroBD.getSenha(), receptor.getSenha());
+        assertEquals(cadastroBD.getSenha(), Utilitario.gerarHASH(receptor.getSenha()));
         assertEquals(cadastroBD.getCpf(), receptor.getCpf());
         assertEquals(cadastroBD.getCargo(), receptor.getCargo());
         assertEquals(cadastroBD.getEndereco(), receptor.getEndereco());
@@ -115,6 +116,6 @@ public class TesteReceptor {
         assertEquals(cadastroBD.getCep(), receptor.getCep());
         assertNotEquals(0, receptor.getId());
     }
-    
+
 
 }
