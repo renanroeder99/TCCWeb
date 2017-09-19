@@ -21,7 +21,6 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="menu_superior.jsp"/>
 
 <form action="ocorrencia_policial_acao_emitir.jsp" method="POST">
     <div>

@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<jsp:include page="menu_superior.jsp"/>
+
 <h1 align="center">Ocorrência Corpo de Bombeiros</h1>
 
 

@@ -11,7 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="menu_superior.jsp"/>
 
 <form action="usuario_acao_cadastrar.jsp" method="POST">
     <div>
