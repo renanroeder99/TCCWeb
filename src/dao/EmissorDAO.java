@@ -175,5 +175,35 @@ public class EmissorDAO {
         }
         return null;
     }
-}
 
+
+    public static Emissor retornarEmissorPorId(int id) {
+        Emissor emissor = null;
+        String sql = "SELECT id, usuario, senha, nome, data_nascimento, cpf, rg,  endereco, telefone_celular, email, cep, trotes FROM emissores WHERE id = ?";
+        try {
+            PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.execute();
+            ResultSet resultados = ps.getResultSet();
+            if (resultados.next()) {
+                emissor = new Emissor();
+                emissor.setId(resultados.getInt("id"));
+                emissor.setUsuario(resultados.getString("usuario-username"));
+                emissor.setSenha(resultados.getString("usuario-senha"));
+                emissor.setNome(resultados.getString("usuario-nome"));
+                emissor.setDataNascimento(resultados.getDate("usuario-data-nascimento"));
+                emissor.setCpf(resultados.getString("usuario-cpf"));
+                emissor.setRg(resultados.getInt("usuario-rg"));
+                emissor.setEndereco(resultados.getString("usuario-endereco"));
+                emissor.setEndereco(resultados.getString("usuario-telefone"));
+                emissor.setEmail(resultados.getString("usuario-email"));
+                emissor.setCep(resultados.getInt("usuario-cep"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.desconectar();
+        }
+        return emissor;
+    }
+}
