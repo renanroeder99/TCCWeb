@@ -23,29 +23,25 @@
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
 </head>
 <body>
-<jsp:include page="menu_superior_corpo_de_bombeiros.jsp">;
+<jsp:include page="menu_superior_corpo_de_bombeiros.jsp"/>
 
 <h1 align="center">Ocorrência Corpo de Bombeiros</h1>
 
 <form action="ocorrencia_corpo_de_bombeiros.jsp" method="POST">
 
     <div>
-        <br>
         <label for="ocorrencia_corpo_de_bombeiros_rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_rua" name="ocorrencia_corpo_de_bombeiros_rua">
     </div>
     <div>
-        <br>
         <label for="ocorrencia_corpo_de_bombeiros_cep" class="label-cadastro">CEP</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_cep" name="ocorrencia_corpo_de_bombeiros_cep">
     </div>
     <div>
-        <br>
         <label for="ocorrencia_corpo_de_bombeiros_numero_residencia" class="label-cadastro">Número da Residência</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_numero_residencia" name="ocorrencia_corpo_de_bombeiros_numero_residencia">
     </div>
     <div>
-        <br>
         <label class="label-cadastro">Tipo da Ocorrência</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaCorpoDeBombeiros();%>
@@ -55,13 +51,14 @@
             <% } %>
         </select>
     </div>
-    <br>
-    <label for="descricao" class="label-cadastro">Descrição</label>
     <div>
+        <label for="descricao" class="label-cadastro">Descrição</label>
     </div>
+    <div>
     <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
 
     <button type="submit">Emitir</button>
+    </div>
 </form>
 </body>
 </html>
