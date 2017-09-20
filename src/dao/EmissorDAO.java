@@ -15,6 +15,8 @@ import java.sql.ResultSet;
 import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -217,4 +219,32 @@ public class EmissorDAO {
         }
         return emissor;
     }
+
+    public List<Emissor> retornarEmissores() {
+        List<Emissor> jogos = new ArrayList<>();
+        String sql = "SELECT id, usuario, nome, cpf, rg, endereco, telefone_celular, email, cep, trotes FROM emissores WHERE id = ?";
+        Conexao cx = new Conexao();
+        try {
+            Statement stt = cx.conectar().createStatement();
+            stt.execute(sql);
+            ResultSet rs = stt.getResultSet();
+            while (rs.next()) {
+                Emissor emissor = new Emissor();
+                emissor.setId(rs.getInt("usuario-id"));
+                emissor.setUsuario(rs.getString("usuario-username"));
+                emissor.setNome(rs.getString("usuario-nome"));
+                emissor.setCpf(rs.getString("usuario-cpf"));
+                emissor.setRg(rs.getInt("usuario-rg"));
+                emissor.setEndereco(rs.getString("usuario-endereco"));
+                emissor.setTelefone(rs.getInt("usuario-telefone"));
+                emissor.setEmail(rs.getString("usuario-email"));
+                emissor.setCep(rs.getInt("usuario-cep"));
+                emissor.setTrote(rs.getInt("usuario-trote"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return jogos;
+    }
+
 }

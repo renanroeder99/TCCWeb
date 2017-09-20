@@ -20,28 +20,33 @@
     <thead>
     <tr>
 
-        <form ondblclick= "detalhes_ocorrencia_policial.jsp" method="get">
+
         <th>Código</th>
         <th>Ocorrencia</th>
         <th>Endereço</th>
         <th>Emissor</th>
-        </form>
+        <th>Emissor</th>
     </tr>
     </thead>
 
 
+    <tbody>
+    <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaPolicialDAO.retornarOcorrenciaPolicial(); %>
+    <% for (BaseOcorrencia ocorrenciaPolicial : ocorrencias) {%>
+    <tr>
+        <td><%= ocorrenciaPolicial.getId()%>
+        </td>
+        <td><%= ocorrenciaPolicial.getBaseTipoOcorrencia()%>
+        </td>
+        <td><%= ocorrenciaPolicial.endereco()%>
+        </td>
+        <td><%= ocorrenciaPolicial.getEmissor()%>
+        </td>
+        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrenciaPolicial.getId()%>">Editar</a></td>
 
-<tbody>
-<% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaPolicialDAO.retornarOcorrenciaPolicial(); %>
-<% for (BaseOcorrencia ocorrenciaPolicial: ocorrencias) {%>
-<tr>
-    <td><%= ocorrenciaPolicial.getId()%></td>
-    <td><%= ocorrenciaPolicial.getBaseTipoOcorrencia()%></td>
-    <td><%= ocorrenciaPolicial.endereco()%></td>
-    <td><%= ocorrenciaPolicial.getEmissor()%></td>
-</tr>
-<% } %>
-</tbody>
+    </tr>
+    <% } %>
+    </tbody>
 </table>
 </body>
 </html>
