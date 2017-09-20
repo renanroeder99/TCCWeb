@@ -81,7 +81,7 @@ public class TipoOcorrenciaDefesaCivilDAO {
         return -1;
     }
 
-    public ArrayList<BaseTipoOcorrencia> buscarOcorrenciaDefesaCivil() {
+    public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaDefesaCivil() {
         ArrayList<BaseTipoOcorrencia> ocorrenciaDefesaCivil = new ArrayList<>();
         String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_defesa_civil";
 
