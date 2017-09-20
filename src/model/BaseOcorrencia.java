@@ -65,7 +65,7 @@ public class BaseOcorrencia {
     }
 
     public String endereco(){
-        return cep + " - " +rua + " - " + numeroResidencia ;
+        return rua + " - " + numeroResidencia ;
     }
 
     @Override
