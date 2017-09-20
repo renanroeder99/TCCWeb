@@ -3,3 +3,24 @@
     color: #020000;
     margin: 0 auto;
 }
+
+.campos{
+    margin-bottom: 20px;
+}
+
+.formulario-cadastro{
+    width: 300px;
+    margin: 0 auto;
+}
+
+.esquerda{
+    padding: 0 2% 0 0;
+    width: 48%;height: 20%;
+    float: left;
+}
+
+.direita{
+    padding: 0 2% 0 0;
+    width: 48%; height: 20%;
+    float: right;
+}

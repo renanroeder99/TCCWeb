@@ -21,7 +21,6 @@
 <head>
     <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
-    <link rel="stylesheet" type="text/css" href="css/tela_usuario_login.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
     <link rel="stylesheet" href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
@@ -31,41 +30,42 @@
 
 <h1 align="center" class="titulo">Ocorrência Médica</h1>
 
-<form action="ocorrencia_medica.jsp" method="POST">
+<form class="formulario-cadastro" action="ocorrencia_medica.jsp" method="POST">
+
+    <div class="campos">
+        <div class="esquerda">
+            <label for="ocorrencia_medica_rua" class="">Rua</label>
+            <input type="text" id="ocorrencia_medica_rua" name="ocorrencia_medica_rua">
+        </div>
+        <div class="direita">
+            <label for="ocorrencia_medica_cep" class="">CEP</label>
+            <input type="text" id="ocorrencia_medica_cep" name="ocorrencia_medica_cep">
+        </div>
+    </div>
+
+    <div class="campos">
+        <div class="esquerda">
+            <label for="ocorrencia_medica_numero_residencia" class="">Número da Residência</label>
+            <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
+        </div>
+        <div class="direita">
+            <label class="">Tipo da Ocorrência</label>
+            <select>
+                <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
+                <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
+                <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
+                </option>
+                <% } %>
+            </select>
+        </div>
+    </div>
 
     <div>
-        <br>
-        <label for="ocorrencia_medica_rua" class="label-cadastro">Rua</label>
-        <input type="text" id="ocorrencia_medica_rua" name="ocorrencia_medica_rua">
+        <label for="descricao" class="">Descrição</label>
+        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
     </div>
-    <div>
-        <br>
-        <label for="ocorrencia_medica_cep" class="label-cadastro">CEP</label>
-        <input type="text" id="ocorrencia_medica_cep" name="ocorrencia_medica_cep">
-    </div>
-    <div>
-        <br>
-        <label for="ocorrencia_medica_numero_residencia" class="label-cadastro">Número da Residência</label>
-        <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
-    </div>
-    <div>
-        <br>
-        <label class="label-cadastro">Tipo da Ocorrência</label>
-        <select>
-            <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
-            <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
-            <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
-            </option>
-            <% } %>
-        </select>
-    </div>
-    <br>
-    <label for="descricao" class="label-cadastro">Descrição</label>
-    <div>
-    </div>
-    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-    <br>
-    <a href="tela_usuario_escolher_ocorrencia.jsp" class="emitir">Emitir</a>
+
+    <button type="submit">Emitir</button>
 </form>
 </body>
 </html>
