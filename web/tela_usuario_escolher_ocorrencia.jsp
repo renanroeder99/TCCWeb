@@ -24,8 +24,8 @@
     <title>Ocorrências</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
 </head>
-<body >
-
+<body>
+<%Emissor emissor = new Emissor();%>
 <h1 align="center">Bem Vindo <%=emissor.getNome()%></h1>
 
 

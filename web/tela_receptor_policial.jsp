@@ -16,6 +16,12 @@
     <title>Ocorrencias Policiais</title>
 </head>
 <body>
+
+    <script type="text/javascript">
+        setTimeout(function(){
+            location = ''
+        },15000)
+    </script>
 <table>
     <thead>
     <tr>

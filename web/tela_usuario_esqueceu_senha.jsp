@@ -1,5 +1,5 @@
 <%@ page import="model.Receptor" %>
-<%@ page import="model.Emissor" %><%--
+<%@ page import="model.Emissor" %>
   Created by IntelliJ IDEA.
   User: 98930
   Date: 18/09/2017
