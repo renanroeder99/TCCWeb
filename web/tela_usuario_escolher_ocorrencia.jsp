@@ -6,22 +6,24 @@
   Time: 14:06
   To change this template use File | Settings | File Templates.
 --%>
-<%--
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
     Conexao conexao = new Conexao();
---%>
+%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Ocorrências</title>
 </head>
 <body >
 
-<%Emissor emissor = new Emissor();%>
 <h1 align="center">Bem Vindo <%=emissor.getNome()%></h1>
 <style>
     body{
