@@ -38,7 +38,7 @@
 <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
 <tr>
     <td><%= ocorrencia.getId()%></td>
-    <td><%= ocorrencia.getBaseTipoOcorrencia()%></td>
+    <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
     <td><%= ocorrencia.endereco()%></td>
     <td><%= ocorrencia.getEmissor()%></td>
 </tr>

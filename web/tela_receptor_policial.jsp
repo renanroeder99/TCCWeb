@@ -31,7 +31,6 @@
         <th>Ocorrencia</th>
         <th>Endereço</th>
         <th>Emissor</th>
-        <th>Emissor</th>
     </tr>
     </thead>
 
@@ -42,11 +41,11 @@
     <tr>
         <td><%= ocorrenciaPolicial.getId()%>
         </td>
-        <td><%= ocorrenciaPolicial.getBaseTipoOcorrencia()%>
+        <td><%= ocorrenciaPolicial.getBaseTipoOcorrencia().getTipo()%>
         </td>
         <td><%= ocorrenciaPolicial.endereco()%>
         </td>
-        <td><%= ocorrenciaPolicial.getEmissor()%>
+        <td><%= ocorrenciaPolicial.getEmissor().getNome()%>
         </td>
         <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrenciaPolicial.getId()%>">Editar</a></td>
 

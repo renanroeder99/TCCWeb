@@ -33,12 +33,12 @@
     </thead>
 <tbody>
 <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaMedicaDAO.retornarOcorrenciasMedica(); %>
-<% for (BaseOcorrencia ocorrencia: ocorrencias) { %>
+<% for (BaseOcorrencia ocorrenciaMedica: ocorrencias) { %>
 <tr>
-    <td><%= ocorrencia.getId()%></td>
-    <td><%= ocorrencia.getBaseTipoOcorrencia()%></td>
-    <td><%= ocorrencia.endereco()%></td>
-    <td><%= ocorrencia.getEmissor()%></td>
+    <td><%= ocorrenciaMedica.getId()%></td>
+    <td><%= ocorrenciaMedica.getBaseTipoOcorrencia().getTipo()%></td>
+    <td><%= ocorrenciaMedica.endereco()%></td>
+    <td><%= ocorrenciaMedica.getEmissor()%></td>
 </tr>
 <% } %>
 </tbody>
