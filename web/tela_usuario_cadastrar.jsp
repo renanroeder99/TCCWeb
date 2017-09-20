@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="lib/jquery-3.2.1.min.js" type=""></script>
+    <script src="js/usuario-cadastrar.js"></script>
 </head>
 <body>
 
@@ -66,7 +68,7 @@
         <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required">
     </div>
 
-        <a href="tela_usuario_alterar.jsp?id=">Cadastrar</a>
+    <input type="submit" value="Submit">
 
 
 </form>
