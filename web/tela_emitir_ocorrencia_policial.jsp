@@ -26,21 +26,20 @@
 
 <form action="ocorrencia_policial.jsp" method="POST">
     <div>
-        <br>
         <label for="ocorrencia-policial-rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia-policial-rua" name="ocorrencia-policial-rua">
     </div>
-    <br>
+
     <div>
         <label for="ocorrencia-policial-cep" class="label-cadastro">CEP</label>
         <input type="text" id="ocorrencia-policial-cep" name="ocorrencia-policial-cep">
     </div>
-    <br>
+
     <div>
         <label for="ocorrencia-policial-numero-residencia" class="label-cadastro">Número da Residência</label>
         <input type="text" id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia">
     </div>
-    <br>
+
     <div>
         <label class="label-cadastro">Tipo da Ocorrência</label>
         <select>
@@ -51,7 +50,7 @@
             <% } %>
         </select>
     </div>
-    <br>
+
     <div>
         <label for="ocorrencia-policial-descricao" class="label-cadastro">Descrição</label>
     </div>
