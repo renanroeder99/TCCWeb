@@ -133,7 +133,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
             while (rs.next()){
                 BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
                 ocorrenciaPolicial.setId(rs.getInt("id"));
-                ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
+                ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
                 //Tipo de ocorrencia
                 ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 ocorrenciaPolicial.setCep(rs.getInt("cep"));

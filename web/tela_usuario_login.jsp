@@ -53,8 +53,7 @@
             </div>
             <br>
             <button type="submit">Entrar</button>
-            <div>
-            </div>
+
         </form>
     </div>
     <a href="tela_usuario_cadastrar.jsp">Cidadão novo?Cadastre-se</a>

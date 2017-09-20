@@ -134,7 +134,7 @@ public class OcorrenciaMedicaDAO {
             while (rs.next()){
                 BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
                 ocorrenciaMedica.setId(rs.getInt("id"));
-                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
+                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
                 //Tipo de ocorrencia
                 ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 ocorrenciaMedica.setCep(rs.getInt("cep"));
