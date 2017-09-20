@@ -6,13 +6,21 @@
   Time: 14:06
   To change this template use File | Settings | File Templates.
 --%>
+<<<<<<< HEAD
 <%
+=======
+
+>>>>>>> ace99de8c5190a71ed86f5b93dee0e25fb7263b8
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
     Conexao conexao = new Conexao();
+<<<<<<< HEAD
 %>
+=======
+
+>>>>>>> ace99de8c5190a71ed86f5b93dee0e25fb7263b8
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
