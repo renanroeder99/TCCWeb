@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
+
 <%
     if(session.getAttribute("emissor") != null){
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");

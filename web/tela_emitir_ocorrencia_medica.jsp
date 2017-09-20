@@ -21,6 +21,7 @@
 <head>
     <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
+    <link rel="stylesheet" type="text/css" href="css/tela_usuario_login.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
     <link rel="stylesheet" href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
@@ -63,7 +64,8 @@
     <div>
     </div>
     <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-    <button type="submit">Emitir</button>
+    <br>
+    <a href="tela_usuario_escolher_ocorrencia.jsp" class="emitir">Emitir</a>
 </form>
 </body>
 </html>
