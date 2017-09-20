@@ -24,9 +24,6 @@
 </head>
 <body>
 
-
-<h1 align="center">Ocorrência Defesa Civil</h1>
-
 <h1 align="center" class="labeltitulo">Ocorrencia Defesa Civil</h1>
 <form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
     <div>
