@@ -6,6 +6,7 @@
   Time: 14:06
   To change this template use File | Settings | File Templates.
 --%>
+<<<<<<< HEAD
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -18,31 +19,20 @@
     Conexao conexao = new Conexao();
 %>
 
+
 <html>
 <head>
     <title>Ocorrências</title>
+    <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
 </head>
 <body >
 
 <h1 align="center">Bem Vindo <%=emissor.getNome()%></h1>
-<style>
-    body{
-        background-color: #e3e8e8;
-    }
-    .botao {
-        vertical-align: -15%;
-        font-size: 30px;
-        width: 200px;
-        height: 50px;
-        background-color: #8d9b9c;
-        color: #070a09;
-        opacity: 0.9;
-        border: 3px double #070a09;
-    }
-</style>
-<a href="tela_emitir_ocorrencia_medica.jsp" class="botao">Chamado Médico</a>
-<a href="tela_emitir_ocorrencia_policial.jsp" class="botao">Chamado Policial</a>
-<a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" class="botao">Chamado Bombeiros</a>
-<a href="tela_emitir_ocorrencia_defesa_civil.jsp" class="botao">Chamado Defesa Civil</a>
+
+
+<a href="tela_emitir_ocorrencia_medica.jsp" class="botao1">Chamado Médico</a>
+<a href="tela_emitir_ocorrencia_policial.jsp" class="botao2">Chamado Policial</a>
+<a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" class="botao3">Chamado Bombeiros</a>
+<a href="tela_emitir_ocorrencia_defesa_civil.jsp" class="botao4">Chamado Defesa Civil</a>
 </body>
 </html>
