@@ -29,24 +29,23 @@
 
 <form action="ocorrencia_corpo_de_bombeiros.jsp" method="POST">
 
-    </div>
-    <br>
+    <div>
+        <br>
         <label for="ocorrencia_corpo_de_bombeiros_rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_rua" name="ocorrencia_corpo_de_bombeiros_rua">
     </div>
-    <br>
-    <br>
     <div>
+        <br>
         <label for="ocorrencia_corpo_de_bombeiros_cep" class="label-cadastro">CEP</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_cep" name="ocorrencia_corpo_de_bombeiros_cep">
     </div>
-    <br>
     <div>
+        <br>
         <label for="ocorrencia_corpo_de_bombeiros_numero_residencia" class="label-cadastro">Número da Residência</label>
         <input type="text" id="ocorrencia_corpo_de_bombeiros_numero_residencia" name="ocorrencia_corpo_de_bombeiros_numero_residencia">
     </div>
-    <br>
     <div>
+        <br>
         <label class="label-cadastro">Tipo da Ocorrência</label>
         <select>
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaCorpoDeBombeiros();%>
@@ -55,9 +54,8 @@
             </option>
             <% } %>
         </select>
-</div>
-    <br>
     </div>
+    <br>
     <label for="descricao" class="label-cadastro">Descrição</label>
     <div>
     </div>

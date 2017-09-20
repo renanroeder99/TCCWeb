@@ -164,5 +164,11 @@ public class Emissor {
         return cep;
     }
 
+    @Override
+    public String toString(){
+        return nome;
+
+    }
+
 
 }

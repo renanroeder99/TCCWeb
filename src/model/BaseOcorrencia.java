@@ -65,7 +65,12 @@ public class BaseOcorrencia {
     }
 
     public String endereco(){
-        return cep + " - " +logradouro + " - " + numeroResidencia ;
+        return cep + " - " +rua + " - " + numeroResidencia ;
+    }
+
+    @Override
+    public String toString(){
+        return endereco() + baseTipoOcorrencia ;
     }
 
 }

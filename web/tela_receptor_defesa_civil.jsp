@@ -14,6 +14,11 @@
     <title>Ocorrencias Defesa Civil</title>
 </head>
 <tbody>
+<script type="text/javascript">
+    setTimeout(function(){
+        location = ''
+    },15000)
+</script>
 <table>
     <thead>
     <tr>

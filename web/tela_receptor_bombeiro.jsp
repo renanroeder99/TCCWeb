@@ -14,6 +14,11 @@
     <title>Ocorrencias Bombeiros</title>
 </head>
 <body>
+<script type="text/javascript">
+    setTimeout(function(){
+        location = ''
+    },15000)
+</script>
 <table border="1">
 
 
