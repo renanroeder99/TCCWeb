@@ -1,8 +1,7 @@
 <div class="menu-superior">
-    <div class="menu-superior-itens">
-        <a class="menu-superior-item" href=""><i class="fa fa-home" aria-hidden="true"></i>Sair</a>
-        <a class="menu-superior-item" href="tela_emitir_ocorrencia_policial.jsp"><i class="fa fa-home" aria-hidden="true"></i>Ocorrencia Policial</a>
-        <a class="menu-superior-item" href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp"><i class="fa fa-home" aria-hidden="true"></i>Ocorrencia Corpo de Bombeiros</a>
-        <a class="menu-superior-item" href="tela_emitir_ocorrencia_defesa_civil"><i class="fa fa-home" aria-hidden="true"></i>Ocorrencia Defesa Civil</a>
-    </div>
+<div class="menu-superior-itens">
+    <a class="menu-superior-item" href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i>Principal</a>
+    <a class="menu-superior-item" href="escola_lista.jsp"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Escolas</a>
+    <a class="menu-superior-item" href="aluno_lista.jsp"><i class="fa fa-user" aria-hidden="true"></i>Alunos</a>
+</div>
 </div>
