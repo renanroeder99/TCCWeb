@@ -22,7 +22,7 @@
                 response.sendRedirect("tela_receptor_defesa_civil.jsp");
                 break;
             case "CDB":
-                response.sendRedirect("tela_receptor_medico.jsp");
+                response.sendRedirect("tela_receptor_bombeiro.jsp");
                 break;
             case "POL":
                 response.sendRedirect("tela_receptor_policial.jsp");

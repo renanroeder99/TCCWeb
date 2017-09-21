@@ -131,16 +131,16 @@ public class OcorrenciaCorpoDeBombeirosDAO {
             stt.execute(sql);
             ResultSet rs = stt.getResultSet();
             while (rs.next()){
-                BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
-                ocorrenciaPolicial.setId(rs.getInt("id"));
-                ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
+                BaseOcorrencia ocorrenciaBombeiro = new BaseOcorrencia();
+                ocorrenciaBombeiro.setId(rs.getInt("id"));
+                ocorrenciaBombeiro.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
                 //Tipo de ocorrencia
-                ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaPolicial.setCep(rs.getInt("cep"));
-                ocorrenciaPolicial.setRua(rs.getString("rua"));
-                ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaPolicial.setLogradouro(rs.getString("logradouro"));
-                tabelaOcorrenciaBombeiro.add(ocorrenciaPolicial);
+                ocorrenciaBombeiro.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaBombeiro.setCep(rs.getInt("cep"));
+                ocorrenciaBombeiro.setRua(rs.getString("rua"));
+                ocorrenciaBombeiro.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaBombeiro.setLogradouro(rs.getString("logradouro"));
+                tabelaOcorrenciaBombeiro.add(ocorrenciaBombeiro);
             }
         }catch(SQLException ex){
             ex.printStackTrace();

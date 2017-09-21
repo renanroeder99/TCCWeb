@@ -43,5 +43,8 @@
     </tbody>
 </table>
 
+<a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
+
+
 </tbody>
 </html>
