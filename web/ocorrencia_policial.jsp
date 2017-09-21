@@ -18,13 +18,16 @@
 <body>
 <%
     BaseOcorrencia ocorrenciaPolicial = new BaseOcorrencia();
-    ocorrenciaPolicial.setRua(request.getParameter("ocorrencia-rua"));
-    ocorrenciaPolicial.setLogradouro(request.getParameter("ocorrencia-logradouro"));
-    ocorrenciaPolicial.setCep(Integer.parseInt(request.getParameter("ocorrencia-cep")));
-    ocorrenciaPolicial.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
-    ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-tipo-ocorrencia"))));
-    ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("emissor"))));
-    ocorrenciaPolicial.setId(Integer.parseInt(request.getParameter("ocorrenia-id")));
+
+    Emissor emissor = (Emissor) session.getAttribute("emissor");
+
+
+    ocorrenciaPolicial.setRua(request.getParameter("ocorrencia-policial-rua"));
+    ocorrenciaPolicial.setLogradouro(request.getParameter("ocorrencia-policial-logradouro"));
+    ocorrenciaPolicial.setCep(Integer.parseInt(request.getParameter("ocorrencia-policial-cep")));
+    ocorrenciaPolicial.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-policial-numero-residencia")));
+    ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-policial-tipo-ocorrencia"))));
+    ocorrenciaPolicial.setEmissor(emissor);
     OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial);
 
     int codigo = OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial);

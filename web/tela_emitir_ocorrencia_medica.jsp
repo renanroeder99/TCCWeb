@@ -1,7 +1,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dao.TipoOcorrenciaMedicaDAO" %>
 <%@ page import="model.BaseTipoOcorrencia" %>
-<%@ page import="model.Emissor" %><%--
+<%@ page import="model.Emissor" %>
+<%@ page import="model.BaseOcorrencia" %><%--
   Created by IntelliJ IDEA.
   User: Felipe de Jesus Cazagranda
   Date: 14/09/2017
@@ -50,7 +51,7 @@
         </div>
         <div class="direita">
             <label class="">Tipo da Ocorrência</label>
-            <select>
+            <select name="ocorrencia_medica_id_tipo_ocorrencia">
                 <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
                 <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                 <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
@@ -58,8 +59,8 @@
                 <% } %>
             </select>
         </div>
-    </div>
 
+    </div>
     <div>
         <label for="descricao" class="">Descrição</label>
         <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
