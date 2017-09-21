@@ -18,13 +18,16 @@
 <body>
 <%
     BaseOcorrencia ocorrencia = new BaseOcorrencia();
+
+    Emissor emissor = (Emissor) session.getAttribute("emissor");
+
+
     ocorrencia.setRua(request.getParameter("ocorrencia-rua"));
     ocorrencia.setLogradouro(request.getParameter("ocorrencia-logradouro"));
     ocorrencia.setCep(Integer.parseInt(request.getParameter("ocorrencia-cep")));
     ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
-    ocorrencia.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-tipo-ocorrencia"))));
-    ocorrencia.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("emissor"))));
-    ocorrencia.setId(Integer.parseInt(request.getParameter("ocorrenia-id")));
+    ocorrencia.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-defesa-civil-tipo-ocorrencia"))));
+    ocorrencia.setEmissor(emissor);
     int codigo = OcorrenciaDefesaCivilDAO.inserir(ocorrencia);
     if(codigo > 0){
         response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);

@@ -1,7 +1,8 @@
 <%@ page import="dao.TipoOcorrenciaDefesaCivilDAO" %>
 <%@ page import="model.BaseTipoOcorrencia" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="model.Emissor" %><%--
+<%@ page import="model.Emissor" %>
+<%@ page import="model.BaseOcorrencia" %><%--
   Created by IntelliJ IDEA.
   User: Antony Henrique Vogel
   Date: 12/09/2017
@@ -25,7 +26,7 @@
 <body>
 
 <h1 align="center" class="labeltitulo">Ocorrencia Defesa Civil</h1>
-<form action="ocorrencia_defesa_civil_acao_emitir.jsp" method="POST">
+<form action="ocorrencia_defesa_civil.jsp" method="POST">
     <div>
         <br>
         <label for="ocorrencia-rua" class="label-cadastro">Rua</label>
@@ -44,15 +45,14 @@
     <div>
         <br>
         <label class="label-cadastro">Tipo da Ocorrência</label>
-        <select>
+        <select name="ocorrencia-defesa-civil-tipo-ocorrencia">
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
             <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
             </option>
             <% } %>
         </select>
-    </div>
-    <br>
+
         <label for="ocorrencia-descricao" class="label-cadastro">Descrição</label>
     <div>
     </div>
