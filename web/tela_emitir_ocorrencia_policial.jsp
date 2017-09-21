@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
 </head>
 <body>
+<jsp:include page="menu_superior_policial.jsp"/>
+
 <h1 align="center">Ocorrência Policial</h1>
 
 <form action="ocorrencia_policial.jsp" method="POST">
