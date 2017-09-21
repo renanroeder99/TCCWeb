@@ -36,6 +36,7 @@
 <div class="pai5">
 <a href="tela_emitir_ocorrencia_defesa_civil.jsp" class="botao4">Chamado Defesa Civil</a>
 </div>
+<textarea cols="30" rows="10" class="text_area"></textarea>
 
 </body>
 </html>

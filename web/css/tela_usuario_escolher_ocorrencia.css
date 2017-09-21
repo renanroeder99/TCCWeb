@@ -69,3 +69,12 @@ body{
 .pai5{
     padding-top: 100px;
 }
+
+.text_area{
+    padding-left: 100px;
+    padding-right: 200px;
+    padding-top: 300px;
+    margin-left: 800px;
+    margin-top: -440px;
+}
+
