@@ -30,7 +30,7 @@
     ocorrencia.setEmissor(emissor);
     int codigo = OcorrenciaDefesaCivilDAO.inserir(ocorrencia);
     if(codigo > 0){
-        response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
+        response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
     }else{
 
     }

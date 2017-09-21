@@ -82,18 +82,18 @@ public class TipoOcorrenciaPolicialDAO {
         return -1;
     }
 
-    public static BaseTipoOcorrencia buscarOPPorID(int codigo) {
+    public static BaseTipoOcorrencia buscarOPPorID(int id) {
         BaseTipoOcorrencia tipoOcorrenciaPolicial = null;
         String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_policiais WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
-            ps.setInt(1, codigo);
+            ps.setInt(1, id);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
                 tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
-                tipoOcorrenciaPolicial.setId(codigo);
+                tipoOcorrenciaPolicial.setId(id);
                 tipoOcorrenciaPolicial.setTipo(rs.getString("tipo"));
                 tipoOcorrenciaPolicial.setDescricao(rs.getString("descricao"));
             }
