@@ -19,10 +19,10 @@
         location = ''
     },15000)
 </script>
-<table border="1">
+<table>
 
 
-    <button disabled type="submit" onclick=window.open(<%%>)>Feedback de ocorrência</button>
+
     <thead>
     <tr>
             <th>Código</th>
@@ -40,11 +40,11 @@
     <td><%= ocorrencia.getId()%></td>
     <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
     <td><%= ocorrencia.endereco()%></td>
-    <td><%= ocorrencia.getEmissor()%></td>
+    <td><%= ocorrencia.getEmissor().getNome()%></td>
 </tr>
 <% } %>
 </tbody>
 </table>
-
+<a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
 </body>
 </html>
