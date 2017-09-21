@@ -31,6 +31,7 @@
         <th>Ocorrencia</th>
         <th>Endereço</th>
         <th>Emissor</th>
+        <th>Detalhes</th>
     </tr>
     </thead>
 
@@ -47,7 +48,7 @@
         </td>
         <td><%= ocorrenciaPolicial.getEmissor().getNome()%>
         </td>
-        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrenciaPolicial.getId()%>">Editar</a></td>
+        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrenciaPolicial.getId()%>">Detalhes</a></td>
 
     </tr>
     <% } %>
