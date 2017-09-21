@@ -10,19 +10,22 @@
 <%@ page import="dao.TipoOcorrenciaMedicaDAO" %>
 <%@ page import="dao.EmissorDAO" %>
 <%@ page import="dao.OcorrenciaMedicaDAO" %>
+<%@ page import="model.Emissor" %>
 
 <%
     BaseOcorrencia baseOcorrencia = new BaseOcorrencia();
+
+    Emissor emissor = (Emissor) session.getAttribute("emissor");
+
     baseOcorrencia.setLogradouro(request.getParameter("ocorrencia_medica_logradouro"));
     baseOcorrencia.setRua(request.getParameter("ocorrencia_medica_rua"));
     baseOcorrencia.setCep(Integer.parseInt(request.getParameter("ocorrencia_medica_cep")));
     baseOcorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia_medica_numero_residencia")));
     baseOcorrencia.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(Integer.parseInt(request.getParameter("ocorrencia_medica_id_tipo_ocorrencia"))));
-    baseOcorrencia.setEmissor(EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("ocorrencia_medica_id_emissor"))));
-
+    baseOcorrencia.setEmissor(emissor);
     int codigo = OcorrenciaMedicaDAO.inserir(baseOcorrencia);
     if(codigo > 0){
-        response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
+        response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
     }else{
 
     }

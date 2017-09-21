@@ -24,10 +24,11 @@
 <table>
     <thead>
         <tr>
-            <td>Código</td>
-            <td>Ocorrencia</td>
-            <td>Endereço</td>
-            <td>Emissor</td>
+            <th>Código</th>
+            <th>Ocorrencia</th>
+            <th>Endereço</th>
+            <th>Emissor</th>
+            <th>Detalhes</th>
 
         </tr>
     </thead>
@@ -39,9 +40,13 @@
     <td><%= ocorrenciaMedica.getBaseTipoOcorrencia().getTipo()%></td>
     <td><%= ocorrenciaMedica.endereco()%></td>
     <td><%= ocorrenciaMedica.getEmissor()%></td>
+    <td><a href="detalhes_ocorrencia_medica.jsp?id=<%=ocorrenciaMedica.getId()%>">Detalhes</a></td>
 </tr>
 <% } %>
 </tbody>
 </table>
+
+<a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
+
 </body>
 </html>

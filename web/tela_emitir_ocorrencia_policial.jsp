@@ -1,7 +1,8 @@
 <%@ page import="model.BaseTipoOcorrencia" %>
 <%@ page import="dao.TipoOcorrenciaPolicialDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="model.Emissor" %><%--
+<%@ page import="model.Emissor" %>
+<%@ page import="model.BaseOcorrencia" %><%--
   Created by IntelliJ IDEA.
   User: 98961
   Date: 14/09/2017
@@ -11,10 +12,10 @@
 <%
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
+        return;
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -42,7 +43,7 @@
 
     <div>
         <label class="label-cadastro">Tipo da Ocorrência</label>
-        <select>
+        <select name = "ocorrencia-policial-tipo-ocorrencia">
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaPolicialDAO.buscarOcorrenciaPolicial();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
             <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>

@@ -22,7 +22,7 @@
                 response.sendRedirect("tela_receptor_defesa_civil.jsp");
                 break;
             case "CDB":
-                response.sendRedirect("tela_receptor_medico.jsp");
+                response.sendRedirect("tela_receptor_bombeiro.jsp");
                 break;
             case "POL":
                 response.sendRedirect("tela_receptor_policial.jsp");
@@ -53,8 +53,7 @@
             </div>
             <br>
             <button type="submit">Entrar</button>
-            <div>
-            </div>
+
         </form>
     </div>
     <a href="tela_usuario_cadastrar.jsp">Cidadão novo?Cadastre-se</a>

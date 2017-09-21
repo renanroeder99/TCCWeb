@@ -13,17 +13,17 @@
 <%
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
+        return;
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 %>
-
 <html>
 <head>
     <title>Ocorrências</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
 </head>
 <body>
-<h1 align="center">Bem Vindo</h1>
+<h1 align="center">Bem Vindo <%=emissor.getNome()%></h1>
 
 
 <a href="tela_emitir_ocorrencia_medica.jsp" class="botao1">Chamado Médico</a>

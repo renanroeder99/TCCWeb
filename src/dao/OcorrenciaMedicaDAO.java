@@ -23,16 +23,16 @@ import model.Emissor;
  */
 public class OcorrenciaMedicaDAO {
     public static int inserir(BaseOcorrencia ocorrenciaMedica){
-        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencia_medica, id_emissor, cep, rua, numero_residencia, logradouro) VALUES(?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, logradouro) VALUES(?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
-            ps.setInt(3, ocorrenciaMedica.getEmissor().getCep());
-            ps.setString(4, ocorrenciaMedica.getEmissor().getRua());
-            ps.setInt(5, ocorrenciaMedica.getEmissor().getNumeroResidencia());
-            ps.setString(6, ocorrenciaMedica.getEmissor().getLogradouro());
+            ps.setInt(3, ocorrenciaMedica.getCep());
+            ps.setString(4, ocorrenciaMedica.getRua());
+            ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
+            ps.setString(6, ocorrenciaMedica.getLogradouro());
             
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -134,7 +134,7 @@ public class OcorrenciaMedicaDAO {
             while (rs.next()){
                 BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
                 ocorrenciaMedica.setId(rs.getInt("id"));
-                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
+                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
                 //Tipo de ocorrencia
                 ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 ocorrenciaMedica.setCep(rs.getInt("cep"));

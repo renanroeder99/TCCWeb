@@ -26,6 +26,7 @@
         <th>Ocorrencia</th>
         <th>Endereço</th>
         <th>Emissor</th>
+        <th>Detalhes</th>
     </tr>
     </thead>
     <tbody>
@@ -36,10 +37,14 @@
         <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo() %></td>
         <td><%= ocorrencia.endereco()%></td>
         <td><%= ocorrencia.getEmissor().getNome()%></td>
+        <td><a href="detalhes_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
     </tr>
     <% } %>
     </tbody>
 </table>
+
+<a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
+
 
 </tbody>
 </html>

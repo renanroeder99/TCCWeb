@@ -137,7 +137,7 @@ public class OcorrenciaDefesaCivilDAO {
             while (rs.next()) {
                 BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
                 ocorrenciaDefesaCivil.setId(rs.getInt("id"));
-                ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
+                ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
                 //Tipo de ocorrencia
                 ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));

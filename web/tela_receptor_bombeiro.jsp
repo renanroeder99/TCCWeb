@@ -19,16 +19,16 @@
         location = ''
     },15000)
 </script>
-<table border="1">
+<table>
 
 
-    <button disabled type="submit" onclick=window.open(<%%>)>Feedback de ocorrência</button>
     <thead>
     <tr>
             <th>Código</th>
             <th>Ocorrencia</th>
             <th>Endereço</th>
             <th>Emissor</th>
+            <th>Detalhes</th>
         </tr>
     </thead>
 
@@ -41,6 +41,7 @@
     <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
     <td><%= ocorrencia.endereco()%></td>
     <td><%= ocorrencia.getEmissor()%></td>
+    <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%ocorrencia.getId();%>">Detalhes</a></td>
 </tr>
 <% } %>
 </tbody>

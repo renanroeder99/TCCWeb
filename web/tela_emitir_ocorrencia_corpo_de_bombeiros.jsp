@@ -12,6 +12,7 @@
 <%
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
+        return;
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 %>
@@ -43,7 +44,7 @@
     </div>
     <div>
         <label class="label-cadastro">Tipo da Ocorrência</label>
-        <select>
+        <select name="ocorrencia_corpo_de_bombeiros">
             <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaCorpoDeBombeiros();%>
             <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
             <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
