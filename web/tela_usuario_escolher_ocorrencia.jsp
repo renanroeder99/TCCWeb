@@ -13,10 +13,10 @@
 <%
     if(session.getAttribute("emissor") == null){
         response.sendRedirect("tela_usuario_login.jsp");
+        return;
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 %>
-
 <html>
 <head>
     <title>Ocorrências</title>
