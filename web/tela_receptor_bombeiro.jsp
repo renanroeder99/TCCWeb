@@ -41,7 +41,7 @@
     <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
     <td><%= ocorrencia.endereco()%></td>
     <td><%= ocorrencia.getEmissor()%></td>
-    <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%ocorrencia.getId()%>">Detalhes</a></td>
+    <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%ocorrencia.getId();%>">Detalhes</a></td>
 </tr>
 <% } %>
 </tbody>
