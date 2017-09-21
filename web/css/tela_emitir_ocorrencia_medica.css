@@ -1,5 +1,33 @@
-.label-cadastro{
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.label-cadastro {
     font-size: 20px;
     color: #020000;
     margin: 0 auto;
+}
+
+.campos{
+    margin-bottom: 20px;
+}
+
+.formulario-cadastro{
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #ffe3b4;
+}
+
+.esquerda{
+    display: inline;
+    width: 20%;height: 20%;
+    float: left;
+}
+
+.direita{
+    display: inline;
+    width: 20%; height: 20%;
+    float: right;
 }

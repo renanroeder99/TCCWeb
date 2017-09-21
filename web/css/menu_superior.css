@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+
+
 }
 
 .menu-superior {
@@ -26,6 +28,7 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .menu-superior-item:hover{
