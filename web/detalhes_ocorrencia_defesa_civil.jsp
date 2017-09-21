@@ -1,5 +1,7 @@
 <%@ page import="model.BaseOcorrencia" %>
-<%@ page import="dao.OcorrenciaDefesaCivilDAO" %><%--
+<%@ page import="dao.OcorrenciaDefesaCivilDAO" %>
+<%@ page import="model.Emissor" %>
+<%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
   User: 98930
   Date: 19/09/2017
@@ -10,9 +12,16 @@
 <html>
 <head>
     <title>Detalhes da ocorrencia</title>
+    <%
+        if(session.getAttribute("receptor") == null){
+            response.sendRedirect("tela_usuario_login.jsp");
+            return;
+        }
+        Receptor receptor = (Receptor) session.getAttribute("receptor");
+    %>
 </head>
 <body>
-<%BaseOcorrencia ocorrencia = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(ocorrencia);%>
+<%BaseOcorrencia ocorrencia = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(Integer.parseInt(request.getParameter("id")));%>
 <h4>Nome: <%ocorrencia.getEmissor().getNome();%></h4>
 <h4>Ocorrencia: <%ocorrencia.getBaseTipoOcorrencia().getTipo();%></h4>
 <h4>Descrição: <%ocorrencia.getBaseTipoOcorrencia().getDescricao();%></h4>
