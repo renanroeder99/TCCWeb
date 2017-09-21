@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
 </head>
 <body>
+<jsp:include page="menu_superior_defesa_civil.jsp"/>
 
 <h1 align="center" class="labeltitulo">Ocorrencia Defesa Civil</h1>
 <form action="ocorrencia_defesa_civil.jsp" method="POST">
