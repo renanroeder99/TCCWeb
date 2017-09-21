@@ -19,7 +19,7 @@
         location = ''
     },15000)
 </script>
-<table border="1">
+<table>
 
 
     <thead>
