@@ -61,7 +61,7 @@
     </div>
 
     <div class="campos">
-        <div>
+        <div class="descricao">
             <label for="descricao" class="">Descrição</label>
         </div>
         <div>
