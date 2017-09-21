@@ -23,9 +23,12 @@
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
 </head>
 <body>
+<jsp:include page="menu_superior_policial.jsp"/>
+
 <h1 align="center">Ocorrência Policial</h1>
 
 <form action="ocorrencia_policial.jsp" method="POST">
+
     <div>
         <label for="ocorrencia-policial-rua" class="label-cadastro">Rua</label>
         <input type="text" id="ocorrencia-policial-rua" name="ocorrencia-policial-rua">
@@ -53,10 +56,10 @@
     </div>
 
     <div>
-        <label for="ocorrencia-policial-descricao" class="label-cadastro">Descrição</label>
+        <label for="ocorrencia-policial-descricao" class="">Descrição</label>
+        <textarea name="Descrição" id="ocorrencia-policial-descricao" cols="30" rows="10"></textarea>
     </div>
     <div>
-        <textarea name="Descrição" id="ocorrencia-policial-descricao" cols="30" rows="10"></textarea>
 
         <button type="submit">Emitir</button>
     </div>

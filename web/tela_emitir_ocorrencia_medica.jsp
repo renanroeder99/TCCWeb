@@ -10,7 +10,7 @@
 --%>
 
 <%
-    if(session.getAttribute("emissor") == null){
+    if (session.getAttribute("emissor") == null) {
         response.sendRedirect("tela_usuario_login.jsp");
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
@@ -50,7 +50,7 @@
         </div>
         <div class="direita">
             <label class="">Tipo da Ocorrência</label>
-            <select>
+            <select name="ocorrencia_medica_id_tipo_ocorrencia">
                 <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
                 <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                 <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
@@ -60,9 +60,13 @@
         </div>
     </div>
 
-    <div>
-        <label for="descricao" class="">Descrição</label>
-        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+    <div class="campos">
+        <div>
+            <label for="descricao" class="">Descrição</label>
+        </div>
+        <div>
+            <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+        </div>
     </div>
 
     <button type="submit">Emitir</button>

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
   User: wanderson
   Date: 14/09/2017
@@ -8,7 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Cadastrar Receptor</title>
+    <%
+        if(session.getAttribute("receptor") == null){
+            response.sendRedirect("tela_usuario_login.jsp");
+            return;
+        }
+        Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
+    %>
 </head>
 <body>
 
