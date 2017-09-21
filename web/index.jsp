@@ -41,6 +41,6 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-        <h3>sad´psald</h3>
+
   </body>
 </html>

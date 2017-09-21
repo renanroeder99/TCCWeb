@@ -1,7 +1,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaCorpoDeBombeirosDAO" %>
-<%@ page import="javax.swing.*" %><%--
+<%@ page import="javax.swing.*" %>
+<%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
   User: Daiane Machado
   Date: 14/09/2017
@@ -12,6 +13,13 @@
 <html>
 <head>
     <title>Ocorrencias Bombeiros</title>
+    <%
+        if(session.getAttribute("receptor") == null){
+            response.sendRedirect("tela_usuario_login.jsp");
+            return;
+        }
+        Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
+    %>
 </head>
 <body>
 <script type="text/javascript">

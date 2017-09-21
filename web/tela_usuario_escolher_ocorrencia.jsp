@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
 </head>
 <body>
-<h1 align="center">Bem Vindo, <%emissor.getNome();%>!</h1>
+<h1 align="center">Bem Vindo, <%emissor.getUsuario();%>!</h1>
 <div class="pai2">
     <a href="tela_emitir_ocorrencia_medica.jsp" class="botao1">Chamado Médico</a>
 </div>
