@@ -1,0 +1,52 @@
+body {
+   background-color: #badcbb;
+}
+
+.pai{
+    font-size: 35px;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #badcbb;
+    background-color: #eaffce;
+
+}
+.email{
+    padding-right: 166px;
+}
+.nome{
+    padding-right: 15px;
+}
+.data_nascimento{
+    padding-right: 0px;
+}
+.nome_usuario{
+    padding-right: 4px;
+}
+.confirmar_email{
+    padding-right: 15px;
+}
+.senha{
+    padding-right: 160px;
+}
+.confirmar_senha{
+    padding-right: 6px;
+}
+.rg{
+    padding-right: 90px;
+}
+.cpf{
+    padding-right: 85px;
+}
+.cep{
+    padding-right: 84px;
+}
+.telefone{
+    padding-right: 58px;
+}
+.endereço{
+    padding-right: 52px;
+}
+.numero_residencia{
+    padding-left: 27px;
+}
