@@ -4,12 +4,14 @@ body{
 .botao1{
     background-color: #ffffff;
     margin-bottom: 200px;
+    padding: 5px;
     margin-left: 100px;
     vertical-align: -15%;
     font-size: 30px;
     width: 200px;
     height: 50px;
     color: #030101;
+    opacity: 0.9;
     border: 3px double #030101;
 }
 .botao2{
