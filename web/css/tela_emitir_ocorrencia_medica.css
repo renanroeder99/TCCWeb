@@ -28,6 +28,7 @@ body{
     font-size: 24px;
     font-family: "Droid Sans";
     float: left;
+    padding-bottom: 10px;
 }
 
 .direita{
@@ -36,9 +37,11 @@ body{
     font-size: 24px;
     font-family: "Droid Sans";
     float: left;
+    padding-bottom: 10px;
 }
 
 .descricao{
     font-size: 24px;
     font-family: "Droid Sans";
+    padding-bottom: 10px;
 }
