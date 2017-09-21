@@ -50,7 +50,7 @@
         </div>
         <div class="direita">
             <label class="">Tipo da Ocorrência</label>
-            <select>
+            <select name="ocorrencia_medica_id_tipo_ocorrencia">
                 <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
                 <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                 <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>

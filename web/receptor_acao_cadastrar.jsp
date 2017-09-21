@@ -13,6 +13,13 @@
 
 <head>
     <title>Title</title>
+    <%
+        if(session.getAttribute("receptor") == null){
+            response.sendRedirect("tela_usuario_login.jsp");
+            return;
+        }
+        Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
+    %>
 </head>
 <body>
 
