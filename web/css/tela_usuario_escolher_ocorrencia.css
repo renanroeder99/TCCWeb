@@ -1,22 +1,19 @@
 body{
-    background-color: #e0e8ce;
+    background-color: #ffffff;
 }
 .botao1{
-    background-color: #ffe3b4;
+    background-color: #ffffff;
     margin-bottom: 200px;
-    padding: 5px;
     margin-left: 100px;
     vertical-align: -15%;
     font-size: 30px;
     width: 200px;
     height: 50px;
     color: #030101;
-    opacity: 0.9;
     border: 3px double #030101;
-
 }
 .botao2{
-    background-color: #ffe3b4;
+    background-color: #ffffff;
     margin-bottom: 200px;
     padding: 5px;
     margin-left: 100px;
@@ -30,7 +27,7 @@ body{
 
 }
 .botao3{
-    background-color: #ffe3b4;
+    background-color: #ffffff;
     margin-bottom: 200px;
     padding: 5px;
     margin-left: 100px;
@@ -43,8 +40,8 @@ body{
     border: 3px double #030101;
 
 }
-.botao4{
-    background-color: #ffe3b4;
+.botao4 {
+    background-color: #ffffff;
     padding: 5px;
     margin-bottom: 200px;
     margin-left: 100px;
@@ -55,6 +52,18 @@ body{
     color: #030101;
     opacity: 0.9;
     border: 3px double #030101;
-
+    margin-top: 100px;
 }
 
+.pai2{
+    padding-top: 110px;
+}
+.pai3{
+    padding-top: 100px;
+}
+.pai4{
+    padding-top: 100px;
+}
+.pai5{
+    padding-top: 100px;
+}
