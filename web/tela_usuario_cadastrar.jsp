@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_cadastro.css">
     <script src="lib/jquery-3.2.1.min.js" type=""></script>
     <script src="js/usuario-cadastrar.js"></script>
@@ -20,7 +20,7 @@
     <h1 class="cadastro">Cadastro</h1>
     <div class="nome">
         <label for="usuario-nome">Nome completo</label>
-        <input type="text" id="usuario-nome" name="usuario-nome" required="required">
+        <input type="text" id="usuario-nome" name="usuario-nome" required="required" style="height: 25px">
     </div>
     <div class="nome_usuario">
         <label for="usuario-username">Nome de usuário</label>
@@ -53,6 +53,7 @@
     <div class="cpf">
         <label for="usuario-cpf">CPF</label>
         <input type="text" id="usuario-cpf" name="usuario-cpf" required="required">
+    </div>
     </div>
     <div class="cep">
         <label for="usuario-cep">CEP</label>
