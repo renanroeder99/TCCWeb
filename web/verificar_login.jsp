@@ -4,7 +4,6 @@
         return;
     }
     if(session.getAttribute("receptor") != null){
-        response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
         Receptor receptor = (Receptor) session.getAttribute("receptor");
         switch (receptor.getCargo()) {
             case "MED":

@@ -10,10 +10,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login do usuário</title>
+    <title>Login de usuário</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_login.css">
 </head>
 <body>
+<jsp:include page="verificar_login.jsp"/>
+
     <div>
         <form action="_usuario_acao_login.jsp" method="post">
             <div>
@@ -33,6 +35,6 @@
     </div>
     <a href="tela_usuario_cadastrar.jsp">Cidadão novo?Cadastre-se</a>
 
-    <a href="tela_usuario_esqueceu_senha.jsp">Esqueceu sua senha?</a>
+
 </body>
 </html>

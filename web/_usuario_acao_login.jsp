@@ -3,7 +3,7 @@
 <%@ page import="model.Receptor" %>
 <%@ page import="model.Emissor" %>
 
-<jsp:include page="verificar_login.jsp"/>
+
 <%
 
     String email = request.getParameter("usuario-username");
