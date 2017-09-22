@@ -22,7 +22,7 @@ import model.BaseOcorrencia;
 public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static int inserir(BaseOcorrencia ocorrenciaBombeiros){
-        String sql = "INSERT INTO ocorrencias_bombeiros (id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro) VALUES (?,?,?,?,?,?);";
+        String sql = "INSERT INTO ocorrencias_bombeiros (id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia) VALUES (?,?,?,?,?,?);";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -32,7 +32,6 @@ public class OcorrenciaCorpoDeBombeirosDAO {
             ps.setInt(3, ocorrenciaBombeiros.getCep());
             ps.setString(4, ocorrenciaBombeiros.getRua());
             ps.setInt(5, ocorrenciaBombeiros.getNumeroResidencia());
-            ps.setString(6, ocorrenciaBombeiros.getLogradouro());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -53,7 +52,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
     public static int alterar(BaseOcorrencia ocorrenciasBombeiros){
         Conexao conexao = new Conexao();
         try{
-            String sql = "UPDATE ocorrencias_bombeiros SET id_tipo_ocorrencias_bombeiros = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, logradouro = ? WHERE id = ? ";
+            String sql = "UPDATE ocorrencias_bombeiros SET id_tipo_ocorrencias_bombeiros = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ? WHERE id = ? ";
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
@@ -62,8 +61,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
             ps.setInt(3, ocorrenciasBombeiros.getCep());
             ps.setString(4, ocorrenciasBombeiros.getRua());
             ps.setInt(5, ocorrenciasBombeiros.getNumeroResidencia());
-            ps.setString(6, ocorrenciasBombeiros.getLogradouro());
-            ps.setInt(7, ocorrenciasBombeiros.getId());
+            ps.setInt(6, ocorrenciasBombeiros.getId());
 
             int resultado = ps.executeUpdate();
             return resultado;
@@ -96,7 +94,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static BaseOcorrencia buscarOcorrenciaBombeiroPorId(int codigo){
         BaseOcorrencia ocorrenciasBombeiros = null;
-        String sql = "SELECT id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia FROM ocorrencias_bombeiros WHERE id = ?";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
@@ -111,7 +109,6 @@ public class OcorrenciaCorpoDeBombeirosDAO {
                 ocorrenciasBombeiros.setCep(rs.getInt("cep"));
                 ocorrenciasBombeiros.setRua(rs.getString("rua"));
                 ocorrenciasBombeiros.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciasBombeiros.setLogradouro(rs.getString("logradouro"));
             }
 
         } catch (SQLException ex) {
@@ -124,7 +121,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciaBombeiro(){
         ArrayList<BaseOcorrencia> tabelaOcorrenciaBombeiro = new ArrayList<>();
-        String sql = "SELECT id, id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros";
+        String sql = "SELECT id, id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia FROM ocorrencias_bombeiros";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
@@ -139,7 +136,6 @@ public class OcorrenciaCorpoDeBombeirosDAO {
                 ocorrenciaBombeiro.setCep(rs.getInt("cep"));
                 ocorrenciaBombeiro.setRua(rs.getString("rua"));
                 ocorrenciaBombeiro.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaBombeiro.setLogradouro(rs.getString("logradouro"));
                 tabelaOcorrenciaBombeiro.add(ocorrenciaBombeiro);
             }
         }catch(SQLException ex){
