@@ -1,12 +1,13 @@
-<%@ page import="dao.TipoOcorrenciaDefesaCivilDAO" %>
 <%@ page import="model.BaseTipoOcorrencia" %>
+<%@ page import="dao.TipoOcorrenciaPolicialDAO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Emissor" %>
-<%@ page import="model.BaseOcorrencia" %><%--
+<%@ page import="model.BaseOcorrencia" %>
+<%@ page import="dao.TipoOcorrenciaDefesaCivilDAO" %><%--
   Created by IntelliJ IDEA.
-  User: Antony Henrique Vogel
-  Date: 12/09/2017
-  Time: 15:37
+  User: 98961
+  Date: 14/09/2017
+  Time: 13:46
   To change this template use File | Settings | File Templates.
 --%>
 <%
@@ -16,49 +17,65 @@
     }
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Ocorrência Defesa Civil</title>
+    <title>Ocorrência Policial</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
+    <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
 </head>
 <body>
 <jsp:include page="menu_superior_defesa_civil.jsp"/>
 
-<h1 align="center" class="labeltitulo">Ocorrencia Defesa Civil</h1>
-<form action="ocorrencia_defesa_civil.jsp" method="POST">
-    <div>
-        <br>
-        <label for="ocorrencia-rua" class="label-cadastro">Rua</label>
-        <input type="text" id="ocorrencia-rua" name="ocorrencia-rua">
-    </div>
-    <div>
-        <br>
-        <label for="ocorrencia-cep" class="label-cadastro">CEP</label>
-        <input type="text" id="ocorrencia-cep" name="ocorrencia_defesa_civil">
-    </div>
-    <div>
-        <br>
-        <label for="ocorrencia-numero-residencia"class="label-cadastro">Número da Residência</label>
-        <input type="text" id="ocorrencia-numero-residencia" name="ocorrencia_defesa_civil_numero_residencia">
-    </div>
-    <div>
-        <br>
-        <label class="label-cadastro">Tipo da Ocorrência</label>
-        <select name="ocorrencia-defesa-civil-tipo-ocorrencia">
-            <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
-            <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
-            <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
-            </option>
-            <% } %>
-        </select>
 
-        <label for="ocorrencia-descricao" class="label-cadastro">Descrição</label>
-    <div>
+<form action="ocorrencia_defesa_civil.jsp.jsp" method="POST"/>
+
+<div id="caixa-cadastro-externa">
+    <div id="caixa-cadastro-interno">
+        <div id="caixa-ocorrencia-label">Ocorrência Defesa Cívil</div>
+
+        <div class="input-div">
+            <input id="ocorrência-defesa-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+        </div>
+
+
+        <div class="input-div">
+            <input id="ocorrencia-defesa-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+        </div>
+
+
+        <div class="input-div">
+            <input id="ocorrencia-defesa-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+        </div>
+
+
+
+
+        <div class="input-div">
+            <textarea cols=80 id="ocorrencia-defesa-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
+        </div>
+        <div class="input-div">
+            <select name = "ocorrencia-defesa-tipo-ocorrencia" id="ocorrencia-defesa-tipo-ocorrencia">
+                <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
+                <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
+                <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
+                </option>
+                <% } %>
+            </select>
+        </div>
+
+        <div id="botoes">
+            <button id="botao" type="submit" title="Enviar Ocorrência">Emitir</button>
+
+        </div>
+
     </div>
-        <textarea name="ocorrencia-descricao" id="ocorrencia-descricao" cols="30" rows="10"></textarea>
-    <button type="submit">Emitir</button>
-</form>
+</div>
+
+
+
+
+
+
 </body>
 </html>
