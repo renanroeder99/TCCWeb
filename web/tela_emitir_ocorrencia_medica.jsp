@@ -22,54 +22,46 @@
     <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
-    <link rel="stylesheet" href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 <jsp:include page="menu_superior_medico.jsp"/>
 
-<h1 align="center" class="titulo">Ocorrência Médica</h1>
+<form action="ocorrencia_policial.jsp" method="POST"/>
+    <div id="caixa-cadastro-externa">
+        <div id="caixa-cadastro-interno">
+            <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
 
-<form class="formulario-cadastro" action="ocorrencia_medica.jsp" method="POST">
+            <div class="input-div">
+                <input id="ocorrência-medica-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+            </div>
 
-    <div class="campos">
-        <div class="esquerda">
-            <label for="ocorrencia_medica_rua" class="">Rua</label>
-            <input type="text" id="ocorrencia_medica_rua" name="ocorrencia_medica_rua">
-        </div>
-        <div class="direita">
-            <label for="ocorrencia_medica_cep" class="">CEP</label>
-            <input type="text" id="ocorrencia_medica_cep" name="ocorrencia_medica_cep">
+            <div class="input-div">
+                <input id="ocorrencia-medica-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+            </div>
+
+            <div class="input-div">
+                <input id="ocorrencia-medica-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+            </div>
+
+            <div class="input-div">
+                <textarea cols=80 id="ocorrencia-medica-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
+            </div>
+            <div class="input-div">
+                <select name = "ocorrencia-medica-tipo-ocorrencia" id="ocorrencia-medica-tipo-ocorrencia">
+                    <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
+                    <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
+                    <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
+                    </option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div id="botoes">
+                <button id="botao" type="submit" title="Enviar Ocorrência">Emitir</button>
+
+            </div>
+
         </div>
     </div>
-
-    <div class="campos">
-        <div class="esquerda">
-            <label for="ocorrencia_medica_numero_residencia" class="">Número da Residência</label>
-            <input type="text" id="ocorrencia_medica_numero_residencia" name="ocorrencia_medica_numero_residencia">
-        </div>
-        <div class="direita">
-            <label class="">Tipo da Ocorrência</label>
-            <select name="ocorrencia_medica_id_tipo_ocorrencia">
-                <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
-                <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
-                <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
-                </option>
-                <% } %>
-            </select>
-        </div>
-    </div>
-
-    <div class="campos">
-        <div class="descricao">
-            <label for="descricao" class="">Descrição</label>
-        </div>
-        <div>
-            <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-        </div>
-    </div>
-
-    <button type="submit">Emitir</button>
-</form>
 </body>
 </html>

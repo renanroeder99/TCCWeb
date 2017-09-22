@@ -16,7 +16,7 @@ import model.Receptor;
 
 /**
  *
- * @author Renan Roeder, 08-23-2017
+ * @author Renan Roeder, 08-23-2017.
  */
 public class ReceptorDAO {
 

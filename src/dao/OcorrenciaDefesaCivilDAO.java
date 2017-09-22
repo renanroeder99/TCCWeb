@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * blablabla
  *
- * @author Wanderson Ferreira 08/09/2017
+ * @author Wanderson Ferreira 08/09/2017.
  */
 public class OcorrenciaDefesaCivilDAO {
 

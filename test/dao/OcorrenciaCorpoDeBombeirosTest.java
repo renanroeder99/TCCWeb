@@ -39,7 +39,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
         baseOcorrenciaCorpoDeBombeiros.setCep(789654142);
         baseOcorrenciaCorpoDeBombeiros.setNumeroResidencia(789);
         baseOcorrenciaCorpoDeBombeiros.setRua("shfefhre");
-        baseOcorrenciaCorpoDeBombeiros.setLogradouro("erergeth");
         baseOcorrenciaCorpoDeBombeiros.setBaseTipoOcorrencia(baseOcorrencia);
         baseOcorrenciaCorpoDeBombeiros.setEmissor(emissor);
         baseOcorrenciaCorpoDeBombeiros.setId(OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrenciaCorpoDeBombeiros));
@@ -74,7 +73,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
         ocorrenciaCorpoDeBombeiros.setCep(7896541);
         ocorrenciaCorpoDeBombeiros.setNumeroResidencia(789);
         ocorrenciaCorpoDeBombeiros.setRua("uihjjfiw");
-        ocorrenciaCorpoDeBombeiros.setLogradouro("rferge");
         ocorrenciaCorpoDeBombeiros.setId(OcorrenciaCorpoDeBombeirosDAO.inserir(ocorrenciaCorpoDeBombeiros));
 
         BaseOcorrencia ocorrenciaCorpoDeBombeirosBuscada = OcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaBombeiroPorId(ocorrenciaCorpoDeBombeiros.getId());
@@ -95,7 +93,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
         assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getCep(), ocorrenciaCorpoDeBombeiros.getCep());
         assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getNumeroResidencia(), ocorrenciaCorpoDeBombeiros.getNumeroResidencia());
         assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getRua(), ocorrenciaCorpoDeBombeiros.getRua());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getLogradouro(), ocorrenciaCorpoDeBombeiros.getLogradouro());
         assertNotEquals(0, emissor.getId());
 
     }

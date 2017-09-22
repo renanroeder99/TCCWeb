@@ -15,7 +15,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * @author(Felipe de Jesus Cazagranda, date = 09-14-2017)
+ * @author(Felipe de Jesus Cazagranda, date = 09-14-2017
  */
 public class TipoOcorrenciaMedicaDAO {
 
