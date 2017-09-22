@@ -152,4 +152,19 @@ public class OcorrenciaPolicialDAO {
         }
         return tabelaOcorrenciaPolicial;
     }
+
+    public static void excluirPolicial(int id) {
+        String sql = "DELETE FROM ocorrencia_policiais WHERE id = ?";
+        try {
+            PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void alterarTrote(int codigo, boolean trote){
+
+    }
 }

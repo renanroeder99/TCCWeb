@@ -34,9 +34,9 @@
 <h4>Quantidade de trotes: <%=ocorrencia.getEmissor().getTrote()%></h4>
 <div>
     <form action="ocorrencia_bombeiros_validar.jsp?id=<%=ocorrencia.getId()%>" method="post">
-        <input type="radio" id="foi_trote" name="feedback">
+        <input type="radio" id="foi_trote" name="feedback" value="false">
         <label for="foi_trote">Trote</label>
-        <input type="radio" id= "nao_foi_trote" name="feedback">
+        <input type="radio" id= "nao_foi_trote" name="feedback" value="true">
         <label for="nao_foi_trote">Ocorrência válida</label>
 
 

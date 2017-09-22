@@ -150,5 +150,21 @@ public class OcorrenciaMedicaDAO {
         }
         return tabelaOcorrenciaMedica;
     }
+
+    public static void excluirMedico(int id) {
+        String sql = "DELETE FROM ocorrencia_medica WHERE id = ?";
+        try {
+            PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void alterarTrote(int codigo, boolean trote){
+
+    }
 }
+
 

@@ -150,4 +150,19 @@ public class OcorrenciaCorpoDeBombeirosDAO {
         return tabelaOcorrenciaBombeiro;
     }
 
+    public static void excluirCorpoDeBombeiros(int id) {
+        String sql = "DELETE FROM ocorrencia_bombeiros WHERE id = ?";
+        try {
+            PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void alterarTrote(int codigo, boolean trote){
+
+    }
+
 }
