@@ -23,7 +23,6 @@
 
 
     ocorrencia.setRua(request.getParameter("ocorrencia-rua"));
-    ocorrencia.setLogradouro(request.getParameter("ocorrencia-logradouro"));
     ocorrencia.setCep(Integer.parseInt(request.getParameter("ocorrencia-cep")));
     ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
     ocorrencia.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-defesa-civil-tipo-ocorrencia"))));

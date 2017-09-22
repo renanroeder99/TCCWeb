@@ -22,7 +22,8 @@ public class Emissor {
     private String confirmarSenha;
     private int rg, telefone, trote;
     private int cep, numeroResidencia, id;
-    private String rua, logradouro;
+    private String rua;
+    private Date dataNascimento;
 
     public String getConfirmarSenha() {
         return confirmarSenha;
@@ -44,8 +45,6 @@ public class Emissor {
         this.numeroResidencia = numeroResidencia;
     }
 
-
-
     public String getRua() {
         return rua;
     }
@@ -54,13 +53,6 @@ public class Emissor {
         this.rua = rua;
     }
 
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
     public int getTrote() {
         return trote;
     }
@@ -77,7 +69,6 @@ public class Emissor {
         this.id = id;
     }
 
-
     public int getTelefone() {
         return telefone;
     }
@@ -93,7 +84,6 @@ public class Emissor {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    private Date dataNascimento;
 
     public String getNome() {
         return nome;
@@ -134,7 +124,6 @@ public class Emissor {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
 
     public String getEndereco() {
         return endereco;
