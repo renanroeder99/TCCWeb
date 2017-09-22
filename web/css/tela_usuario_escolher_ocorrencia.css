@@ -70,6 +70,7 @@ body{
     padding-top: 100px;
 }
 
+<<<<<<< HEAD
 textarea{
     width: 500px;
     position: absolute;
@@ -83,5 +84,17 @@ textarea{
 
     outline: none;
     resize: none;
+=======
+.text_area{
+    padding-left: 100px;
+    padding-right: 200px;
+    padding-top: 300px;
+    margin-left: 800px;
+    margin-top: -440px;
+
+>>>>>>> 069fdc9a647069fc729fb8a51f21924e2b8a286a
 }
+
+
+
 
