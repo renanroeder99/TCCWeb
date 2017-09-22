@@ -43,7 +43,7 @@
 <button type="submit"> Confirmar</button>
 </form>
 </div>
-<a href="ocorrencia_defesa_civil_excluir.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
+<a href="excluir_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
 </body>
 </html>
 

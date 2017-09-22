@@ -42,6 +42,6 @@
 </div>
 <button type="submit"> Confirmar</button>
 </form>
-<a href="ocorrencia_medica_excluir.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
+<a href="excluir_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
 </body>
 </html>
