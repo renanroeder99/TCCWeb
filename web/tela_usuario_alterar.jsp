@@ -9,9 +9,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Editar cadastro</title>
 </head>
 <body>
+<jsp:include page="verificar_login.jsp"/>
 <% Emissor emissor = EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("id"))); %>
 
 <form action="usuario_acao_alterar.jsp?id=" method="POST">
