@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_login.css">
 </head>
 <body>
-<jsp:include page="verificar_login.jsp"/>
+
 
     <div>
         <form action="_usuario_acao_login.jsp" method="post">
