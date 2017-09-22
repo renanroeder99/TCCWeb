@@ -6,7 +6,7 @@
         OcorrenciaPolicialDAO.excluirPolicial(id);
         BaseOcorrencia ocorrencia = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(id);
         if (ocorrencia == null) {
-            response.sendRedirect("tela_receptor_defesa_civil.jsp?message=ok");
+            response.sendRedirect("tela_receptor_defesa_civil.jsp?");
         } else {
             response.sendRedirect("tela_receptor_defesa_civil.jsp?message=errou");
         }
