@@ -45,12 +45,10 @@
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
 </head>
 <body>
-
-<h1 align="center">Bem Vindo, <%=emissor.getUsuario()%>!</h1>
-
-    <div class="pai2">
-        <a href="tela_emitir_ocorrencia_medica.jsp" class="botao1">Chamado Médico</a>
-    </div>
+<h1 align="center">Bem Vindo! <%=emissor.getUsuario()%>!</h1>
+<div class="pai2">
+    <a href="tela_emitir_ocorrencia_medica.jsp" class="botao1">Chamado Médico</a>
+</div>
 <div class="pai3">
     <a href="tela_emitir_ocorrencia_policial.jsp" class="botao2">Chamado Policial</a>
 </div>
@@ -60,7 +58,7 @@
 <div class="pai5">
     <a href="tela_emitir_ocorrencia_defesa_civil.jsp" class="botao4">Chamado Defesa Civil</a>
 </div>
-<textarea cols=80 id="text_area_tela_inicial" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
+<textarea cols="30" rows="10" class="text_area"></textarea>
 
 </body>
 </html>
