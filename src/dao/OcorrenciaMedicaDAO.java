@@ -94,7 +94,7 @@ public class OcorrenciaMedicaDAO {
     
     public static BaseOcorrencia buscarOcorrenciaMedicaPorID(int codigo) {
         BaseOcorrencia ocorrenciaMedica = null;
-        String sql = "SELECT id_tipo_ocorrencia_medica, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas WHERE id = ?";
         Conexao conexao = new Conexao();
         Emissor emissor = new Emissor();
 

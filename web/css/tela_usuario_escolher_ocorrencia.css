@@ -1,100 +1,20 @@
 body{
-    background-color: #ffffff;
+    background: #cbe2ee;
 }
-.botao1{
-    background-color: #ffffff;
-    margin-bottom: 200px;
+#caixa-escolher-interna{
+    background-color: #a9d1e5;
+    width: 900px;
+    height: 560px;
+    margin: 40px auto 0px;
+    border-radius: 5px;
+
+}
+.input-div{
+    margin: 40px;
     padding: 5px;
-    margin-left: 100px;
-    vertical-align: -15%;
-    font-size: 30px;
-    width: 200px;
-    height: 50px;
-    color: #030101;
-    opacity: 0.9;
-    border: 3px double #030101;
-}
-.botao2{
-    background-color: #ffffff;
-    margin-bottom: 200px;
-    padding: 5px;
-    margin-left: 100px;
-    vertical-align: -15%;
-    font-size: 30px;
-    width: 200px;
-    height: 50px;
-    color: #030101;
-    opacity: 0.9;
-    border: 3px double #030101;
-
-}
-.botao3{
-    background-color: #ffffff;
-    margin-bottom: 200px;
-    padding: 5px;
-    margin-left: 100px;
-    vertical-align: -15%;
-    font-size: 30px;
-    width: 200px;
-    height: 50px;
-    color: #030101;
-    opacity: 0.9;
-    border: 3px double #030101;
-
-}
-.botao4 {
-    background-color: #ffffff;
-    padding: 5px;
-    margin-bottom: 200px;
-    margin-left: 100px;
-    vertical-align: -15%;
-    font-size: 30px;
-    width: 200px;
-    height: 50px;
-    color: #030101;
-    opacity: 0.9;
-    border: 3px double #030101;
-    margin-top: 100px;
-}
-
-.pai2{
-    padding-top: 110px;
-}
-.pai3{
-    padding-top: 100px;
-}
-.pai4{
-    padding-top: 100px;
-}
-.pai5{
-    padding-top: 100px;
-}
-
-<<<<<<< HEAD
-textarea{
-    width: 500px;
-    position: absolute;
-    left: 800px;
-    top: 300px;
-    padding-left: 5px;
-    font: normal 18px sans-serif;
-    color: #aeaeae;
-    border-radius: 3px;
-    border: 1px solid #bfc3c5;
-
-    outline: none;
-    resize: none;
-=======
-.text_area{
-    padding-left: 100px;
-    padding-right: 200px;
-    padding-top: 300px;
-    margin-left: 800px;
-    margin-top: -440px;
-
->>>>>>> 069fdc9a647069fc729fb8a51f21924e2b8a286a
-}
 
 
+}
+#
 
 

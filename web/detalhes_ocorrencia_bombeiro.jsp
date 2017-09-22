@@ -49,6 +49,6 @@
 <% } else if (ocorrencia.getStatus() == 2){ %>
 <h4>Status: Ocorrência válida</h4>
     <%}%>
-<a href="ocorrencia_bombeiro_excluir.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
+<a href="excluir_ocorrencia_bombeiro.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
 </body>
 </html>
