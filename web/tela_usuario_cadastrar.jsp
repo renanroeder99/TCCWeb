@@ -15,6 +15,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <form action="usuario_acao_cadastrar.jsp" method="POST">
 <div class="pai">
     <h1 class="cadastro">Cadastro</h1>
@@ -70,12 +71,32 @@
     <div class="numero_residencia">
         <label for="usuario-numero-residencia">Número de residência</label>
         <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required">
+=======
+<form action="usuario_acao_cadastrar.jsp" method="POST"/>
+
+    <div id="caixa-cadastro-externa">
+        <div id="caixa-cadastro-interna">
+            <div id="caixa-cadastro-label">Cadastro</div>
+
+            <div class="input-div">
+                <input id="usuario-nome" type="text" value="Digite seu Nome" onfocus="this.value='';"/>
+            </div>
+
+            <div class="input-div">
+                <input id="usuario-data-nascimento" type="date"/>
+            </div>
+
+            <div class="input-div">
+                <input  >
+
+            </div>
+
+        </div>
+>>>>>>> de23a445705c6cd9dbc804e7419a3e08d43b393f
     </div>
 
 
-    <input type="submit" value="Submit">
-</div>
 
-</form>
+
 </body>
 </html>
