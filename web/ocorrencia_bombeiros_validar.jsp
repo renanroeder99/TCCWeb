@@ -4,9 +4,9 @@
 <%  try {
 
     int id = Integer.parseInt(request.getParameter("id"));
-    boolean trote = Boolean.parseBoolean(request.getParameter("feedback"));
+    int trote = Integer.parseInt(request.getParameter("status"));
     if (id > 0) {
-        OcorrenciaCorpoDeBombeirosDAO.alterarTrote(trote);
+        OcorrenciaCorpoDeBombeirosDAO.alterarTrote(id, trote);
 
     }
 }catch (SQLException ex){
