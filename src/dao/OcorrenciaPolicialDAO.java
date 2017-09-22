@@ -20,7 +20,7 @@ import javax.swing.plaf.nimbus.State;
 
 /**
  *
- * @author Wanderson Ferreira
+ * @author Wanderson Ferreira.
  */
 public class OcorrenciaPolicialDAO {
     
