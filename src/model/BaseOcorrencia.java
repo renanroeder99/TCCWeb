@@ -1,7 +1,7 @@
 package model;
 
 public class BaseOcorrencia {
-    private String rua, logradouro;
+    private String rua;
     private int cep;
     private int numeroResidencia;
     private int id;
@@ -38,14 +38,6 @@ public class BaseOcorrencia {
 
     public void setRua(String rua) {
         this.rua = rua;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
     }
 
     public int getCep() {

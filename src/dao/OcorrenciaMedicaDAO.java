@@ -162,8 +162,16 @@ public class OcorrenciaMedicaDAO {
         }
     }
 
-    public static void alterarTrote(int codigo, boolean trote){
-
+    public static void alterarTrote(int id, boolean trote) {
+        Conexao conexao = new Conexao();
+        try {
+            String sql = "UPDATE ocorrencias_medicas SET trote = ? WHERE id = ?";
+            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.setBoolean(2, trote);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 }
 

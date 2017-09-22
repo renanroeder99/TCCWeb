@@ -24,7 +24,6 @@
 
 
     ocorrenciaPolicial.setRua(request.getParameter("ocorrencia-policial-rua"));
-    ocorrenciaPolicial.setLogradouro(request.getParameter("ocorrencia-policial-logradouro"));
     ocorrenciaPolicial.setCep(Integer.parseInt(request.getParameter("ocorrencia-policial-cep")));
     ocorrenciaPolicial.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-policial-numero-residencia")));
     ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(Integer.parseInt(request.getParameter("ocorrencia-policial-tipo-ocorrencia"))));
