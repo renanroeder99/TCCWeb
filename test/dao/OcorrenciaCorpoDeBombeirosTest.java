@@ -75,20 +75,12 @@ public class OcorrenciaCorpoDeBombeirosTest {
         ocorrenciaCorpoDeBombeiros.setRua("uihjjfiw");
         ocorrenciaCorpoDeBombeiros.setId(OcorrenciaCorpoDeBombeirosDAO.inserir(ocorrenciaCorpoDeBombeiros));
 
+
         BaseOcorrencia ocorrenciaCorpoDeBombeirosBuscada = OcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaBombeiroPorId(ocorrenciaCorpoDeBombeiros.getId());
 
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getBaseTipoOcorrencia().getTipo(), ocorrenciaCorpoDeBombeiros.getBaseTipoOcorrencia().getTipo());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getBaseTipoOcorrencia().getDescricao(), ocorrenciaCorpoDeBombeiros.getBaseTipoOcorrencia().getDescricao());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getNome(), ocorrenciaCorpoDeBombeiros.getEmissor().getNome());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getUsuario(), ocorrenciaCorpoDeBombeiros.getEmissor().getUsuario());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getEmail(), ocorrenciaCorpoDeBombeiros.getEmissor().getEmail());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getSenha(), ocorrenciaCorpoDeBombeiros.getEmissor().getSenha());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getCpf(), ocorrenciaCorpoDeBombeiros.getEmissor().getCpf());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getRg(), ocorrenciaCorpoDeBombeiros.getEmissor().getRg());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getEndereco(), ocorrenciaCorpoDeBombeiros.getEmissor().getEndereco());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getCep(), ocorrenciaCorpoDeBombeiros.getCep());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getTelefone(), ocorrenciaCorpoDeBombeiros.getEmissor().getTelefone());
-        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getTrote(), ocorrenciaCorpoDeBombeiros.getEmissor().getTrote());
+        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getBaseTipoOcorrencia().getId(), ocorrenciaCorpoDeBombeiros.getBaseTipoOcorrencia().getId());
+
+        assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getEmissor().getId(), ocorrenciaCorpoDeBombeiros.getEmissor().getId());
 
         assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getCep(), ocorrenciaCorpoDeBombeiros.getCep());
         assertEquals(ocorrenciaCorpoDeBombeirosBuscada.getNumeroResidencia(), ocorrenciaCorpoDeBombeiros.getNumeroResidencia());

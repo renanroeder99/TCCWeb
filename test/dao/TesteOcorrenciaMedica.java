@@ -35,6 +35,7 @@ public class TesteOcorrenciaMedica {
         tipoOcorrenciaMedica.setTipo("avc");
         tipoOcorrenciaMedica.setDescricao("Morte cerebral");
         tipoOcorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(tipoOcorrenciaMedica));
+        assertEquals(1, tipoOcorrenciaMedica.getId());
 
         Emissor emissor = new Emissor();
         emissor.setNome("Renan Roeder");
@@ -57,6 +58,7 @@ public class TesteOcorrenciaMedica {
         ocorrenciaMedica.setBaseTipoOcorrencia(tipoOcorrenciaMedica);
         ocorrenciaMedica.setEmissor(emissor);
         ocorrenciaMedica.setId(OcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
+
         assertEquals(1, ocorrenciaMedica.getId());
 
     }
@@ -99,6 +101,7 @@ public class TesteOcorrenciaMedica {
         BaseOcorrencia ocorrenciaMedicaBuscada = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(ocorrenciaMedica.getId());
 
         assertEquals(ocorrenciaMedicaBuscada.getBaseTipoOcorrencia().getId(), ocorrenciaMedica.getBaseTipoOcorrencia().getId());
+
         assertEquals(ocorrenciaMedicaBuscada.getEmissor().getId(), ocorrenciaMedica.getEmissor().getId());
 
         assertEquals(ocorrenciaMedicaBuscada.getCep(), ocorrenciaMedica.getCep());

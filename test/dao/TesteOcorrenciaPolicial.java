@@ -95,7 +95,9 @@ public class TesteOcorrenciaPolicial {
         BaseOcorrencia ocorrenciaPolicialBuscada = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(ocorrenciaPolicial.getId());
 
         assertEquals(ocorrenciaPolicialBuscada.getBaseTipoOcorrencia().getId(), ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
+
         assertEquals(ocorrenciaPolicialBuscada.getEmissor().getId(), ocorrenciaPolicial.getEmissor().getId());
+
         assertEquals(ocorrenciaPolicialBuscada.getCep(), ocorrenciaPolicial.getCep());
         assertEquals(ocorrenciaPolicialBuscada.getNumeroResidencia(), ocorrenciaPolicial.getNumeroResidencia());
         assertEquals(ocorrenciaPolicialBuscada.getRua(), ocorrenciaPolicial.getRua());

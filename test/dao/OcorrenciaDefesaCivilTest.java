@@ -84,11 +84,9 @@ public class OcorrenciaDefesaCivilTest {
 
         BaseOcorrencia ocorrenciaDefesaCivilBuscada = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(ocorrenciaDefesaCivil.getId());
 
-
-
         assertEquals(ocorrenciaDefesaCivilBuscada.getBaseTipoOcorrencia().getId(), ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
-        assertEquals(ocorrenciaDefesaCivilBuscada.getEmissor().getId(), ocorrenciaDefesaCivil.getEmissor().getId());
 
+        assertEquals(ocorrenciaDefesaCivilBuscada.getEmissor().getId(), ocorrenciaDefesaCivil.getEmissor().getId());
 
         assertEquals(ocorrenciaDefesaCivilBuscada.getCep(), ocorrenciaDefesaCivil.getCep());
         assertEquals(ocorrenciaDefesaCivilBuscada.getNumeroResidencia(), ocorrenciaDefesaCivil.getNumeroResidencia());
