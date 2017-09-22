@@ -23,7 +23,7 @@ import model.Emissor;
  */
 public class OcorrenciaMedicaDAO {
     public static int inserir(BaseOcorrencia ocorrenciaMedica){
-        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia) VALUES(?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia) VALUES(?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);

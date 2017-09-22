@@ -25,7 +25,7 @@ import javax.swing.plaf.nimbus.State;
 public class OcorrenciaPolicialDAO {
     
     public static int inserir(BaseOcorrencia ocorrenciaPolicial) {
-        String sql = "INSERT INTO ocorrencias_policiais (id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO ocorrencias_policiais (id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia) VALUES (?, ?, ?, ?, ?)";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
