@@ -23,7 +23,7 @@ import model.Emissor;
  */
 public class OcorrenciaMedicaDAO {
     public static int inserir(BaseOcorrencia ocorrenciaMedica){
-        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, logradouro) VALUES(?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia) VALUES(?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -32,7 +32,6 @@ public class OcorrenciaMedicaDAO {
             ps.setInt(3, ocorrenciaMedica.getCep());
             ps.setString(4, ocorrenciaMedica.getRua());
             ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
-            ps.setString(6, ocorrenciaMedica.getLogradouro());
             
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -53,7 +52,7 @@ public class OcorrenciaMedicaDAO {
     public static int alterar(BaseOcorrencia ocorrenciaMedica) {
         Conexao conexao = new Conexao();
         try {
-            String sql = "UPDATE ocorrencias_medicas SET id_tipo_ocorrencia_medica = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, logradouro = ? WHERE id = ?;";
+            String sql = "UPDATE ocorrencias_medicas SET id_tipo_ocorrencia_medica = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ? WHERE id = ?;";
             
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             
@@ -62,8 +61,7 @@ public class OcorrenciaMedicaDAO {
             ps.setInt(3, ocorrenciaMedica.getCep());
             ps.setString(4, ocorrenciaMedica.getRua());
             ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
-            ps.setString(6, ocorrenciaMedica.getLogradouro());
-            ps.setInt(7, ocorrenciaMedica.getId());
+            ps.setInt(6, ocorrenciaMedica.getId());
             int resultado = ps.executeUpdate();
             return resultado;
             
@@ -96,7 +94,7 @@ public class OcorrenciaMedicaDAO {
     
     public static BaseOcorrencia buscarOcorrenciaMedicaPorID(int codigo) {
         BaseOcorrencia ocorrenciaMedica = null;
-        String sql = "SELECT id_tipo_ocorrencia_medica, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_medicas WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencia_medica, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas WHERE id = ?";
         Conexao conexao = new Conexao();
         Emissor emissor = new Emissor();
 
@@ -113,7 +111,6 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setCep(rs.getInt("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaMedica.setLogradouro(rs.getString("logradouro"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -125,7 +122,7 @@ public class OcorrenciaMedicaDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciasMedica(){
         ArrayList<BaseOcorrencia> tabelaOcorrenciaMedica = new ArrayList<>();
-        String sql = "SELECT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_medicas";
+        String sql = "SELECT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
@@ -140,7 +137,6 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setCep(rs.getInt("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaMedica.setLogradouro(rs.getString("logradouro"));
                 tabelaOcorrenciaMedica.add(ocorrenciaMedica);
             }
         }catch(SQLException ex){
