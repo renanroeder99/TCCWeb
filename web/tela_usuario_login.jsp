@@ -12,27 +12,35 @@
 <head>
     <title>Login do usuário</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_login.css">
+
 </head>
 <body>
     <div>
         <form action="_usuario_acao_login.jsp" method="post">
-            <div>
+            <div id="caixa-login">
+                <div id="caixa-login-interno">
+                    <div id="caixa-login-label">Faça seu Login</div>
 
-                <label for="usuario-username" class="label-cadastro">Usuário</label>
-                <input type="email" name="usuario-username" id="usuario-username">
+                    <div class="input-div">
+                        <input id="usuario-senha" type="text" value="Digite seu email" onfocus="this.value='';" />
+                    </div>
+
+                    <div class="input-div">
+                        <input id="usuario-senha" type="password" value="Digite sua senha" onfocus="this.value='';"/>
+                    </div>
+
+                    <div id="botoes">
+                        <div id="botao" title="Entrar">Entrar</div>
+
+
+
+                    </div>
+
+                </div>
+
             </div>
-
-            <div>
-                <label for="usuario-senha" class="label-cadastro">Senha</label>
-                <input type="password" name="usuario-senha" id="usuario-senha">
-            </div>
-            <br>
-            <button type="submit">Entrar</button>
-
-        </form>
-    </div>
-    <a href="tela_usuario_cadastrar.jsp">Cidadão novo?Cadastre-se</a>
-
-    <a href="tela_usuario_esqueceu_senha.jsp">Esqueceu sua senha?</a>
+            <aside>
+                <img id="imagem" src="bandeira.png" title="bandeira de blumenau">
+            </aside>
 </body>
 </html>
