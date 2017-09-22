@@ -41,24 +41,48 @@
 
 <html>
 <head>
-    <title>Ocorrências</title>
+    <title>Escolher Ocorrência</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
 </head>
 <body>
 <h1 align="center">Bem Vindo! <%=emissor.getUsuario()%>!</h1>
-<div class="pai2">
-    <a href="tela_emitir_ocorrencia_medica.jsp" class="botao1">Chamado Médico</a>
-</div>
-<div class="pai3">
-    <a href="tela_emitir_ocorrencia_policial.jsp" class="botao2">Chamado Policial</a>
-</div>
-<div class="pai4">
-    <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" class="botao3">Chamado Bombeiros</a>
-</div>
-<div class="pai5">
-    <a href="tela_emitir_ocorrencia_defesa_civil.jsp" class="botao4">Chamado Defesa Civil</a>
-</div>
-<textarea cols="30" rows="10" class="text_area"></textarea>
+    <div class="caixa-escolher">
+
+        <div id="caixa-escolher-interna">
+            <div class="input-div">
+                <button type="button"> id="ocorrencia-policial"
+                <a href="tela_emitir_ocorrencia_policial.jsp"/>
+                </button>
+             </div>
+
+            <div class="input-div">
+
+                <button  type="button" id="ocorrencia-medica"
+                   href="tela_emitir_ocorrencia_medica.jsp"/>
+            </button>
+            </div>
+
+            <div class="input-div">
+
+                <button type="button" id="ocorrencia-corpo-bombeiro"
+                        href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp"/>
+            </button>
+            </div>
+
+            <div class="input-div">
+                <button type="button" id="ocorrencia-defesa-civil"
+                        href="tela_emitir_ocorrencia_defesa_civil.jsp"/>
+            </button>
+            </div>
+
+
+
+        </div>
+    </div>
+            <div class="input-div">
+                <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard"></textarea>
+            </div>
+
 
 </body>
 </html>
