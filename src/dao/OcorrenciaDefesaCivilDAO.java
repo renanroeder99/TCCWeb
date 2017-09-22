@@ -23,7 +23,7 @@ import java.util.List;
 public class OcorrenciaDefesaCivilDAO {
 
     public static int inserir(BaseOcorrencia ocorrenciaDefesaCivil) {
-        String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia) VALUES (?, ?, ?, ?, ?)";
 
         Conexao conexao = new Conexao();
         try {

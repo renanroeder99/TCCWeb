@@ -22,7 +22,7 @@ import model.BaseOcorrencia;
 public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static int inserir(BaseOcorrencia ocorrenciaBombeiros){
-        String sql = "INSERT INTO ocorrencias_bombeiros (id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia) VALUES (?,?,?,?,?,?);";
+        String sql = "INSERT INTO ocorrencias_bombeiros (id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia) VALUES (?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
