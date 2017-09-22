@@ -53,7 +53,6 @@ public class TesteOcorrenciaMedica {
         ocorrenciaMedica.setCep(145444);
         ocorrenciaMedica.setNumeroResidencia(1004);
         ocorrenciaMedica.setRua("Pqp ");
-        ocorrenciaMedica.setLogradouro("casa");
 
         ocorrenciaMedica.setBaseTipoOcorrencia(tipoOcorrenciaMedica);
         ocorrenciaMedica.setEmissor(emissor);
@@ -89,14 +88,12 @@ public class TesteOcorrenciaMedica {
         ocorrenciaMedica.setCep(145444);
         ocorrenciaMedica.setNumeroResidencia(1004);
         ocorrenciaMedica.setRua("Pqp ");
-        ocorrenciaMedica.setLogradouro("casa");
         ocorrenciaMedica.setId(OcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
         assertEquals(1, ocorrenciaMedica.getId());
 
         ocorrenciaMedica.setCep(12345678);
         ocorrenciaMedica.setNumeroResidencia(291);
         ocorrenciaMedica.setRua("Rua das Velhas com Cabelos Laranjas");
-        ocorrenciaMedica.setLogradouro("tcfu");
         OcorrenciaMedicaDAO.alterar(ocorrenciaMedica);
 
         BaseOcorrencia ocorrenciaMedicaBuscada = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(ocorrenciaMedica.getId());
@@ -107,9 +104,5 @@ public class TesteOcorrenciaMedica {
         assertEquals(ocorrenciaMedicaBuscada.getCep(), ocorrenciaMedica.getCep());
         assertEquals(ocorrenciaMedicaBuscada.getNumeroResidencia(), ocorrenciaMedica.getNumeroResidencia());
         assertEquals(ocorrenciaMedicaBuscada.getRua(), ocorrenciaMedica.getRua());
-        assertEquals(ocorrenciaMedicaBuscada.getLogradouro(), ocorrenciaMedica.getLogradouro());
-
-
     }
-
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Daiane Machado, date = 08/29/17
+ * @author Daiane Machado, date = 08/29/17.
  */
 public class TipoOcorrenciaCorpoDeBombeirosDAO {
 

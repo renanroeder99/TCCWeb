@@ -17,10 +17,9 @@
 
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 
-    baseOcorrencia.setLogradouro(request.getParameter("ocorrencia_medica_logradouro"));
-    baseOcorrencia.setRua(request.getParameter("ocorrencia_medica_rua"));
-    baseOcorrencia.setCep(Integer.parseInt(request.getParameter("ocorrencia_medica_cep")));
-    baseOcorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia_medica_numero_residencia")));
+    baseOcorrencia.setRua(request.getParameter("ocorrência-medica-rua"));
+    baseOcorrencia.setCep(Integer.parseInt(request.getParameter("ocorrencia-medica-cep")));
+    baseOcorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-medica-numero-residencia")));
     baseOcorrencia.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(Integer.parseInt(request.getParameter("ocorrencia_medica_id_tipo_ocorrencia"))));
     baseOcorrencia.setEmissor(emissor);
     int codigo = OcorrenciaMedicaDAO.inserir(baseOcorrencia);

@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * blablabla
  *
- * @author Wanderson Ferreira 08/09/2017
+ * @author Wanderson Ferreira 08/09/2017.
  */
 public class OcorrenciaDefesaCivilDAO {
 
@@ -155,7 +155,7 @@ public class OcorrenciaDefesaCivilDAO {
     }
 
     public static void excluirDefesaCivil(int id) {
-        String sql = "DELETE FROM ocorrencia_defesa_civil WHERE id = ?";
+        String sql = "DELETE FROM ocorrencias_defesa_civil WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
             ps.setInt(1, id);
@@ -165,8 +165,16 @@ public class OcorrenciaDefesaCivilDAO {
         }
     }
 
-    public static void alterarTrote(int codigo, boolean trote){
-
+    public static void alterarTrote(int id, boolean trote) {
+        Conexao conexao = new Conexao();
+        try {
+            String sql = "UPDATE ocorrencias_defesa_civil SET trote = ? WHERE id = ?";
+            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.setBoolean(2, trote);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }
