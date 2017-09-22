@@ -21,21 +21,20 @@ import model.Receptor;
 public class ReceptorDAO {
 
     public static int cadastrar(Receptor cadastroAdministrador) throws SQLException {
-        String sql = "INSERT INTO receptores (nome_completo, login, senha, cpf, cargo, endereco, telefone_celular, email, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO receptores (nome_completo, senha, cpf, cargo, endereco, telefone_celular, email, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         String senha = cadastroAdministrador.getSenha();
 
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, cadastroAdministrador.getNome());
-            ps.setString(2, cadastroAdministrador.getLogin());
-            ps.setString(3, Utilitario.gerarHASH(cadastroAdministrador.getSenha()));
-            ps.setString(4, cadastroAdministrador.getCpf());
-            ps.setString(5, cadastroAdministrador.getCargo());
-            ps.setString(6, cadastroAdministrador.getEndereco());
-            ps.setInt(7, cadastroAdministrador.getTelefone());
-            ps.setString(8, cadastroAdministrador.getEmail());
-            ps.setString(9, cadastroAdministrador.getCep());
+            ps.setString(2, Utilitario.gerarHASH(cadastroAdministrador.getSenha()));
+            ps.setString(3, cadastroAdministrador.getCpf());
+            ps.setString(4, cadastroAdministrador.getCargo());
+            ps.setString(5, cadastroAdministrador.getEndereco());
+            ps.setInt(6, cadastroAdministrador.getTelefone());
+            ps.setString(7, cadastroAdministrador.getEmail());
+            ps.setString(8, cadastroAdministrador.getCep());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -56,7 +55,6 @@ public class ReceptorDAO {
         try {
 
             String sql = "UPDATE receptores SET nome_completo = ?,"
-                    + " login = ?,"
                     + " senha = ?,"
                     + " cpf = ?,"
                     + " cargo = ?,"
@@ -67,15 +65,14 @@ public class ReceptorDAO {
                     + "WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setString(1, cadastroAdministrador.getNome());
-            ps.setString(2, cadastroAdministrador.getLogin());
-            ps.setString(3, Utilitario.gerarHASH(cadastroAdministrador.getSenha()));
-            ps.setString(4, cadastroAdministrador.getCpf());
-            ps.setString(5, cadastroAdministrador.getCargo());
-            ps.setString(6, cadastroAdministrador.getEndereco());
-            ps.setInt(7, cadastroAdministrador.getTelefone());
-            ps.setString(8, cadastroAdministrador.getEmail());
-            ps.setString(9, cadastroAdministrador.getCep());
-            ps.setInt(10, cadastroAdministrador.getId());
+            ps.setString(2, Utilitario.gerarHASH(cadastroAdministrador.getSenha()));
+            ps.setString(3, cadastroAdministrador.getCpf());
+            ps.setString(4, cadastroAdministrador.getCargo());
+            ps.setString(5, cadastroAdministrador.getEndereco());
+            ps.setInt(6, cadastroAdministrador.getTelefone());
+            ps.setString(7, cadastroAdministrador.getEmail());
+            ps.setString(8, cadastroAdministrador.getCep());
+            ps.setInt(9, cadastroAdministrador.getId());
 
             int resultado = ps.executeUpdate();
             return resultado;
@@ -124,7 +121,7 @@ public class ReceptorDAO {
 
     public static Receptor buscarReceptorPorID(int codigo) {
         Receptor administrador = null;
-        String sql = "SELECT nome_completo, login, senha, cpf, cargo, endereco, telefone_celular, email, cep FROM receptores WHERE id = ?";
+        String sql = "SELECT nome_completo, senha, cpf, cargo, endereco, telefone_celular, email, cep FROM receptores WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
@@ -135,7 +132,6 @@ public class ReceptorDAO {
                 administrador = new Receptor();
                 administrador.setId(codigo);
                 administrador.setNome(rs.getString("nome_completo"));
-                administrador.setLogin(rs.getString("login"));
                 administrador.setSenha(rs.getString("senha"));
                 administrador.setCpf(rs.getString("cpf"));
                 administrador.setCargo(rs.getString("cargo"));
