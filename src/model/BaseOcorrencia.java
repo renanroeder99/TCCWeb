@@ -5,9 +5,11 @@ public class BaseOcorrencia {
     private int cep;
     private int numeroResidencia;
     private int id;
-    private BaseTipoOcorrencia baseTipoOcorrencia;
-    private Emissor emissor;
+    private int status;
 
+    private BaseTipoOcorrencia baseTipoOcorrencia;
+
+    private Emissor emissor;
     public Emissor getEmissor() {
         return emissor;
     }
@@ -50,6 +52,14 @@ public class BaseOcorrencia {
 
     public int getNumeroResidencia() {
         return numeroResidencia;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public void setNumeroResidencia(int numeroResidencia) {

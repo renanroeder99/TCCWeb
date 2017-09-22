@@ -131,7 +131,6 @@ public class OcorrenciaCorpoDeBombeirosDAO {
                 BaseOcorrencia ocorrenciaBombeiro = new BaseOcorrencia();
                 ocorrenciaBombeiro.setId(rs.getInt("id"));
                 ocorrenciaBombeiro.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
-                //Tipo de ocorrencia
                 ocorrenciaBombeiro.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
                 ocorrenciaBombeiro.setCep(rs.getInt("cep"));
                 ocorrenciaBombeiro.setRua(rs.getString("rua"));
@@ -157,13 +156,20 @@ public class OcorrenciaCorpoDeBombeirosDAO {
         }
     }
 
-    public static void alterarTrote(int id, boolean trote) {
+    public static void alterarTrote(int id, int  status) {
         Conexao conexao = new Conexao();
         try {
-            String sql = "UPDATE ocorrencias_bombeiros SET trote = ? WHERE id = ?";
+            /*
+            0 - Não foi definido
+            1 - Trote
+            2 - Ok
+             */
+
+            String sql = "UPDATE ocorrencias_bombeiros SET status = ? WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setInt(1, id);
-            ps.setBoolean(2, trote);
+            ps.setInt(2, status);
+            ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

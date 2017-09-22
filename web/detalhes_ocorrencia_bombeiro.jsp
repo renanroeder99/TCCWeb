@@ -32,17 +32,23 @@
 <h4>Endereço do emissor: <%=ocorrencia.getEmissor().getEndereco()%></h4>
 <h4>Email: <%=ocorrencia.getEmissor().getEmail()%></h4>
 <h4>Quantidade de trotes: <%=ocorrencia.getEmissor().getTrote()%></h4>
-<div>
-    <form action="ocorrencia_bombeiros_validar.jsp?id=<%=ocorrencia.getId()%>" method="post">
-        <input type="radio" id="foi_trote" name="feedback" value="false">
-        <label for="foi_trote">Trote</label>
-        <input type="radio" id= "nao_foi_trote" name="feedback" value="true">
-        <label for="nao_foi_trote">Ocorrência válida</label>
+<% if(ocorrencia.getStatus() == 0){ %>
+    <div>
+        <form action="ocorrencia_bombeiros_validar.jsp?id=<%=ocorrencia.getId()%>" method="post">
+            <input type="radio" id="foi_trote" name="status" value="1">
+            <label for="foi_trote">Trote</label>
+            <input type="radio" id= "nao_foi_trote" name="status" value="2">
+            <label for="nao_foi_trote">Ocorrência válida</label>
 
 
-        <button type="submit"> Confirmar</button>
-    </form>
-</div>
+            <button type="submit"> Confirmar</button>
+        </form>
+    </div>
+<% } else  if(ocorrencia.getStatus() == 1) { %>
+<h4>Status: Trote</h4>
+<% } else if (ocorrencia.getStatus() == 2){ %>
+<h4>Status: Ocorrência válida</h4>
+    <%}%>
 <a href="ocorrencia_bombeiro_excluir.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
 </body>
 </html>

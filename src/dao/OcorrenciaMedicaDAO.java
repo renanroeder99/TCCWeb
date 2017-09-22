@@ -32,7 +32,7 @@ public class OcorrenciaMedicaDAO {
             ps.setInt(3, ocorrenciaMedica.getCep());
             ps.setString(4, ocorrenciaMedica.getRua());
             ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
-            
+
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             

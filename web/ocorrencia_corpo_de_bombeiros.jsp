@@ -16,11 +16,12 @@
 
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 
-    baseOcorrenciaCorpoBombeiros.setRua(request.getParameter("ocorrencia_corpo_de_bombeiros_rua"));
-    baseOcorrenciaCorpoBombeiros.setCep(Integer.parseInt(request.getParameter("ocorrencia_corpo_de_bombeiros_cep")));
-    baseOcorrenciaCorpoBombeiros.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia_corpo_de_bombeiros_numero_residencia")));
-    baseOcorrenciaCorpoBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(Integer.parseInt(request.getParameter("ocorrencia_corpo_de_bombeiros"))));
+    baseOcorrenciaCorpoBombeiros.setRua(request.getParameter("ocorrência-corpo_de_bombeiros-rua"));
+    baseOcorrenciaCorpoBombeiros.setCep(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-cep")));
+    baseOcorrenciaCorpoBombeiros.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-numero-residencia")));
+    baseOcorrenciaCorpoBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-tipo-ocorrencia"))));
     baseOcorrenciaCorpoBombeiros.setEmissor(emissor);
+
     int codigo = OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrenciaCorpoBombeiros);
     if(codigo > 0){
         //response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);

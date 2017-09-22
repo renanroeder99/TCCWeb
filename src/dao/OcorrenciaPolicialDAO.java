@@ -34,7 +34,7 @@ public class OcorrenciaPolicialDAO {
             ps.setInt(3, ocorrenciaPolicial.getCep());
             ps.setString(4, ocorrenciaPolicial.getRua());
             ps.setInt(5, ocorrenciaPolicial.getNumeroResidencia());
-            
+
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             
