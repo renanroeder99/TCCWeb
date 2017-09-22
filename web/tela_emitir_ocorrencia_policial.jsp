@@ -20,49 +20,60 @@
 <html>
 <head>
     <title>Ocorrência Policial</title>
-    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
+    <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_policial.css">
 </head>
 <body>
 <jsp:include page="menu_superior_policial.jsp"/>
 
-<h1 align="center">Ocorrência Policial</h1>
 
-<form action="ocorrencia_policial.jsp" method="POST">
+<form action="ocorrencia_policial.jsp" method="POST"/>
 
-    <div>
-        <label for="ocorrencia-policial-rua" class="label-cadastro">Rua</label>
-        <input type="text" id="ocorrencia-policial-rua" name="ocorrencia-policial-rua">
+    <div id="caixa-cadastro-externa">
+        <div id="caixa-cadastro-interno">
+            <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
+
+            <div class="input-div">
+                <input id="ocorrência-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+            </div>
+
+
+            <div class="input-div">
+                <input id="ocorrencia-policial-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+            </div>
+
+
+            <div class="input-div">
+                <input id="ocorrencia-policial-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+            </div>
+
+
+
+
+            <div class="input-div">
+                <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
+            </div>
+            <div class="input-div">
+                <select name = "ocorrencia-policial-tipo-ocorrencia" id="ocorrencia-policial-tipo-ocorrencia">
+                    <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaPolicialDAO.buscarOcorrenciaPolicial();%>
+                    <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
+                    <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
+                    </option>
+                    <% } %>
+                </select>
+                </div>
+
+                <div id="botoes">
+                    <button id="botao" type="submit" title="Enviar Ocorrência">Emitir</button>
+
+            </div>
+
+        </div>
     </div>
 
-    <div>
-        <label for="ocorrencia-policial-cep" class="label-cadastro">CEP</label>
-        <input type="text" id="ocorrencia-policial-cep" name="ocorrencia-policial-cep">
-    </div>
 
-    <div>
-        <label for="ocorrencia-policial-numero-residencia" class="label-cadastro">Número da Residência</label>
-        <input type="text" id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia">
-    </div>
 
-    <div>
-        <label class="label-cadastro">Tipo da Ocorrência</label>
-        <select name = "ocorrencia-policial-tipo-ocorrencia">
-            <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaPolicialDAO.buscarOcorrenciaPolicial();%>
-            <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
-            <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
-            </option>
-            <% } %>
-        </select>
-    </div>
 
-    <div>
-        <label for="ocorrencia-policial-descricao" class="">Descrição</label>
-        <textarea name="Descrição" id="ocorrencia-policial-descricao" cols="30" rows="10"></textarea>
-    </div>
-    <div>
 
-        <button type="submit">Emitir</button>
-    </div>
-</form>
+
 </body>
 </html>

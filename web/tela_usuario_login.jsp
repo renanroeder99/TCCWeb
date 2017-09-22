@@ -16,21 +16,22 @@
 </head>
 <body>
     <div>
-        <form action="_usuario_acao_login.jsp" method="post">
+        <form action="_usuario_acao_login.jsp" method="post"/>
             <div id="caixa-login">
+
                 <div id="caixa-login-interno">
                     <div id="caixa-login-label">Faça seu Login</div>
 
                     <div class="input-div">
-                        <input id="usuario-senha" type="text" value="Digite seu email" onfocus="this.value='';" />
+                        <input id="usuario-email" name="usuario-email" type="text" value="Digite seu email" onfocus="this.value='';" />
                     </div>
 
                     <div class="input-div">
-                        <input id="usuario-senha" type="password" value="Digite sua senha" onfocus="this.value='';"/>
+                        <input id="usuario-senha" name="usuario-senha" type="password" value="Digite sua senha" onfocus="this.value='';"/>
                     </div>
 
                     <div id="botoes">
-                        <div id="botao" title="Entrar">Entrar</div>
+                        <button id="botao" type="submit">Entrar</button>
 
 
 
@@ -39,8 +40,9 @@
                 </div>
 
             </div>
+    </div>
             <aside>
-                <img id="imagem" src="bandeira.png" title="bandeira de blumenau">
+                <img id="imagem" src="css/imagens/bandeira.png" title="bandeira de blumenau">
             </aside>
 </body>
 </html>

@@ -6,7 +6,7 @@
 
 <%
 
-    String email = request.getParameter("usuario-username");
+    String email = request.getParameter("usuario-email");
     String senha = request.getParameter("usuario-senha");
     Emissor emissor = EmissorDAO.realizarLogin(email, senha);
     Receptor receptor = ReceptorDAO.realizarLogin(email, senha);
