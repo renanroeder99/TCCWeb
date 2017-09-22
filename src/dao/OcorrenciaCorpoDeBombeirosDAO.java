@@ -94,7 +94,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
     public static BaseOcorrencia buscarOcorrenciaBombeiroPorId(int codigo){
         BaseOcorrencia ocorrenciasBombeiros = null;
-        String sql = "SELECT id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_bombeiros WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_bombeiros, id_emissor, cep, rua, numero_residencia FROM ocorrencias_bombeiros WHERE id = ?";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
