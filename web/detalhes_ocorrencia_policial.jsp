@@ -21,14 +21,29 @@
 </head>
 <body>
 <%BaseOcorrencia ocorrencia = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(Integer.parseInt(request.getParameter("id")));%>
-<h4>Nome: <%ocorrencia.getEmissor().getNome();%></h4>
-<h4>Ocorrencia: <%ocorrencia.getBaseTipoOcorrencia().getTipo();%></h4>
-<h4>Descrição: <%ocorrencia.getBaseTipoOcorrencia().getDescricao();%></h4>
-<h4>Telefone: <%ocorrencia.getEmissor().getTelefone();%></h4>
-<h4>RG: <%ocorrencia.getEmissor().getRg();%></h4>
-<h4>CPF: <%ocorrencia.getEmissor().getCpf();%></h4>
-<h4>Endereço: <%ocorrencia.getEmissor().getEndereco();%></h4>
-<h4>Email: <%ocorrencia.getEmissor().getEmail();%></h4>
-<h4>Quantidade de trotes: <%ocorrencia.getEmissor().getTrote();%></h4>
+<h4>Nome: <%=ocorrencia.getEmissor().getNome()%></h4>
+<h4>Ocorrencia: <%=ocorrencia.getBaseTipoOcorrencia().getTipo()%></h4>
+<h4>Descrição: <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%></h4>
+<h4>Telefone: <%=ocorrencia.getEmissor().getTelefone()%></h4>
+<h4>RG: <%=ocorrencia.getEmissor().getRg()%></h4>
+<h4>CPF: <%=ocorrencia.getEmissor().getCpf()%></h4>
+<h4>Endereço: <%=ocorrencia.getEmissor().getEndereco()%></h4>
+<h4>Email: <%=ocorrencia.getEmissor().getEmail()%></h4>
+<h4>Quantidade de trotes: <%=ocorrencia.getEmissor().getTrote()%></h4>
+<div>
+</div>
+<form action="ocorrencia_policial_validar.jsp?id=<%=ocorrencia.getId()%>" method="post">
+    <input type="radio" id="foi_trote" name="feedback">
+    <label for="foi_trote">Trote</label>
+    <input type="radio" id= "nao_foi_trote" name="feedback">
+    <label for="nao_foi_trote">Ocorrência válida</label>
+<div>
+
+
+</div>
+<button type="submit"> Confirmar</button>
+</form>
+
+<a href="ocorrencia_policial_excluir.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
 </body>
 </html>
