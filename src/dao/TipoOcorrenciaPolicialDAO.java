@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Wanderson Ferreira 30/08/2017
+ * @author Wanderson Ferreira 30/08/2017.
  */
 public class TipoOcorrenciaPolicialDAO {
 

@@ -17,7 +17,7 @@ import model.BaseOcorrencia;
 
 /**
  *
- * @author Daiane Machado, date = 31/08/17
+ * @author Daiane Machado, date = 31/08/17.
  */
 public class OcorrenciaCorpoDeBombeirosDAO {
 
@@ -161,8 +161,16 @@ public class OcorrenciaCorpoDeBombeirosDAO {
         }
     }
 
-    public static void alterarTrote(int codigo, boolean trote){
-
+    public static void alterarTrote(int id, boolean trote) {
+        Conexao conexao = new Conexao();
+        try {
+            String sql = "UPDATE ocorrencias_bombeiros SET trote = ? WHERE id = ?";
+            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.setBoolean(2, trote);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

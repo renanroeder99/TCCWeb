@@ -7,7 +7,6 @@
 <%
     Emissor emissor = new Emissor();
     emissor.setNome(request.getParameter("usuario-nome"));
-    emissor.setUsuario(request.getParameter("usuario-username"));
     emissor.setDataNascimento(Date.valueOf(request.getParameter("usuario-data-nascimento")));
     emissor.setEmail(request.getParameter("usuario-email"));
     emissor.setConfirmarEmail(request.getParameter("usuario-confirmar-email"));

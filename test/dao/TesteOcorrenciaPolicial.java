@@ -48,7 +48,6 @@ public class TesteOcorrenciaPolicial {
         ocorrenciaPolicial.setCep(145444);
         ocorrenciaPolicial.setNumeroResidencia(1004);
         ocorrenciaPolicial.setRua("Pqp ");
-        ocorrenciaPolicial.setLogradouro("casa");
 
         ocorrenciaPolicial.setBaseTipoOcorrencia(tipoOcorrenciaPolicial);
         ocorrenciaPolicial.setEmissor(emissor);
@@ -85,14 +84,12 @@ public class TesteOcorrenciaPolicial {
         ocorrenciaPolicial.setCep(14587444);
         ocorrenciaPolicial.setNumeroResidencia(1004);
         ocorrenciaPolicial.setRua("Pqp ");
-        ocorrenciaPolicial.setLogradouro("casa");
         ocorrenciaPolicial.setId(OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial));
         assertEquals(1, ocorrenciaPolicial.getId());
 
         ocorrenciaPolicial.setCep(12345678);
         ocorrenciaPolicial.setNumeroResidencia(291);
         ocorrenciaPolicial.setRua("Rua das Velhas com Cabelos Laranjas");
-        ocorrenciaPolicial.setLogradouro("");
         OcorrenciaPolicialDAO.alterar(ocorrenciaPolicial);
 
         BaseOcorrencia ocorrenciaPolicialBuscada = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(ocorrenciaPolicial.getId());
@@ -102,7 +99,6 @@ public class TesteOcorrenciaPolicial {
         assertEquals(ocorrenciaPolicialBuscada.getCep(), ocorrenciaPolicial.getCep());
         assertEquals(ocorrenciaPolicialBuscada.getNumeroResidencia(), ocorrenciaPolicial.getNumeroResidencia());
         assertEquals(ocorrenciaPolicialBuscada.getRua(), ocorrenciaPolicial.getRua());
-        assertEquals(ocorrenciaPolicialBuscada.getLogradouro(), ocorrenciaPolicial.getLogradouro());
 
     }
 

@@ -38,7 +38,6 @@ public class OcorrenciaDefesaCivilTest {
         ocorrenciaDefesaCivil.setCep(145444);
         ocorrenciaDefesaCivil.setNumeroResidencia(1004);
         ocorrenciaDefesaCivil.setRua("Pqp ");
-        ocorrenciaDefesaCivil.setLogradouro("casa");
 
         ocorrenciaDefesaCivil.setBaseTipoOcorrencia(tipoOcorrenciaDefesaCivil);
         ocorrenciaDefesaCivil.setEmissor(emissor);
@@ -75,14 +74,12 @@ public class OcorrenciaDefesaCivilTest {
         ocorrenciaDefesaCivil.setCep(44545555);
         ocorrenciaDefesaCivil.setNumeroResidencia(1004);
         ocorrenciaDefesaCivil.setRua("Pqp ");
-        ocorrenciaDefesaCivil.setLogradouro("casa");
         ocorrenciaDefesaCivil.setId(OcorrenciaDefesaCivilDAO.inserir(ocorrenciaDefesaCivil));
         assertEquals(1, ocorrenciaDefesaCivil.getId());
 
         ocorrenciaDefesaCivil.setCep(44444444);
         ocorrenciaDefesaCivil.setNumeroResidencia(104);
         ocorrenciaDefesaCivil.setRua("Pzxd");
-        ocorrenciaDefesaCivil.setLogradouro("dfdfcf");
         OcorrenciaDefesaCivilDAO.alterar(ocorrenciaDefesaCivil);
 
         BaseOcorrencia ocorrenciaDefesaCivilBuscada = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(ocorrenciaDefesaCivil.getId());
@@ -96,7 +93,6 @@ public class OcorrenciaDefesaCivilTest {
         assertEquals(ocorrenciaDefesaCivilBuscada.getCep(), ocorrenciaDefesaCivil.getCep());
         assertEquals(ocorrenciaDefesaCivilBuscada.getNumeroResidencia(), ocorrenciaDefesaCivil.getNumeroResidencia());
         assertEquals(ocorrenciaDefesaCivilBuscada.getRua(), ocorrenciaDefesaCivil.getRua());
-        assertEquals(ocorrenciaDefesaCivilBuscada.getLogradouro(), ocorrenciaDefesaCivil.getLogradouro());
 
 
 
