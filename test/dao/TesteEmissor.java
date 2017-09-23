@@ -28,7 +28,7 @@ public class TesteEmissor {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep("89070-730");
+        emissor.setCep(89070-730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setTrote(0);
         int codigoInserido = EmissorDAO.cadastrar(emissor);
@@ -46,13 +46,13 @@ public class TesteEmissor {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884999"));
         emissor.setEndereco("Avenida Ipiranga do Brasil");
-        emissor.setCep("89070-730");
+        emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setTrote(Integer.parseInt("0"));
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         assertEquals(1, emissor.getId());
-        
+
         emissor.setNome("Wanderson");
         emissor.setUsuario("wanwan");
         emissor.setEmail("wands@hotmail.com");
@@ -60,13 +60,13 @@ public class TesteEmissor {
         emissor.setCpf("1122723594");
         emissor.setRg(Integer.parseInt("884"));
         emissor.setEndereco("Avenidas");
-        emissor.setCep("8070-7301");
+        emissor.setCep(80707301);
         emissor.setTelefone(Integer.parseInt("97916393"));
         emissor.setTrote(Integer.parseInt("1"));
         emissor.setId(EmissorDAO.alterar(emissor));
 
-        Emissor cadastroBD = EmissorDAO.buscarUsuarioPorID(emissor.getId());
-        
+        Emissor cadastroBD = EmissorDAO.buscarEmissorPorID(emissor.getId());
+
         assertEquals(cadastroBD.getId(), emissor.getId());
         assertEquals(cadastroBD.getNome(), emissor.getNome());
         assertEquals(cadastroBD.getUsuario(), emissor.getUsuario());
@@ -94,12 +94,12 @@ public class TesteEmissor {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884"));
         emissor.setEndereco("Avenida");
-        emissor.setCep("89070-730");
+        emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setId(EmissorDAO.cadastrar(emissor));
-        emissor.setTrote(Integer.parseInt("0"));
+        emissor.setTrote(0);
         EmissorDAO.excluir(emissor.getId());
-        assertNull(EmissorDAO.buscarUsuarioPorID(emissor.getId()));
+        assertNull(EmissorDAO.buscarEmissorPorID(emissor.getId()));
 
     }
 

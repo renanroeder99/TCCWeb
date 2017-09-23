@@ -1,12 +1,22 @@
 package model;
 
 public class BaseOcorrencia {
-
-    private BaseTipoOcorrencia baseTipoOcorrencia;
-    private Emissor emissor;
-    private String rua, logradouro;
+    private String rua;
     private int cep;
     private int numeroResidencia;
+    private int id;
+    private int status;
+
+    private BaseTipoOcorrencia baseTipoOcorrencia;
+
+    private Emissor emissor;
+    public Emissor getEmissor() {
+        return emissor;
+    }
+
+    public void setEmissor(Emissor emissor) {
+        this.emissor = emissor;
+    }
 
     public int getId() {
         return id;
@@ -16,8 +26,6 @@ public class BaseOcorrencia {
         this.id = id;
     }
 
-    private int id;
-
     public BaseTipoOcorrencia getBaseTipoOcorrencia() {
         return baseTipoOcorrencia;
     }
@@ -26,28 +34,12 @@ public class BaseOcorrencia {
         this.baseTipoOcorrencia = baseTipoOcorrencia;
     }
 
-    public Emissor getEmissor() {
-        return emissor;
-    }
-
-    public void setEmissor(Emissor emissor) {
-        this.emissor = emissor;
-    }
-
     public String getRua() {
         return rua;
     }
 
     public void setRua(String rua) {
         this.rua = rua;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
     }
 
     public int getCep() {
@@ -62,7 +54,25 @@ public class BaseOcorrencia {
         return numeroResidencia;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public void setNumeroResidencia(int numeroResidencia) {
         this.numeroResidencia = numeroResidencia;
     }
+
+    public String endereco(){
+        return rua + " - " + numeroResidencia ;
+    }
+
+    @Override
+    public String toString(){
+        return endereco() + baseTipoOcorrencia ;
+    }
+
 }

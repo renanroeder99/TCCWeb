@@ -1,0 +1,13 @@
+body {
+   background-color: #b9cae8;
+}
+
+.pai{
+    font-size: 20px;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #b9cae8;
+    background-color: #b9cae8;
+
+}

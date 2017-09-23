@@ -7,14 +7,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
- * @author Daiane Machado, date = 08/29/17
+ * @author Daiane Machado, date = 08/29/17.
  */
 public class TipoOcorrenciaCorpoDeBombeirosDAO {
 
-    public static int chamadoBombeiros(BaseTipoOcorrencia baseTipoOcorrencia) {
+    public static int inserir(BaseTipoOcorrencia baseTipoOcorrencia) {
         String sql = "INSERT INTO tipo_ocorrencias_bombeiros (tipo, descricao) VALUES (?, ?);";
         Conexao conexao = new Conexao();
         try {
@@ -102,5 +103,30 @@ public class TipoOcorrenciaCorpoDeBombeirosDAO {
             conexao.desconectar();
         }
         return corpoDeBombeiros;
+    }
+
+
+    public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaCorpoDeBombeiros() {
+        ArrayList<BaseTipoOcorrencia> ocorrencias = new ArrayList<>();
+        String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_bombeiros";
+
+        Conexao conexao = new Conexao();
+        try {
+            Statement ps = conexao.conectar().createStatement();
+            ps.execute(sql);
+            ResultSet rs = ps.getResultSet();
+            while (rs.next()) {
+                BaseTipoOcorrencia ocorrencia = new BaseTipoOcorrencia();
+                ocorrencia.setId(rs.getInt("id"));
+                ocorrencia.setTipo(rs.getString("tipo"));
+                ocorrencia.setDescricao(rs.getString("descricao"));
+                ocorrencias.add(ocorrencia);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            conexao.desconectar();
+        }
+        return ocorrencias;
     }
 }

@@ -50,3 +50,6 @@ src/MyArrayList.java
 .idea
 TCCWeb.iml
 
+web/tela_usuario_login.jsp
+src/dao/TipoOcorrenciaPolicialDAO.java
+src/dao/TipoOcorrenciaPolicialDAO.java

@@ -1,6 +1,7 @@
 package dao;
 
 import database.Limpeza;
+import model.BaseTipoOcorrencia;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,8 +18,8 @@ public class TesteTipoOcorrenciaBombeiro {
         baseTipoOcorrencia.setTipo("tdxtrtrtrf");
         baseTipoOcorrencia.setDescricao("por ai");
 
-        int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia);
-        assertEquals(1, baseTipoOcorrencia);
+        int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia);
+        assertEquals(1, codigoInserido);
 
     }
 
@@ -28,7 +29,7 @@ public class TesteTipoOcorrenciaBombeiro {
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
         baseTipoOcorrencia.setTipo("wad");
         baseTipoOcorrencia.setDescricao("eeey5ty");
-        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia));
+        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia));
         
         assertEquals(1, baseTipoOcorrencia.getId());
 
@@ -45,13 +46,13 @@ public class TesteTipoOcorrenciaBombeiro {
 
         baseTipoOcorrencia.setTipo("abc");
         baseTipoOcorrencia.setDescricao("por aqui");
-        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia));
+        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia));
 
         assertEquals(1, baseTipoOcorrencia.getId());
 
         baseTipoOcorrencia.setTipo("diferente");
         baseTipoOcorrencia.setDescricao("tambem");
-        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.chamadoBombeiros(baseTipoOcorrencia));
+        baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia));
 
         BaseTipoOcorrencia cadastroBD = TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(baseTipoOcorrencia.getId());
 

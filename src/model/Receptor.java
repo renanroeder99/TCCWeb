@@ -10,8 +10,24 @@ package model;
  * @author 98930
  */
 public class Receptor {
-    private String nome, login, senha, cpf, cargo, endereco, email, cep;
+    private String nome;
+    private String login;
+    private String senha;
+    private String cpf;
+    private String cargo;
+    private String endereco;
+    private String email;
+    private String cep;
+    private String confirmarSenha;
     private int telefone, id;
+
+    public String getConfirmarSenha() {
+        return confirmarSenha;
+    }
+
+    public void setConfirmarSenha(String confirmarSenha) {
+        this.confirmarSenha = confirmarSenha;
+    }
 
     public int getId() {
         return id;
@@ -28,7 +44,6 @@ public class Receptor {
     public void setCep(String cep) {
         this.cep = cep;
     }
-    
 
     public String getNome() {
         return nome;

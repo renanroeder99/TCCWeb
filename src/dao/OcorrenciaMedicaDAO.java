@@ -10,28 +10,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
-import model.BaseEmissor;
 import model.BaseOcorrencia;
+import model.Emissor;
 
 /**
  *
- * @author Renan Roeder, 09-08-2017
+ * @author(Felipe de Jesus Cazagranda, date = 09-14-2017
+ *
  */
 public class OcorrenciaMedicaDAO {
     public static int inserir(BaseOcorrencia ocorrenciaMedica){
-        BaseEmissor baseEmissor = new BaseEmissor();
-        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencia_medica, id_emissor, cep, rua, numero_residencia, logradouro) VALUES(?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO ocorrencias_medicas (id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia) VALUES(?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         try{
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
-            ps.setInt(3, baseEmissor.getCep());
-            ps.setString(4, baseEmissor.getRua());
-            ps.setInt(5, baseEmissor.getNumeroResidencia());
-            ps.setString(6, baseEmissor.getLogradouro());
-            
+            ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
+            ps.setInt(3, ocorrenciaMedica.getCep());
+            ps.setString(4, ocorrenciaMedica.getRua());
+            ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
+
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             
@@ -41,6 +42,7 @@ public class OcorrenciaMedicaDAO {
             }
         }catch(SQLException ex){
             ex.printStackTrace();
+            return 0;
         }finally{
             conexao.desconectar();
         }
@@ -49,19 +51,17 @@ public class OcorrenciaMedicaDAO {
     
     public static int alterar(BaseOcorrencia ocorrenciaMedica) {
         Conexao conexao = new Conexao();
-        BaseEmissor baseEmissor = new BaseEmissor();
         try {
-            String sql = "UPDATE ocorrencias_medicas SET id_tipo_ocorrencia_medica = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, logradouro = ? WHERE id = ?;";
+            String sql = "UPDATE ocorrencias_medicas SET id_tipo_ocorrencia_medica = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ? WHERE id = ?;";
             
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
-            ps.setInt(2, baseEmissor.getEmissor().getId());
-            ps.setInt(3, baseEmissor.getCep());
-            ps.setString(4, baseEmissor.getRua());
-            ps.setInt(5, baseEmissor.getNumeroResidencia());
-            ps.setString(6, baseEmissor.getLogradouro());
-            ps.setInt(7, baseEmissor.getId());
+            ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
+            ps.setInt(3, ocorrenciaMedica.getCep());
+            ps.setString(4, ocorrenciaMedica.getRua());
+            ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
+            ps.setInt(6, ocorrenciaMedica.getId());
             int resultado = ps.executeUpdate();
             return resultado;
             
@@ -94,9 +94,9 @@ public class OcorrenciaMedicaDAO {
     
     public static BaseOcorrencia buscarOcorrenciaMedicaPorID(int codigo) {
         BaseOcorrencia ocorrenciaMedica = null;
-        String sql = "SELECT id_tipo_ocorrencia_medica, id_emissor, cep, rua, numero_residencia, logradouro FROM ocorrencias_medicas WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas WHERE id = ?";
         Conexao conexao = new Conexao();
-        BaseEmissor baseEmissor = new BaseEmissor();
+        Emissor emissor = new Emissor();
 
         try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
@@ -105,13 +105,12 @@ public class OcorrenciaMedicaDAO {
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
                 ocorrenciaMedica = new BaseOcorrencia();
-                baseEmissor.setId(codigo);
-                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOMPorID(rs.getInt("id_tipo_ocorrencia_medica")));
-                baseEmissor.setEmissor(EmissorDAO.buscarUsuarioPorID(rs.getInt("id_emissor")));
-                baseEmissor.setCep(rs.getInt("cep"));
-                baseEmissor.setRua(rs.getString("rua"));
-                baseEmissor.setNumeroResidencia(rs.getInt("numero_residencia"));
-                baseEmissor.setLogradouro(rs.getString("logradouro"));
+                ocorrenciaMedica.setId(codigo);
+                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(rs.getInt("id_tipo_ocorrencia_medica")));
+                ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaMedica.setCep(rs.getInt("cep"));
+                ocorrenciaMedica.setRua(rs.getString("rua"));
+                ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -120,6 +119,56 @@ public class OcorrenciaMedicaDAO {
         }
         return ocorrenciaMedica;
     }
-    
+
+    public static ArrayList<BaseOcorrencia> retornarOcorrenciasMedica(){
+        ArrayList<BaseOcorrencia> tabelaOcorrenciaMedica = new ArrayList<>();
+        String sql = "SELECT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas";
+        Conexao conexao = new Conexao();
+        try {
+            Statement stt = conexao.conectar().createStatement();
+            stt.execute(sql);
+            ResultSet rs = stt.getResultSet();
+            while (rs.next()){
+                BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
+                ocorrenciaMedica.setId(rs.getInt("id"));
+                ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
+                //Tipo de ocorrencia
+                ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
+                ocorrenciaMedica.setCep(rs.getInt("cep"));
+                ocorrenciaMedica.setRua(rs.getString("rua"));
+                ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
+                tabelaOcorrenciaMedica.add(ocorrenciaMedica);
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally {
+            conexao.desconectar();
+        }
+        return tabelaOcorrenciaMedica;
+    }
+
+    public static void excluirMedico(int id) {
+        String sql = "DELETE FROM ocorrencias_medicas WHERE id = ?";
+        try {
+            PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void alterarTrote(int id, int status) {
+        Conexao conexao = new Conexao();
+        try {
+            String sql = "UPDATE ocorrencias_medicas SET status = ? WHERE id = ?";
+            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.setInt(2, status);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
+
 

@@ -12,8 +12,46 @@ import java.sql.Date;
  * @author Renan Roeder, 08-22-2017
  */
 public class Emissor {
-    private String nome, usuario, email, confirmarEmail, senha, cpf, cep, endereco;
-    private int id, rg, telefone, trote;
+    private String nome;
+    private String usuario;
+    private String email;
+    private String confirmarEmail;
+    private String senha;
+    private String cpf;
+    private String endereco;
+    private String confirmarSenha;
+    private int rg, telefone, trote;
+    private int cep, numeroResidencia, id;
+    private String rua;
+    private Date dataNascimento;
+
+    public String getConfirmarSenha() {
+        return confirmarSenha;
+    }
+
+    public void setConfirmarSenha(String confirmarSenha) {
+        this.confirmarSenha = confirmarSenha;
+    }
+
+    public void setCep(int cep) {
+        this.cep = cep;
+    }
+
+    public int getNumeroResidencia() {
+        return numeroResidencia;
+    }
+
+    public void setNumeroResidencia(int numeroResidencia) {
+        this.numeroResidencia = numeroResidencia;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
 
     public int getTrote() {
         return trote;
@@ -31,7 +69,6 @@ public class Emissor {
         this.id = id;
     }
 
-
     public int getTelefone() {
         return telefone;
     }
@@ -47,7 +84,6 @@ public class Emissor {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    private Date dataNascimento;
 
     public String getNome() {
         return nome;
@@ -89,14 +125,6 @@ public class Emissor {
         this.cpf = cpf;
     }
 
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
     public String getEndereco() {
         return endereco;
     }
@@ -120,5 +148,16 @@ public class Emissor {
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    
+
+    public int getCep() {
+        return cep;
+    }
+
+    @Override
+    public String toString(){
+        return nome;
+
+    }
+
+
 }

@@ -12,10 +12,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
- *
- * @author(Felipe de Jesus Cazagranda, date = 08-30-2017)
+ * @author(Felipe de Jesus Cazagranda, date = 09-14-2017
  */
 public class TipoOcorrenciaMedicaDAO {
 
@@ -89,7 +89,31 @@ public class TipoOcorrenciaMedicaDAO {
         return -1;
     }
 
-    public static BaseTipoOcorrencia buscarOMPorID(int id) {
+    public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaMedica() {
+        ArrayList<BaseTipoOcorrencia> ocorrenciasMedicas = new ArrayList<>();
+        String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_medicas";
+
+        Conexao conexao = new Conexao();
+        try {
+            Statement ps = conexao.conectar().createStatement();
+            ps.execute(sql);
+            ResultSet rs = ps.getResultSet();
+            while (rs.next()) {
+                BaseTipoOcorrencia ocorrenciaMedica = new BaseTipoOcorrencia();
+                ocorrenciaMedica.setId(rs.getInt("id"));
+                ocorrenciaMedica.setTipo(rs.getString("tipo"));
+                ocorrenciaMedica.setDescricao(rs.getString("descricao"));
+                ocorrenciasMedicas.add(ocorrenciaMedica);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            conexao.desconectar();
+        }
+        return ocorrenciasMedicas;
+    }
+
+    public static BaseTipoOcorrencia buscarOcorrenciaMedicaPorID(int id) {
         BaseTipoOcorrencia ocorrenciaMedica = null;
         String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_medicas WHERE id = ?";
 

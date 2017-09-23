@@ -7,9 +7,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
- * @author 98930
+ * @author Antony
  */
 public class TipoOcorrenciaDefesaCivilDAO {
 
@@ -78,6 +79,30 @@ public class TipoOcorrenciaDefesaCivilDAO {
             conexao.desconectar();
         }
         return -1;
+    }
+
+    public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaDefesaCivil() {
+        ArrayList<BaseTipoOcorrencia> ocorrenciaDefesaCivil = new ArrayList<>();
+        String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_defesa_civil";
+
+        Conexao conexao = new Conexao();
+        try {
+            Statement ps = conexao.conectar().createStatement();
+            ps.execute(sql);
+            ResultSet rs = ps.getResultSet();
+            while (rs.next()) {
+                BaseTipoOcorrencia ocorrencia = new BaseTipoOcorrencia();
+                ocorrencia.setId(rs.getInt("id"));
+                ocorrencia.setTipo(rs.getString("tipo"));
+                ocorrencia.setDescricao(rs.getString("descricao"));
+                ocorrenciaDefesaCivil.add(ocorrencia);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            conexao.desconectar();
+        }
+        return ocorrenciaDefesaCivil;
     }
 
     public static BaseTipoOcorrencia buscarDefesaCivilPorId(int codigo) {
