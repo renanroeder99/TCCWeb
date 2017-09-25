@@ -22,7 +22,7 @@
     %>
 </head>
 <body>
-<form action="receptor_acao_cadastrar.jsp" method="POST">
+<form action="receptor_acao_cadastrar.jsp" method="POST"/>
 <script type="text/javascript">
     setTimeout(function(){
         location = ''
@@ -52,12 +52,15 @@
     <td><%= ocorrencia.getEmissor()%></td>
     <%if (ocorrencia.getStatus() == 1){%>
             <%statusTrote = "Trote";%>
+            <td><%=statusTrote%></td>
     <%}else if (ocorrencia.getStatus() == 2){%>
             <%statusTrote = "Validado";%>
-    <%}else{%>
-            <%statusTrote = "Em aberto";%>
+            <td><%=statusTrote%></td>
+    <%}else if(ocorrencia.getStatus() == 0){%>
+            <%statusTrote = "Em aberto" + ocorrencia.getStatus();%>
+            <td><%=statusTrote%></td>
     <%}%>
-    <td><%=statusTrote%></td>
+
     <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 </tr>
 <% } %>
