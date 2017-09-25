@@ -1,36 +1,27 @@
-body {
-   background-color: #b9cae8;
+body{
+    background: #cbe2ee;
 }
-
-.pai{
-    font-size: 20px;
-    text-align: center;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #b9cae8;
-    background-color: #b9cae8;
-
-}
-
-#caixa-cadastro-externa{
+#caixa-cadastrar-externa{
     background-color: #a9d1e5;
-    width: 900px;
-    height: 560px;
+    width: 1000px;
+    height: 600px;
     margin: 40px auto 0px;
     border-radius: 5px;
 
 }
+
 #caixa-cadastro-interno{
     background-color: white;
-    width:  890px;
-    height: 550px;
+    width:  990px;
+    height: 590px;
     position: absolute;
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0px 0px 0px black;
     overflow: hidden;
 }
-#caixa-ocorrencia-label{
+
+#caixa-cadastrar-label{
     height: 47px;
     text-align: center;
     font: bold 23px/47px sans-serif;
@@ -51,8 +42,141 @@ body {
     text-shadow: 1px 0px 1px white;
 
 }
-
 .input-div{
     margin: 40px;
     padding: 5px;
+
 }
+
+#usuario-nome{
+    width: 400px;
+    height: 40px;
+    padding-left: 5px;
+    font: normal 18px sans-serif;
+    color:#202123;
+    border-radius: 3px;
+    border: 1px solid #bfc3c5;
+    outline: none;
+}
+label{
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    left: 600px;
+    top: 60px;
+
+}
+#usuario-data-nascimento{
+    width: 150px;
+    height: 40px;
+    padding-left: 5px;
+    font: normal 18px sans-serif;
+    color: #202123;
+    border-radius: 3px;
+    border: 1px solid #bfc3c5;
+    outline: none;
+    position: absolute;
+    left: 600px;
+    top: 93px;
+
+}
+
+#usuario-email{
+    width: 400px;
+    height: 40px;
+    padding-left: 5px;
+    font: normal 18px sans-serif;
+    color: #202123;
+    border-radius: 3px;
+    border: 1px solid #bfc3c5;
+    outline: none;
+    position: absolute;
+    position: absolute;
+    left: 42px;
+    top: 180px;
+
+}
+#usuario-confirmar-email{
+    width: 400px;
+    height: 40px;
+
+
+}
+#usuario-senha{
+    width: 400px;
+    height: 40px;
+
+}
+#usuario-rg{
+    width: 400px;
+    height: 40px;
+
+}
+#usuario-cpf{
+    width: 400px;
+    height: 40px;
+
+}
+#usuario-cep{
+    width: 400px;
+    height: 40px;
+
+}
+#usuario-telefone{
+    width: 400px;
+    height: 40px;
+
+}
+#usuario-endereco{
+    width: 400px;
+    height: 40px;
+
+}
+#usuario-numero-residencia{
+    width: 150px;
+    height: 40px;
+
+}
+#botoes{
+    width: 50px;
+    margin-left: 25px;
+}
+
+#botao{
+    position: absolute;
+    left: 650px;
+    top: 400px;
+    padding: 10px 25px;
+    font: bold 12px sans-serif;
+    border-radius: 20px;
+    text-shadow: 0px 1px 0px white;
+    border:1px solid #c6e1eb;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3030+0,edf6f9+0,cde5ee+100,cde5ee+100 */
+    background: #ff3030; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3030 0%, #edf6f9 0%, #cde5ee 100%, #cde5ee 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ff3030 0%,#edf6f9 0%,#cde5ee 100%,#cde5ee 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ff3030 0%,#edf6f9 0%,#cde5ee 100%,#cde5ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3030', endColorstr='#cde5ee',GradientType=0 ); /* IE6-9 */
+
+    color: #527988;
+    box-shadow: 0px 0px 10px #c9c9c9;
+}
+
+#botao:hover{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cde5ee+0,cde5ee+0,edf6f9+100,ff3030+100 */
+    background: #cde5ee; /* Old browsers */
+    background: -moz-linear-gradient(top, #cde5ee 0%, #cde5ee 0%, #edf6f9 100%, #ff3030 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #cde5ee 0%,#cde5ee 0%,#edf6f9 100%,#ff3030 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #cde5ee 0%,#cde5ee 0%,#edf6f9 100%,#ff3030 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cde5ee', endColorstr='#ff3030',GradientType=0 ); /* IE6-9 */
+
+    cursor:pointer;
+}
+
+
+
+
+
+
+
