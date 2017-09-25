@@ -21,11 +21,12 @@
     baseOcorrenciaCorpoBombeiros.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-numero-residencia")));
     baseOcorrenciaCorpoBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-tipo-ocorrencia"))));
     baseOcorrenciaCorpoBombeiros.setEmissor(emissor);
+    baseOcorrenciaCorpoBombeiros.setStatus(0);
 
     int codigo = OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrenciaCorpoBombeiros);
     if(codigo > 0){
-        //response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
-        response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
+        response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
+
     }else{
 
     }

@@ -1,6 +1,5 @@
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaDefesaCivilDAO" %>
-<%@ page import="model.Emissor" %>
 <%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
   User: 98930
