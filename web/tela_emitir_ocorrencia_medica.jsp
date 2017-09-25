@@ -26,10 +26,10 @@
 <body>
 <jsp:include page="menu_superior_medico.jsp"/>
 
-<form action="ocorrencia_policial.jsp" method="POST"/>
+<form action="ocorrencia_medica.jsp.jsp" method="POST"/>
     <div id="caixa-cadastro-externa">
         <div id="caixa-cadastro-interno">
-            <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
+            <div id="caixa-ocorrencia-label">Ocorrência Medica</div>
 
             <div class="input-div">
                 <input id="ocorrencia-medica-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
