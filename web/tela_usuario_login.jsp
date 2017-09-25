@@ -30,7 +30,7 @@
                         <input id="usuario-senha" name="usuario-senha" type="password" value="Digite sua senha" onfocus="this.value='';"/>
                     </div>
                     <div class="input-div">
-                        <a href="tela_usuario_cadastrar.jsp">Cadastre-se</a>
+                        <a href="tela_usuario_cadastrar.jsp">Não é cadastrado? Cadastre-se.</a>
                     </div>
 
                     <div id="botoes">

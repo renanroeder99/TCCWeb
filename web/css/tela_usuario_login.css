@@ -64,12 +64,7 @@ body{
 
 
 }
-.input-div:hover{
-    background-color: #e0f1fc;
-}
-.input-div:hover input{
-    border-color: #4bdcf2;
-}
+
 
 #usuario-senha{
 
@@ -119,6 +114,12 @@ body{
 #botao-cadastrar{
     color: black;
 }
-.botao-cadastrar{
-    
+a:link {
+    text-decoration:none;
+}
+a{
+    color: #0099ff;
+    position: absolute;
+    left: 276px;
+    top: 200px;
 }

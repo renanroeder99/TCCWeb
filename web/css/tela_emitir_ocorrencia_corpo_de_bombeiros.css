@@ -84,7 +84,7 @@ body{
     top: 195px;
 
 }
-#ocorrencia-corpo_de_bombeiros-descricao{
+#ocorrencia_corpo_de_bombeiros-descricao{
     width: 395px;
     height: 182px;
     padding-left: 5px;
@@ -149,3 +149,5 @@ body{
 
     cursor: pointer;
 }
+
+
