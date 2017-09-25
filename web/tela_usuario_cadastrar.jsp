@@ -15,21 +15,15 @@
 </head>
 <body>
 
-<<<<<<< HEAD
+
 <form action="usuario_acao_cadastrar.jsp" method="POST">
 <div class="pai">
     <h1 class="cadastro">Cadastro</h1>
-    <div class="nome">
-        <label for="usuario-nome">Nome completo</label>
-        <input type="text" id="usuario-nome" name="usuario-nome" required="required" style="height: 25px">
+    <div class="input-div">
+        <input id="tela-cadastro-nome" type="text" value="Digite seu nome" onfocus="this.value='';" />
     </div>
-    <div class="nome_usuario">
-        <label for="usuario-username">Nome de usuário</label>
-        <input type="text" id="usuario-username" name="usuario-username"  required="required">
-    </div>
-    <div class="data_nascimento">
-        <label for="usuario-data-nascimento">Data de nascimento</label>
-        <input type="date" id="usuario-data-nascimento" name="usuario-data-nascimento" required="required">
+    <div class="input-div">
+        <input id="tela-cadastro-nascimento" type="date" value="Digite sua data de nascimento" onfocus="this.value='';" />
     </div>
     <div class="email">
         <label for="usuario-email">Email</label>
@@ -71,32 +65,9 @@
     <div class="numero_residencia">
         <label for="usuario-numero-residencia">Número de residência</label>
         <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required">
-=======
-<form action="usuario_acao_cadastrar.jsp" method="POST"/>
 
-    <div id="caixa-cadastro-externa">
-        <div id="caixa-cadastro-interna">
-            <div id="caixa-cadastro-label">Cadastro</div>
-
-            <div class="input-div">
-                <input id="usuario-nome" type="text" value="Digite seu Nome" onfocus="this.value='';"/>
-            </div>
-
-            <div class="input-div">
-                <input id="usuario-data-nascimento" type="date"/>
-            </div>
-
-            <div class="input-div">
-                <input  >
-
-            </div>
-
-        </div>
->>>>>>> de23a445705c6cd9dbc804e7419a3e08d43b393f
     </div>
-
-
-
-
+</div>
+</form>
 </body>
 </html>
