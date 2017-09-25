@@ -33,9 +33,9 @@
 <div>
 </div>
 <form action="ocorrencia_policial_validar.jsp?id=<%=ocorrencia.getId()%>" method="post">
-    <input type="radio" id="foi_trote" name="feedback">
+    <input type="radio" id="foi_trote" name="feedback" value="1">
     <label for="foi_trote">Trote</label>
-    <input type="radio" id= "nao_foi_trote" name="feedback">
+    <input type="radio" id= "nao_foi_trote" name="feedback" value="2">
     <label for="nao_foi_trote">Ocorrência válida</label>
 <div>
 

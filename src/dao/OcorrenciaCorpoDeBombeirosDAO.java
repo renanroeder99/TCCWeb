@@ -167,9 +167,12 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
             String sql = "UPDATE ocorrencias_bombeiros SET status = ? WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
-            ps.setInt(1, id);
-            ps.setInt(2, status);
+            ps.setInt(1, status);
+            ps.setInt(2, id);
             ps.executeUpdate();
+            if(status ==0){
+
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
