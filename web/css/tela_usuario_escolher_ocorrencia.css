@@ -1,26 +1,30 @@
 body{
     background: #cbe2ee;
-    margin: 40px;
+    margin: 60px;
 }
 #caixa-escolher{
     background-color: rgba(0, 0, 0, 0.05);
     width: 540px;
     height: 500px;
-    margin: 40px auto 0px;
+    margin: 105px auto 0px;
     border-radius: 5px;
 
 }
 h3{
-    color:  #555555;
-    position: static;
-    left: 870px;
-    top: 15px;
+    color: #984c4c;
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    font-family: sans-serif;
+    font-size: 16px;
 }
 .botao_sair{
     color: #555555;
     cursor: auto;
-    font-size: 20px;
-
+    font: bold 16px sans-serif;
+    position: absolute;
+    left: 1200px;
+    top: 55px;
 
 }
 a:link {
@@ -63,16 +67,6 @@ a:link {
     margin-left: 25px;
 }
 
-textarea{
-    width: 350px;
-    height: 200px;
-    position: absolute;
-    left: 870px;
-    top: 150px;
-    border-radius: 5px;
-    resize: none;
-
-}
 
 #ocorrencia-policial{
     position: absolute;
