@@ -16,9 +16,10 @@ h3{
     left: 870px;
     top: 15px;
 }
-#sair{
+.botao_sair{
     color: #555555;
     cursor: auto;
+    font-size: 20px;
 
 }
 a:link {
