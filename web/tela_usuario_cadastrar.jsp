@@ -57,7 +57,7 @@
              <input id="usuario-endereco" type="text" value="Endereço" onfocus="this.value='';" />
          </div>
            <div class="input-div">
-               <input id="usuario-numero-residencia" type="number" value="Número Residência" onfocus="this.value='';" />
+               <input id="usuario-numero-residencia" type="text" value="Número Residência" onfocus="this.value='';" />
            </div>
        </div>
        <div id="botoes">
