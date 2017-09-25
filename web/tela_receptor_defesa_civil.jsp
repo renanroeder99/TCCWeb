@@ -52,14 +52,12 @@
     <td><%= ocorrencia.getEmissor()%></td>
     <%if (ocorrencia.getStatus() == 1){%>
     <%statusTrote = "Trote";%>
-    <td><%=statusTrote%></td>
     <%}else if (ocorrencia.getStatus() == 2){%>
     <%statusTrote = "Validado";%>
-    <td><%=statusTrote%></td>
-    <%}else if(ocorrencia.getStatus() == 0){%>
+    <%}else {%>
     <%statusTrote = "Em aberto" + ocorrencia.getStatus();%>
-    <td><%=statusTrote%></td>
     <%}%>
+    <td><%=statusTrote%></td>
         <td><a href="detalhes_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
     </tr>
     <% } %>
