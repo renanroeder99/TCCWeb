@@ -156,26 +156,19 @@ public class OcorrenciaCorpoDeBombeirosDAO {
         }
     }
 
-    public static void alterarTrote(int id, int  status) {
+    public static int alterarTrote(int id, int  status) {
         Conexao conexao = new Conexao();
         try {
-            /*
-            0 - Não foi definido
-            1 - Trote
-            2 - Ok
-             */
 
             String sql = "UPDATE ocorrencias_bombeiros SET status_trote = ? WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setInt(1, status);
             ps.setInt(2, id);
-            ps.executeUpdate();
-            if(status ==0){
-
-            }
+            return ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return -1;
     }
 
 }

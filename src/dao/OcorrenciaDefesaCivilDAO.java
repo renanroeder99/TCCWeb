@@ -161,16 +161,18 @@ public class OcorrenciaDefesaCivilDAO {
         }
     }
 
-    public static void alterarTrote(int id, int status) {
+    public static int alterarTrote(int id, int status) {
         Conexao conexao = new Conexao();
         try {
             String sql = "UPDATE ocorrencias_defesa_civil SET status_trote = ? WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             ps.setInt(1, id);
             ps.setInt(2, status);
+            return ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return -1;
     }
 
 }
