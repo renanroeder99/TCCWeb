@@ -4,7 +4,7 @@
 <%@ page import="model.Emissor" %>
 <%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
-  User: 98930
+  User: Wanderson Ferreira
   Date: 14/09/2017
   Time: 14:53
   To change this template use File | Settings | File Templates.
@@ -24,7 +24,7 @@
     %>
 </head>
 <body>
-
+<form action="receptor_acao_cadastrar.jsp" method="POST">
     <script type="text/javascript">
         setTimeout(function(){
             location = ''

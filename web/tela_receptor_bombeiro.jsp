@@ -22,14 +22,13 @@
     %>
 </head>
 <body>
+<form action="receptor_acao_cadastrar.jsp" method="POST">
 <script type="text/javascript">
     setTimeout(function(){
         location = ''
     },15000)
 </script>
 <table>
-
-
     <thead>
     <tr>
             <th>Código</th>
@@ -59,8 +58,6 @@
             <%statusTrote = "Em aberto";%>
     <%}%>
     <td><%=statusTrote%></td>
-
-
     <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 </tr>
 <% } %>

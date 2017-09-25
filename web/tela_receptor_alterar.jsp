@@ -22,8 +22,6 @@
 
 <% Receptor receptor = ReceptorDAO.buscarReceptorPorID(Integer.parseInt(request.getParameter("id"))); %>
 
-
-
 <form action="receptor_acao_cadastrar.jsp" method="POST">
     <div>
         <label for="receptor-nome">Nome Completo</label>
