@@ -32,15 +32,15 @@
             <div id="caixa-ocorrencia-label">Ocorrência Médica</div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+                <input id="ocorrencia-medica-rua" name="ocorrencia-medica-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
             </div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+                <input id="ocorrencia-medica-numero-residencia" name="ocorrencia-medica-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
             </div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+                <input id="ocorrencia-medica-cep" name="ocorrencia-medica-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
             </div>
 
             <div class="input-div">

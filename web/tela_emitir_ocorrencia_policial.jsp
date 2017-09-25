@@ -34,17 +34,17 @@
             <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
 
             <div class="input-div">
-                <input id="ocorrencia-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+                <input id="ocorrencia-policial-rua" name="ocorrencia-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
             </div>
 
 
             <div class="input-div">
-                <input id="ocorrencia-policial-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+                <input id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
             </div>
 
 
             <div class="input-div">
-                <input id="ocorrencia-policial-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+                <input id="ocorrencia-policial-cep" name="ocorrencia-policial-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
             </div>
 
 

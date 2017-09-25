@@ -48,19 +48,21 @@
     <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
     <tr>
         <%String statusTrote;%>
+
         <td><%= ocorrencia.getId()%></td>
         <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
         <td><%= ocorrencia.endereco()%></td>
         <td><%= ocorrencia.getEmissor()%></td>
         <%if (ocorrencia.getStatus() == 1){%>
         <%statusTrote = "Trote";%>
+        <td><%=statusTrote%></td>
         <%}else if (ocorrencia.getStatus() == 2){%>
         <%statusTrote = "Validado";%>
-        <%}else{%>
-        <%statusTrote = "Em aberto";%>
-        <%}%>
         <td><%=statusTrote%></td>
-        </td>
+        <%}else if(ocorrencia.getStatus() == 0){%>
+        <%statusTrote = "Em aberto" + ocorrencia.getStatus();%>
+        <td><%=statusTrote%></td>
+        <%}%>
         <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
     </tr>

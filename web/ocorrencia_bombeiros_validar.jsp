@@ -3,7 +3,7 @@
 <%
 
     int id = Integer.parseInt(request.getParameter("id"));
-    int trote = Integer.parseInt(request.getParameter("status"));
+    int trote = Integer.parseInt(request.getParameter("feedback"));
     if (id > 0) {
         OcorrenciaCorpoDeBombeirosDAO.alterarTrote(id, trote);
 

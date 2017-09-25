@@ -50,7 +50,7 @@
 </head>
 <body>
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
-<h3 align="center">Bem Vindo,  <%=emissor.getUsuario()%>! <a href="tela_usuario_login.jsp"></a></h3>
+<h3 align="center">Bem Vindo, <%=emissor.getNome()%>! <a href="tela_usuario_login.jsp"></a></h3>
 
 
 
