@@ -21,7 +21,6 @@
     baseOcorrenciaCorpoBombeiros.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-numero-residencia")));
     baseOcorrenciaCorpoBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-tipo-ocorrencia"))));
     baseOcorrenciaCorpoBombeiros.setEmissor(emissor);
-    baseOcorrenciaCorpoBombeiros.setStatus(0);
 
     int codigo = OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrenciaCorpoBombeiros);
     if(codigo > 0){

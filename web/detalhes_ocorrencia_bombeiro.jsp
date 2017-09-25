@@ -35,9 +35,9 @@
 <% if(ocorrencia.getStatus() == 0){ %>
     <div>
         <form action="ocorrencia_bombeiros_validar.jsp?id=<%=ocorrencia.getId()%>" method="post">
-            <input type="radio" id="foi_trote" name="status" value="1">
+            <input type="radio" id="foi_trote" name="feedback" value="1">
             <label for="foi_trote">Trote</label>
-            <input type="radio" id= "nao_foi_trote" name="status" value="2">
+            <input type="radio" id= "nao_foi_trote" name="feedback" value="2">
             <label for="nao_foi_trote">Ocorrência válida</label>
 
 

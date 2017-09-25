@@ -33,7 +33,6 @@
     ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
     ocorrencia.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-defesa-civil-tipo-ocorrencia"))));
     ocorrencia.setEmissor(emissor);
-    ocorrencia.setStatus(0);
     int codigo = OcorrenciaDefesaCivilDAO.inserir(ocorrencia);
     if(codigo > 0){
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");

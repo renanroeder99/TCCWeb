@@ -22,7 +22,6 @@
     baseOcorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-medica-numero-residencia")));
     baseOcorrencia.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(Integer.parseInt(request.getParameter("ocorrencia-medica-tipo-ocorrencia"))));
     baseOcorrencia.setEmissor(emissor);
-    baseOcorrencia.setStatus(0);
     int codigo = OcorrenciaMedicaDAO.inserir(baseOcorrencia);
     if(codigo > 0){
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");

@@ -55,7 +55,7 @@
     <%}else if (ocorrencia.getStatus() == 2){%>
     <%statusTrote = "Validado";%>
     <%}else {%>
-    <%statusTrote = "Em aberto" + ocorrencia.getStatus();%>
+    <%statusTrote = "Em aberto";%>
     <%}%>
     <td><%=statusTrote%></td>
         <td><a href="detalhes_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>

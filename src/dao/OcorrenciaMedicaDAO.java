@@ -94,7 +94,7 @@ public class OcorrenciaMedicaDAO {
     
     public static BaseOcorrencia buscarOcorrenciaMedicaPorID(int codigo) {
         BaseOcorrencia ocorrenciaMedica = null;
-        String sql = "SELECT id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, status_trote FROM ocorrencias_medicas WHERE id = ?";
         Conexao conexao = new Conexao();
         Emissor emissor = new Emissor();
 
@@ -111,6 +111,7 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setCep(rs.getInt("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaMedica.setStatus(rs.getInt("status_trote"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
