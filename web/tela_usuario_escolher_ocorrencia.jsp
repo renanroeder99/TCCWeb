@@ -49,7 +49,7 @@
 
 </head>
 <body>
-<h3 align="center">Bem Vindo  <%=emissor.getUsuario()%>! , <a href="" id="sair">Sair</a></h3>
+<h3 align="center">Bem Vindo, <%=emissor.getUsuario()%>! <a href="" id="sair">Sair</a></h3>
 
 
 <div id="caixa-escolher">
@@ -80,7 +80,7 @@
 </div>
 
 <aside>
-    <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard"></textarea>
+    <textarea cols=80 id="caixa_descricao_ocorrencia" rows="10" name="opiniao" maxlength="500" wrap="hard"></textarea>
 </aside>
 
 

@@ -13,7 +13,7 @@ body{
 h3{
     color:  #555555;
     position: absolute;
-    left: 870;
+    left: 870px;
     top: 15px;
 }
 #sair{
@@ -62,19 +62,20 @@ a:link {
 }
 
 textarea{
-    width: 350;
-    height: 200;
+    width: 350px;
+    height: 200px;
     position: absolute;
-    left: 870;
-    top: 150;
+    left: 870px;
+    top: 150px;
     border-radius: 5px;
     resize: none;
+
 }
 
 #ocorrencia-policial{
     position: absolute;
-    width: 170;
-    height: 80;
+    width: 170px;
+    height: 80px;
     left: 50px;
     top: 120px;
     padding: 10px 25px;
@@ -96,8 +97,8 @@ textarea{
 
 #ocorrencia-medica{
     position: absolute;
-    width: 170;
-    height: 80;
+    width: 170px;
+    height: 80px;
     left: 300px;
     top: 120px;
 
@@ -121,8 +122,8 @@ textarea{
 
 #ocorrencia-bombeiros{
     position: absolute;
-    width: 170;
-    height: 80;
+    width: 170px;
+    height: 80px;
     left: 300px;
     top: 300px;
 
@@ -147,8 +148,8 @@ textarea{
 
 #ocorrencia-defesa-civil{
     position: absolute;
-    width: 170;
-    height: 80;
+    width: 170px;
+    height: 80px;
     left: 50px;
     top: 300px;
 
