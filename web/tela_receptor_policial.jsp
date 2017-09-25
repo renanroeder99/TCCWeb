@@ -30,6 +30,7 @@
             location = ''
         },15000)
     </script>
+    <table>
     <thead>
     <tr>
         <th>Código</th>
@@ -58,7 +59,7 @@
         <%}else{%>
         <%statusTrote = "Em aberto";%>
         <%}%>
-        <td><%=statusTrote%></td>Emissor().getNome()%>
+        <td><%=statusTrote%></td>
         </td>
         <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
