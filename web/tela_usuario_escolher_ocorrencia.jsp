@@ -49,12 +49,8 @@
 
 </head>
 <body>
-<<<<<<< HEAD
-<h3 align="center">Bem Vindo  <%=emissor.getUsuario()%>! , <a href="tela_usuario_login.jsp" id="sair">Sair</a></h3>
-=======
-<h3 align="center">Bem Vindo <%=emissor.getUsuario()%>! , <a href="" id="sair">Sair</a></h3>
->>>>>>> 6e7c867cd8f7fd0b790db6dcfe67a78d42eda798
 
+<h3 align="center">Bem Vindo  <%=emissor.getUsuario()%>! , <a href="tela_usuario_login.jsp" id="sair">Sair</a></h3>
 
 <div id="caixa-escolher">
 
