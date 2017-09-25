@@ -19,11 +19,13 @@
 <form action="usuario_acao_cadastrar.jsp" method="POST">
 <div class="pai">
     <h1 class="cadastro">Cadastro</h1>
-    <div class="input-div">
-        <input id="tela-cadastro-nome" type="text" value="Digite seu nome" onfocus="this.value='';" />
+    <div>
+        <label for="nome-usuario">Nome</label>
+        <input type="text" id="nome-usuario" name="nome-usuario" required="required">
     </div>
-    <div class="input-div">
-        <input id="tela-cadastro-nascimento" type="date" value="Digite sua data de nascimento" onfocus="this.value='';" />
+    <div>
+        <label for="data-usuario">Data De Nascimento</label>
+        <input type="date" id="data-usuario" name="data-usuario" required="required">
     </div>
     <div class="email">
         <label for="usuario-email">Email</label>
@@ -48,7 +50,6 @@
     <div class="cpf">
         <label for="usuario-cpf">CPF</label>
         <input type="text" id="usuario-cpf" name="usuario-cpf" required="required">
-    </div>
     </div>
     <div class="cep">
         <label for="usuario-cep">CEP</label>
