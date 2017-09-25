@@ -34,7 +34,7 @@
             <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
 
             <div class="input-div">
-                <input id="ocorrência-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+                <input id="ocorrencia-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
             </div>
 
 

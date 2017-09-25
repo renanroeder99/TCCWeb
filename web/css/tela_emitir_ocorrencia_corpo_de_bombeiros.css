@@ -111,12 +111,6 @@ body{
     top: 195px;
 }
 
-.input-div:hover{
-    background-color: #e0f1fc;
-}
-.input-div:hover input{
-    border-color: #4bdcf2;
-}
 
 #usuario-senha{
 
