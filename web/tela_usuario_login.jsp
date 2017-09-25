@@ -29,6 +29,9 @@
                     <div class="input-div">
                         <input id="usuario-senha" name="usuario-senha" type="password" value="Digite sua senha" onfocus="this.value='';"/>
                     </div>
+                    <div class="input-div">
+                        <a href="tela_usuario_cadastrar.jsp">Cadastre-se</a>
+                    </div>
 
                     <div id="botoes">
                         <button id="botao" type="submit">Entrar</button>
