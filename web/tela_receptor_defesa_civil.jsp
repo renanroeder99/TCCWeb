@@ -27,6 +27,7 @@
         location = ''
     },15000)
 </script>
+<table>
 <thead>
 <tr>
     <th>Código</th>
