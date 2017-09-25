@@ -50,10 +50,8 @@
 </head>
 <body>
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
+<div class="div-pai">
 <h3 align="center">Bem Vindo,  <%=emissor.getUsuario()%>! <a href="tela_usuario_login.jsp"></a></h3>
-
-
-
 
 <div id="caixa-escolher">
 
@@ -62,29 +60,20 @@
         <div id="caixa-escolher-label">Escolha a Ocorrência</div>
 
         <div id="botoes">
-            <a href="tela_emitir_ocorrencia_policial.jsp"><button id="ocorrencia-policial">Ocorrência Policial</button></a>
+            <a href="tela_emitir_ocorrencia_policial.jsp" title="
+O 190 é destinado ao atendimento da população nas situações de urgências policiais, por isso ao utilizá-lo, seja breve, pois outra pessoa pode estar em risco real e precisando da PM o mais rápido possível."><button id="ocorrencia-policial">Ocorrência Policial</button></a>
 
+            <a href="tela_emitir_ocorrencia_medica.jsp" title="O Serviço de Atendimento Móvel de Urgência realiza o atendimento de urgência e emergência, por intermédio de ambulâncias, em qualquer lugar: residências, locais de trabalho e vias públicas."><button id="ocorrencia-medica">Ocorrência Médica</button></a>
 
+            <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" title="Tem a missão de proteção de vidas, patrimônio e meio ambiente e busca ser referência para a sociedade pela excelência dos serviços prestados, por meio da qualificação dos seus integrantes, da gestão estratégica da Instituição, do constante reequipamento e da inovação tecnológica."><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
 
-
-            <a href="tela_emitir_ocorrencia_medica.jsp"><button id="ocorrencia-medica">Ocorrência Médica</button></a>
-
-
-
-
-            <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp"><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
-
-
-
-            <a href="tela_emitir_ocorrencia_defesa_civil.jsp"><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
+            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="DEFESA CIVIL (SIADE) é um serviço telefônico especial, não tarifado, destinado à comunicação de emergência com a Defesa Civil, de âmbito local, para atender a comunidade do Distrito Federal. "><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
         </div>
 
     </div>
 </div>
+</div>
 
-<aside>
-    <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard"></textarea>
-</aside>
 
 
 </body>
