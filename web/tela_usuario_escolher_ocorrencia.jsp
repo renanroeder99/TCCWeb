@@ -49,7 +49,7 @@
 
 </head>
 <body>
-<h3 align="center">Bem Vindo  <%=emissor.getUsuario()%>! , <a href="" id="sair">Sair</a></h3>
+<h3 align="center">Bem Vindo  <%=emissor.getUsuario()%>! , <a href="deslogar.jsp" id="sair">Sair</a></h3>
 
 
 <div id="caixa-escolher">
