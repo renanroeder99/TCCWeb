@@ -1,7 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaMedicaDAO" %>
-<%@ page import="model.Emissor" %>
 <%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
   User: 98930
