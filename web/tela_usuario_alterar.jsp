@@ -18,47 +18,47 @@
 <% Emissor emissor = EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("id"))); %>
 
 <form action="usuario_acao_alterar.jsp?id=" method="POST">
-    
+
     <div id="caixa-cadastrar-externa">
         <div id="caixa-cadastro-interno">
-            <div id="caixa-cadastrar-label">Cadastro</div>
+            <div id="caixa-cadastrar-label">Alterar Cadastro</div>
 
             <div class="input-div">
-                <input id="usuario-nome" type="text" placeholder="Nome"/>
+                <input id="usuario-nome" name="usuario-nome" type="text" placeholder="Nome"/>
             </div>
             <div class="input-div">
                 <label for="usuario-data-nascimento">Data Nascimento</label>
-                <input id="usuario-data-nascimento" type="date"/>
+                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date"/>
             </div>
             <div class="input-div">
-                <input id="usuario-email" type="email" placeholder="Email"/>
+                <input id="usuario-email" name="usuario-email" type="email" placeholder="Email"/>
             </div>
             <div class="input-div">
-                <input id="usuario-confirmar-email" type="email"placeholder="Confirmar Email" />
+                <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email"placeholder="Confirmar Email" />
             </div>
 
             <div class="input-div">
-                <input id="usuario-senha" type="password" placeholder="Senha" />
+                <input id="usuario-senha" name="usuario-senha" type="password" placeholder="Senha" />
             </div>
             <div class="input-div">
-                <input id="usuario-rg" type="text" placeholder="RG"/>
+                <input id="usuario-rg" name="usuario-rg" type="text" placeholder="RG"/>
 
             </div>
             <div class="input-div">
-                <input id="usuario-cpf" type="text" placeholder="CPF" />
+                <input id="usuario-cpf"  name="usuario-cpf" type="text" placeholder="CPF" />
 
             </div>
             <div class="input-div">
-                <input id="usuario-cep" type="text" placeholder="CEP"/>
+                <input id="usuario-cep"  name="usuario-cep"" type="text" placeholder="CEP"/>
             </div>
             <div class="input-div">
-                <input id="usuario-telefone" type="text" placeholder="Telefone" />
+                <input id="usuario-telefone"  name="usuario-telefone" type="text" placeholder="Telefone" />
             </div>
             <div class="input-div">
-                <input id="usuario-endereco" type="text" placeholder="Endereço" />
+                <input id="usuario-endereco" name="usuario-endereco" type="text" placeholder="Endereço" />
             </div>
             <div class="input-div">
-                <input id="usuario-numero-residencia" type="text" placeholder="N° Residência" />
+                <input id="usuario-numero-residencia" name="usuario-numero-residencia" type="text" placeholder="N° Residência" />
             </div>
         </div>
         <div id="botoes">

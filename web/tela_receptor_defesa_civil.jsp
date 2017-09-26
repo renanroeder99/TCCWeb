@@ -12,6 +12,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="css/tabelas.css">
+
     <title>Ocorrencias Defesa Civil</title>
     <%
         if(session.getAttribute("receptor") == null){
