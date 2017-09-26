@@ -34,17 +34,17 @@
             <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
 
             <div class="input-div">
-                <input id="ocorrencia-policial-rua" name="ocorrencia-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+                <input id="ocorrencia-policial-rua" name="ocorrencia-policial-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" required="required"/>
             </div>
 
 
             <div class="input-div">
-                <input id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+                <input id="ocorrencia-policial-numero-residencia" name="ocorrencia-policial-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" required="required"/>
             </div>
 
 
             <div class="input-div">
-                <input id="ocorrencia-policial-cep" name="ocorrencia-policial-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+                <input id="ocorrencia-policial-cep" name="ocorrencia-policial-cep" value="Digite o Cep" type="text" onfocus="this.value='';" required="required"/>
             </div>
 
 
@@ -54,7 +54,7 @@
                 <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
             </div>
             <div class="input-div">
-                <select name = "ocorrencia-policial-tipo-ocorrencia" id="ocorrencia-policial-tipo-ocorrencia">
+                <select name = "ocorrencia-policial-tipo-ocorrencia" id="ocorrencia-policial-tipo-ocorrencia" required="required">
                     <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaPolicialDAO.buscarOcorrenciaPolicial();%>
                     <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                     <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
