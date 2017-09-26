@@ -24,7 +24,7 @@
     %>
 </head>
 <body>
-<form action="receptor_acao_cadastrar.jsp" method="POST">
+<form action="receptor_acao_cadastrar.jsp" method="POST"/>
     <script type="text/javascript">
         setTimeout(function(){
             location = ''
@@ -56,7 +56,7 @@
         <select name = "status-trote" id="status-trote">
             <% String statusTrote[] = {"Em aberto", "Trote", "Validado"};%>
             <% for (byte i = 0; i < 3; i++) { %>
-            <option value="<%=statusTrote[i] %>"
+            <option value="<%=statusTrote[i] %>" <%=statusTrote[i]%>
             </option>
             <% } %>
         </select>
@@ -69,6 +69,6 @@
     </table>
         <a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
 
-</form>
+
 </body>
 </html>
