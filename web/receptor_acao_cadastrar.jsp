@@ -28,15 +28,14 @@
     receptor.setNome(request.getParameter("receptor-nome"));
     receptor.setCpf(request.getParameter("receptor-cpf"));
     receptor.setEmail(request.getParameter("receptor-email"));
-    receptor.setConfirmarSenha(request.getParameter("receptor-confirmar-senha"));
-    receptor.setSenha(request.getParameter("senha"));
+    receptor.setSenha(request.getParameter("receptor-senha"));
     receptor.setTelefone(Integer.parseInt(request.getParameter("receptor-telefone")));
     receptor.setEndereco(request.getParameter("receptor-enderenco"));
     receptor.setCep(request.getParameter("receptor-cep"));
     receptor.setCargo(request.getParameter("receptor-cargo"));
     int codigo = ReceptorDAO.cadastrar(receptor);
     if(codigo > 0){
-        response.sendRedirect("tela_receptor");
+        response.sendRedirect("tela_usuario_login.jsp");
     }else{
 
     }
