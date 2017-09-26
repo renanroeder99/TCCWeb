@@ -41,7 +41,6 @@
 
     </div>
 
-
     <div>
         <label for="receptor-telefone">Telefone</label>
         <input type="text" name="receptor-telefone" id="receptor-telefone" name="receptor-telefone">
