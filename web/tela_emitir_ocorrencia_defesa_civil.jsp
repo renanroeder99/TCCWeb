@@ -20,7 +20,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Ocorrência Policial</title>
+    <title>Ocorrência Desefa Civil</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
 </head>
@@ -32,7 +32,7 @@
 
 <div id="caixa-cadastro-externa">
     <div id="caixa-cadastro-interno">
-        <div id="caixa-ocorrencia-label">Ocorrência Defesa Cívil</div>
+        <div id="caixa-ocorrencia-label">Ocorrência Defesa Civil</div>
 
         <div class="input-div">
             <input id="ocorrência-defesa-rua" name="ocorrência-defesa-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" required="required"/>

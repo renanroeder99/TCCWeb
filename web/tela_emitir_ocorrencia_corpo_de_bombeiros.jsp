@@ -35,17 +35,17 @@
         <div id="caixa-ocorrencia-label">Ocorrência Corpo de Bombeiros</div>
 
         <div class="input-div">
-            <input id="ocorrência-corpo_de_bombeiros-rua" name="ocorrência-corpo_de_bombeiros-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+            <input id="ocorrência-corpo_de_bombeiros-rua" name="ocorrência-corpo_de_bombeiros-rua" type="text" value="Digite o Endereço" onfocus="this.value='';"required="required" />
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-corpo_de_bombeiros-numero-residencia" name="ocorrencia-corpo_de_bombeiros-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+            <input id="ocorrencia-corpo_de_bombeiros-numero-residencia" name="ocorrencia-corpo_de_bombeiros-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';"required="required" />
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-corpo_de_bombeiros-cep" name="ocorrencia-corpo_de_bombeiros-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+            <input id="ocorrencia-corpo_de_bombeiros-cep" name="ocorrencia-corpo_de_bombeiros-cep" value="Digite o Cep" type="text" onfocus="this.value='';"required="required"/>
         </div>
 
 
@@ -53,7 +53,7 @@
             <textarea cols=80 id="ocorrencia_corpo_de_bombeiros-descricao" name="ocorrencia_corpo_de_bombeiros-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
         </div>
         <div class="input-div">
-            <select name = "ocorrencia-corpo_de_bombeiros-tipo-ocorrencia" id="ocorrencia-corpo_de_bombeiros-tipo-ocorrencia">
+            <select name = "ocorrencia-corpo_de_bombeiros-tipo-ocorrencia" id="ocorrencia-corpo_de_bombeiros-tipo-ocorrencia"required="required">
                 <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaCorpoDeBombeirosDAO.buscarOcorrenciaCorpoDeBombeiros();%>
                 <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                 <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
