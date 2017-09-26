@@ -21,7 +21,7 @@
     
     <div id="caixa-cadastrar-externa">
         <div id="caixa-cadastro-interno">
-            <div id="caixa-cadastrar-label">Cadastro</div>
+            <div id="caixa-cadastrar-label">Alterar Cadastro</div>
 
             <div class="input-div">
                 <input id="usuario-nome" type="text" placeholder="Nome"/>
