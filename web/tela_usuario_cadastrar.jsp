@@ -15,87 +15,56 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-<form action="usuario_acao_cadastrar.jsp" method="POST">
-<div class="pai">
-    <h1 class="cadastro">Cadastro</h1>
-    <div class="nome">
-        <label for="usuario-nome">Nome completo</label>
-        <input type="text" id="usuario-nome" name="usuario-nome" required="required" style="height: 25px">
-    </div>
-    <div class="nome_usuario">
-        <label for="usuario-username">Nome de usuário</label>
-        <input type="text" id="usuario-username" name="usuario-username"  required="required">
-    </div>
-    <div class="data_nascimento">
-        <label for="usuario-data-nascimento">Data de nascimento</label>
-        <input type="date" id="usuario-data-nascimento" name="usuario-data-nascimento" required="required">
-    </div>
-    <div class="email">
-        <label for="usuario-email">Email</label>
-        <input type="email" id="usuario-email" name="usuario-email" required="required">
-    </div>
-    <div class="confirmar_email">
-        <label for="usuario-confirmar-email">Confirmar email</label>
-        <input type="email" id="usuario-confirmar-email" name="usuario-confirmar-email" required="required">
-    </div>
-    <div class="senha">
-        <label for="usuario-senha">Senha</label>
-        <input type="password" id="usuario-senha" name="usuario-senha" required="required">
-    </div>
-    <div class="confirmar_senha">
-        <label for="usuario-confirmar-senha">Confirmar senha</label>
-        <input type="password" id="usuario-confirmar-senha" name="usuario-confirmar-senha" required="required">
-    </div>
-    <div class="rg">
-        <label for="usuario-rg">RG</label>
-        <input type="number" id="usuario-rg" name="usuario-rg" required="required">
-    </div>
-    <div class="cpf">
-        <label for="usuario-cpf">CPF</label>
-        <input type="text" id="usuario-cpf" name="usuario-cpf" required="required">
-    </div>
-    </div>
-    <div class="cep">
-        <label for="usuario-cep">CEP</label>
-        <input type="text" id="usuario-cep" name="usuario-cep" required="required">
-    </div>
-    <div class="telefone">
-        <label for="usuario-telefone">Telefone</label>
-        <input type="text" id="usuario-telefone" name="usuario-telefone" required="required">
-    </div>
-    <div class="endereço">
-        <label for="usuario-endereco">Endereco</label>
-        <input type="text" id="usuario-endereco" name="usuario-endereco"  required="required">
-    </div>
-    <div class="numero_residencia">
-        <label for="usuario-numero-residencia">Número de residência</label>
-        <input type="number" id="usuario-numero-residencia" name="usuario-numero-residencia" required="required">
-=======
+
 <form action="usuario_acao_cadastrar.jsp" method="POST"/>
 
-    <div id="caixa-cadastro-externa">
-        <div id="caixa-cadastro-interna">
-            <div id="caixa-cadastro-label">Cadastro</div>
+   <div id="caixa-cadastrar-externa">
+       <div id="caixa-cadastro-interno">
+           <div id="caixa-cadastrar-label">Cadastro</div>
 
-            <div class="input-div">
-                <input id="usuario-nome" type="text" value="Digite seu Nome" onfocus="this.value='';"/>
-            </div>
+           <div class="input-div">
+               <input id="usuario-nome" type="text" value="Nome" onfocus="this.value='';" />
+           </div>
+           <div class="input-div">
+               <label for="usuario-data-nascimento">Data Nascimento</label>
+               <input id="usuario-data-nascimento" type="date"/>
+           </div>
+           <div class="input-div">
+               <input id="usuario-email" type="email" value="Email" onfocus="this.value='';" />
+           </div>
+           <div class="input-div">
+           <input id="usuario-confirmar-email" type="email" value="Confirmar Email" onfocus="this.value='';" />
+             </div>
 
-            <div class="input-div">
-                <input id="usuario-data-nascimento" type="date"/>
-            </div>
+           <div class="input-div">
+               <input id="usuario-senha" type="password" value="Senha" onfocus="this.value='';" />
+           </div>
+           <div class="input-div">
+               <input id="usuario-rg" type="text" value="RG" onfocus="this.value='';" />
 
-            <div class="input-div">
-                <input  >
+           </div>
+           <div class="input-div">
+               <input id="usuario-cpf" type="text" value="CPF" onfocus="this.value='';" />
 
-            </div>
+           </div>
+           <div class="input-div">
+               <input id="usuario-cep" type="text" value="CEP" onfocus="this.value='';" />
+           </div>
+         <div class="input-div">
+             <input id="usuario-telefone" type="text" value="Telefone" onfocus="this.value='';" />
+         </div>
+         <div class="input-div">
+             <input id="usuario-endereco" type="text" value="Endereço" onfocus="this.value='';" />
+         </div>
+           <div class="input-div">
+               <input id="usuario-numero-residencia" type="text" value="Número Residência" onfocus="this.value='';" />
+           </div>
+       </div>
+       <div id="botoes">
+           <button id="botao" type="submit" title="Fazer o Cadastro">Cadastrar</button>
+       </div>
 
-        </div>
->>>>>>> de23a445705c6cd9dbc804e7419a3e08d43b393f
-    </div>
-
-
+   </div>
 
 
 </body>

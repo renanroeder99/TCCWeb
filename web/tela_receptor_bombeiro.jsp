@@ -22,20 +22,20 @@
     %>
 </head>
 <body>
+<form action="receptor_acao_cadastrar.jsp" method="POST"/>
 <script type="text/javascript">
     setTimeout(function(){
         location = ''
     },15000)
 </script>
 <table>
-
-
     <thead>
     <tr>
             <th>Código</th>
             <th>Ocorrencia</th>
             <th>Endereço</th>
             <th>Emissor</th>
+            <th>Status</th>
             <th>Detalhes</th>
         </tr>
     </thead>
@@ -45,11 +45,21 @@
 <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaCorpoDeBombeirosDAO.retornarOcorrenciaBombeiro(); %>
 <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
 <tr>
+    <%String statusTrote;%>
     <td><%= ocorrencia.getId()%></td>
     <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
     <td><%= ocorrencia.endereco()%></td>
     <td><%= ocorrencia.getEmissor()%></td>
-    <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%ocorrencia.getId();%>">Detalhes</a></td>
+    <%if (ocorrencia.getStatus() == 1){%>
+    <%statusTrote = "Trote";%>
+    <%}else if (ocorrencia.getStatus() == 2){%>
+    <%statusTrote = "Validado";%>
+    <%}else {%>
+    <%statusTrote = "Em aberto";%>
+    <%}%>
+    <td><%=statusTrote%></td>
+
+    <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 </tr>
 <% } %>
 </tbody>

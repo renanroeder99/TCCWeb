@@ -31,7 +31,7 @@ import model.Emissor;
 public class EmissorDAO {
 
     public static int cadastrar(Emissor emissor) throws SQLException {
-        String sql = "INSERT INTO emissores (usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, trotes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO emissores (usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, status_trote) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         String senha = emissor.getSenha();
         try {
@@ -77,7 +77,7 @@ public class EmissorDAO {
                     + " telefone_celular = ?,"
                     + " email = ?,"
                     + " cep = ?, "
-                    + " trotes = ?"
+                    + " status_trote = ?"
                     + " WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
