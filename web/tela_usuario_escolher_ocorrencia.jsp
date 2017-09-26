@@ -45,15 +45,19 @@
     <title>Escolher Ocorrência</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
 
 </head>
 <body>
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
-<div class="div-pai">
-    <div>
-<h3 align="center">Bem Vindo,  <%=emissor.getUsuario()%>! <a href="tela_usuario_login.jsp"></a></h3>
-<h3>Alterar Dados<a href="usuario_acao_alterar.jsp" class="link_alterar"></a></h3>
+
+<div class="pai">
+
+<h3 align="center" >Bem Vindo,  <%=emissor.getUsuario()%>! <a href="tela_usuario_login.jsp"></a></h3>
+</div>
+<div class=" filho">
+    <%int codigo = emissor.getId();%>
+<a  href="tela_usuario_alterar.jsp?id=<%=codigo%>" class="link_alterar">Alterar</a>
     </div>
 <div id="caixa-escolher">
 
@@ -74,7 +78,7 @@ O 190 é destinado ao atendimento da população nas situações de urgências p
 
     </div>
 </div>
-</div>
+
 
 </body>
 </html>
