@@ -32,22 +32,22 @@
             <div id="caixa-ocorrencia-label">Ocorrência Médica</div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-rua" name="ocorrencia-medica-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+                <input id="ocorrencia-medica-rua" name="ocorrencia-medica-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" required="required"/>
             </div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-numero-residencia" name="ocorrencia-medica-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+                <input id="ocorrencia-medica-numero-residencia" name="ocorrencia-medica-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" required="required"/>
             </div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-cep" name="ocorrencia-medica-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+                <input id="ocorrencia-medica-cep" name="ocorrencia-medica-cep" value="Digite o Cep" type="text" onfocus="this.value='';" required="required"/>
             </div>
 
             <div class="input-div">
                 <textarea cols=80 id="ocorrencia-medica-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
             </div>
             <div class="input-div">
-                <select name = "ocorrencia-medica-tipo-ocorrencia" id="ocorrencia-medica-tipo-ocorrencia">
+                <select name = "ocorrencia-medica-tipo-ocorrencia" id="ocorrencia-medica-tipo-ocorrencia" required="required">
                     <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedica();%>
                     <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                     <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
