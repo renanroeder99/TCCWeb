@@ -12,12 +12,13 @@
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_cadastro.css">
     <script src="lib/jquery-3.2.1.min.js" type=""></script>
     <script src="js/usuario-cadastrar.js"></script>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 
 
 <form action="usuario_acao_cadastrar.jsp" method="POST"/>
-
+jsp
    <div id="caixa-cadastrar-externa">
        <div id="caixa-cadastro-interno">
            <div id="caixa-cadastrar-label">Cadastro</div>
