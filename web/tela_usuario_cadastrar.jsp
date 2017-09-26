@@ -27,7 +27,7 @@
            </div>
            <div class="input-div">
                <label for="usuario-data-nascimento">Data Nascimento</label>
-               <input id="usuario-data-nascimento" type="date" required="required"/>
+               <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required"/>
            </div>
            <div class="input-div">
                <input id="usuario-email" type="email" placeholder="Email" required="required"/>
@@ -40,24 +40,24 @@
                <input id="usuario-senha" type="password" placeholder="Senha" required="required"/>
            </div>
            <div class="input-div">
-               <input id="usuario-rg" type="text" placeholder="RG" required="required"/>
+               <input id="usuario-rg" name="usuario-rg" type="number" placeholder="RG" required="required"/>
 
            </div>
            <div class="input-div">
-               <input id="usuario-cpf" type="text" placeholder="CPF" required="required"/>
+               <input id="usuario-cpf" name="usuario-cpf" type="number" placeholder="CPF" required="required"/>
 
            </div>
            <div class="input-div">
-               <input id="usuario-cep" type="text" placeholder="CEP" required="required"/>
+               <input id="usuario-cep" name="usuario-cep" type="number" placeholder="CEP" required="required"/>
            </div>
          <div class="input-div">
-             <input id="usuario-telefone" type="text" placeholder="Telefone" required="required"/>
+             <input id="usuario-telefone" name="usuario-telefone" type="number" placeholder="Telefone" required="required"/>
          </div>
          <div class="input-div">
-             <input id="usuario-endereco" type="text" placeholder="Endereço" required="required"/>
+             <input id="usuario-endereco" name="usuario-endereco" type="text" placeholder="Endereço" required="required"/>
          </div>
            <div class="input-div">
-               <input id="usuario-numero-residencia" type="text" placeholder="N° Residência" required="required"/>
+               <input id="usuario-numero-residencia" name="usuario-numero-residencia" type="number" placeholder="N° Residência" required="required"/>
            </div>
        </div>
        <div id="botoes">
