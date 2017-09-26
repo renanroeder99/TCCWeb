@@ -35,17 +35,17 @@
         <div id="caixa-ocorrencia-label">Ocorrência Defesa Cívil</div>
 
         <div class="input-div">
-            <input id="ocorrência-defesa-rua" name="ocorrência-defesa-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+            <input id="ocorrência-defesa-rua" name="ocorrência-defesa-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" required="required"/>
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-defesa-numero-residencia" name="ocorrencia-defesa-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+            <input id="ocorrencia-defesa-numero-residencia" name="ocorrencia-defesa-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';"required="required" />
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-defesa-cep" name="ocorrencia-defesa-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+            <input id="ocorrencia-defesa-cep" name="ocorrencia-defesa-cep" value="Digite o Cep" type="text" onfocus="this.value='';" required="required"/>
         </div>
 
 
@@ -55,7 +55,7 @@
             <textarea cols=80 id="ocorrencia-defesa-descricao" name="ocorrencia-defesa-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
         </div>
         <div class="input-div">
-            <select name = "ocorrencia-defesa-tipo-ocorrencia" id="ocorrencia-defesa-tipo-ocorrencia">
+            <select name = "ocorrencia-defesa-tipo-ocorrencia" id="ocorrencia-defesa-tipo-ocorrencia" required="required">
                 <% ArrayList<BaseTipoOcorrencia> tipos = TipoOcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivil();%>
                 <% for (BaseTipoOcorrencia tipoOcorrencia : tipos) { %>
                 <option value="<%= tipoOcorrencia.getId() %>"><%= tipoOcorrencia.getTipo() %>
