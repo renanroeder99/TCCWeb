@@ -22,43 +22,43 @@
 <form action="receptor_acao_cadastrar.jsp" method="POST">
     <div>
         <label for="receptor-nome">Nome Completo</label>
-        <input type="text" id="receptor-nome" name="receptor-nome">
+        <input type="text" name="receptor-nome" id="receptor-nome" name="receptor-nome">
     </div>
 
     <div>
         <label for="receptor-cpf">CPF</label>
-        <input type="text" id="receptor-cpf" name="receptor-cpf">
+        <input type="text" name="receptor-cpf" id="receptor-cpf" name="receptor-cpf">
     </div>
 
     <div>
         <label for="receptor-email">Email</label>
-        <input type="text" id="receptor-email" name="receptor-email">
+        <input type="text" name="receptor-email" id="receptor-email" name="receptor-email">
     </div>
 
     <div>
         <label for="receptor-senha">Senha</label>
-        <input type="password" id="receptor-senha" name="receptor-senha">
+        <input type="password" name="receptor-senha" id="receptor-senha" name="receptor-senha">
 
     </div>
 
     <div>
         <label for="receptor-confirmar-senha">Confirmar Senha</label>
-        <input type="password" id="receptor-confirmar-senha" name="receptor-confirmar-senha">
+        <input type="password" name="receptor-confirmar-senha" id="receptor-confirmar-senha" name="receptor-confirmar-senha">
     </div>
 
     <div>
         <label for="receptor-telefone">Teleforne</label>
-        <input type="text" id="receptor-telefone" name="receptor-telefone">
+        <input type="text" name="receptor-telefone" id="receptor-telefone" name="receptor-telefone">
     </div>
 
     <div>
         <label for="receptor-endereco">Endereço</label>
-        <input type="text" id="receptor-endereco" name="receptor-endereco">
+        <input type="text" name="receptor-endereco" id="receptor-endereco" name="receptor-endereco">
     </div>
 
     <div>
         <label for="receptor-cep">CEP</label>
-        <input type="text" id="receptor-cep" name="receptor-cep">
+        <input type="text" name="receptor-cep" id="receptor-cep" name="receptor-cep">
     </div>
 
 

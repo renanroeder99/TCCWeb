@@ -34,10 +34,6 @@
     </div>
 
     <div>
-        <label for="receptor-login">Login</label>
-        <input type="text" id="receptor-login" name="receptor-login" required="required" value="<%= receptor.getLogin() %>">
-    </div>
-    <div>
         <label for="receptor-email">Email</label>
         <input type="text" id="receptor-email" name="receptor-email" required="required" value="<%= receptor.getEmail() %>">
     </div>
@@ -77,6 +73,6 @@
 
 
 
-
+</form>
 </body>
 </html>
