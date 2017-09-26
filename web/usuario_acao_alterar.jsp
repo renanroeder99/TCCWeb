@@ -9,6 +9,7 @@
 <%
     Emissor emissor = new Emissor();
 
+    emissor.setId(Integer.parseInt(request.getParameter("usuario-id")));
     emissor.setNome(request.getParameter("usuario-nome"));
 
 
@@ -31,7 +32,7 @@
     emissor.setEndereco(request.getParameter("usuario-endereco"));
     emissor.setNumeroResidencia(Integer.parseInt(request.getParameter("usuario-numero-residencia")));
     int codigo = EmissorDAO.alterar(emissor);
-    
+
     System.out.println(codigo);
     if(codigo >= 0){
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp?id=" + codigo);

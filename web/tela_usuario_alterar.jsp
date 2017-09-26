@@ -22,7 +22,7 @@
     <div id="caixa-cadastrar-externa">
         <div id="caixa-cadastro-interno">
             <div id="caixa-cadastrar-label">Alterar Cadastro</div>
-
+            <input type="hidden" name="usuario-id" value="<%=emissor.getId()%>">
             <div class="input-div">
                 <input id="usuario-nome" name="usuario-nome" type="text" placeholder="Nome" value="<%=emissor.getNome()%>">
             </div>
