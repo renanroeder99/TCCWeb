@@ -28,7 +28,7 @@
 <jsp:include page="menu_superior_defesa_civil.jsp"/>
 
 
-<form action="ocorrencia_defesa_civil.jsp.jsp" method="POST"/>
+<form action="ocorrencia_defesa_civil.jsp" method="POST"/>
 
 <div id="caixa-cadastro-externa">
     <div id="caixa-cadastro-interno">
