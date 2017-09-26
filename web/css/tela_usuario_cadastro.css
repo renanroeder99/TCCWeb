@@ -223,7 +223,7 @@ label{
 
 }
 
-#botao{
+#botao-cadastrar{
     position: absolute;
     left: 670px;
     top: 640px;
@@ -245,7 +245,7 @@ label{
     box-shadow: 0px 0px 10px #c9c9c9;
 }
 
-#botao:hover{
+#botao-cadastrar:hover{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cde5ee+0,cde5ee+0,edf6f9+100,ff3030+100 */
     background: #cde5ee; /* Old browsers */
     background: -moz-linear-gradient(top, #cde5ee 0%, #cde5ee 0%, #edf6f9 100%, #ff3030 100%); /* FF3.6-15 */

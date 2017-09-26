@@ -3,11 +3,14 @@
 <%@ page import ="model.Emissor"%>
 <%@ page import="dao.EmissorDAO" %>
 <%@ page import="java.sql.Date" %>
+<%@ page import="database.Utilitario" %>
 
 <%
     Emissor emissor = new Emissor();
     emissor.setNome(request.getParameter("usuario-nome"));
-    emissor.setDataNascimento(Date.valueOf(request.getParameter("usuario-data-nascimento")));
+
+
+    emissor.setDataNascimento(Utilitario.retornarPadraoSQL(request.getParameter("usuario-data-nascimento")));
     emissor.setEmail(request.getParameter("usuario-email"));
     emissor.setConfirmarEmail(request.getParameter("usuario-confirmar-email"));
     emissor.setSenha(request.getParameter("usuario-senha"));
@@ -18,8 +21,8 @@
 
     if (String.valueOf(emissor.getCep()).charAt(0) != 8){
         request.setAttribute("mensagem","Cep Invalido");
-
     }
+
 
     emissor.setTelefone(Integer.parseInt(request.getParameter("usuario-telefone")));
     emissor.setEndereco(request.getParameter("usuario-endereco"));
