@@ -16,14 +16,10 @@
 </head>
 <body>
 
-
-<<<<<<< HEAD
 <form action="usuario_acao_cadastrar.jsp" method="POST"/>
-jsp
-=======
+
 <form action="usuario_acao_cadastrar.jsp" method="POST">
 
->>>>>>> 864136de10f4a6d802701c8121e6e0db862b65cb
    <div id="caixa-cadastrar-externa">
        <div id="caixa-cadastro-interno">
            <div id="caixa-cadastrar-label">Cadastro</div>
