@@ -51,8 +51,10 @@
 <body>
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
 <div class="div-pai">
+    <div>
 <h3 align="center">Bem Vindo,  <%=emissor.getUsuario()%>! <a href="tela_usuario_login.jsp"></a></h3>
-
+<h3>Alterar Dados<a href="usuario_acao_alterar.jsp" class="link_alterar"></a></h3>
+    </div>
 <div id="caixa-escolher">
 
     <div id="caixa-escolher-interna">
