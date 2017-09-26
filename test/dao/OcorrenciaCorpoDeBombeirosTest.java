@@ -32,7 +32,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
         emissor.setEndereco("fijfijfjfi");
         emissor.setCep(74102365);
         emissor.setTelefone(Integer.parseInt("965874102"));
-        emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia baseOcorrenciaCorpoDeBombeiros = new BaseOcorrencia();
@@ -64,7 +63,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
         emissor.setEndereco("fijfijfjfi");
         emissor.setCep(74102365);
         emissor.setTelefone(Integer.parseInt("965874102"));
-        emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaCorpoDeBombeiros = new BaseOcorrencia();

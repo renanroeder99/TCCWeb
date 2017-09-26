@@ -29,7 +29,6 @@
 <h4>CPF: <%=ocorrencia.getEmissor().getCpf()%></h4>
 <h4>Endereço: <%=ocorrencia.getEmissor().getEndereco()%></h4>
 <h4>Email: <%=ocorrencia.getEmissor().getEmail()%></h4>
-<h4>Quantidade de trotes: <%=ocorrencia.getEmissor().getTrote()%></h4>
 <div>
 </div>
 

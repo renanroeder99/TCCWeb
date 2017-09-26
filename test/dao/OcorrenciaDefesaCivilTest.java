@@ -31,7 +31,6 @@ public class OcorrenciaDefesaCivilTest {
         emissor.setEndereco("Avenida Brasil do Ipiranga");
         emissor.setCep(89070-730);
         emissor.setTelefone(Integer.parseInt("97396393"));
-        emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
@@ -65,7 +64,6 @@ public class OcorrenciaDefesaCivilTest {
         emissor.setEndereco("Avenida Brasil do Ipiranga");
         emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
-        emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
