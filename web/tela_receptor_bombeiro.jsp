@@ -35,7 +35,6 @@
             <th>Ocorrencia</th>
             <th>Endereço</th>
             <th>Emissor</th>
-
             <th>Detalhes</th>
         </tr>
     </thead>
