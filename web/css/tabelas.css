@@ -4,5 +4,95 @@ tr:nth-child(odd) {background: #aed2ee
 }
 body{
     background: #cbe2ee;
+}
+.coluna-nome{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 11%;
+}
+.coluna-tipo{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 10%;
+}
+.coluna-descricao{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 15%;
+}
+.coluna-rg{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 11%;
+}
+.coluna-cpf{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 11%;
+}
+.coluna-email{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 12%;
+}
+.coluna-telefone{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 8%;
+}
+.coluna-endereco-emissor{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 11%;
+}
+.coluna-endereco-ocorrencia{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 17px;
+    width: 11%;
+}
 
+.div-lista {
+    display: block;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    clear: both;
+}
+
+table {
+    width: 100%;
+}
+
+thead tr, tfoot tr {
+    height: 45px;
+    font-size: 19px;
+    background-color: #ffcecf;
+    color: white;
+}
+
+tr {
+    height: 40px;
+    background-color: wheat;
+    font-size: 18px;
+}
+
+td{
+    padding-left: 10px;
+}
+
+table tr:nth-child(odd) td {
+    background-color: #eeeeee;
+}
+
+table tr:nth-child(even) td {
+    background-color: lightgrey;
 }
