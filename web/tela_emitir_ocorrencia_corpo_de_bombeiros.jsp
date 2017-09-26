@@ -35,17 +35,17 @@
         <div id="caixa-ocorrencia-label">Ocorrência Corpo de Bombeiros</div>
 
         <div class="input-div">
-            <input id="ocorrência-corpo_de_bombeiros-rua" name="ocorrência-corpo_de_bombeiros-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" />
+            <input id="ocorrência-corpo_de_bombeiros-rua" name="ocorrência-corpo_de_bombeiros-rua" type="text" placeholder="Rua"/>
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-corpo_de_bombeiros-numero-residencia" name="ocorrencia-corpo_de_bombeiros-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';" />
+            <input id="ocorrencia-corpo_de_bombeiros-numero-residencia" name="ocorrencia-corpo_de_bombeiros-numero-residencia" type="text" placeholder="N° Residência"/>
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-corpo_de_bombeiros-cep" name="ocorrencia-corpo_de_bombeiros-cep" value="Digite o Cep" type="text" onfocus="this.value='';"/>
+            <input id="ocorrencia-corpo_de_bombeiros-cep" name="ocorrencia-corpo_de_bombeiros-cep" type="text" placeholder="CEP"/>
         </div>
 
 

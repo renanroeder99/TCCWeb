@@ -23,11 +23,11 @@
                     <div id="caixa-login-label">Faça seu Login</div>
 
                     <div class="input-div">
-                        <input id="usuario-email" name="usuario-email" type="text" value="Digite seu email" onfocus="this.value='';" />
+                        <input id="usuario-email" name="usuario-email" type="text" placeholder="Digite seu Email" />
                     </div>
 
                     <div class="input-div">
-                        <input id="usuario-senha" name="usuario-senha" type="password" value="Digite sua senha" onfocus="this.value='';"/>
+                        <input id="usuario-senha" name="usuario-senha" type="password" placeholder="Digite sua Senha"/>
                     </div>
                     <div class="input-div">
                         <a href="tela_usuario_cadastrar.jsp">Não é cadastrado? Cadastre-se.</a>

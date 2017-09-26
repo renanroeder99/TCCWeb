@@ -23,41 +23,41 @@
            <div id="caixa-cadastrar-label">Cadastro</div>
 
            <div class="input-div">
-               <input id="usuario-nome" type="text" value="Nome" onfocus="this.value='';" />
+               <input id="usuario-nome" type="text" placeholder="Nome"/>
            </div>
            <div class="input-div">
                <label for="usuario-data-nascimento">Data Nascimento</label>
                <input id="usuario-data-nascimento" type="date"/>
            </div>
            <div class="input-div">
-               <input id="usuario-email" type="email" value="Email" onfocus="this.value='';" />
+               <input id="usuario-email" type="email" placeholder="Email"/>
            </div>
            <div class="input-div">
-           <input id="usuario-confirmar-email" type="email" value="Confirmar Email" onfocus="this.value='';" />
+           <input id="usuario-confirmar-email" type="email"placeholder="Confirmar Email" />
              </div>
 
            <div class="input-div">
-               <input id="usuario-senha" type="password" value="Senha" onfocus="this.value='';" />
+               <input id="usuario-senha" type="password" placeholder="Senha" />
            </div>
            <div class="input-div">
-               <input id="usuario-rg" type="text" value="RG" onfocus="this.value='';" />
+               <input id="usuario-rg" type="text" placeholder="RG"/>
 
            </div>
            <div class="input-div">
-               <input id="usuario-cpf" type="text" value="CPF" onfocus="this.value='';" />
+               <input id="usuario-cpf" type="text" placeholder="CPF" />
 
            </div>
            <div class="input-div">
-               <input id="usuario-cep" type="text" value="CEP" onfocus="this.value='';" />
+               <input id="usuario-cep" type="text" placeholder="CEP"/>
            </div>
          <div class="input-div">
-             <input id="usuario-telefone" type="text" value="Telefone" onfocus="this.value='';" />
+             <input id="usuario-telefone" type="text" placeholder="Telefone" />
          </div>
          <div class="input-div">
-             <input id="usuario-endereco" type="text" value="Endereço" onfocus="this.value='';" />
+             <input id="usuario-endereco" type="text" placeholder="Endereço" />
          </div>
            <div class="input-div">
-               <input id="usuario-numero-residencia" type="text" value="Número Residência" onfocus="this.value='';" />
+               <input id="usuario-numero-residencia" type="text" placeholder="N° Residência" />
            </div>
        </div>
        <div id="botoes">
