@@ -40,32 +40,33 @@
 </tr>
 </thead>
 
-<tbody>
+    <tbody>
 
-<% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaDefesaCivilDAO.retornarOcorrenciasDefesaCivil(); %>
-<% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
-<tr>
-    <%String statusTrote;%>
-    <td><%= ocorrencia.getId()%></td>
-    <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
-    <td><%= ocorrencia.endereco()%></td>
-    <td><%= ocorrencia.getEmissor()%></td>
-    <%if (ocorrencia.getStatus() == 1){%>
-    <%statusTrote = "Trote";%>
-    <%}else if (ocorrencia.getStatus() == 2){%>
-    <%statusTrote = "Validado";%>
-    <%}else {%>
-    <%statusTrote = "Em aberto" + ocorrencia.getStatus();%>
-    <%}%>
-    <td><%=statusTrote%></td>
-        <td><a href="detalhes_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
+    <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaDefesaCivilDAO.retornarOcorrenciasDefesaCivil(); %>
+    <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
+    <tr>
+
+
+        <td><%= ocorrencia.getId()%></td>
+        <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
+        <td><%= ocorrencia.endereco()%></td>
+        <td><%= ocorrencia.getEmissor()%></td>
+        <select name = "status-trote" id="status-trote">
+            <% String statusTrote[] = {"Em aberto", "Trote", "Validado"};%>
+            <% for (byte i = 0; i < 3; i++) { %>
+            <option value="<%=statusTrote[i] %>"
+            </option>
+            <% } %>
+        </select>
+        <td><%=statusTrote%></td>
+        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
+
     </tr>
     <% } %>
     </tbody>
 </table>
+    <a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
 
-<a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
-
-
-</tbody>
+</form>
+</body>
 </html>
