@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'TCCWeb'" />
-    <option name="defaultScopeName" value="Project 'TCCWeb'" />
-    <option name="SEARCH_SCOPE" value="Project 'TCCWeb'" />
+    <option name="customScope" value="File '[TCCWeb] - ...\web\ocorrencia_medica.jsp'" />
+    <option name="defaultScopeName" value="File '[TCCWeb] - ...\web\ocorrencia_medica.jsp'" />
+    <option name="SEARCH_SCOPE" value="File '[TCCWeb] - ...\web\ocorrencia_medica.jsp'" />
   </component>
 </application>
