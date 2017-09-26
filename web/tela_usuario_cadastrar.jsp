@@ -61,7 +61,7 @@
            </div>
        </div>
        <div id="botoes">
-           <a href="tela_usuario_login.jsp" title="Cadastrar Usuario"><button id="botao">Cadastrar</button></a>
+           <button type="submit" id="botao-cadastrar">Cadastrar</button>
        </div>
 
    </div>

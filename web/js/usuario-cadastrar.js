@@ -12,4 +12,14 @@ $(function(){
         }
     });
 
+    $("#botao-cadastrar").on("click", function () {
+        $email = $("#usuario-email").val();
+        $emailConfirmacao = $("#usuario-confirmar-email").val();
+
+        if($email !== $emailConfirmacao){
+            alert("Confirmação de e-mail não confere");
+            return false;
+        }
+    })
+
 });
