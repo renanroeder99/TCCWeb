@@ -40,10 +40,10 @@
         <input type="password" name="receptor-senha" id="receptor-senha" name="receptor-senha">
 
     </div>
-    
+
 
     <div>
-        <label for="receptor-telefone">Teleforne</label>
+        <label for="receptor-telefone">Telefone</label>
         <input type="text" name="receptor-telefone" id="receptor-telefone" name="receptor-telefone">
     </div>
 
@@ -60,16 +60,16 @@
 
     <div>
 
-        <input type="radio" id="receptor-medico" name="cadastro-cargo" value="MED" required="required">
+        <input type="radio" id="receptor-medico" name="receptor-cargo" value="MED" required="required">
         <label for="receptor-medico">Médico</label><br>
 
-        <input type="radio" id="receptor-bombeiros" name="cadastro-cargo" value ="CDB" required="required">
+        <input type="radio" id="receptor-bombeiros" name="receptor-cargo" value ="CDB" required="required">
         <label for="receptor-bombeiros">Bombeiros</label><br>
 
-        <input type="radio" id="receptor-defesa-civil" name="cadastro-cargo" value="DFC" required="required">
+        <input type="radio" id="receptor-defesa-civil" name="receptor-cargo" value="DFC" required="required">
         <label for="receptor-defesa-civil">Defesa Civil</label><br>
 
-        <input type="radio" id="receptor-policial" name="cadastro-cargo" value="POL" required="required">
+        <input type="radio" id="receptor-policial" name="receptor-cargo" value="POL" required="required">
         <label for="receptor-policial">Policial</label><br>
 
     </div>
