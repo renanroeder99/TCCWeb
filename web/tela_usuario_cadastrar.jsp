@@ -16,7 +16,6 @@
 </head>
 <body>
 
-<form action="usuario_acao_cadastrar.jsp" method="POST"/>
 
 <form action="usuario_acao_cadastrar.jsp" method="POST">
 
@@ -25,21 +24,21 @@
            <div id="caixa-cadastrar-label">Cadastro</div>
 
            <div class="input-div">
-               <input id="usuario-nome" type="text" placeholder="Nome" required="required"/>
+               <input id="usuario-nome" type="text" name="usuario-nome" placeholder="Nome" required="required"/>
            </div>
            <div class="input-div">
                <label for="usuario-data-nascimento">Data Nascimento</label>
                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required"/>
            </div>
            <div class="input-div">
-               <input id="usuario-email" type="email" placeholder="Email" required="required"/>
+               <input id="usuario-email" name="usuario-email" type="email" placeholder="Email" required="required"/>
            </div>
            <div class="input-div">
-           <input id="usuario-confirmar-email" type="email"placeholder="Confirmar Email" required="required"/>
+           <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email"placeholder="Confirmar Email" required="required"/>
              </div>
 
            <div class="input-div">
-               <input id="usuario-senha" type="password" placeholder="Senha" required="required"/>
+               <input id="usuario-senha" name = "usuario-senha" type="password" placeholder="Senha" required="required"/>
            </div>
            <div class="input-div">
                <input id="usuario-rg" name="usuario-rg" type="number" placeholder="RG" required="required"/>
