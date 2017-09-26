@@ -35,17 +35,17 @@
         <div id="caixa-ocorrencia-label">Ocorrência Defesa Civil</div>
 
         <div class="input-div">
-            <input id="ocorrência-defesa-rua" name="ocorrência-defesa-rua" type="text" value="Digite o Endereço" onfocus="this.value='';" required="required"/>
+            <input id="ocorrência-defesa-rua" name="ocorrência-defesa-rua" type="text" placeholder="Rua" required="required"/>
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-defesa-numero-residencia" name="ocorrencia-defesa-numero-residencia" type="text" value="N° Residência" onfocus="this.value='';"required="required" />
+            <input id="ocorrencia-defesa-numero-residencia" name="ocorrencia-defesa-numero-residencia" placeholder="N° Residência" required="required" />
         </div>
 
 
         <div class="input-div">
-            <input id="ocorrencia-defesa-cep" name="ocorrencia-defesa-cep" value="Digite o Cep" type="text" onfocus="this.value='';" required="required"/>
+            <input id="ocorrencia-defesa-cep" name="ocorrencia-defesa-cep" placeholder="CEP" required="required"/>
         </div>
 
 
