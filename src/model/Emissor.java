@@ -20,7 +20,7 @@ public class Emissor {
     private String cpf;
     private String endereco;
     private String confirmarSenha;
-    private int rg, telefone, trote;
+    private int rg, telefone;
     private int cep, numeroResidencia, id;
     private String rua;
     private Date dataNascimento;
@@ -51,14 +51,6 @@ public class Emissor {
 
     public void setRua(String rua) {
         this.rua = rua;
-    }
-
-    public int getTrote() {
-        return trote;
-    }
-
-    public void setTrote(int trote) {
-        this.trote = trote;
     }
 
     public int getId() {

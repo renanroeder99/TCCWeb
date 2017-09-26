@@ -94,7 +94,7 @@ public class OcorrenciaMedicaDAO {
     
     public static BaseOcorrencia buscarOcorrenciaMedicaPorID(int codigo) {
         BaseOcorrencia ocorrenciaMedica = null;
-        String sql = "SELECT id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, status_trote FROM ocorrencias_medicas WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas WHERE id = ?";
         Conexao conexao = new Conexao();
         Emissor emissor = new Emissor();
 
@@ -111,7 +111,6 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setCep(rs.getInt("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaMedica.setStatus(rs.getInt("status_trote"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -123,7 +122,7 @@ public class OcorrenciaMedicaDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciasMedica(){
         ArrayList<BaseOcorrencia> tabelaOcorrenciaMedica = new ArrayList<>();
-        String sql = "SELECT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia, status_trote FROM ocorrencias_medicas";
+        String sql = "SELECT id, id_tipo_ocorrencias_medicas, id_emissor, cep, rua, numero_residencia FROM ocorrencias_medicas";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
@@ -138,7 +137,6 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setCep(rs.getInt("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaMedica.setStatus(rs.getInt("status_trote"));
                 tabelaOcorrenciaMedica.add(ocorrenciaMedica);
             }
         }catch(SQLException ex){
@@ -160,19 +158,7 @@ public class OcorrenciaMedicaDAO {
         }
     }
 
-    public static int alterarTrote(int id, int status) {
-        Conexao conexao = new Conexao();
-        try {
-            String sql = "UPDATE ocorrencias_medicas SET status_trote = ? WHERE id = ?";
-            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
-            ps.setInt(1, id);
-            ps.setInt(2, status);
-            return ps.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return -1;
-    }
+
 }
 
 

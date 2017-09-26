@@ -47,7 +47,6 @@ public class TesteOcorrenciaMedica {
         emissor.setEndereco("Avenida Brasil do Ipiranga");
         emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
-        emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
@@ -81,7 +80,6 @@ public class TesteOcorrenciaMedica {
         emissor.setEndereco("Avenida Brasil do Ipiranga");
         emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
-        emissor.setTrote(0);
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();

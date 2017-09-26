@@ -124,7 +124,7 @@ public class OcorrenciaPolicialDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciaPolicial(){
         ArrayList<BaseOcorrencia> tabelaOcorrenciaPolicial = new ArrayList<>();
-        String sql = "SELECT id, id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia, status_trote FROM ocorrencias_policiais";
+        String sql = "SELECT id, id_tipo_ocorrencias_policiais, id_emissor, cep, rua, numero_residencia FROM ocorrencias_policiais";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
@@ -139,7 +139,7 @@ public class OcorrenciaPolicialDAO {
                 ocorrenciaPolicial.setCep(rs.getInt("cep"));
                 ocorrenciaPolicial.setRua(rs.getString("rua"));
                 ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaPolicial.setStatus(rs.getInt("status_trote"));
+
                 tabelaOcorrenciaPolicial.add(ocorrenciaPolicial);
             }
         }catch(SQLException ex){
@@ -161,17 +161,4 @@ public class OcorrenciaPolicialDAO {
         }
     }
 
-    public static int alterarTrote(int id, int status) {
-        Conexao conexao = new Conexao();
-        try {
-            String sql = "UPDATE ocorrencias_policiais SET status_trote = ? WHERE id = ?";
-            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
-            ps.setInt(1, status);
-            ps.setInt(2, id);
-           return ps.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return -1;
-    }
 }
