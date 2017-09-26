@@ -28,7 +28,7 @@
 <jsp:include page="menu_superior_corpo_de_bombeiros.jsp"/>
 
 
-<form action="ocorrencia_corpo_de_bombeiros.jsp" method="POST"/>
+<form action="ocorrencia_corpo_de_bombeiros.jsp" method="POST">
 
 <div id="caixa-cadastro-externa">
     <div id="caixa-cadastro-interno">
@@ -69,6 +69,6 @@
 
     </div>
 </div>
-
+</form>
 </body>
 </html>

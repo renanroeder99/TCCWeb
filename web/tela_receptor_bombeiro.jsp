@@ -1,7 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaCorpoDeBombeirosDAO" %>
-<%@ page import="javax.swing.*" %>
 <%@ page import="model.Receptor" %><%--
   Created by IntelliJ IDEA.
   User: Daiane Machado
@@ -12,7 +11,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <title>Ocorrencias Bombeiros</title>
+    
     <%
         if(session.getAttribute("receptor") == null){
             response.sendRedirect("tela_usuario_login.jsp");
@@ -22,13 +23,12 @@
     %>
 </head>
 <body>
-<form action="receptor_acao_cadastrar.jsp" method="POST"/>
 <script type="text/javascript">
     setTimeout(function(){
         location = ''
     },15000)
 </script>
-<table>
+<table name="tabela_bombeiro">
     <thead>
     <tr>
             <th>Código</th>
@@ -52,14 +52,12 @@
         <td><%= ocorrencia.endereco()%></td>
         <td><%= ocorrencia.getEmissor()%></td>
 
-        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
+        <td><a href="detalhes_ocorrencia_bombeiro.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
     </tr>
     <% } %>
     </tbody>
 </table>
 <a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
-
-</form>
 </body>
 </html>

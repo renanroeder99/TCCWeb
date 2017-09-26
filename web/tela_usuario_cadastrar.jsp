@@ -17,48 +17,53 @@
 <body>
 
 
+<<<<<<< HEAD
 <form action="usuario_acao_cadastrar.jsp" method="POST"/>
 jsp
+=======
+<form action="usuario_acao_cadastrar.jsp" method="POST">
+
+>>>>>>> 864136de10f4a6d802701c8121e6e0db862b65cb
    <div id="caixa-cadastrar-externa">
        <div id="caixa-cadastro-interno">
            <div id="caixa-cadastrar-label">Cadastro</div>
 
            <div class="input-div">
-               <input id="usuario-nome" type="text" placeholder="Nome"/>
+               <input id="usuario-nome" type="text" placeholder="Nome" required="required"/>
            </div>
            <div class="input-div">
                <label for="usuario-data-nascimento">Data Nascimento</label>
-               <input id="usuario-data-nascimento" type="date"/>
+               <input id="usuario-data-nascimento" type="date" required="required"/>
            </div>
            <div class="input-div">
-               <input id="usuario-email" type="email" placeholder="Email"/>
+               <input id="usuario-email" type="email" placeholder="Email" required="required"/>
            </div>
            <div class="input-div">
-           <input id="usuario-confirmar-email" type="email"placeholder="Confirmar Email" />
+           <input id="usuario-confirmar-email" type="email"placeholder="Confirmar Email" required="required"/>
              </div>
 
            <div class="input-div">
-               <input id="usuario-senha" type="password" placeholder="Senha" />
+               <input id="usuario-senha" type="password" placeholder="Senha" required="required"/>
            </div>
            <div class="input-div">
-               <input id="usuario-rg" type="text" placeholder="RG"/>
+               <input id="usuario-rg" type="text" placeholder="RG" required="required"/>
 
            </div>
            <div class="input-div">
-               <input id="usuario-cpf" type="text" placeholder="CPF" />
+               <input id="usuario-cpf" type="text" placeholder="CPF" required="required"/>
 
            </div>
            <div class="input-div">
-               <input id="usuario-cep" type="text" placeholder="CEP"/>
+               <input id="usuario-cep" type="text" placeholder="CEP" required="required"/>
            </div>
          <div class="input-div">
-             <input id="usuario-telefone" type="text" placeholder="Telefone" />
+             <input id="usuario-telefone" type="text" placeholder="Telefone" required="required"/>
          </div>
          <div class="input-div">
-             <input id="usuario-endereco" type="text" placeholder="Endereço" />
+             <input id="usuario-endereco" type="text" placeholder="Endereço" required="required"/>
          </div>
            <div class="input-div">
-               <input id="usuario-numero-residencia" type="text" placeholder="N° Residência" />
+               <input id="usuario-numero-residencia" type="text" placeholder="N° Residência" required="required"/>
            </div>
        </div>
        <div id="botoes">
@@ -67,6 +72,6 @@ jsp
 
    </div>
 
-
+</form>
 </body>
 </html>

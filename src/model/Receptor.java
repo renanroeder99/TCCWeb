@@ -11,7 +11,6 @@ package model;
  */
 public class Receptor {
     private String nome;
-    private String login;
     private String senha;
     private String cpf;
     private String cargo;
@@ -53,13 +52,6 @@ public class Receptor {
         this.nome = nome;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
 
     public String getSenha() {
         return senha;

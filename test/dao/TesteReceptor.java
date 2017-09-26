@@ -29,7 +29,6 @@ public class TesteReceptor {
         Limpeza.truncateTabelas();
         Receptor administrador = new Receptor();
         administrador.setNome("Felipe Cazagranda");
-        administrador.setLogin("FelipeCaz");
         administrador.setSenha("123123");
         administrador.setCpf("11333211254");
         administrador.setCargo("MED");
@@ -47,7 +46,6 @@ public class TesteReceptor {
         Limpeza.truncateTabelas();
         Receptor receptor = new Receptor();
         receptor.setNome("wad");
-        receptor.setLogin("eeey5ty");
         receptor.setSenha("1234556789");
         receptor.setCpf("651651561");
         receptor.setCargo("MED");
@@ -63,7 +61,6 @@ public class TesteReceptor {
 
         assertEquals(receptor.getId(), codigoInserido.getId());
         assertEquals(receptor.getNome(), codigoInserido.getNome());
-        assertEquals(receptor.getLogin(), codigoInserido.getLogin());
         assertEquals(Utilitario.gerarHASH(receptor.getSenha()), codigoInserido.getSenha());
         assertEquals(receptor.getCpf(), codigoInserido.getCpf());
         assertEquals(receptor.getCargo(), codigoInserido.getCargo());
@@ -79,7 +76,6 @@ public class TesteReceptor {
         Limpeza.truncateTabelas();
         Receptor receptor = new Receptor();
         receptor.setNome("Felipe Cazagranda");
-        receptor.setLogin("FelipeCaz");
         receptor.setSenha("123123");
         receptor.setCpf("11333211254");
         receptor.setCargo("Vagabundo");
@@ -92,7 +88,6 @@ public class TesteReceptor {
         assertEquals(1, receptor.getId());
 
         receptor.setNome("Antony Vogel");
-        receptor.setLogin("xtonyx");
         receptor.setSenha("123123123");
         receptor.setCpf("15216223467");
         receptor.setCargo("MED");
@@ -106,7 +101,6 @@ public class TesteReceptor {
 
         assertEquals(cadastroBD.getId(), receptor.getId());
         assertEquals(cadastroBD.getNome(), receptor.getNome());
-        assertEquals(cadastroBD.getLogin(), receptor.getLogin());
         assertEquals(cadastroBD.getSenha(), Utilitario.gerarHASH(receptor.getSenha()));
         assertEquals(cadastroBD.getCpf(), receptor.getCpf());
         assertEquals(cadastroBD.getCargo(), receptor.getCargo());

@@ -27,7 +27,7 @@
 <jsp:include page="menu_superior_policial.jsp"/>
 
 
-<form action="ocorrencia_policial.jsp" method="POST"/>
+<form action="ocorrencia_policial.jsp" method="POST">
 
     <div id="caixa-cadastro-externa">
         <div id="caixa-cadastro-interno">
@@ -75,6 +75,6 @@
 
 
 
-
+</form>
 </body>
 </html>
