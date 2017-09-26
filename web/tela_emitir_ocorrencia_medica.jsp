@@ -26,7 +26,7 @@
 <body>
 <jsp:include page="menu_superior_medico.jsp"/>
 
-<form action="ocorrencia_medica.jsp" method="POST"/>
+<form action="ocorrencia_medica.jsp" method="POST">
     <div id="caixa-cadastro-externa">
         <div id="caixa-cadastro-interno">
             <div id="caixa-ocorrencia-label">Ocorrência Médica</div>
@@ -63,5 +63,6 @@
 
         </div>
     </div>
+</form>
 </body>
 </html>

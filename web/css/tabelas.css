@@ -2,3 +2,7 @@ tr:nth-child(even) {background: #d9fff8
 }
 tr:nth-child(odd) {background: #aed2ee
 }
+body{
+    background: #cbe2ee;
+
+}

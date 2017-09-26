@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="tabelas.css">
+    <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <title>Ocorrencias Bombeiros</title>
     
     <%
@@ -23,7 +23,6 @@
     %>
 </head>
 <body>
-<form action="receptor_acao_cadastrar.jsp" method="POST"/>
 <script type="text/javascript">
     setTimeout(function(){
         location = ''
@@ -60,7 +59,5 @@
     </tbody>
 </table>
 <a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
-
-</form>
 </body>
 </html>

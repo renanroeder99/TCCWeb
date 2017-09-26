@@ -16,7 +16,7 @@
 <body>
 
 
-<form action="usuario_acao_cadastrar.jsp" method="POST"/>
+<form action="usuario_acao_cadastrar.jsp" method="POST">
 
    <div id="caixa-cadastrar-externa">
        <div id="caixa-cadastro-interno">
@@ -66,6 +66,6 @@
 
    </div>
 
-
+</form>
 </body>
 </html>
