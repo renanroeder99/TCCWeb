@@ -92,7 +92,7 @@ public class EmissorDAO {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return 0;
+            return -1;
         } finally {
             conexao.desconectar();
         }
