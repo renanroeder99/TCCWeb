@@ -31,22 +31,21 @@ import model.Emissor;
 public class EmissorDAO {
 
     public static int cadastrar(Emissor emissor) throws SQLException {
-        String sql = "INSERT INTO emissores (usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO emissores (senha, nome, cpf, rg, endereco, telefone_celular, email, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         String senha = emissor.getSenha();
         try {
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, emissor.getUsuario());
-            ps.setString(2, Utilitario.gerarHASH(emissor.getSenha()));
-            ps.setString(3, emissor.getNome());
-            ps.setString(4, emissor.getCpf());
-            ps.setInt(5, emissor.getRg());
-            ps.setString(6, emissor.getEndereco());
-            ps.setInt(7, emissor.getTelefone());
-            ps.setString(8, emissor.getEmail());
-            ps.setInt(9, emissor.getCep());
+            ps.setString(1, Utilitario.gerarHASH(emissor.getSenha()));
+            ps.setString(2, emissor.getNome());
+            ps.setString(3, emissor.getCpf());
+            ps.setInt(4, emissor.getRg());
+            ps.setString(5, emissor.getEndereco());
+            ps.setInt(6, emissor.getTelefone());
+            ps.setString(7, emissor.getEmail());
+            ps.setInt(8, emissor.getCep());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -67,7 +66,7 @@ public class EmissorDAO {
         Conexao conexao = new Conexao();
         try {
 
-            String sql = "UPDATE emissores SET usuario = ?,"
+            String sql = "UPDATE emissores SET"
                     + " senha = ?,"
                     + " nome = ?,"
                     + " cpf = ?,"
@@ -75,20 +74,19 @@ public class EmissorDAO {
                     + " endereco = ?,"
                     + " telefone_celular = ?,"
                     + " email = ?,"
-                    + " cep = ?, "
+                    + " cep = ? "
                     + " WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
-            ps.setString(1, usuario.getUsuario());
-            ps.setString(2, usuario.getSenha());
-            ps.setString(3, usuario.getNome());
-            ps.setString(4, usuario.getCpf());
-            ps.setInt(5, usuario.getRg());
-            ps.setString(6, usuario.getEndereco());
-            ps.setInt(7, usuario.getTelefone());
-            ps.setString(8, usuario.getEmail());
-            ps.setInt(9, usuario.getCep());
-            ps.setInt(10, usuario.getId());
+            ps.setString(1, usuario.getSenha());
+            ps.setString(2, usuario.getNome());
+            ps.setString(3, usuario.getCpf());
+            ps.setInt(4, usuario.getRg());
+            ps.setString(5, usuario.getEndereco());
+            ps.setInt(6, usuario.getTelefone());
+            ps.setString(7, usuario.getEmail());
+            ps.setInt(8, usuario.getCep());
+            ps.setInt(9, usuario.getId());
             int resultado = ps.executeUpdate();
             return resultado;
 
@@ -102,7 +100,7 @@ public class EmissorDAO {
     }
 
     public static void excluir(int codigo) {
-        String sql = "DELETE FROM emissores WHERE id = ?;";
+        String sql = "DELETE FROM emissores WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
@@ -135,7 +133,7 @@ public class EmissorDAO {
 
     public static Emissor buscarEmissorPorID(int codigo) {
         Emissor cadastroUsuario = null;
-        String sql = "SELECT id, usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep FROM emissores WHERE id = ?";
+        String sql = "SELECT id, senha, nome, cpf, rg, endereco, telefone_celular, email, cep FROM emissores WHERE id = ?";
 
         Conexao conexao = new Conexao();
         try {
@@ -147,7 +145,6 @@ public class EmissorDAO {
                 cadastroUsuario = new Emissor();
                 cadastroUsuario.setId(codigo);
                 cadastroUsuario.setNome(rs.getString("nome"));
-                cadastroUsuario.setUsuario(rs.getString("usuario"));
                 cadastroUsuario.setSenha(rs.getString("senha"));
                 cadastroUsuario.setCpf(rs.getString("cpf"));
                 cadastroUsuario.setRg(rs.getInt("rg"));
@@ -188,7 +185,7 @@ public class EmissorDAO {
 
     public static Emissor retornarEmissorPorId(int id) {
         Emissor emissor = null;
-        String sql = "SELECT id, usuario, senha, nome, data_nascimento, cpf, rg,  endereco, telefone_celular, email, cep FROM emissores WHERE id = ?";
+        String sql = "SELECT id, senha, nome, data_nascimento, cpf, rg,  endereco, telefone_celular, email, cep FROM emissores WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
             ps.setInt(1, id);
@@ -197,7 +194,6 @@ public class EmissorDAO {
             if (resultados.next()) {
                 emissor = new Emissor();
                 emissor.setId(resultados.getInt("id"));
-                emissor.setUsuario(resultados.getString("usuario-username"));
                 emissor.setSenha(resultados.getString("usuario-senha"));
                 emissor.setNome(resultados.getString("usuario-nome"));
                 emissor.setDataNascimento(resultados.getDate("usuario-data-nascimento"));

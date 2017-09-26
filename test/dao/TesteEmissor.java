@@ -22,7 +22,6 @@ public class TesteEmissor {
         Limpeza.truncateTabelas();
         Emissor emissor = new Emissor();
         emissor.setNome("Renan Roeder");
-        emissor.setUsuario("renanroeder");
         emissor.setEmail("renanroeder@hotmail.com");
         emissor.setSenha("123456789");
         emissor.setCpf("11227235984");
@@ -39,7 +38,6 @@ public class TesteEmissor {
         Limpeza.truncateTabelas();
         Emissor emissor = new Emissor();
         emissor.setNome("Renan Roeder");
-        emissor.setUsuario("renanroeder1");
         emissor.setEmail("renanroeder@hotmail.com");
         emissor.setSenha("123456789");
         emissor.setCpf("11227235984");
@@ -52,7 +50,6 @@ public class TesteEmissor {
         assertEquals(1, emissor.getId());
 
         emissor.setNome("Wanderson");
-        emissor.setUsuario("wanwan");
         emissor.setEmail("wands@hotmail.com");
         emissor.setSenha("12345679");
         emissor.setCpf("1122723594");
@@ -66,7 +63,6 @@ public class TesteEmissor {
 
         assertEquals(cadastroBD.getId(), emissor.getId());
         assertEquals(cadastroBD.getNome(), emissor.getNome());
-        assertEquals(cadastroBD.getUsuario(), emissor.getUsuario());
         assertEquals(cadastroBD.getEmail(), emissor.getEmail());
         assertEquals(cadastroBD.getConfirmarEmail(), emissor.getConfirmarEmail());
         assertEquals(cadastroBD.getSenha(), emissor.getSenha());

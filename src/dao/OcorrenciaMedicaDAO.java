@@ -52,7 +52,7 @@ public class OcorrenciaMedicaDAO {
     public static int alterar(BaseOcorrencia ocorrenciaMedica) {
         Conexao conexao = new Conexao();
         try {
-            String sql = "UPDATE ocorrencias_medicas SET id_tipo_ocorrencia_medica = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ? WHERE id = ?;";
+            String sql = "UPDATE ocorrencias_medicas SET id_tipo_ocorrencias_medicas = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ? WHERE id = ?;";
             
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
             

@@ -53,7 +53,7 @@
         <td><%= ocorrencia.endereco()%></td>
         <td><%= ocorrencia.getEmissor()%></td>
 
-        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
+        <td><a href="detalhes_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
     </tr>
     <% } %>
