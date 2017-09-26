@@ -17,7 +17,7 @@
 <jsp:include page="verificar_login.jsp"/>
 <% Emissor emissor = EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("id"))); %>
 
-<form action="usuario_acao_alterar.jsp?id=" method="POST">
+<form action="usuario_acao_alterar.jsp?" method="POST">
 
     <div id="caixa-cadastrar-externa">
         <div id="caixa-cadastro-interno">
@@ -34,11 +34,11 @@
                 <input id="usuario-email" name="usuario-email" type="email" placeholder="Email" value="<%=emissor.getEmail()%>">
             </div>
             <div class="input-div">
-                <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email"placeholder="Confirmar Email" value="<%=emissor.getConfirmarEmail()%>">
+                <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email"placeholder="Confirmar Email">
             </div>
 
             <div class="input-div">
-                <input id="usuario-senha" name="usuario-senha" type="password" placeholder="Senha" value="<%=emissor.getSenha()%>">
+                <input id="usuario-senha" name="usuario-senha" type="password" placeholder="Senha">
             </div>
             <div class="input-div">
                 <input id="usuario-rg" name="usuario-rg" type="text" placeholder="RG" value="<%=emissor.getRg()%>">
