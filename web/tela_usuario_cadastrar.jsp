@@ -27,41 +27,61 @@
            <div class="input-div">
                <input id="usuario-nome" type="text" placeholder="Nome" required="required"/>
            </div>
-           <div class="input-div">
-               <label for="usuario-data-nascimento">Data Nascimento</label>
-               <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required"/>
-           </div>
+
+
            <div class="input-div">
                <input id="usuario-email" type="email" placeholder="Email" required="required"/>
            </div>
+
+
            <div class="input-div">
            <input id="usuario-confirmar-email" type="email"placeholder="Confirmar Email" required="required"/>
              </div>
 
+
+
            <div class="input-div">
                <input id="usuario-senha" type="password" placeholder="Senha" required="required"/>
            </div>
-           <div class="input-div">
-               <input id="usuario-rg" name="usuario-rg" type="number" placeholder="RG" required="required"/>
 
-           </div>
            <div class="input-div">
                <input id="usuario-cpf" name="usuario-cpf" type="number" placeholder="CPF" required="required"/>
 
            </div>
+
+           <div class="input-div">
+               <input id="usuario-rg" name="usuario-rg" type="number" placeholder="RG" required="required"/>
+
+           </div>
+
+           <div class="input-div">
+               <label for="usuario-data-nascimento">Data Nascimento</label>
+               <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required"/>
+           </div>
+
+
+           <div class="input-div">
+             <input id="usuario-telefone" name="usuario-telefone" type="number" placeholder="Telefone" required="required"/>
+         </div>
+
            <div class="input-div">
                <input id="usuario-cep" name="usuario-cep" type="number" placeholder="CEP" required="required"/>
            </div>
-         <div class="input-div">
-             <input id="usuario-telefone" name="usuario-telefone" type="number" placeholder="Telefone" required="required"/>
-         </div>
-         <div class="input-div">
+
+
+
+
+           <div class="input-div">
              <input id="usuario-endereco" name="usuario-endereco" type="text" placeholder="Endereço" required="required"/>
          </div>
+
+
            <div class="input-div">
                <input id="usuario-numero-residencia" name="usuario-numero-residencia" type="number" placeholder="N° Residência" required="required"/>
            </div>
        </div>
+
+
        <div id="botoes">
            <button type="submit" id="botao-cadastrar">Cadastrar</button>
        </div>

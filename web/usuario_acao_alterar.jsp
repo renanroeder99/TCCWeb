@@ -4,13 +4,15 @@
 <%@ page import="dao.EmissorDAO" %>
 <%@ page import="java.sql.Date" %>
 <%@ page import="database.Utilitario" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <%
     Emissor emissor = new Emissor();
     emissor.setNome(request.getParameter("usuario-nome"));
 
 
-    emissor.setDataNascimento(Utilitario.retornarPadraoSQL(request.getParameter("usuario-data-nascimento")));
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    emissor.setDataNascimento(new java.sql.Date(format.parse(request.getParameter("usuario-data-nascimento")).getTime()));
     emissor.setEmail(request.getParameter("usuario-email"));
     emissor.setConfirmarEmail(request.getParameter("usuario-confirmar-email"));
     emissor.setSenha(request.getParameter("usuario-senha"));
