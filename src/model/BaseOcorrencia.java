@@ -5,7 +5,6 @@ public class BaseOcorrencia {
     private int cep;
     private int numeroResidencia;
     private int id;
-    private int status;
 
     private BaseTipoOcorrencia baseTipoOcorrencia;
 
@@ -54,13 +53,6 @@ public class BaseOcorrencia {
         return numeroResidencia;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public void setNumeroResidencia(int numeroResidencia) {
         this.numeroResidencia = numeroResidencia;

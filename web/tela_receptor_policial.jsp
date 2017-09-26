@@ -37,7 +37,6 @@
         <th>Ocorrencia</th>
         <th>Endereço</th>
         <th>Emissor</th>
-        <th>Status</th>
         <th>Detalhes</th>
     </tr>
     </thead>
@@ -53,14 +52,7 @@
         <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
         <td><%= ocorrencia.endereco()%></td>
         <td><%= ocorrencia.getEmissor()%></td>
-        <select name = "status-trote" id="status-trote">
-            <% String statusTrote[] = {"Em aberto", "Trote", "Validado"};%>
-            <% for (byte i = 0; i < 3; i++) { %>
-            <option value="<%=statusTrote[i] %>" <%=statusTrote[i]%>
-            </option>
-            <% } %>
-        </select>
-        <td><%=statusTrote%></td>
+
         <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
     </tr>

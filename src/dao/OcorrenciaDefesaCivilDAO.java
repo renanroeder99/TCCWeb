@@ -98,7 +98,7 @@ public class OcorrenciaDefesaCivilDAO {
 
     public static BaseOcorrencia buscarOcorrenciaDefesaCivilPorId(int codigo) {
         BaseOcorrencia ocorrenciaDefesaCivil = null;
-        String sql = "SELECT id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, status_trote FROM ocorrencias_defesa_civil WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia FROM ocorrencias_defesa_civil WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
@@ -113,7 +113,7 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaDefesaCivil.setStatus(rs.getInt("status_trote"));
+
             }
 
         } catch (SQLException ex) {
@@ -126,7 +126,7 @@ public class OcorrenciaDefesaCivilDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciasDefesaCivil() {
         ArrayList<BaseOcorrencia> tabelaOcorrenciaDefesaCivil = new ArrayList<>();
-        String sql = "SELECT id, id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, status_trote FROM ocorrencias_defesa_civil";
+        String sql = "SELECT id, id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia FROM ocorrencias_defesa_civil";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
@@ -141,7 +141,6 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaDefesaCivil.setStatus(rs.getInt("status_trote"));
                 tabelaOcorrenciaDefesaCivil.add(ocorrenciaDefesaCivil);
             }
         } catch (SQLException ex) {
@@ -161,20 +160,6 @@ public class OcorrenciaDefesaCivilDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static int alterarTrote(int id, int status) {
-        Conexao conexao = new Conexao();
-        try {
-            String sql = "UPDATE ocorrencias_defesa_civil SET status_trote = ? WHERE id = ?";
-            PreparedStatement ps = conexao.conectar().prepareStatement(sql);
-            ps.setInt(1, id);
-            ps.setInt(2, status);
-            return ps.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return -1;
     }
 
 }

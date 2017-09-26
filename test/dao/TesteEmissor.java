@@ -30,7 +30,6 @@ public class TesteEmissor {
         emissor.setEndereco("Avenida Brasil do Ipiranga");
         emissor.setCep(89070-730);
         emissor.setTelefone(Integer.parseInt("97396393"));
-        emissor.setTrote(0);
         int codigoInserido = EmissorDAO.cadastrar(emissor);
         assertEquals(1, codigoInserido);
     }
@@ -48,7 +47,6 @@ public class TesteEmissor {
         emissor.setEndereco("Avenida Ipiranga do Brasil");
         emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
-        emissor.setTrote(Integer.parseInt("0"));
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         assertEquals(1, emissor.getId());
@@ -62,7 +60,6 @@ public class TesteEmissor {
         emissor.setEndereco("Avenidas");
         emissor.setCep(80707301);
         emissor.setTelefone(Integer.parseInt("97916393"));
-        emissor.setTrote(Integer.parseInt("1"));
         emissor.setId(EmissorDAO.alterar(emissor));
 
         Emissor cadastroBD = EmissorDAO.buscarEmissorPorID(emissor.getId());
@@ -78,7 +75,6 @@ public class TesteEmissor {
         assertEquals(cadastroBD.getEndereco(), emissor.getEndereco());
         assertEquals(cadastroBD.getCep(), emissor.getCep());
         assertEquals(cadastroBD.getTelefone(), emissor.getTelefone());
-        assertEquals(cadastroBD.getTrote(), emissor.getTrote());
         assertNotEquals(0, emissor.getId());
 
     }
@@ -97,7 +93,6 @@ public class TesteEmissor {
         emissor.setCep(89070730);
         emissor.setTelefone(Integer.parseInt("97396393"));
         emissor.setId(EmissorDAO.cadastrar(emissor));
-        emissor.setTrote(0);
         EmissorDAO.excluir(emissor.getId());
         assertNull(EmissorDAO.buscarEmissorPorID(emissor.getId()));
 
