@@ -78,7 +78,7 @@ public class EmissorDAO {
                     + " WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
-            ps.setString(1, usuario.getSenha());
+            ps.setString(1,Utilitario.gerarHASH(usuario.getSenha()));
             ps.setString(2, usuario.getNome());
             ps.setString(3, usuario.getCpf());
             ps.setInt(4, usuario.getRg());
