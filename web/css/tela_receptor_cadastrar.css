@@ -81,8 +81,8 @@ label{
     border: 1px solid #bfc3c5;
     outline: none;
     position: absolute;
-    left: 580px;
-    top: 120px;
+    left: 42px;
+    top: 600px;
 
 }
 
@@ -157,7 +157,6 @@ label{
     top: 440px;
 
 }
-
 
 #botoes{
     width: 50px;
