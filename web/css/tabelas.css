@@ -1,63 +1,9 @@
 tr:nth-child(even) {background: #d9fff8
 }
-tr:nth-child(odd) {background: #aed2ee
+tr:nth-child(odd) {background: cornflowerblue
 }
 body{
     background: #cbe2ee;
-}
-.coluna-nome{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 11%;
-}
-.coluna-tipo{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 10%;
-}
-.coluna-descricao{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 15%;
-}
-.coluna-rg{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 11%;
-}
-.coluna-cpf{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 11%;
-}
-.coluna-email{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 12%;
-}
-.coluna-telefone{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 8%;
-}
-.coluna-endereco-emissor{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 11%;
-}
-.coluna-endereco-ocorrencia{
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 17px;
-    width: 11%;
 }
 
 .div-lista {
@@ -75,7 +21,7 @@ table {
 thead tr, tfoot tr {
     height: 45px;
     font-size: 19px;
-    background-color: #ffcecf;
+    background-color: cornflowerblue;
     color: white;
 }
 
@@ -126,4 +72,21 @@ table tr:nth-child(even) td {
     box-shadow: 1px 1px 3px #dedede;
     color: #555555;
     text-shadow: 1px 0px 1px white;
+}
+
+.botao {
+    color: #555555;
+    cursor: auto;
+    font: bold 16px sans-serif;
+    position: absolute;
+    text-decoration: none;
+}
+
+.botao2 {
+    color: #555555;
+    cursor: auto;
+    font: bold 16px sans-serif;
+    position: absolute;
+    left: 170px;
+    text-decoration: none;
 }
