@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Detalhes da ocorrencia</title>
+    <title>Detalhes da Ocorrência</title>
     <%
         if(session.getAttribute("receptor") == null){
             response.sendRedirect("tela_usuario_login.jsp");
@@ -18,21 +18,52 @@
         }
         Receptor receptor = (Receptor) session.getAttribute("receptor");
     %>
+    <link rel="stylesheet" type="text/css" href="css/detalhes_escolher_ocorrencias_policiais.css">
 </head>
 <body>
-<%BaseOcorrencia ocorrencia = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(Integer.parseInt(request.getParameter("id")));%>
-<h4>Nome: <%=ocorrencia.getEmissor().getNome()%></h4>
-<h4>Ocorrencia: <%=ocorrencia.getBaseTipoOcorrencia().getTipo()%></h4>
-<h4>Descrição: <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%></h4>
-<h4>Telefone: <%=ocorrencia.getEmissor().getTelefone()%></h4>
-<h4>RG: <%=ocorrencia.getEmissor().getRg()%></h4>
-<h4>CPF: <%=ocorrencia.getEmissor().getCpf()%></h4>
-<h4>Endereço: <%=ocorrencia.getEmissor().getEndereco()%></h4>
-<h4>Email: <%=ocorrencia.getEmissor().getEmail()%></h4>
-<div>
+
+
+ <%BaseOcorrencia ocorrencia = OcorrenciaPolicialDAO.buscarOcorrenciaPolicialPorID(Integer.parseInt(request.getParameter("id")));%>
+<div id="caixa-detalhe">
+    <div id="caixa-detalhe-interna">
+        <div id="caixa-detalhe-label">Detalhe da Ocorrência</div>
+
+        <div class="nome">
+            <h4>Nome:  <%=ocorrencia.getEmissor().getNome()%>  </h4>
+        </div>
+
+        <div class="ocorrencia">
+            <h4>Ocorrencia:  <%=ocorrencia.getBaseTipoOcorrencia().getTipo()%> </h4>
+        </div>
+
+        <div class="descricao">
+            <h4>Descrição:  <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%>  </h4>
+        </div>
+
+        <div class="telefone">
+            <h4>Telefone:  <%=ocorrencia.getEmissor().getTelefone()%> </h4>
+        </div>
+
+        <div class="rg">
+            <h4>RG:  <%=ocorrencia.getEmissor().getRg()%>  </h4>
+        </div>
+
+        <div class="cpf">
+            <h4>CPF:  <%=ocorrencia.getEmissor().getCpf()%>  </h4>
+        </div>
+
+        <div class="endereco">
+            <h4>Endereço:   <%=ocorrencia.getEmissor().getEndereco()%>  </h4>
+        </div>
+
+        <div class="email">
+            <h4>Email:  <%=ocorrencia.getEmissor().getEmail()%> </h4>
+        </div>
+    </div>
 </div>
 
-
-<a href="excluir_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
+<a href="excluir_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Excluir Ocorrência</a>
 </body>
+</html>
+
 </html>
