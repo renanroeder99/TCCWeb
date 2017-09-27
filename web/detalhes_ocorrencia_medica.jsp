@@ -12,6 +12,7 @@
 <html>
 <head>
     <title>Detalhes da ocorrencia</title>
+    <link rel="stylesheet" type="text/css" href="css/detalhes_ocorrencia_medica.css">
     <%
         if(session.getAttribute("receptor") == null){
             response.sendRedirect("tela_usuario_login.jsp");
@@ -22,15 +23,44 @@
 </head>
 <body>
 <%BaseOcorrencia ocorrencia = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(Integer.parseInt(request.getParameter("id")));%>
-<h4>Nome: <%=ocorrencia.getEmissor().getNome()%></h4>
-<h4>Ocorrencia: <%=ocorrencia.getBaseTipoOcorrencia().getTipo()%></h4>
-<h4>Descrição: <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%></h4>
-<h4>Telefone: <%=ocorrencia.getEmissor().getTelefone()%></h4>
-<h4>RG: <%=ocorrencia.getEmissor().getRg()%></h4>
-<h4>CPF: <%=ocorrencia.getEmissor().getCpf()%></h4>
-<h4>Endereço da ocorrencia: <%=ocorrencia.endereco()%></h4>
-<h4>Endereço do emissor: <%=ocorrencia.getEmissor().getEndereco()%></h4>
-<h4>Email: <%=ocorrencia.getEmissor().getEmail()%></h4>
+
+<div id="caixa-detalhe">
+    <div id="caixa-detalhe-interna">
+        <div id="caixa-detalhe-label">Detalhe da Ocorrência</div>
+
+        <div class="nome">
+            <h4>Nome:  <%=ocorrencia.getEmissor().getNome()%>  </h4>
+        </div>
+
+        <div class="ocorrencia">
+            <h4>Ocorrencia:  <%=ocorrencia.getBaseTipoOcorrencia().getTipo()%> </h4>
+        </div>
+
+        <div class="descricao">
+            <h4>Descrição:  <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%>  </h4>
+        </div>
+
+        <div class="telefone">
+            <h4>Telefone:  <%=ocorrencia.getEmissor().getTelefone()%> </h4>
+        </div>
+
+        <div class="rg">
+            <h4>RG:  <%=ocorrencia.getEmissor().getRg()%>  </h4>
+        </div>
+
+        <div class="cpf">
+            <h4>CPF:  <%=ocorrencia.getEmissor().getCpf()%>  </h4>
+        </div>
+
+        <div class="endereco">
+            <h4>Endereço:   <%=ocorrencia.getEmissor().getEndereco()%>  </h4>
+        </div>
+
+        <div class="email">
+            <h4>Email:  <%=ocorrencia.getEmissor().getEmail()%> </h4>
+        </div>
+    </div>
+</div>
 
 
 <a href="excluir_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
