@@ -5,7 +5,20 @@ tr:nth-child(odd) {background: cornflowerblue
 body{
     background: #cbe2ee;
 }
+.form_caja {
+    width: 524px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+    margin: 0 auto 20px auto;
+    background: #446bb3;
 
+    border-radius: 15px;
+
+    -moz-border-radius: 15px;
+
+    -webkit-border-radius: 15px;
+    color: #446bb3;
+}
 .div-lista {
     display: block;
     width: 70%;
