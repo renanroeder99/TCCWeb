@@ -61,8 +61,8 @@
     <% } %>
     </tbody>
 </table>
-    <a href="tela_receptor_cadastrar.jsp">Cadastrar Receptor</a>
-
+    <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
+    <a href="deslogar.jsp" class="botao2">Sair</a>
 </form>
 </body>
 </html>
