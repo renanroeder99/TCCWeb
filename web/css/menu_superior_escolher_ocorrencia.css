@@ -1,0 +1,28 @@
+#nav{
+    width: 800px;
+    height: 60px;
+    margin: 0;
+    border-radius: 5px;
+    background: #e3f765;
+}
+#nav ul{
+    list-style: none;
+}
+#nav ul li{
+    margin: 10px;
+}S
+
+#nav ul .sair{
+    position: absolute;
+    left: 600px;
+
+}
+#nav ul .home{
+    position: absolute;
+    left: 50px;
+
+}
+
+#nav ul:hover{
+    background: #eee;
+}

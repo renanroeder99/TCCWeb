@@ -49,6 +49,7 @@
 
 </head>
 <body>
+<jsp:include page="menu_superior_escolher_ocorrencia.jsp" />
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
 
 <div class="pai">
