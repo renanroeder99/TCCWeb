@@ -29,9 +29,9 @@
         location = ''
     },15000)
 </script>
-<div>
+<div class="botoes">
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
-    <a href="tela_usuario_login.jsp" class="botao2">Sair</a>
+    <a href="tela_usuario_login.jsp" class="botao">Sair</a>
 </div>
 <div>
     <table>
@@ -45,6 +45,8 @@
             <th>Detalhes</th>
         </tr>
         </thead>
+
+
         <tbody>
 
         <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaDefesaCivilDAO.retornarOcorrenciasDefesaCivil(); %>
@@ -52,11 +54,14 @@
         <tr>
 
 
-            <td><%= ocorrencia.getId()%></td>
-            <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
-            <td><%= ocorrencia.endereco()%></td>
-            <td><%= ocorrencia.getEmissor()%></td>
-
+            <td><%= ocorrencia.getId()%>
+            </td>
+            <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%>
+            </td>
+            <td><%= ocorrencia.endereco()%>
+            </td>
+            <td><%= ocorrencia.getEmissor()%>
+            </td>
             <td><a href="detalhes_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
         </tr>
