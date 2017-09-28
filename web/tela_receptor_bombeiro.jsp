@@ -28,7 +28,7 @@
         location = ''
     },15000)
 </script>
-<table name="tabela_bombeiro">
+<table class="form_caja">
     <thead>
     <tr>
             <th>Código</th>

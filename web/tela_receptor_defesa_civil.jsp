@@ -30,7 +30,7 @@
         location = ''
     },15000)
 </script>
-<table>
+<table class="form_caja">
 <thead>
 <tr>
     <th>Código</th>
