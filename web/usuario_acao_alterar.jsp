@@ -35,7 +35,7 @@
 
     System.out.println(codigo);
     if(codigo >= 0){
-        response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp?id=" + codigo);
+        response.sendRedirect("tela_usuario_login.jsp");
     }else{
 
     }

@@ -1,7 +1,7 @@
 body{
     background: #cbe2ee;
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 .esquerda{
     float: left;
@@ -162,6 +162,28 @@ label{
 
 }
 
+#botao{
+    position: absolute;
+    left: 200px;
+    top: 300px;
+
+    padding: 10px 25px;
+    font: bold 12px sans-serif;
+    border-radius: 20px;
+    text-shadow: 0px 1px 0px white;
+    border:1px solid #c6e1eb;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3030+0,edf6f9+0,cde5ee+100,cde5ee+100 */
+    background: #ff3030; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3030 0%, #edf6f9 0%, #cde5ee 100%, #cde5ee 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ff3030 0%,#edf6f9 0%,#cde5ee 100%,#cde5ee 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ff3030 0%,#edf6f9 0%,#cde5ee 100%,#cde5ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3030', endColorstr='#cde5ee',GradientType=0 ); /* IE6-9 */
+
+    color: #527988;
+    box-shadow: 0px 0px 10px #c9c9c9;
+}
+
 #botao-alterar{
     
     left: 670px;
@@ -184,7 +206,7 @@ label{
     box-shadow: 0px 0px 10px #c9c9c9;
 }
 
-#botao-cadastrar:hover{
+#botao-cadastrar-receptor:hover{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cde5ee+0,cde5ee+0,edf6f9+100,ff3030+100 */
     background: #cde5ee; /* Old browsers */
     background: -moz-linear-gradient(top, #cde5ee 0%, #cde5ee 0%, #edf6f9 100%, #ff3030 100%); /* FF3.6-15 */
@@ -207,7 +229,22 @@ input {
     vertical-align: middle;
 }
 
+#botao-cadastrar-receptor{
 
+    position: absolute;
+    left: 670px;
+    top: 640px;
+    padding: 10px 25px;
+    font: bold 12px sans-serif;
+    border-radius: 20px;
+    text-shadow: 0px 1px 0px white;
+    border: 1px solid #c6e1eb;
+    background: #ff3030;
+    background: -moz-linear-gradient(top, #ff3030 0%, #edf6f9 0%, #cde5ee 100%, #cde5ee 100%);
+    background: -webkit-linear-gradient(top, #ff3030 0%,#edf6f9 0%,#cde5ee 100%,#cde5ee 100%);
+    background: linear-gradient(to bottom, #ff3030 0%,#edf6f9 0%,#cde5ee 100%,#cde5ee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3030', endColorstr='#cde5ee',GradientType=0 );
+    color: #527988;
+    box-shadow: 0px 0px 10px #c9c9c9;
 
-
-
+}

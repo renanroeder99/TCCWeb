@@ -69,32 +69,34 @@
                     <div>
                         <input type="radio" id="receptor-medico" name="receptor-cargo" value="MED" required="required">
                         <label for="receptor-medico">Médico</label>
-                        <div>
-                        </div>
-                        <br>
+                    </div>
+                    <div>
 
-                        <input type="radio" id="receptor-bombeiros" name="receptor-cargo" value="CDB" required="required">
+
+                        <input type="radio" id="receptor-bombeiros" name="receptor-cargo" value="CDB"
+                               required="required">
                         <label for="receptor-bombeiros">Bombeiros</label>
-                    <div>
                     </div>
-                        <br>
+                    <div>
 
-                        <input type="radio" id="receptor-defesa-civil" name="receptor-cargo" value="DFC" required="required">
+
+                        <input type="radio" id="receptor-defesa-civil" name="receptor-cargo" value="DFC"
+                               required="required">
                         <label for="receptor-defesa-civil">Defesa Civil</label>
-                    <div>
                     </div>
-                        <br>
+                    <div>
 
-                        <input type="radio" id="receptor-policial" name="receptor-cargo" value="POL" required="required">
+                        <input type="radio" id="receptor-policial" name="receptor-cargo" value="POL"
+                               required="required">
                         <label for="receptor-policial">Policial</label>
-                    <div>
                     </div>
-                        <br>
+                    
+                    <div id="botoes">
+                        <button type="submit" id="botao-cadastrar-receptor">Cadastrar</button>
+                    </div>
 
-                        <div id="botoes">
-                            <button type="submit" id="botao-cadastrar">Cadastrar</button>
-                        </div>
 
+                </div>
             </div>
         </div>
     </div>
