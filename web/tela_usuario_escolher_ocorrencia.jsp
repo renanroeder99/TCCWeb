@@ -72,13 +72,13 @@
 
         <div id="botoes">
             <a href="tela_emitir_ocorrencia_policial.jsp" title="
-O 190 é destinado ao atendimento da população nas situações de urgências policiais, por isso ao utilizá-lo, seja breve, pois outra pessoa pode estar em risco real e precisando da PM o mais rápido possível."><button id="ocorrencia-policial">Ocorrência Policial</button></a>
+Chamar a viatura policial em caso de crimes"><button id="ocorrencia-policial">Ocorrência Policial</button></a>
 
-            <a href="tela_emitir_ocorrencia_medica.jsp" title="O Serviço de Atendimento Móvel de Urgência realiza o atendimento de urgência e emergência, por intermédio de ambulâncias, em qualquer lugar: residências, locais de trabalho e vias públicas."><button id="ocorrencia-medica">Ocorrência Médica</button></a>
+            <a href="tela_emitir_ocorrencia_medica.jsp" title="Chamar o SAMU em caso de urgência e saúde em estado crítico"><button id="ocorrencia-medica">Ocorrência Médica</button></a>
 
-            <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" title="Tem a missão de proteção de vidas, patrimônio e meio ambiente e busca ser referência para a sociedade pela excelência dos serviços prestados, por meio da qualificação dos seus integrantes, da gestão estratégica da Instituição, do constante reequipamento e da inovação tecnológica."><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
+            <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" title="Chamar a ambulancia dos bombeiros em caso de necessidade de primeiros socorros"><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
 
-            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="DEFESA CIVIL (SIADE) é um serviço telefônico especial, não tarifado, destinado à comunicação de emergência com a Defesa Civil, de âmbito local, para atender a comunidade do Distrito Federal. "><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
+            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="Chamar o carro da defesa civil em casos de desastres naturais"><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
         </div>
 
     </div>
