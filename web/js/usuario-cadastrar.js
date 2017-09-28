@@ -1,7 +1,7 @@
-$(function(){
+$(function () {
 
     $("#usuario-cep").on("focusout", function (e) {
-        if($(this).val().length > 0) {
+        if ($(this).val().length > 0) {
             $cep = $(this).val();
             $posicao = $cep.indexOf(89);
             if ($posicao != 0) {
@@ -16,14 +16,11 @@ $(function(){
         $email = $("#usuario-email").val();
         $emailConfirmacao = $("#usuario-confirmar-email").val();
 
-        if($email !== $emailConfirmacao){
+        if ($email !== $emailConfirmacao) {
             alert("Confirmação de e-mail não confere");
             return false;
         }
     })
-
-});
-
 
 
     $("#ocorrencia-policial-cep").on("focusout", function (e) {
@@ -37,3 +34,8 @@ $(function(){
             }
         }
     });
+
+    function mensagemOcorrenciaEmitida() {
+        alert("Ocorrência emitida com sucesso");
+    }
+});
