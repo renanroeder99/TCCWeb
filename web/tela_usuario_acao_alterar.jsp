@@ -6,6 +6,12 @@
 <html>
 <head>
     <title>Alterar cadastro</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <% Emissor emissor = EmissorDAO.buscarEmissorPorID(Integer.parseInt(request.getParameter("id"))); %>

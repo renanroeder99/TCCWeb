@@ -21,6 +21,12 @@
         }
         Receptor receptor = (Receptor) session.getAttribute("receptor");
     %>
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <script type="text/javascript">
@@ -28,7 +34,7 @@
         location = ''
     },15000)
 </script>
-<table name="tabela_bombeiro">
+<table class="form_caja">
     <thead>
     <tr>
             <th>Código</th>

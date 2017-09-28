@@ -14,7 +14,6 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
-
     <title>Ocorrencias Médicas</title>
     <%
         if(session.getAttribute("receptor") == null){
@@ -23,6 +22,12 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <form action="receptor_acao_cadastrar.jsp" method="POST">
@@ -31,16 +36,15 @@
         location = ''
     },15000)
 </script>
-<table>
+<table class="form_caja">
 <thead>
-<tr>
-    <th>Código</th>
-    <th>Ocorrencia</th>
-    <th>Endereço</th>
-    <th>Emissor</th>
-
-    <th>Detalhes</th>
-</tr>
+    <tr>
+        <th>Código</th>
+        <th>Ocorrencia</th>
+        <th>Endereço</th>
+        <th>Emissor</th>
+        <th>Detalhes</th>
+    </tr>
 </thead>
 
     <tbody>
