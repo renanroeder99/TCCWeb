@@ -20,6 +20,7 @@
         Receptor receptor = (Receptor) session.getAttribute("receptor");
     %>
 
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <%BaseOcorrencia ocorrencia = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(Integer.parseInt(request.getParameter("id")));%>
