@@ -55,7 +55,7 @@
 
 
         <div class="input-div">
-            <textarea cols=80 id="ocorrencia_corpo_de_bombeiros-descricao" name="ocorrencia_corpo_de_bombeiros-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
+            <textarea cols=80 id="ocorrencia_corpo_de_bombeiros-descricao" name="ocorrencia_corpo_de_bombeiros-descricao" rows="10" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! " required="required"></textarea>
         </div>
         <div class="input-div">
             <select name = "ocorrencia-corpo_de_bombeiros-tipo-ocorrencia" id="ocorrencia-corpo_de_bombeiros-tipo-ocorrencia">
