@@ -1,4 +1,4 @@
-<%@ page import="dao.OcorrenciaDefesaCivilDAO" %>
+<%@ page import="dao.OcorrenciaDefesaCivilDAO"%>
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaMedicaDAO" %>
 <%@ page import="model.Receptor" %><%--
