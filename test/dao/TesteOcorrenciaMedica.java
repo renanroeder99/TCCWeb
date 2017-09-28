@@ -33,7 +33,6 @@ public class TesteOcorrenciaMedica {
 
         BaseTipoOcorrencia tipoOcorrenciaMedica = new BaseTipoOcorrencia();
         tipoOcorrenciaMedica.setTipo("avc");
-        tipoOcorrenciaMedica.setDescricao("Morte cerebral");
         tipoOcorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(tipoOcorrenciaMedica));
         assertEquals(1, tipoOcorrenciaMedica.getId());
 
@@ -67,7 +66,6 @@ public class TesteOcorrenciaMedica {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia tipoOcorrenciaMedica = new BaseTipoOcorrencia();
         tipoOcorrenciaMedica.setTipo("latrocinio");
-        tipoOcorrenciaMedica.setDescricao("Morte cerebral");
         tipoOcorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(tipoOcorrenciaMedica));
 
         Emissor emissor = new Emissor();
