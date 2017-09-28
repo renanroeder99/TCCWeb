@@ -3,7 +3,7 @@
 <%@ page import="model.Receptor" %>
 <%@ page import="model.Emissor" %>
 
-
+<jsp:include page="deslogar.jsp"></jsp:include>
 <%
 
     String email = request.getParameter("usuario-email");
