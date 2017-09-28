@@ -15,6 +15,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
+    <link rel="stylesheet" type="text/css" href="css/tela_rece"
 
     <title>Ocorrencias Policiais</title>
     <%

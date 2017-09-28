@@ -9,20 +9,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-
+<%
+    if (session.getAttribute("receptor") == null) {
+        response.sendRedirect("tela_usuario_login.jsp");
+        return;
+    }
+    Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/tabelas.css">
-    <link rel="stylesheet" type="text/css" href="css/tela_receptor_medico.css">
     <title>Ocorrencias Médicas</title>
-    <%
-        if (session.getAttribute("receptor") == null) {
-            response.sendRedirect("tela_usuario_login.jsp");
-            return;
-        }
-        Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
-    %>
+    <link rel="stylesheet" type="text/css" href="css/tabelas.css">
+    <link rel="stylesheet" type="text/css" href="css/tela_receptor.css">
 </head>
 <body>
 <script type="text/javascript">
@@ -32,7 +31,7 @@
 </script>
 <div class="botoes">
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
-    <a href="deslogar.jsp" class="botao2">Sair</a>
+    <a href="tela_usuario_login.jsp" class="botao2">Sair</a>
 </div>
 <div>
     <table>

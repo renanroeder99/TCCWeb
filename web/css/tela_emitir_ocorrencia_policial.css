@@ -1,5 +1,6 @@
 body{
-    background: #cbe2ee;
+    background: rgb(216, 213, 213);
+    margin: 0px;
 }
 #caixa-cadastro-externa{
     background-color: #a9d1e5;
@@ -148,4 +149,45 @@ color: #202123;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cde5ee', endColorstr='#ff3030',GradientType=0 ); /* IE6-9 */
 
     cursor:pointer;
+}
+#nav{
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    background: rgb(169, 209, 229);
+}
+
+#nav ul{
+    list-style: none;
+}
+#nav ul li{
+    margin: 10px;
+}
+
+#nav ul  .sair{
+    position: absolute;
+    left: 90%;
+
+}
+#nav ul .home{
+    position: absolute;
+    left: 10%;
+
+}
+#nav ul .medico{
+    position: absolute;
+    left: 40%;
+
+}
+
+#nav ul .bombeiro{
+    position: absolute;
+    left: 50%;
+
+}
+
+#nav ul .defesa-civil{
+    position: absolute;
+    left: 60%;
+
 }

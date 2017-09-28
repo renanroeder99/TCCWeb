@@ -115,7 +115,7 @@ public class OcorrenciaPolicialDAO {
                 ocorrenciaPolicial.setCep(rs.getInt("cep"));
                 ocorrenciaPolicial.setRua(rs.getString("rua"));
                 ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaPolicial.setDescricao(rs.getString("ocorrencia_policial_descricao"));
+                ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -142,7 +142,7 @@ public class OcorrenciaPolicialDAO {
                 ocorrenciaPolicial.setCep(rs.getInt("cep"));
                 ocorrenciaPolicial.setRua(rs.getString("rua"));
                 ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
-                ocorrenciaPolicial.setDescricao(rs.getString("ocorrencia-policial-descricao"));
+                ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
 
                 tabelaOcorrenciaPolicial.add(ocorrenciaPolicial);
             }

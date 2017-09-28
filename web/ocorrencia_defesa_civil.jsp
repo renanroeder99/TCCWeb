@@ -30,7 +30,7 @@
 
     ocorrencia.setRua(request.getParameter("ocorrencia-rua"));
     ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
-    ocorrencia.setDescricao(request.getParameter("ocorrencia-defesa-civil-descricao"));
+    ocorrencia.setDescricao(request.getParameter("ocorrencia-defesa-descricao"));
     ocorrencia.setEmissor(emissor);
     int codigo = OcorrenciaDefesaCivilDAO.inserir(ocorrencia);
     if(codigo > 0){

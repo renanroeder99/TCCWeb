@@ -22,11 +22,9 @@
 <head>
     <title>Ocorrência Desefa Civil</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
-    <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
-
 </head>
 <body>
-<jsp:include page="menu_superior_defesa_civil.jsp"/>
+
 
 
 <form action="ocorrencia_defesa_civil.jsp" method="POST">
