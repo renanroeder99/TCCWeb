@@ -52,27 +52,19 @@
 
 <div id="nav">
     <ul>
-        <li width='65' class="home"><a href='tela_escolher_ocorrencia' title='Página Incial'><img src='\css\imagens\home.png' width="40"/></a></li>
+        <%int codigo = emissor.getId();%>
+        <li width='65' class="alterar"><a  href="tela_usuario_alterar.jsp?id=<%=codigo%>" title='Alterar Dados'><img src='\css\imagens\alterar.png' width="40"/></a></li>
 
 
-        <li width='65' class="sair"><a href='deslogar' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
+        <li width='65' class="sair"><a href='tela_usuario_login.jsp' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
 
 
 
     </ul>
 </div>
+       <h3 align="center" >Bem Vindo,  <%=emissor.getNome()%>! </h3>
 
 
-<a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
-
-<div class="pai">
-
-<h3 align="center" >Bem Vindo,  <%=emissor.getNome()%>! <a href="tela_usuario_login.jsp"></a></h3>
-</div>
-<div class=" filho">
-    <%int codigo = emissor.getId();%>
-<a  href="tela_usuario_alterar.jsp?id=<%=codigo%>" class="link_alterar">Alterar</a>
-    </div>
 <div id="caixa-escolher">
 
     <div id="caixa-escolher-interna">
