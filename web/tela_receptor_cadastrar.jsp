@@ -17,6 +17,7 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 
