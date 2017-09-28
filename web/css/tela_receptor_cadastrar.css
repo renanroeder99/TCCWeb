@@ -197,7 +197,16 @@ label{
     cursor:pointer;
 }
 
+.receptor-medico{
+    padding-left: 5px;
+    font: normal 15px sans-serif;
+    color: #202123;
+    outline: none;
+    position: absolute;
+    left: 50px;
+    top: 440px;
 
+}
 
 
 
