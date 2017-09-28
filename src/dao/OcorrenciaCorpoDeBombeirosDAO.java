@@ -149,7 +149,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
     }
 
     public static void excluirCorpoDeBombeiros(int id) {
-        String sql = "DELETE FROM ocorrencia_bombeiros WHERE id = ?";
+        String sql = "DELETE FROM ocorrencias_bombeiros WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
             ps.setInt(1, id);
