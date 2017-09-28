@@ -22,6 +22,12 @@
     <title>Ocorrencia Médica</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_medica.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="menu_superior_medico.jsp"/>

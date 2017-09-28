@@ -45,10 +45,29 @@
     <title>Escolher Ocorrência</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
     <meta charset="UTF-8"/>
-
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 
 </head>
 <body>
+
+<div id="nav">
+    <ul>
+        <li width='65' class="home"><a href='tela_escolher_ocorrencia' title='Página Incial'><img src='\css\imagens\home.png' width="40"/></a></li>
+
+
+        <li width='65' class="sair"><a href='deslogar' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
+
+
+
+    </ul>
+</div>
+
+
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
 
 <div class="pai">
@@ -67,13 +86,13 @@
 
         <div id="botoes">
             <a href="tela_emitir_ocorrencia_policial.jsp" title="
-O 190 é destinado ao atendimento da população nas situações de urgências policiais, por isso ao utilizá-lo, seja breve, pois outra pessoa pode estar em risco real e precisando da PM o mais rápido possível."><button id="ocorrencia-policial">Ocorrência Policial</button></a>
+Chamar a viatura policial em caso de crimes"><button id="ocorrencia-policial">Ocorrência Policial</button></a>
 
-            <a href="tela_emitir_ocorrencia_medica.jsp" title="O Serviço de Atendimento Móvel de Urgência realiza o atendimento de urgência e emergência, por intermédio de ambulâncias, em qualquer lugar: residências, locais de trabalho e vias públicas."><button id="ocorrencia-medica">Ocorrência Médica</button></a>
+            <a href="tela_emitir_ocorrencia_medica.jsp" title="Chamar o SAMU em caso de urgência e saúde em estado crítico"><button id="ocorrencia-medica">Ocorrência Médica</button></a>
 
-            <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" title="Tem a missão de proteção de vidas, patrimônio e meio ambiente e busca ser referência para a sociedade pela excelência dos serviços prestados, por meio da qualificação dos seus integrantes, da gestão estratégica da Instituição, do constante reequipamento e da inovação tecnológica."><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
+            <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" title="Chamar a ambulancia dos bombeiros em caso de necessidade de primeiros socorros"><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
 
-            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="DEFESA CIVIL (SIADE) é um serviço telefônico especial, não tarifado, destinado à comunicação de emergência com a Defesa Civil, de âmbito local, para atender a comunidade do Distrito Federal. "><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
+            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="Chamar o carro da defesa civil em casos de desastres naturais"><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
         </div>
 
     </div>

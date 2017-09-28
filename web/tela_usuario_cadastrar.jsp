@@ -13,6 +13,12 @@
     <script src="lib/jquery-3.2.1.min.js" type=""></script>
     <script src="js/usuario-cadastrar.js"></script>
     <meta charset="UTF-8"/>
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 

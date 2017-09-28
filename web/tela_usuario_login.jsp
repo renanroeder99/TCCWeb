@@ -13,6 +13,12 @@
     <title>Login do usuário</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_login.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 
 </head>
 <body>
