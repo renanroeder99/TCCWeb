@@ -27,7 +27,6 @@ public class TesteTipoOcorrenciaPolicial {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
         tipoOcorrenciaPolicial.setTipo("latrocinio");
-        tipoOcorrenciaPolicial.setDescricao("Morte cerebral");
 
         int codigoInserido = TipoOcorrenciaPolicialDAO.inserir(tipoOcorrenciaPolicial);
         assertEquals(1, codigoInserido);
@@ -40,13 +39,11 @@ public class TesteTipoOcorrenciaPolicial {
         BaseTipoOcorrencia testeTipoOcorrenciaPolicial = new BaseTipoOcorrencia();
 
         testeTipoOcorrenciaPolicial.setTipo("latrocinio");
-        testeTipoOcorrenciaPolicial.setDescricao("Morte cerebral");
         testeTipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.inserir(testeTipoOcorrenciaPolicial));
 
         assertEquals(1, testeTipoOcorrenciaPolicial.getId());
 
         testeTipoOcorrenciaPolicial.setTipo("homicidio");
-        testeTipoOcorrenciaPolicial.setDescricao("tameintamein");
 
         testeTipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.alterar(testeTipoOcorrenciaPolicial));
 
@@ -55,7 +52,6 @@ public class TesteTipoOcorrenciaPolicial {
         assertEquals(cadastroBD.getId(), testeTipoOcorrenciaPolicial.getId());
 
         assertEquals(cadastroBD.getTipo(), testeTipoOcorrenciaPolicial.getTipo());
-        assertEquals(cadastroBD.getDescricao(), testeTipoOcorrenciaPolicial.getDescricao());
 
         assertNotEquals(0, testeTipoOcorrenciaPolicial.getId());
 

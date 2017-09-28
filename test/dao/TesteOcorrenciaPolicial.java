@@ -26,7 +26,6 @@ public class TesteOcorrenciaPolicial {
 
         BaseTipoOcorrencia tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
         tipoOcorrenciaPolicial.setTipo("Latrocinio");
-        tipoOcorrenciaPolicial.setDescricao("Morte cerebral");
         tipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.inserir(tipoOcorrenciaPolicial));
         assertEquals(1, tipoOcorrenciaPolicial.getId());
 
@@ -61,7 +60,6 @@ public class TesteOcorrenciaPolicial {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
         tipoOcorrenciaPolicial.setTipo("latrocinio");
-        tipoOcorrenciaPolicial.setDescricao("Morte cerebral");
         tipoOcorrenciaPolicial.setId(TipoOcorrenciaPolicialDAO.inserir(tipoOcorrenciaPolicial));
 
         Emissor emissor = new Emissor();

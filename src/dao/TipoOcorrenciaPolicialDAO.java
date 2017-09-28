@@ -17,12 +17,11 @@ import java.util.ArrayList;
 public class TipoOcorrenciaPolicialDAO {
 
     public static int inserir(BaseTipoOcorrencia baseTipoOcorrencia) {
-        String sql = "INSERT INTO tipo_ocorrencias_policiais (tipo, descricao) VALUES (?,?);";
+        String sql = "INSERT INTO tipo_ocorrencias_policiais (tipo) VALUES (?);";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, baseTipoOcorrencia.getTipo());
-            ps.setString(2, baseTipoOcorrencia.getDescricao());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -44,13 +43,12 @@ public class TipoOcorrenciaPolicialDAO {
         Conexao conexao = new Conexao();
         try {
             String sql = "UPDATE tipo_ocorrencias_policiais SET tipo = ?,"
-                    + "descricao = ?"
+
                     + "WHERE id = ?";
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
             ps.setString(1, baseTipoOcorrencia.getTipo());
-            ps.setString(2, baseTipoOcorrencia.getDescricao());
             ps.setInt(3, baseTipoOcorrencia.getId());
             int resultado = ps.executeUpdate();
             return resultado;
@@ -84,7 +82,7 @@ public class TipoOcorrenciaPolicialDAO {
 
     public static BaseTipoOcorrencia buscarOPPorID(int id) {
         BaseTipoOcorrencia tipoOcorrenciaPolicial = null;
-        String sql = "SELECT tipo, descricao FROM tipo_ocorrencias_policiais WHERE id = ?";
+        String sql = "SELECT tipo FROM tipo_ocorrencias_policiais WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
@@ -95,7 +93,6 @@ public class TipoOcorrenciaPolicialDAO {
                 tipoOcorrenciaPolicial = new BaseTipoOcorrencia();
                 tipoOcorrenciaPolicial.setId(id);
                 tipoOcorrenciaPolicial.setTipo(rs.getString("tipo"));
-                tipoOcorrenciaPolicial.setDescricao(rs.getString("descricao"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -108,7 +105,7 @@ public class TipoOcorrenciaPolicialDAO {
     public static ArrayList<BaseTipoOcorrencia> buscarOcorrenciaPolicial() {
 
         ArrayList<BaseTipoOcorrencia> ocorrenciasPoliciais = new ArrayList<>();
-        String sql = "SELECT id, tipo, descricao FROM tipo_ocorrencias_policiais";
+        String sql = "SELECT id, tipo FROM tipo_ocorrencias_policiais";
 
         Conexao conexao = new Conexao();
         try {
@@ -119,7 +116,6 @@ public class TipoOcorrenciaPolicialDAO {
                 BaseTipoOcorrencia ocorrenciaPolicial = new BaseTipoOcorrencia();
                 ocorrenciaPolicial.setId(rs.getInt("id"));
                 ocorrenciaPolicial.setTipo(rs.getString("tipo"));
-                ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
                 ocorrenciasPoliciais.add(ocorrenciaPolicial);
             }
         } catch (SQLException ex) {
