@@ -14,59 +14,60 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
+    <link rel="stylesheet" type="text/css" href="css/tela_receptor_medico.css">
     <title>Ocorrencias Médicas</title>
     <%
-        if(session.getAttribute("receptor") == null){
+        if (session.getAttribute("receptor") == null) {
             response.sendRedirect("tela_usuario_login.jsp");
             return;
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
 </head>
 <body>
-<form action="receptor_acao_cadastrar.jsp" method="POST">
 <script type="text/javascript">
-    setTimeout(function(){
+    setTimeout(function () {
         location = ''
-    },15000)
+    }, 15000)
 </script>
-<table class="form_caja">
-<thead>
-    <tr>
-        <th>Código</th>
-        <th>Ocorrencia</th>
-        <th>Endereço</th>
-        <th>Emissor</th>
-        <th>Detalhes</th>
-    </tr>
-</thead>
-
-    <tbody>
-
-    <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaMedicaDAO.retornarOcorrenciasMedica(); %>
-    <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
-    <tr>
-
-
-        <td><%= ocorrencia.getId()%></td>
-        <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
-        <td><%= ocorrencia.endereco()%></td>
-        <td><%= ocorrencia.getEmissor()%></td>
-
-        <td><a href="detalhes_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
-
-    </tr>
-    <% } %>
-    </tbody>
-</table>
+<div class="botoes">
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
     <a href="deslogar.jsp" class="botao2">Sair</a>
-</form>
+</div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Código</th>
+            <th>Ocorrencia</th>
+            <th>Endereço</th>
+            <th>Emissor</th>
+            <th>Detalhes</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaMedicaDAO.retornarOcorrenciasMedica(); %>
+        <% for (BaseOcorrencia ocorrencia : ocorrencias) {%>
+        <tr>
+
+
+            <td><%= ocorrencia.getId()%>
+            </td>
+            <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%>
+            </td>
+            <td><%= ocorrencia.endereco()%>
+            </td>
+            <td><%= ocorrencia.getEmissor()%>
+            </td>
+
+            <td><a href="detalhes_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
+
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
