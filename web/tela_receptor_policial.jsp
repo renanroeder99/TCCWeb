@@ -27,42 +27,46 @@
 
 </head>
 <body>
+<script type="text/javascript">
+    setTimeout(function(){
+        location = ''
+    },15000)
+</script>
 <form action="receptor_acao_cadastrar.jsp" method="POST"/>
-    <script type="text/javascript">
-        setTimeout(function(){
-            location = ''
-        },15000)
-    </script>
-    <table class="form_caja">
-    <thead>
-    <tr>
-        <th>Código</th>
-        <th>Ocorrencia</th>
-        <th>Endereço</th>
-        <th>Emissor</th>
-        <th>Detalhes</th>
-    </tr>
-    </thead>
-
-    <tbody>
-
-    <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaPolicialDAO.retornarOcorrenciaPolicial(); %>
-    <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
-    <tr>
-
-
-        <td><%= ocorrencia.getId()%></td>
-        <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
-        <td><%= ocorrencia.endereco()%></td>
-        <td><%= ocorrencia.getEmissor()%></td>
-
-        <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
-
-    </tr>
-    <% } %>
-    </tbody>
-</table>
+<div>
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
     <a href="deslogar.jsp" class="botao2">Sair</a>
+</div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Código</th>
+            <th>Ocorrencia</th>
+            <th>Endereço</th>
+            <th>Emissor</th>
+            <th>Detalhes</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaPolicialDAO.retornarOcorrenciaPolicial(); %>
+        <% for (BaseOcorrencia ocorrencia: ocorrencias) {%>
+        <tr>
+
+
+            <td><%= ocorrencia.getId()%></td>
+            <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
+            <td><%= ocorrencia.endereco()%></td>
+            <td><%= ocorrencia.getEmissor()%></td>
+
+            <td><a href="detalhes_ocorrencia_policial.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
+
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
