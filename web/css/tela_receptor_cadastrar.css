@@ -1,6 +1,15 @@
 body{
     background: #cbe2ee;
 }
+.esquerda{
+    float: left;
+}
+
+.direita{
+
+}
+
+
 #caixa-cadastrar-externa{
     background-color: #a9d1e5;
     width: 985px;
@@ -14,7 +23,7 @@ body{
     background-color: white;
     width: 975px;
     height: 790px;
-    position: absolute;
+    
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0px 0px 0px black;
@@ -57,14 +66,12 @@ body{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-    position: absolute;
     left: 42px;
     top: 120px;
 }
 label{
     width: 200px;
     height: 40px;
-    position: absolute;
     left: 580px;
     font: normal 15px sans-serif;
     top: 100px;
@@ -80,10 +87,7 @@ label{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-    position: absolute;
     left: 42px;
-    top: 600px;
-
 }
 
 #receptor-email{
@@ -95,10 +99,8 @@ label{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-
-    position: absolute;
     left: 42px;
-    top: 200px;
+
 }
 #receptor-senha{
     width: 350px;
@@ -109,10 +111,7 @@ label{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-    position: absolute;
     left: 42px;
-    top: 280px;
-
 
 }
 #receptor-telefone{
@@ -124,9 +123,7 @@ label{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-    position: absolute;
     left: 42px;
-    top: 360px;
 
 }
 #receptor-endereco{
@@ -138,8 +135,6 @@ label{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-    position: absolute;
-    top: 520px;
     left: 42px;
 
 }
@@ -152,9 +147,8 @@ label{
     border-radius: 3px;
     border: 1px solid #bfc3c5;
     outline: none;
-    position: absolute;
+    
     left: 42px;
-    top: 440px;
 
 }
 
@@ -165,7 +159,7 @@ label{
 }
 
 #botao-alterar{
-    position: absolute;
+    
     left: 670px;
     top: 640px;
     padding: 10px 25px;
@@ -197,15 +191,16 @@ label{
     cursor:pointer;
 }
 
-.receptor-medico{
+.receptor-bombeiros{
     padding-left: 5px;
     font: normal 15px sans-serif;
     color: #202123;
     outline: none;
-    position: absolute;
     left: 50px;
-    top: 440px;
-
+}
+input {
+    margin:0 4px 0 0;
+    vertical-align: middle;
 }
 
 
