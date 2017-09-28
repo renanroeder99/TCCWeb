@@ -11,7 +11,7 @@
     <title>Cadastrar Receptor</title>
     <link rel="stylesheet" type="text/css" href="css/tela_receptor_cadastrar.css">
     <%
-        if(session.getAttribute("receptor") == null){
+        if (session.getAttribute("receptor") == null) {
             response.sendRedirect("tela_usuario_login.jsp");
             return;
         }
@@ -26,58 +26,75 @@
     <div id="caixa-cadastrar-externa">
         <div id="caixa-cadastro-interno">
             <div id="caixa-cadastrar-label">Cadastrar Receptor</div>
+            <div class="esquerda">
+                <div class="input-div">
+                    <input id="receptor-nome" type="text" name="receptor-nome" placeholder="Nome Completo"
+                           required="required"/>
+                </div>
 
-        <div class="input-div">
-        <input id="receptor-nome" type="text" name="receptor-nome" placeholder="Nome Completo" required="required"/>
-    </div>
+                <div class="input-div">
+                    <input id="receptor-cpf" name="receptor-cpf" type="CPF" placeholder="CPF" required="required"/>
+                </div>
 
-            <div class="input-div">
-                <input id="receptor-cpf" name="receptr-cpf" type="CPF" placeholder="CPF" required="required"/>
+                <div class="input-div">
+                    <input id="receptor-email" name="receptor-email" type="Email" placeholder="Email"
+                           required="required"/>
+                </div>
+
+                <div class="input-div">
+                    <input id="receptor-senha" name="receptor-senha" type="password" placeholder="Senha"
+                           required="required"/>
+                </div>
+
+                <div class="input-div">
+                    <input id="receptor-telefone" name="receptor-telefone" type="number" placeholder="Telefone"
+                           required="required"/>
+
+                </div>
+
+                <div class="input-div">
+                    <input id="receptor-endereco" name="receptor-endereco" type="number" placeholder="Endereço"
+                           required="required"/>
+
+                </div>
+
+                <div class="input-div">
+                    <input id="receptor-cep" name="receptor-cep" type="number" placeholder="CEP" required="required"/>
+
+                </div>
             </div>
+            <div class="esquerda">
+                <h3>Cargo</h3>
+                <div>
+                    <div>
+                    </div>
+                    <div>
+                        <input type="radio" id="receptor-medico" name="receptor-cargo" value="MED" required="required">
+                        <label for="receptor-medico">Médico</label>
+                        <div>
+                        </div>
 
-            <div class="input-div">
-                <input id="receptor-email" name="receptor-email" type="Email"placeholder="Email" required="required"/>
-            </div>
+                        <input type="radio" id="receptor-bombeiros" name="receptor-cargo" value="CDB" required="required">
+                        <label for="receptor-bombeiros">Bombeiros</label>
+                    <div>
+                    </div>
 
-            <div class="input-div">
-                <input id="receptor-senha" name = "receptor-senha" type="password" placeholder="Senha" required="required"/>
-            </div>
+                        <input type="radio" id="receptor-defesa-civil" name="receptor-cargo" value="DFC" required="required">
+                        <label for="receptor-defesa-civil">Defesa Civil</label>
+                    <div>
+                    </div>
 
-            <div class="input-div">
-                <input id="receptor-telefone" name="receptor-telefone" type="number" placeholder="Telefone" required="required"/>
+                        <input type="radio" id="receptor-policial" name="receptor-cargo" value="POL" required="required">
+                        <label for="receptor-policial">Policial</label>
+                    <div>
+                    </div>
 
-            </div>
-
-            <div class="input-div">
-                <input id="receptor-endereco" name="receptor-endereco" type="number" placeholder="Endereço" required="required"/>
-
-            </div>
-
-            <div class="input-div">
-                <input id="receptor-cep" name="receptor-cep" type="number" placeholder="CEP" required="required"/>
-
-            </div>
-            <div>
-
-                <input type="radio" id="receptor-medico" name="receptor-cargo" value="MED" required="required">
-                <label for="receptor-medico">Médico</label><br>
-
-                <input type="radio" id="receptor-bombeiros" name="receptor-cargo" value ="CDB" required="required">
-                <label for="receptor-bombeiros">Bombeiros</label><br>
-
-                <input type="radio" id="receptor-defesa-civil" name="receptor-cargo" value="DFC" required="required">
-                <label for="receptor-defesa-civil">Defesa Civil</label><br>
-
-                <input type="radio" id="receptor-policial" name="receptor-cargo" value="POL" required="required">
-                <label for="receptor-policial">Policial</label><br>
+                <div id="botoes">
+                    <button type="submit" id="botao-cadastrar">Cadastrar</button>
+                </div>
 
             </div>
-
-        <div id="botoes">
-            <button type="submit" id="botao-cadastrar">Cadastrar</button>
         </div>
-
-    </div>
     </div>
 </form>
 </body>

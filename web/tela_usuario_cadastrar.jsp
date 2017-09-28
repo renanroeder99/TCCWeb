@@ -28,17 +28,13 @@
                <input id="usuario-nome" type="text" name="usuario-nome" placeholder="Nome" required="required"/>
            </div>
 
-
            <div class="input-div">
                <input id="usuario-email" name="usuario-email" type="email" placeholder="Email" required="required"/>
            </div>
 
-
            <div class="input-div">
            <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email"placeholder="Confirmar Email" required="required"/>
              </div>
-
-
 
            <div class="input-div">
                <input id="usuario-senha" name = "usuario-senha" type="password" placeholder="Senha" required="required"/>
@@ -58,7 +54,6 @@
                <label for="usuario-data-nascimento">Data Nascimento</label>
                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required"/>
            </div>
-
 
            <div class="input-div">
              <input id="usuario-telefone" name="usuario-telefone" type="number" placeholder="Telefone" required="required"/>
