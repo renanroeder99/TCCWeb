@@ -23,7 +23,7 @@ import java.util.List;
 public class OcorrenciaDefesaCivilDAO {
 
     public static int inserir(BaseOcorrencia ocorrenciaDefesaCivil) {
-        String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ocorrencias_defesa_civil (id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, descricao) VALUES (?, ?, ?, ?, ?, ?)";
 
         Conexao conexao = new Conexao();
         try {
@@ -34,6 +34,7 @@ public class OcorrenciaDefesaCivilDAO {
             ps.setInt(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
             ps.setInt(5, ocorrenciaDefesaCivil.getNumeroResidencia());
+            ps.setString(6, ocorrenciaDefesaCivil.getDescricao());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -56,7 +57,7 @@ public class OcorrenciaDefesaCivilDAO {
         Conexao conexao = new Conexao();
 
         try {
-            String sql = "UPDATE ocorrencias_defesa_civil SET id_tipo_ocorrencias_defesa_civil = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ? WHERE id = ? ";
+            String sql = "UPDATE ocorrencias_defesa_civil SET id_tipo_ocorrencias_defesa_civil = ?, id_emissor = ?, cep = ?, rua = ?, numero_residencia = ?, descricao WHERE id = ? ";
 
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
@@ -65,7 +66,8 @@ public class OcorrenciaDefesaCivilDAO {
             ps.setInt(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
             ps.setInt(5, ocorrenciaDefesaCivil.getNumeroResidencia());
-            ps.setInt(6, ocorrenciaDefesaCivil.getId());
+            ps.setString(6, ocorrenciaDefesaCivil.getDescricao());
+            ps.setInt(7, ocorrenciaDefesaCivil.getId());
 
             int resultado = ps.executeUpdate();
             return resultado;
@@ -98,7 +100,7 @@ public class OcorrenciaDefesaCivilDAO {
 
     public static BaseOcorrencia buscarOcorrenciaDefesaCivilPorId(int codigo) {
         BaseOcorrencia ocorrenciaDefesaCivil = null;
-        String sql = "SELECT id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia FROM ocorrencias_defesa_civil WHERE id = ?";
+        String sql = "SELECT id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, descricao FROM ocorrencias_defesa_civil WHERE id = ?";
         Conexao conexao = new Conexao();
         try {
             PreparedStatement ps = conexao.conectar().prepareCall(sql);
@@ -113,6 +115,7 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaDefesaCivil.setDescricao(rs.getString("descricao"));
 
             }
 
@@ -126,7 +129,7 @@ public class OcorrenciaDefesaCivilDAO {
 
     public static ArrayList<BaseOcorrencia> retornarOcorrenciasDefesaCivil() {
         ArrayList<BaseOcorrencia> tabelaOcorrenciaDefesaCivil = new ArrayList<>();
-        String sql = "SELECT id, id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia FROM ocorrencias_defesa_civil";
+        String sql = "SELECT id, id_tipo_ocorrencias_defesa_civil, id_emissor, cep, rua, numero_residencia, descricao FROM ocorrencias_defesa_civil";
         Conexao conexao = new Conexao();
         try {
             Statement stt = conexao.conectar().createStatement();
@@ -141,6 +144,7 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
+                ocorrenciaDefesaCivil.setDescricao(rs.getString("descricao"));
                 tabelaOcorrenciaDefesaCivil.add(ocorrenciaDefesaCivil);
             }
         } catch (SQLException ex) {

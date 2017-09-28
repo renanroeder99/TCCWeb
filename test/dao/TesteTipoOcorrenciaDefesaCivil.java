@@ -19,7 +19,6 @@ public class TesteTipoOcorrenciaDefesaCivil {
         Limpeza.truncateTabelas();
         BaseOcorrencia defesaCivil = new BaseOcorrencia();
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
-        baseTipoOcorrencia.setDescricao("abcabc");
         defesaCivil.setRua("abcabc");
 
         int codigoInserido = TipoOcorrenciaDefesaCivilDAO.inserir(baseTipoOcorrencia);
@@ -32,7 +31,6 @@ public class TesteTipoOcorrenciaDefesaCivil {
    BaseOcorrencia defesaCivil = new BaseOcorrencia();
        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
 
-       baseTipoOcorrencia.setDescricao("edg");
        defesaCivil.setRua("weqree");
        baseTipoOcorrencia.setId(TipoOcorrenciaDefesaCivilDAO.inserir(baseTipoOcorrencia));
    
@@ -50,19 +48,16 @@ public class TesteTipoOcorrenciaDefesaCivil {
        BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
        BaseOcorrencia defesaCivil = new BaseOcorrencia();
 
-       baseTipoOcorrencia.setDescricao("abcabc");
        defesaCivil.setRua("abcabc");
        baseTipoOcorrencia.setId(TipoOcorrenciaDefesaCivilDAO.inserir(baseTipoOcorrencia));
        
        assertEquals(1, baseTipoOcorrencia.getId());
 
-       baseTipoOcorrencia.setDescricao("adc");
        defesaCivil.setRua("asfojasiohsao");
        baseTipoOcorrencia.setId(TipoOcorrenciaDefesaCivilDAO.inserir(baseTipoOcorrencia));
                
        BaseTipoOcorrencia cadastroBD = TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(baseTipoOcorrencia.getId());
        
-       assertEquals(cadastroBD.getDescricao(), baseTipoOcorrencia.getDescricao());
 
        
        assertNotEquals(0, baseTipoOcorrencia.getId());

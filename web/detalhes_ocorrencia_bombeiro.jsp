@@ -40,7 +40,7 @@
         </div>
 
         <div class="descricao">
-            <h4>Descrição:  <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%>  </h4>
+            <h4>Descrição:  <%=ocorrencia.getDescricao()%>  </h4>
         </div>
 
         <div class="telefone">

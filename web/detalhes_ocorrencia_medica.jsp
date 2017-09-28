@@ -1,4 +1,4 @@
-<%@ page import="dao.OcorrenciaDefesaCivilDAO" %>
+<%@ page import="dao.OcorrenciaDefesaCivilDAO"%>
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaMedicaDAO" %>
 <%@ page import="model.Receptor" %><%--
@@ -38,7 +38,7 @@
         </div>
 
         <div class="descricao">
-            <h4>Descrição:  <%=ocorrencia.getBaseTipoOcorrencia().getDescricao()%>  </h4>
+            <h4>Descrição:  <%=ocorrencia.getDescricao()%>  </h4>
         </div>
 
         <div class="telefone">

@@ -17,7 +17,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
     public void testarCriacao() throws SQLException {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia baseOcorrencia = new BaseTipoOcorrencia();
-        baseOcorrencia.setDescricao("grtgtrgrt");
 
         baseOcorrencia.setTipo("rtjgrg");
         baseOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrencia));
@@ -49,7 +48,6 @@ public class OcorrenciaCorpoDeBombeirosTest {
     public void testarAlterar() throws SQLException {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia baseOcorrencia = new BaseTipoOcorrencia();
-        baseOcorrencia.setDescricao("fhwqrf");
         baseOcorrencia.setTipo("ertsfw");
         baseOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrencia));
 

@@ -23,8 +23,7 @@ public class TesteTipoOcorrenciaMedica {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
         baseTipoOcorrencia.setTipo("Infarto");
-        baseTipoOcorrencia.setDescricao("Blabla");
-        
+
         int codigoInserido = TipoOcorrenciaMedicaDAO.inserir(baseTipoOcorrencia);
         assertEquals(1, codigoInserido);
     }
@@ -34,7 +33,6 @@ public class TesteTipoOcorrenciaMedica {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia ocorrenciaMedica = new BaseTipoOcorrencia();
         ocorrenciaMedica.setTipo("Infarto");
-        ocorrenciaMedica.setDescricao("Blabla");
         ocorrenciaMedica.setId(TipoOcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
         
         assertEquals(1, ocorrenciaMedica.getId());
@@ -43,8 +41,7 @@ public class TesteTipoOcorrenciaMedica {
 
         assertEquals(ocorrenciaMedica.getId(), codigoInserido.getId());
         assertEquals(ocorrenciaMedica.getTipo(), codigoInserido.getTipo());
-        assertEquals(ocorrenciaMedica.getDescricao(), codigoInserido.getDescricao());
-        
+
         
     }
     
@@ -54,21 +51,18 @@ public class TesteTipoOcorrenciaMedica {
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
 
         baseTipoOcorrencia.setTipo("Infarto");
-        baseTipoOcorrencia.setDescricao("Blabla");
         baseTipoOcorrencia.setId(TipoOcorrenciaMedicaDAO.inserir(baseTipoOcorrencia));
         
         assertEquals(1, baseTipoOcorrencia.getId());
 
         baseTipoOcorrencia.setTipo("Derrame");
-        baseTipoOcorrencia.setDescricao("Blablabla");
         baseTipoOcorrencia.setId(TipoOcorrenciaMedicaDAO.alterar(baseTipoOcorrencia));
         
         BaseTipoOcorrencia cadastroBD = TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(baseTipoOcorrencia.getId());
         
         assertEquals(cadastroBD.getId(), baseTipoOcorrencia.getId());
         assertEquals(cadastroBD.getTipo(), baseTipoOcorrencia.getTipo());
-        assertEquals(cadastroBD.getDescricao(), baseTipoOcorrencia.getDescricao());
-        
+
         assertNotEquals(0, baseTipoOcorrencia.getId());
         
     }

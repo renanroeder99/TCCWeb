@@ -17,7 +17,6 @@ public class OcorrenciaDefesaCivilTest {
         BaseTipoOcorrencia tipoOcorrenciaDefesaCivil = new BaseTipoOcorrencia();
 
         tipoOcorrenciaDefesaCivil.setTipo("Enchente");
-        tipoOcorrenciaDefesaCivil.setDescricao("Enchente na rua 7 de setembro");
         tipoOcorrenciaDefesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.inserir(tipoOcorrenciaDefesaCivil));
 
 
@@ -51,7 +50,6 @@ public class OcorrenciaDefesaCivilTest {
         BaseTipoOcorrencia tipoOcorrenciaDefesaCivil = new BaseTipoOcorrencia();
 
         tipoOcorrenciaDefesaCivil.setTipo("Enchente");
-        tipoOcorrenciaDefesaCivil.setDescricao("Enchente na rua 7 de setembro");
         tipoOcorrenciaDefesaCivil.setId(TipoOcorrenciaDefesaCivilDAO.inserir(tipoOcorrenciaDefesaCivil));
 
         Emissor emissor = new Emissor();

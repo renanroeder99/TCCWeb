@@ -16,7 +16,6 @@ public class TesteTipoOcorrenciaBombeiro {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
         baseTipoOcorrencia.setTipo("tdxtrtrtrf");
-        baseTipoOcorrencia.setDescricao("por ai");
 
         int codigoInserido = TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia);
         assertEquals(1, codigoInserido);
@@ -28,7 +27,6 @@ public class TesteTipoOcorrenciaBombeiro {
         Limpeza.truncateTabelas();
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
         baseTipoOcorrencia.setTipo("wad");
-        baseTipoOcorrencia.setDescricao("eeey5ty");
         baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia));
         
         assertEquals(1, baseTipoOcorrencia.getId());
@@ -45,20 +43,17 @@ public class TesteTipoOcorrenciaBombeiro {
         BaseTipoOcorrencia baseTipoOcorrencia = new BaseTipoOcorrencia();
 
         baseTipoOcorrencia.setTipo("abc");
-        baseTipoOcorrencia.setDescricao("por aqui");
         baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia));
 
         assertEquals(1, baseTipoOcorrencia.getId());
 
         baseTipoOcorrencia.setTipo("diferente");
-        baseTipoOcorrencia.setDescricao("tambem");
         baseTipoOcorrencia.setId(TipoOcorrenciaCorpoDeBombeirosDAO.inserir(baseTipoOcorrencia));
 
         BaseTipoOcorrencia cadastroBD = TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(baseTipoOcorrencia.getId());
 
         assertEquals(cadastroBD.getId(), baseTipoOcorrencia.getId());
         assertEquals(cadastroBD.getTipo(), baseTipoOcorrencia.getTipo());
-        assertEquals(cadastroBD.getDescricao(), baseTipoOcorrencia.getDescricao());
 
         assertNotEquals(0, baseTipoOcorrencia.getId());
 
