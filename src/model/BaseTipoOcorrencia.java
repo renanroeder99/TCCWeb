@@ -2,7 +2,7 @@ package model;
 
 public class BaseTipoOcorrencia {
 
-    private String tipo,descricao;
+    private String tipo;
 
     private int id;
 
@@ -22,17 +22,5 @@ public class BaseTipoOcorrencia {
         this.tipo = tipo;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    @Override
-    public String toString(){
-        return tipo + descricao;
-    }
 
 }

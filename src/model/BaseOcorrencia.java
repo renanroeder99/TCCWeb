@@ -1,7 +1,7 @@
 package model;
 
 public class BaseOcorrencia {
-    private String rua;
+    private String rua, descricao;
     private int cep;
     private int numeroResidencia;
     private int id;
@@ -31,6 +31,14 @@ public class BaseOcorrencia {
 
     public void setBaseTipoOcorrencia(BaseTipoOcorrencia baseTipoOcorrencia) {
         this.baseTipoOcorrencia = baseTipoOcorrencia;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getRua() {

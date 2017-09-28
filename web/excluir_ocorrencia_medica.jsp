@@ -6,9 +6,9 @@
         OcorrenciaMedicaDAO.excluirMedico(id);
         BaseOcorrencia ocorrencia = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(id);
         if (ocorrencia == null) {
-            response.sendRedirect("tela_receptor_defesa_civil.jsp?message=ok");
+            response.sendRedirect("tela_receptor_medico.jsp?message=ok");
         } else {
-            response.sendRedirect("tela_receptor_defesa_civil.jsp?message=errou");
+            response.sendRedirect("tela_receptor_medico.jsp?message=errou");
         }
     }
 }catch (NumberFormatException e){

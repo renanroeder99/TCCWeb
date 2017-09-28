@@ -22,7 +22,12 @@
     <title>Ocorrência Policial</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_policial.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
-
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
     <script src="lib/jquery-3.2.1.min.js" type=""></script>
     <script src="js/usuario-cadastrar.js"></script>
 </head>
@@ -54,7 +59,7 @@
 
 
             <div class="input-div">
-                <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="opiniao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! "></textarea>
+                <textarea cols=80 id="ocorrencia-policial-descricao" rows="10" name="ocorrencia-policial-descricao" maxlength="500" wrap="hard" placeholder="Digite uma breve descrição do acontecimento! " required="required"></textarea>
             </div>
             <div class="input-div">
                 <select name = "ocorrencia-policial-tipo-ocorrencia" id="ocorrencia-policial-tipo-ocorrencia" required="required">
