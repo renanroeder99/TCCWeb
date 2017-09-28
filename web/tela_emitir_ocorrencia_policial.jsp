@@ -22,6 +22,12 @@
     <title>Ocorrência Policial</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_policial.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="menu_superior_policial.jsp"/>

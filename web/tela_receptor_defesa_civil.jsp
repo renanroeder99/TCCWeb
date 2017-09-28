@@ -22,6 +22,12 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <tbody>
 <form action="receptor_acao_cadastrar.jsp" method="POST">
@@ -63,5 +69,6 @@
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
     <a href="deslogar.jsp" class="botao2">Sair</a>
 </form>
+</tbody>
 </body>
 </html>
