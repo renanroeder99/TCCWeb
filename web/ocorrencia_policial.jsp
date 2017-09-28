@@ -15,6 +15,8 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="lib/jquery-3.2.1.min.js" type=""></script>
+    <script src="js/usuario-cadastrar.js"></script>
 </head>
 <body>
 <%
@@ -33,6 +35,8 @@
 
     int codigo = OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial);
     if(codigo > 0){
+        %>
+        <script>mensagemOcorrenciaEmitida()</script>
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
     }else{
 
