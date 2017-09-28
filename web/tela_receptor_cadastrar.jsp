@@ -90,7 +90,7 @@
                                required="required">
                         <label for="receptor-policial">Policial</label>
                     </div>
-                    
+
                     <div id="botoes">
                         <button type="submit" id="botao-cadastrar-receptor">Cadastrar</button>
                     </div>
