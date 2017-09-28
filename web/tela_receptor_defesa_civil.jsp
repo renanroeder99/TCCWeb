@@ -30,7 +30,7 @@
 </script>
 <div class="botoes">
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
-    <a href="tela_usuario_login.jsp" class="botao2">Sair</a>
+    <a href="tela_usuario_login.jsp" class="botao">Sair</a>
 </div>
 <div>
     <table>
