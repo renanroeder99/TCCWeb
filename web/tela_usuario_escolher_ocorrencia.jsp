@@ -54,7 +54,20 @@
 
 </head>
 <body>
-<jsp:include page="menu_superior_escolher_ocorrencia.jsp" />
+
+<div id="nav">
+    <ul>
+        <li width='65' class="home"><a href='tela_escolher_ocorrencia' title='Página Incial'><img src='\css\imagens\home.png' width="40"/></a></li>
+
+
+        <li width='65' class="sair"><a href='deslogar' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
+
+
+
+    </ul>
+</div>
+
+
 <a href="tela_usuario_login.jsp" class="botao_sair">Sair</a>
 
 <div class="pai">
