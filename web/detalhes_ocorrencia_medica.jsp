@@ -1,4 +1,4 @@
-<%@ page import="dao.OcorrenciaDefesaCivilDAO" %>
+<%@ page import="dao.OcorrenciaDefesaCivilDAO"%>
 <%@ page import="model.BaseOcorrencia" %>
 <%@ page import="dao.OcorrenciaMedicaDAO" %>
 <%@ page import="model.Receptor" %><%--
@@ -20,12 +20,7 @@
         }
         Receptor receptor = (Receptor) session.getAttribute("receptor");
     %>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
 </head>
 <body>
 <%BaseOcorrencia ocorrencia = OcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(Integer.parseInt(request.getParameter("id")));%>

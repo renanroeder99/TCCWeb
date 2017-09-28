@@ -23,12 +23,7 @@
     <title>Ocorrência Desefa Civil</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
 </head>
 <body>
 <jsp:include page="menu_superior_defesa_civil.jsp"/>
@@ -36,7 +31,25 @@
 
 <form action="ocorrencia_defesa_civil.jsp" method="POST">
 
-<div id="caixa-cadastro-externa">
+    <div id="nav">
+        <ul>
+            <li width='65' class="home"><a href='tela_usuario_escolher_ocorrencia.jsp' title='Página Incial'><img src='\css\imagens\home.png' width="40"/></a></li>
+
+
+            <li width='65' class="sair"><a href='deslogar.jsp' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
+
+            <li width='65' class="policial"><a href='tela_emitir_ocorrencia_policial.jsp' title='Emitir Ocorrência Policial'><img src='\css\imagens\policial.png' width="39"/></a></li>
+
+            <li width='65' class="medico"><a href='tela_emitir_ocorrencia_medica.jsp' title='Emitir Ocorrência Médica'><img src='\css\imagens\medico.png' width="39"/></a></li>
+
+            <li width='65' class="bombeiro"><a href='tela_emitir_ocorrencia_corpo_de_bombeiros.jsp.jsp' title='Emitir Ocorrência Bombeiros'><img src='\css\imagens\bombeiro.png' width="39"/></a></li>
+
+
+        </ul>
+    </div>
+
+
+    <div id="caixa-cadastro-externa">
     <div id="caixa-cadastro-interno">
         <div id="caixa-ocorrencia-label">Ocorrência Defesa Civil</div>
 
