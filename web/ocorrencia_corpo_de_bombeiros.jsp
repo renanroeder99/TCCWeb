@@ -24,7 +24,7 @@
     baseOcorrenciaCorpoBombeiros.setEmissor(emissor);
 
     int codigo = OcorrenciaCorpoDeBombeirosDAO.inserir(baseOcorrenciaCorpoBombeiros);
-    if(codigo > 0){
+    if(codigo >= 0){
         response.sendRedirect("tela_escolher_ocorrencia.jsp?id=" + codigo);
 
     }else{
