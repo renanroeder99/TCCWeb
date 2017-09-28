@@ -30,41 +30,41 @@
             <div id="caixa-cadastrar-label">Alterar Cadastro</div>
             <input type="hidden" name="usuario-id" value="<%=emissor.getId()%>">
             <div class="input-div">
-                <input id="usuario-nome" name="usuario-nome" type="text" placeholder="Nome" value="<%=emissor.getNome()%>">
+                <input id="usuario-nome" name="usuario-nome" type="text" placeholder="Nome" required="required" value="<%=emissor.getNome()%>">
             </div>
             <div class="input-div">
                 <label for="usuario-data-nascimento">Data Nascimento</label>
-                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" value="<%=emissor.getDataNascimento()%>">
+                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required" value="<%=emissor.getDataNascimento()%>" >
             </div>
             <div class="input-div">
-                <input id="usuario-email" name="usuario-email" type="email" placeholder="Email" value="<%=emissor.getEmail()%>">
+                <input id="usuario-email" name="usuario-email" type="email" required="required" placeholder="Email" value="<%=emissor.getEmail()%>">
             </div>
             <div class="input-div">
-                <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email"placeholder="Confirmar Email">
+                <input id="usuario-confirmar-email" name="usuario-confirmar-email" type="email" required="required" placeholder="Confirmar Email">
             </div>
 
             <div class="input-div">
-                <input id="usuario-senha" name="usuario-senha" type="password" placeholder="Senha">
+                <input id="usuario-senha" name="usuario-senha" type="password" required="required" placeholder="Senha">
             </div>
             <div class="input-div">
-                <input id="usuario-rg" name="usuario-rg" type="text" placeholder="RG" value="<%=emissor.getRg()%>">
+                <input id="usuario-rg" name="usuario-rg" type="text" placeholder="RG" required="required" value="<%=emissor.getRg()%>">
 
             </div>
             <div class="input-div">
-                <input id="usuario-cpf"  name="usuario-cpf" type="text" placeholder="CPF" value="<%=emissor.getCpf()%>">
+                <input id="usuario-cpf"  name="usuario-cpf" type="text" placeholder="CPF" required="required" value="<%=emissor.getCpf()%>">
 
             </div>
             <div class="input-div">
-                <input id="usuario-cep"  name="usuario-cep" type="text" placeholder="CEP" value="<%=emissor.getCep()%>">
+                <input id="usuario-cep"  name="usuario-cep" type="text" placeholder="CEP" required="required" value="<%=emissor.getCep()%>">
             </div>
             <div class="input-div">
-                <input id="usuario-telefone"  name="usuario-telefone" type="text" placeholder="Telefone" value="<%=emissor.getTelefone()%>">
+                <input id="usuario-telefone"  name="usuario-telefone" type="text" placeholder="Telefone" required="required" value="<%=emissor.getTelefone()%>">
             </div>
             <div class="input-div">
-                <input id="usuario-endereco" name="usuario-endereco" type="text" placeholder="Endereço" value="<%=emissor.getEndereco()%>">
+                <input id="usuario-endereco" name="usuario-endereco" type="text" placeholder="Endereço" required="required" value="<%=emissor.getEndereco()%>">
             </div>
             <div class="input-div">
-                <input id="usuario-numero-residencia" name="usuario-numero-residencia" type="text" placeholder="N° Residência" value="<%=emissor.getNumeroResidencia()%>">
+                <input id="usuario-numero-residencia" name="usuario-numero-residencia" type="text" placeholder="N° Residência" required="required" value="<%=emissor.getNumeroResidencia()%>">
             </div>
         </div>
         <div id="botoes">
