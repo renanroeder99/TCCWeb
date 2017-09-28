@@ -22,7 +22,12 @@
     <title>Ocorrência Corpo de Bombeiros</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
-
+    <style type="text/css">
+        body {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="menu_superior_corpo_de_bombeiros.jsp"/>
