@@ -45,12 +45,7 @@
     <title>Escolher Ocorrência</title>
     <link rel="stylesheet" type="text/css" href="css/tela_usuario_escolher_ocorrencia.css">
     <meta charset="UTF-8"/>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
 
 </head>
 <body>

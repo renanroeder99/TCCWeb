@@ -22,12 +22,7 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
 </head>
 <tbody>
 <form action="receptor_acao_cadastrar.jsp" method="POST">

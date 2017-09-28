@@ -19,12 +19,7 @@
         }
         Receptor receptor = (Receptor) session.getAttribute("receptor");
     %>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
 </head>
 <body>
 <%BaseOcorrencia ocorrencia = OcorrenciaDefesaCivilDAO.buscarOcorrenciaDefesaCivilPorId(Integer.parseInt(request.getParameter("id")));%>
