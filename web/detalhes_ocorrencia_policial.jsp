@@ -18,12 +18,7 @@
         }
         Receptor receptor = (Receptor) session.getAttribute("receptor");
     %>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
     <link rel="stylesheet" type="text/css" href="css/detalhes_ocorrencia_policial.css">
 </head>
 <body>
