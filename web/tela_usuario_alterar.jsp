@@ -12,12 +12,7 @@
     <title>Alterar Informações</title>
     <link rel="stylesheet" type="text/css" href="css/tela_alterar_usuario.css">
     <meta charset="UTF-8"/>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+
 </head>
 <body>
 <jsp:include page="verificar_login.jsp"/>

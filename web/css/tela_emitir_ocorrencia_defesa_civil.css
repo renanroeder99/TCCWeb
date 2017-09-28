@@ -145,3 +145,38 @@ body{
 
     cursor:pointer;
 }
+#nav ul{
+    list-style: none;
+}
+#nav ul li{
+    margin: 10px;
+}
+
+#nav ul  .sair{
+    position: absolute;
+    left: 90%;
+
+}
+#nav ul .home{
+    position: absolute;
+    left: 10%;
+
+}
+#nav ul .policial{
+    position: absolute;
+    left: 40%;
+
+}
+
+#nav ul .medico{
+    position: absolute;
+    left: 50%;
+
+}
+
+#nav ul .bombeiro{
+    position: absolute;
+    left: 60%;
+
+}
+
