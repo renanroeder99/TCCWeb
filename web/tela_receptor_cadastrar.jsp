@@ -17,12 +17,6 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
-    <style type="text/css">
-        body {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
 </head>
 <body>
 
@@ -54,11 +48,10 @@
                 <div class="input-div">
                     <input id="receptor-telefone" name="receptor-telefone" type="number" placeholder="Telefone"
                            required="required"/>
-
                 </div>
 
                 <div class="input-div">
-                    <input id="receptor-endereco" name="receptor-endereco" type="number" placeholder="Endereço"
+                    <input id="receptor-endereco" name="receptor-endereco" type="text" placeholder="Endereço"
                            required="required"/>
 
                 </div>
@@ -78,21 +71,25 @@
                         <label for="receptor-medico">Médico</label>
                         <div>
                         </div>
+                        <br>
 
                         <input type="radio" id="receptor-bombeiros" name="receptor-cargo" value="CDB" required="required">
                         <label for="receptor-bombeiros">Bombeiros</label>
                     <div>
                     </div>
+                        <br>
 
                         <input type="radio" id="receptor-defesa-civil" name="receptor-cargo" value="DFC" required="required">
                         <label for="receptor-defesa-civil">Defesa Civil</label>
                     <div>
                     </div>
+                        <br>
 
                         <input type="radio" id="receptor-policial" name="receptor-cargo" value="POL" required="required">
                         <label for="receptor-policial">Policial</label>
                     <div>
                     </div>
+                        <br>
 
                 <div id="botoes">
                     <button type="submit" id="botao-cadastrar">Cadastrar</button>
