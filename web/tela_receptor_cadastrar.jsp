@@ -91,9 +91,9 @@
                     </div>
                         <br>
 
-                <div id="botoes">
-                    <button type="submit" id="botao-cadastrar">Cadastrar</button>
-                </div>
+                        <div id="botoes">
+                            <button type="submit" id="botao-cadastrar">Cadastrar</button>
+                        </div>
 
             </div>
         </div>
