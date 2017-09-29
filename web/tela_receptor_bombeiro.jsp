@@ -34,7 +34,7 @@
     <a href="tela_usuario_login.jsp" id="botao-sair">Sair</a>
 </div>
 <div>
-    <table>
+    <table class="table">
         <thead>
         <tr>
                 <th>Código</th>
