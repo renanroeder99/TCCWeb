@@ -13,6 +13,16 @@
     <script src="lib/jquery-3.2.1.min.js" type=""></script>
     <script src="js/usuario-cadastrar.js"></script>
     <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+            $("#usuario-telefone").mask("9999-9999");
+            $("#usuario-cep").mask("99999-999");
+            $("#usuario-cpf").mask("999.999.999-99");
+
+        });
+    </script>
 
 </head>
 <body>
@@ -41,7 +51,7 @@
            </div>
 
            <div class="input-div">
-               <input id="usuario-cpf" name="usuario-cpf" type="number" placeholder="CPF" required="required"/>
+               <input id="usuario-cpf" name="usuario-cpf" type="text" placeholder="CPF" required="required"/>
 
            </div>
 
@@ -56,11 +66,12 @@
            </div>
 
            <div class="input-div">
-             <input id="usuario-telefone" name="usuario-telefone" type="number" placeholder="Telefone" required="required"/>
+             <input id="usuario-telefone" name="usuario-telefone" type="text" placeholder="Telefone" required="required"/>
+
          </div>
 
            <div class="input-div">
-               <input id="usuario-cep" name="usuario-cep" type="number" placeholder="CEP" required="required"/>
+               <input id="usuario-cep" name="usuario-cep" type="text" placeholder="CEP" required="required"/>
            </div>
 
 

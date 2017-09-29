@@ -43,9 +43,9 @@ public class EmissorDAO {
             ps.setString(3, emissor.getCpf());
             ps.setInt(4, emissor.getRg());
             ps.setString(5, emissor.getEndereco());
-            ps.setInt(6, emissor.getTelefone());
+            ps.setString(6, emissor.getTelefone());
             ps.setString(7, emissor.getEmail());
-            ps.setInt(8, emissor.getCep());
+            ps.setString(8, emissor.getCep());
             ps.setDate(9, emissor.getDataNascimento());
 
             ps.execute();
@@ -85,9 +85,9 @@ public class EmissorDAO {
             ps.setString(3, usuario.getCpf());
             ps.setInt(4, usuario.getRg());
             ps.setString(5, usuario.getEndereco());
-            ps.setInt(6, usuario.getTelefone());
+            ps.setString(6, usuario.getTelefone());
             ps.setString(7, usuario.getEmail());
-            ps.setInt(8, usuario.getCep());
+            ps.setString(8, usuario.getCep());
             ps.setInt(10, usuario.getId());
             ps.setDate(9, usuario.getDataNascimento());
 
@@ -153,9 +153,9 @@ public class EmissorDAO {
                 cadastroUsuario.setCpf(rs.getString("cpf"));
                 cadastroUsuario.setRg(rs.getInt("rg"));
                 cadastroUsuario.setEndereco(rs.getString("endereco"));
-                cadastroUsuario.setTelefone(rs.getInt("telefone_celular"));
+                cadastroUsuario.setTelefone(rs.getString("telefone_celular"));
                 cadastroUsuario.setEmail(rs.getString("email"));
-                cadastroUsuario.setCep(rs.getInt("cep"));
+                cadastroUsuario.setCep(rs.getString("cep"));
                 cadastroUsuario.setDataNascimento(rs.getDate("data_nascimento"));
 
             }
@@ -208,7 +208,7 @@ public class EmissorDAO {
                 emissor.setEndereco(resultados.getString("usuario-endereco"));
                 emissor.setEndereco(resultados.getString("usuario-telefone"));
                 emissor.setEmail(resultados.getString("usuario-email"));
-                emissor.setCep(resultados.getInt("usuario-cep"));
+                emissor.setCep(resultados.getString("usuario-cep"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -234,9 +234,9 @@ public class EmissorDAO {
                 emissor.setCpf(rs.getString("usuario-cpf"));
                 emissor.setRg(rs.getInt("usuario-rg"));
                 emissor.setEndereco(rs.getString("usuario-endereco"));
-                emissor.setTelefone(rs.getInt("usuario-telefone"));
+                emissor.setTelefone(rs.getString("usuario-telefone"));
                 emissor.setEmail(rs.getString("usuario-email"));
-                emissor.setCep(rs.getInt("usuario-cep"));
+                emissor.setCep(rs.getString("usuario-cep"));
                 emissor.setDataNascimento(rs.getDate("data_nascimento"));
             }
         } catch (SQLException ex) {

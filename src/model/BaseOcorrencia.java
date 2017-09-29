@@ -2,7 +2,7 @@ package model;
 
 public class BaseOcorrencia {
     private String rua, descricao;
-    private int cep;
+    private String cep;
     private int numeroResidencia;
     private int id;
 
@@ -49,11 +49,11 @@ public class BaseOcorrencia {
         this.rua = rua;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 

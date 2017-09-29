@@ -22,6 +22,16 @@
     <title>Ocorrência Corpo de Bombeiros</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
     <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+
+            $("#ocorrencia-corpo_de_bombeiros-cep").mask("99999-999");
+
+
+        });
+    </script>
 
 </head>
 <body>

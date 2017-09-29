@@ -13,6 +13,16 @@
     <title>Alterar Informações</title>
     <link rel="stylesheet" type="text/css" href="css/tela_alterar_usuario.css">
     <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+            $("#usuario-telefone").mask("9999-9999");
+            $("#usuario-cep").mask("99999-999");
+            $("#usuario-cpf").mask("999.999.999-99");
+
+        });
+    </script>
 
 </head>
 <body>

@@ -18,12 +18,32 @@ public class Emissor {
     private String confirmarEmail;
     private String senha;
     private String cpf;
+
+
     private String endereco;
     private String confirmarSenha;
-    private int rg, telefone;
-    private int cep, numeroResidencia, id;
+    private String  telefone;
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    private String cep;
+    private int id, rg, numeroResidencia;
     private String rua;
     private Date dataNascimento;
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
     public String getConfirmarSenha() {
         return confirmarSenha;
@@ -33,9 +53,7 @@ public class Emissor {
         this.confirmarSenha = confirmarSenha;
     }
 
-    public void setCep(int cep) {
-        this.cep = cep;
-    }
+
 
     public int getNumeroResidencia() {
         return numeroResidencia;
@@ -61,13 +79,7 @@ public class Emissor {
         this.id = id;
     }
 
-    public int getTelefone() {
-        return telefone;
-    }
 
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
-    }
 
     public String getSenha() {
         return senha;
@@ -141,9 +153,7 @@ public class Emissor {
         this.dataNascimento = dataNascimento;
     }
 
-    public int getCep() {
-        return cep;
-    }
+
 
     @Override
     public String toString(){
