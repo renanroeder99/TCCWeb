@@ -37,7 +37,7 @@
             <li width='65' class="home"><a href='tela_usuario_escolher_ocorrencia.jsp' title='Página Incial'><img src='\css\imagens\home.png' width="40"/></a></li>
 
 
-            <li width='65' class="sair"><a href='deslogar.jsp' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
+            <li width='65' class="sair"><a href='tela_usuario_login.jsp' title='Sair'><img src='\css\imagens\sair.png' width="39"/></a></li>
 
             <li width='65' class="medico"><a href='tela_emitir_ocorrencia_medica.jsp' title='Emitir Ocorrência Médica'><img src='\css\imagens\medico.png' width="39"/></a></li>
 

@@ -4,7 +4,7 @@ USE denuncias;
 
 CREATE TABLE IF NOT EXISTS receptores (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  login VARCHAR(25) UNIQUE NOT NULL,
+  login VARCHAR(25) UNIQUE,
   nome_completo VARCHAR(100) NOT NULL,
   senha VARCHAR(128) NOT NULL,
   cpf VARCHAR(15) UNIQUE NOT NULL,
@@ -12,13 +12,13 @@ CREATE TABLE IF NOT EXISTS receptores (
   cargo VARCHAR(20)NOT NULL,
   endereco VARCHAR(100) NOT NULL,
   telefone_celular BIGINT(15),
-  email VARCHAR(64) UNIQUE NOT NULL,
-  foto BLOB
+  email VARCHAR(64) UNIQUE NOT NULL
+
 );
 
 CREATE TABLE IF NOT EXISTS emissores (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  usuario VARCHAR(25) UNIQUE NOT NULL,
+  usuario VARCHAR(25) UNIQUE,
   senha VARCHAR(128) NOT NULL,
   nome VARCHAR(100)NOT NULL,
   cpf VARCHAR(15) UNIQUE NOT NULL,
@@ -27,32 +27,30 @@ CREATE TABLE IF NOT EXISTS emissores (
   telefone_celular BIGINT(15)NOT NULL,
   email VARCHAR(64) UNIQUE NOT NULL,
   cep VARCHAR(10)NOT NULL,
-  trotes INT(2)NOT NULL,
-  foto BLOB
+  trotes INT(2),
+  data_nascimento DATE
+
 );
 
 CREATE TABLE tipo_ocorrencias_policiais (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  tipo VARCHAR(30),
-  descricao TEXT
+  tipo VARCHAR(30)
+
 );
 
 CREATE TABLE tipo_ocorrencias_bombeiros (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  tipo VARCHAR(21),
-  descricao TEXT
+  tipo VARCHAR(21)
 );
 
 CREATE TABLE tipo_ocorrencias_medicas (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  tipo VARCHAR(30),
-  descricao TEXT
+  tipo VARCHAR(30)
 );
 
 CREATE TABLE tipo_ocorrencias_defesa_civil (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  tipo VARCHAR(40),
-  descricao TEXT
+  tipo VARCHAR(40)
 );
 
 CREATE TABLE IF NOT EXISTS ocorrencias_policiais (
@@ -62,6 +60,7 @@ CREATE TABLE IF NOT EXISTS ocorrencias_policiais (
   id_tipo_ocorrencias_policiais INT UNSIGNED ,
   id_emissor INT UNSIGNED,
 
+  descricao VARCHAR(255)   ,
   FOREIGN KEY (id_tipo_ocorrencias_policiais) REFERENCES tipo_ocorrencias_policiais(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
@@ -76,6 +75,8 @@ CREATE TABLE  IF NOT EXISTS  ocorrencias_medicas (
 
   id_tipo_ocorrencias_medicas INT UNSIGNED ,
   id_emissor INT UNSIGNED,
+
+  descricao VARCHAR(255),
 
   FOREIGN KEY (id_tipo_ocorrencias_medicas) REFERENCES tipo_ocorrencias_medicas(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
@@ -93,6 +94,7 @@ CREATE TABLE  IF NOT EXISTS  ocorrencias_bombeiros(
   id_tipo_ocorrencias_bombeiros INT UNSIGNED,
   id_emissor INT UNSIGNED,
 
+  descricao VARCHAR(255),
   FOREIGN KEY (id_tipo_ocorrencias_bombeiros) REFERENCES tipo_ocorrencias_bombeiros(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
@@ -107,7 +109,7 @@ CREATE TABLE  IF NOT EXISTS  ocorrencias_defesa_civil(
 
   id_tipo_ocorrencias_defesa_civil INT UNSIGNED,
   id_emissor INT UNSIGNED,
-
+  descricao VARCHAR(255)  ,
   FOREIGN KEY (id_tipo_ocorrencias_defesa_civil) REFERENCES tipo_ocorrencias_defesa_civil(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
@@ -162,12 +164,12 @@ INSERT INTO tipo_ocorrencias_defesa_civil(tipo) VALUES
   ("Quedas de postes de energia elétrica"),
   ("Enchente");
 
-INSERT INTO emissores(id, usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, trotes) VALUES
+INSERT INTO emissores(id, usuario, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, trotes, data_nascimento) VALUES
   ("1","FelipeCaz", "4DFF4EA340F0A823F15D3F4F01AB62EAE0E5DA579CCB851F8DB9DFE84C58B2B37B89903A740E1EE172DA793A6E79D560E5F7F9BD058A12A280433ED6FA46510A", "Felipe de Jesus Cazagranda" , "893007726" , 487517118 ,"Rua das Margaridas" , "993346739" ,
-       "felipe@hotmail.com" , "89068-700" , 0),
-  ("2","RenanRoeder","40B244112641DD78DD4F93B6C9190DD46E0099194D5A44257B7EFAD6EF9FF4683DA1EDA0244448CB343AA688F5D3EFD7314DAFE580AC0BCBF115AECA9E8DC114", "Renan Roeder", "8944477", 48877784, "Rua Jorge Wagner", "9899144", "renan@hotmail.com", "89222554",0),
-  ("3","Wanderson","3BAFBF08882A2D10133093A1B8433F50563B93C14ACD05B79028EB1D12799027241450980651994501423A66C276AE26C43B739BC65C4E16B10C3AF6C202AEBB", "Wanderson", "8944445", 48999644, "Rua General Ósorio", "9899144", "wanderson@hotmail.com", "89222574",0),
-  ("4","Antonio","A321D8B405E3EF2604959847B36D171EEBEBC4A8941DC70A4784935A4FCA5D5813DE84DFA049F06549AA61B20848C1633CE81B675286EA8FB53DB240D831C568", "Antonio", "89444445", 4888999, "Rua 7 de Setembro", "9899144", "antonio@hotmail.com", "89222578",0);
+       "felipe@hotmail.com" , "89068-700" , 0, "1999-01-15"),
+  ("2","RenanRoeder","40B244112641DD78DD4F93B6C9190DD46E0099194D5A44257B7EFAD6EF9FF4683DA1EDA0244448CB343AA688F5D3EFD7314DAFE580AC0BCBF115AECA9E8DC114", "Renan Roeder", "8944477", 48877784, "Rua Jorge Wagner", "9899144", "renan@hotmail.com", "89222554",0, "1998-05-12"),
+  ("3","Wanderson","3BAFBF08882A2D10133093A1B8433F50563B93C14ACD05B79028EB1D12799027241450980651994501423A66C276AE26C43B739BC65C4E16B10C3AF6C202AEBB", "Wanderson", "8944445", 48999644, "Rua General Ósorio", "9899144", "wanderson@hotmail.com", "89222574",0, "1994-01-25"),
+  ("4","Antony","A321D8B405E3EF2604959847B36D171EEBEBC4A8941DC70A4784935A4FCA5D5813DE84DFA049F06549AA61B20848C1633CE81B675286EA8FB53DB240D831C568", "Antony", "89444445", 4888999, "Rua 7 de Setembro", "9899144", "antony@hotmail.com", "89222578",0, "1996-11-30");
 
 INSERT INTO receptores(id, login, nome_completo, senha, cpf, cep, cargo, endereco, telefone_celular, email) VALUES
   ("1","João", "João Raimundo", "4DFF4EA340F0A823F15D3F4F01AB62EAE0E5DA579CCB851F8DB9DFE84C58B2B37B89903A740E1EE172DA793A6E79D560E5F7F9BD058A12A280433ED6FA46510A" , "83643967810" , 95062356 , "MED" , "Badenfurt" , "993346739" ,
@@ -181,15 +183,15 @@ INSERT INTO receptores(id, login, nome_completo, senha, cpf, cep, cargo, enderec
 
 
 
-INSERT INTO ocorrencias_policiais(id_emissor, id_tipo_ocorrencias_policiais, cep, rua, numero_residencia) VALUES
-  ("1", "1", "89030190", "Rua Jorge Wagner", "166"),
-  ("2", "2", "89030199", "Rua São José", "15");
+INSERT INTO ocorrencias_policiais(id_emissor, id_tipo_ocorrencias_policiais, cep, rua, numero_residencia, descricao) VALUES
+  ("1", "1", "89030190", "Rua Jorge Wagner", "166", "Suspeito correu em direção ao Trevo de Pomerode"),
+  ("2", "2", "89030199", "Rua São José", "15", "Suspeito armado");
 
-INSERT INTO ocorrencias_bombeiros(id_emissor, id_tipo_ocorrencias_bombeiros, cep, rua, numero_residencia) VALUES
-  ("2", "1", "89010730", "Rua 7 de Setembro", "166");
+INSERT INTO ocorrencias_bombeiros(id_emissor, id_tipo_ocorrencias_bombeiros, cep, rua, numero_residencia, descricao) VALUES
+  ("2", "1", "89010730", "Rua 7 de Setembro", "166", "Pessoa sentindo falta de ar");
 
-INSERT INTO ocorrencias_defesa_civil(id_emissor, id_tipo_ocorrencias_defesa_civil, cep, rua, numero_residencia) VALUES
-  ("3", "1", "89090730", "Rua XV de Novembro", "15");
+INSERT INTO ocorrencias_defesa_civil(id_emissor, id_tipo_ocorrencias_defesa_civil, cep, rua, numero_residencia, descricao) VALUES
+  ("3", "1", "89090730", "Rua XV de Novembro", "15", "Estamos ilhados em cima da casa");
 
-INSERT INTO ocorrencias_medicas(id_emissor, id_tipo_ocorrencias_medicas, cep, rua, numero_residencia) VALUES
-  ("4", "1", "89080730", "Rua São José", "12")
+INSERT INTO ocorrencias_medicas(id_emissor, id_tipo_ocorrencias_medicas, cep, rua, numero_residencia, descricao) VALUES
+  ("4", "1", "89080730", "Rua São José", "12", "Pessoa altamente doente");
