@@ -53,7 +53,7 @@
         <div id="caixa-ocorrencia-label">Ocorrência Corpo de Bombeiros</div>
 
         <div class="input-div">
-            <input id="ocorrencia-corpo_de_bombeiros-rua" name="ocorrencia-corpo_de_bombeiros-rua" required="required" type="text" placeholder="Rua"/>
+            <input id="ocorrencia-corpo_de_bombeiros-rua" name="ocorrencia-corpo_de_bombeiros-rua" required="required" type="text" placeholder="Logradouro"/>
         </div>
 
 

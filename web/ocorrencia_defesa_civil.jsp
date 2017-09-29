@@ -23,13 +23,12 @@
 
 
 
-    ocorrencia.setRua(request.getParameter("ocorrência-defesa-rua"));
+    ocorrencia.setRua(request.getParameter("ocorrencia-defesa-rua"));
     ocorrencia.setCep(Integer.parseInt(request.getParameter("ocorrencia-defesa-cep")));
     ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-defesa-numero-residencia")));
     ocorrencia.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(Integer.parseInt(request.getParameter("ocorrencia-defesa-tipo-ocorrencia"))));
 
-    ocorrencia.setRua(request.getParameter("ocorrencia-rua"));
-    ocorrencia.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-numero-residencia")));
+
     ocorrencia.setDescricao(request.getParameter("ocorrencia-defesa-descricao"));
     ocorrencia.setEmissor(emissor);
     int codigo = OcorrenciaDefesaCivilDAO.inserir(ocorrencia);

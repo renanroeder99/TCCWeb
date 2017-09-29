@@ -53,7 +53,7 @@
         <div id="caixa-ocorrencia-label">Ocorrência Defesa Civil</div>
 
         <div class="input-div">
-            <input id="ocorrência-defesa-rua" name="ocorrência-defesa-rua" type="text" placeholder="Rua" required="required"/>
+            <input id="ocorrencia-defesa-rua" name="ocorrencia-defesa-rua" type="text" placeholder="Logradouro" required="required"/>
         </div>
 
 

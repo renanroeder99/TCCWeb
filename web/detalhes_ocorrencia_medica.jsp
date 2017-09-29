@@ -54,7 +54,7 @@
         </div>
 
         <div class="endereco">
-            <h4>Endereço:   <%=ocorrencia.getEmissor().getEndereco()%>  </h4>
+            <h4>Endereço:   <%=ocorrencia.getRua()%>  </h4>
         </div>
 
         <div class="email">

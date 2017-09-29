@@ -56,7 +56,7 @@
             <div id="caixa-ocorrencia-label">Ocorrência Policial</div>
 
             <div class="input-div">
-                <input id="ocorrencia-policial-rua" name="ocorrencia-policial-rua" type="text" placeholder="Rua"required="required"/>
+                <input id="ocorrencia-policial-rua" name="ocorrencia-policial-rua" type="text" placeholder="Logradouro"required="required"/>
             </div>
 
 
@@ -92,8 +92,6 @@
 
         </div>
     </div>
-
-
 
 
 

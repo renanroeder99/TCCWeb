@@ -76,13 +76,6 @@ table tr:nth-child(even) td {
     text-shadow: 1px 0px 1px white;
 }
 
-.botao {
-    color: #555555;
-    cursor: auto;
-    font: bold 16px sans-serif;
-    position: absolute;
-    text-decoration: none;
-}
 
 .botao2 {
     color: #555555;
@@ -91,4 +84,29 @@ table tr:nth-child(even) td {
     position: absolute;
     left: 170px;
     text-decoration: none;
+}
+
+.botao #botao-cadastar {
+    height: 40px;
+    position: absolute;
+    left: 50px;
+    top: 15px;
+    font: bold 16px sans-serif;
+    cursor: auto;
+    color: #555555;
+}
+
+.botao #botao-sair{
+    height: 40px;
+    position: absolute;
+    left: 90px;
+    top: 15px ;
+    font: bold 16px sans-serif;
+    cursor: auto;
+    color: #555555;
+
+}
+a:link{
+    text-decoration: none;
+    height: 40px;
 }

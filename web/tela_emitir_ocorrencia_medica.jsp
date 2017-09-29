@@ -51,7 +51,7 @@
             <div id="caixa-ocorrencia-label">Ocorrência Médica</div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-rua" name="ocorrencia-medica-rua" type="text" placeholder="Rua" required="required"/>
+                <input id="ocorrencia-medica-rua" name="ocorrencia-medica-rua" type="text" placeholder="Logradouro" required="required"/>
             </div>
 
             <div class="input-div">
