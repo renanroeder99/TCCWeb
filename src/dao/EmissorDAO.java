@@ -88,8 +88,9 @@ public class EmissorDAO {
             ps.setInt(6, usuario.getTelefone());
             ps.setString(7, usuario.getEmail());
             ps.setInt(8, usuario.getCep());
-            ps.setInt(9, usuario.getId());
-            ps.setDate(10, usuario.getDataNascimento());
+            ps.setInt(10, usuario.getId());
+            ps.setDate(9, usuario.getDataNascimento());
+
             int resultado = ps.executeUpdate();
             return resultado;
 
