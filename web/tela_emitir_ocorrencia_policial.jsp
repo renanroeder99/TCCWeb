@@ -41,7 +41,7 @@
 
             <li width='65' class="medico"><a href='tela_emitir_ocorrencia_medica.jsp' title='Emitir Ocorrência Médica'><img src='\css\imagens\medico.png' width="39"/></a></li>
 
-            <li width='65' class="defesa-civil"><a href='tela_emitir_ocorrencia_policial.jsp' title='Emitir Ocorrência Defesa Civil'><img src='\css\imagens\defesacivil.png' width="39"/></a></li>
+            <li width='65' class="defesa-civil"><a href='tela_emitir_ocorrencia_defesa_civil.jsp' title='Emitir Ocorrência Defesa Civil'><img src='\css\imagens\defesacivil.png' width="39"/></a></li>
 
 
             <li width='65' class="bombeiro"><a href='tela_emitir_ocorrencia_corpo_de_bombeiros.jsp' title='Emitir Ocorrência Bombeiros'><img src='\css\imagens\bombeiro.png' width="39"/></a></li>
