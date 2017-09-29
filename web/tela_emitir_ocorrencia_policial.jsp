@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="css/menu_superior.css">
     <script src="lib/jquery-3.2.1.min.js" type=""></script>
     <script src="js/usuario-cadastrar.js"></script>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 

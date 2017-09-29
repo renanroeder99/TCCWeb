@@ -20,7 +20,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <link rel="stylesheet" type="text/css" href="css/tela_receptor.css">
-    <title>Ocorrencias Bombeiros</title>
+    <title>Ocorrências Bombeiros</title>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <script type="text/javascript">
@@ -28,9 +29,9 @@
         location = ''
     },15000)
 </script>
-<div>
+<div class="botoes">
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
-    <a href="tela_usuario_login.jsp" class="botao2">Sair</a>
+    <a href="tela_usuario_login.jsp" class="botao">Sair</a>
 </div>
 <div>
     <table>

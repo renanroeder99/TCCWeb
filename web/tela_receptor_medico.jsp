@@ -19,9 +19,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Ocorrencias Médicas</title>
+    <title>Ocorrências Médicas</title>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <link rel="stylesheet" type="text/css" href="css/tela_receptor.css">
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <script type="text/javascript">
@@ -31,7 +32,7 @@
 </script>
 <div class="botoes">
     <a href="tela_receptor_cadastrar.jsp" class="botao">Cadastrar Receptor</a>
-    <a href="tela_usuario_login.jsp" class="botao2">Sair</a>
+    <a href="tela_usuario_login.jsp" class="botao">Sair</a>
 </div>
 <div>
     <table>

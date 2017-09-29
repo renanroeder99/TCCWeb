@@ -21,7 +21,7 @@
 <head>
     <title>Ocorrência Corpo de Bombeiros</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_corpo_de_bombeiros.css">
-
+    <meta charset="UTF-8"/>
 
 </head>
 <body>

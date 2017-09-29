@@ -21,6 +21,7 @@
         }
         Emissor emissor = (Emissor) session.getAttribute("emissor");
     %>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 
