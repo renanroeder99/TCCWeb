@@ -31,7 +31,7 @@ public class OcorrenciaPolicialDAO {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
-            ps.setInt(3, ocorrenciaPolicial.getCep());
+            ps.setString(3, ocorrenciaPolicial.getCep());
             ps.setString(4, ocorrenciaPolicial.getRua());
             ps.setInt(5, ocorrenciaPolicial.getNumeroResidencia());
             ps.setString(6, ocorrenciaPolicial.getDescricao());
@@ -62,7 +62,7 @@ public class OcorrenciaPolicialDAO {
             
             ps.setInt(1, ocorrenciaPolicial.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaPolicial.getEmissor().getId());
-            ps.setInt(3, ocorrenciaPolicial.getCep());
+            ps.setString(3, ocorrenciaPolicial.getCep());
             ps.setString(4, ocorrenciaPolicial.getRua());
             ps.setInt(5, ocorrenciaPolicial.getNumeroResidencia());
             ps.setInt(6, ocorrenciaPolicial.getId());
@@ -112,7 +112,7 @@ public class OcorrenciaPolicialDAO {
                 ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
                 ocorrenciaPolicial.setId(codigo);
                 ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaPolicial.setCep(rs.getInt("cep"));
+                ocorrenciaPolicial.setCep(rs.getString("cep"));
                 ocorrenciaPolicial.setRua(rs.getString("rua"));
                 ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaPolicial.setDescricao(rs.getString("descricao"));
@@ -139,7 +139,7 @@ public class OcorrenciaPolicialDAO {
                 ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
 
                 ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaPolicial.setCep(rs.getInt("cep"));
+                ocorrenciaPolicial.setCep(rs.getString("cep"));
                 ocorrenciaPolicial.setRua(rs.getString("rua"));
                 ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaPolicial.setDescricao(rs.getString("descricao"));

@@ -31,7 +31,7 @@ public class OcorrenciaDefesaCivilDAO {
 
             ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaDefesaCivil.getEmissor().getId());
-            ps.setInt(3, ocorrenciaDefesaCivil.getCep());
+            ps.setString(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
             ps.setInt(5, ocorrenciaDefesaCivil.getNumeroResidencia());
             ps.setString(6, ocorrenciaDefesaCivil.getDescricao());
@@ -63,7 +63,7 @@ public class OcorrenciaDefesaCivilDAO {
 
             ps.setInt(1, ocorrenciaDefesaCivil.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaDefesaCivil.getEmissor().getId());
-            ps.setInt(3, ocorrenciaDefesaCivil.getCep());
+            ps.setString(3, ocorrenciaDefesaCivil.getCep());
             ps.setString(4, ocorrenciaDefesaCivil.getRua());
             ps.setInt(5, ocorrenciaDefesaCivil.getNumeroResidencia());
             ps.setString(6, ocorrenciaDefesaCivil.getDescricao());
@@ -112,7 +112,7 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setId(codigo);
                 ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
                 ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
+                ocorrenciaDefesaCivil.setCep(rs.getString("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaDefesaCivil.setDescricao(rs.getString("descricao"));
@@ -141,7 +141,7 @@ public class OcorrenciaDefesaCivilDAO {
                 ocorrenciaDefesaCivil.setBaseTipoOcorrencia(TipoOcorrenciaDefesaCivilDAO.buscarDefesaCivilPorId(rs.getInt("id_tipo_ocorrencias_defesa_civil")));
                 //Tipo de ocorrencia
                 ocorrenciaDefesaCivil.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaDefesaCivil.setCep(rs.getInt("cep"));
+                ocorrenciaDefesaCivil.setCep(rs.getString("cep"));
                 ocorrenciaDefesaCivil.setRua(rs.getString("rua"));
                 ocorrenciaDefesaCivil.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaDefesaCivil.setDescricao(rs.getString("descricao"));

@@ -29,7 +29,7 @@ public class OcorrenciaMedicaDAO {
             PreparedStatement ps = conexao.conectar().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
-            ps.setInt(3, ocorrenciaMedica.getCep());
+            ps.setString(3, ocorrenciaMedica.getCep());
             ps.setString(4, ocorrenciaMedica.getRua());
             ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
             ps.setString(6, ocorrenciaMedica.getDescricao());
@@ -59,7 +59,7 @@ public class OcorrenciaMedicaDAO {
             
             ps.setInt(1, ocorrenciaMedica.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaMedica.getEmissor().getId());
-            ps.setInt(3, ocorrenciaMedica.getCep());
+            ps.setString(3, ocorrenciaMedica.getCep());
             ps.setString(4, ocorrenciaMedica.getRua());
             ps.setInt(5, ocorrenciaMedica.getNumeroResidencia());
             ps.setInt(6, ocorrenciaMedica.getId());
@@ -109,7 +109,7 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setId(codigo);
                 ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
                 ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaMedica.setCep(rs.getInt("cep"));
+                ocorrenciaMedica.setCep(rs.getString("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaMedica.setDescricao(rs.getString("descricao"));
@@ -136,7 +136,7 @@ public class OcorrenciaMedicaDAO {
                 ocorrenciaMedica.setBaseTipoOcorrencia(TipoOcorrenciaMedicaDAO.buscarOcorrenciaMedicaPorID(rs.getInt("id_tipo_ocorrencias_medicas")));
                 //Tipo de ocorrencia
                 ocorrenciaMedica.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaMedica.setCep(rs.getInt("cep"));
+                ocorrenciaMedica.setCep(rs.getString("cep"));
                 ocorrenciaMedica.setRua(rs.getString("rua"));
                 ocorrenciaMedica.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaMedica.setDescricao(rs.getString("descricao"));
