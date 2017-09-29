@@ -79,7 +79,7 @@ Chamar a viatura policial em caso de crimes"><button id="ocorrencia-policial">Oc
 
             <a href="tela_emitir_ocorrencia_corpo_de_bombeiros.jsp" title="Chamar a ambulancia dos bombeiros em caso de necessidade de primeiros socorros"><button id="ocorrencia-bombeiros">Corpo de Bombeiros</button></a>
 
-            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="Chamar o carro da defesa civil em casos de desastres naturais"><button id="ocorrencia-defesa-civil">Defesa Cívil</button></a>
+            <a href="tela_emitir_ocorrencia_defesa_civil.jsp" title="Chamar o carro da defesa civil em casos de desastres naturais"><button id="ocorrencia-defesa-civil">Defesa Civil</button></a>
         </div>
 
     </div>
