@@ -13,12 +13,22 @@ public class Receptor {
     private String nome;
     private String senha;
     private String cpf;
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
     private String cargo;
     private String endereco;
     private String email;
     private String cep;
     private String confirmarSenha;
-    private int telefone, id;
+    private String telefone;
+    private  int id;
 
     public String getConfirmarSenha() {
         return confirmarSenha;
@@ -91,14 +101,6 @@ public class Receptor {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
     }
 
 }

@@ -29,7 +29,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
             ps.setInt(1, ocorrenciaBombeiros.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciaBombeiros.getEmissor().getId());
-            ps.setInt(3, ocorrenciaBombeiros.getCep());
+            ps.setString(3, ocorrenciaBombeiros.getCep());
             ps.setString(4, ocorrenciaBombeiros.getRua());
             ps.setInt(5, ocorrenciaBombeiros.getNumeroResidencia());
             ps.setString(6, ocorrenciaBombeiros.getDescricao());
@@ -58,7 +58,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
 
             ps.setInt(1, ocorrenciasBombeiros.getBaseTipoOcorrencia().getId());
             ps.setInt(2, ocorrenciasBombeiros.getEmissor().getId());
-            ps.setInt(3, ocorrenciasBombeiros.getCep());
+            ps.setString(3, ocorrenciasBombeiros.getCep());
             ps.setString(4, ocorrenciasBombeiros.getRua());
             ps.setInt(5, ocorrenciasBombeiros.getNumeroResidencia());
             ps.setString(6, ocorrenciasBombeiros.getDescricao());
@@ -107,7 +107,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
                 ocorrenciasBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
                 ocorrenciasBombeiros.setId(codigo);
                 ocorrenciasBombeiros.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciasBombeiros.setCep(rs.getInt("cep"));
+                ocorrenciasBombeiros.setCep(rs.getString("cep"));
                 ocorrenciasBombeiros.setRua(rs.getString("rua"));
                 ocorrenciasBombeiros.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciasBombeiros.setDescricao(rs.getString("descricao"));
@@ -134,7 +134,7 @@ public class OcorrenciaCorpoDeBombeirosDAO {
                 ocorrenciaBombeiro.setId(rs.getInt("id"));
                 ocorrenciaBombeiro.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(rs.getInt("id_tipo_ocorrencias_bombeiros")));
                 ocorrenciaBombeiro.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaBombeiro.setCep(rs.getInt("cep"));
+                ocorrenciaBombeiro.setCep(rs.getString("cep"));
                 ocorrenciaBombeiro.setRua(rs.getString("rua"));
                 ocorrenciaBombeiro.setNumeroResidencia(rs.getInt("numero_residencia"));
                 ocorrenciaBombeiro.setDescricao(rs.getString("descricao"));

@@ -23,6 +23,16 @@
     <title>Ocorrência Desefa Civil</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
     <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+
+            $("#ocorrencia-defesa-cep").mask("99999-999");
+
+
+        });
+    </script>
 </head>
 <body>
 
@@ -63,7 +73,7 @@
 
 
         <div class="input-div">
-            <input id="ocorrencia-defesa-cep" name="ocorrencia-defesa-cep" placeholder="CEP" required="required"/>
+            <input id="ocorrencia-defesa-cep" name="ocorrencia-defesa-cep" type="text" placeholder="CEP" required="required"/>
         </div>
 
 

@@ -22,6 +22,16 @@
         Emissor emissor = (Emissor) session.getAttribute("emissor");
     %>
     <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+
+            $("#ocorrencia-medica-cep").mask("99999-999");
+
+
+        });
+    </script>
 </head>
 <body>
 
@@ -59,7 +69,7 @@
             </div>
 
             <div class="input-div">
-                <input id="ocorrencia-medica-cep" name="ocorrencia-medica-cep" placeholder="CEP" required="required"/>
+                <input id="ocorrencia-medica-cep" name="ocorrencia-medica-cep"  type="text" placeholder="CEP" required="required"/>
             </div>
 
             <div class="input-div">
