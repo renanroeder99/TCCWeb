@@ -22,6 +22,7 @@
 <head>
     <title>Ocorrência Desefa Civil</title>
     <link rel="stylesheet" type="text/css" href="css/tela_emitir_ocorrencia_defesa_civil.css">
+    <meta charset="UTF-8"/>
 </head>
 <body>
 

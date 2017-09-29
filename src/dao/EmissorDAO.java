@@ -31,7 +31,7 @@ import model.Emissor;
 public class EmissorDAO {
 
     public static int cadastrar(Emissor emissor) throws SQLException {
-        String sql = "INSERT INTO emissores (senha, nome, cpf, rg, endereco, telefone_celular, email, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO emissores (senha, nome, cpf, rg, endereco, telefone_celular, email, cep, data_nascimento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
         Conexao conexao = new Conexao();
         String senha = emissor.getSenha();
         try {
@@ -46,6 +46,7 @@ public class EmissorDAO {
             ps.setInt(6, emissor.getTelefone());
             ps.setString(7, emissor.getEmail());
             ps.setInt(8, emissor.getCep());
+            ps.setDate(9, emissor.getDataNascimento());
 
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
@@ -74,7 +75,8 @@ public class EmissorDAO {
                     + " endereco = ?,"
                     + " telefone_celular = ?,"
                     + " email = ?,"
-                    + " cep = ? "
+                    + " cep = ?, "
+                    + " data_nascimento = ? "
                     + " WHERE id = ?";
             PreparedStatement ps = conexao.conectar().prepareStatement(sql);
 
@@ -87,6 +89,7 @@ public class EmissorDAO {
             ps.setString(7, usuario.getEmail());
             ps.setInt(8, usuario.getCep());
             ps.setInt(9, usuario.getId());
+            ps.setDate(10, usuario.getDataNascimento());
             int resultado = ps.executeUpdate();
             return resultado;
 
@@ -133,7 +136,7 @@ public class EmissorDAO {
 
     public static Emissor buscarEmissorPorID(int codigo) {
         Emissor cadastroUsuario = null;
-        String sql = "SELECT id, senha, nome, cpf, rg, endereco, telefone_celular, email, cep FROM emissores WHERE id = ?";
+        String sql = "SELECT id, senha, nome, cpf, rg, endereco, telefone_celular, email, cep, data_nascimento FROM emissores WHERE id = ?";
 
         Conexao conexao = new Conexao();
         try {
@@ -152,6 +155,8 @@ public class EmissorDAO {
                 cadastroUsuario.setTelefone(rs.getInt("telefone_celular"));
                 cadastroUsuario.setEmail(rs.getString("email"));
                 cadastroUsuario.setCep(rs.getInt("cep"));
+                cadastroUsuario.setDataNascimento(rs.getDate("data_nascimento"));
+
             }
 
         } catch (SQLException ex) {
@@ -214,7 +219,7 @@ public class EmissorDAO {
 
     public List<Emissor> retornarEmissores() {
         List<Emissor> jogos = new ArrayList<>();
-        String sql = "SELECT id, usuario, nome, cpf, rg, endereco, telefone_celular, email, cep FROM emissores WHERE id = ?";
+        String sql = "SELECT id, usuario, nome, cpf, rg, endereco, telefone_celular, email, cep, data_nascimento FROM emissores WHERE id = ?";
         Conexao cx = new Conexao();
         try {
             Statement stt = cx.conectar().createStatement();
@@ -222,7 +227,7 @@ public class EmissorDAO {
             ResultSet rs = stt.getResultSet();
             while (rs.next()) {
                 Emissor emissor = new Emissor();
-                emissor.setId(rs.getInt("usuario-id"));
+                emissor.setId(rs.getInt("id"));
                 emissor.setUsuario(rs.getString("usuario-username"));
                 emissor.setNome(rs.getString("usuario-nome"));
                 emissor.setCpf(rs.getString("usuario-cpf"));
@@ -231,6 +236,7 @@ public class EmissorDAO {
                 emissor.setTelefone(rs.getInt("usuario-telefone"));
                 emissor.setEmail(rs.getString("usuario-email"));
                 emissor.setCep(rs.getInt("usuario-cep"));
+                emissor.setDataNascimento(rs.getDate("data_nascimento"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

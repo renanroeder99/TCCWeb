@@ -19,9 +19,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Ocorrencias Médicas</title>
+    <title>Ocorrências Médicas</title>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <link rel="stylesheet" type="text/css" href="css/tela_receptor.css">
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <script type="text/javascript">

@@ -17,6 +17,7 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 
@@ -90,11 +91,10 @@
                                required="required">
                         <label for="receptor-policial">Policial</label>
                     </div>
-                    
+
                     <div id="botoes">
                         <button type="submit" id="botao-cadastrar-receptor">Cadastrar</button>
                     </div>
-
 
                 </div>
             </div>

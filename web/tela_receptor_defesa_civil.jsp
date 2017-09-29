@@ -20,7 +20,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <link rel="stylesheet" type="text/css" href="css/tela_receptor.css">
-    <title>Ocorrencias Defesa Civil</title>
+    <title>Ocorrências Defesa Civil</title>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <script type="text/javascript">
@@ -44,6 +45,8 @@
             <th>Detalhes</th>
         </tr>
         </thead>
+
+
         <tbody>
 
         <% ArrayList<BaseOcorrencia> ocorrencias = OcorrenciaDefesaCivilDAO.retornarOcorrenciasDefesaCivil(); %>
@@ -51,11 +54,14 @@
         <tr>
 
 
-            <td><%= ocorrencia.getId()%></td>
-            <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%></td>
-            <td><%= ocorrencia.endereco()%></td>
-            <td><%= ocorrencia.getEmissor()%></td>
-
+            <td><%= ocorrencia.getId()%>
+            </td>
+            <td><%= ocorrencia.getBaseTipoOcorrencia().getTipo()%>
+            </td>
+            <td><%= ocorrencia.endereco()%>
+            </td>
+            <td><%= ocorrencia.getEmissor()%>
+            </td>
             <td><a href="detalhes_ocorrencia_defesa_civil.jsp?id=<%=ocorrencia.getId()%>">Detalhes</a></td>
 
         </tr>

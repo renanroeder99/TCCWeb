@@ -1,5 +1,6 @@
 <%@ page import="model.Emissor" %>
-<%@ page import="dao.EmissorDAO" %><%--
+<%@ page import="dao.EmissorDAO" %>
+<%@ page import="database.Utilitario" %><%--
   Created by IntelliJ IDEA.
   User: 98930
   Date: 12/09/2017
@@ -29,7 +30,7 @@
             </div>
             <div class="input-div">
                 <label for="usuario-data-nascimento">Data Nascimento</label>
-                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required" value="<%=emissor.getDataNascimento()%>" >
+                <input id="usuario-data-nascimento" name="usuario-data-nascimento" type="date" required="required" value="<%=Utilitario.retornarPadraoBR(emissor.getDataNascimento())%>" >
             </div>
             <div class="input-div">
                 <input id="usuario-email" name="usuario-email" type="email" required="required" placeholder="Email" value="<%=emissor.getEmail()%>">

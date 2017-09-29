@@ -20,6 +20,7 @@
     %>
 
     <link rel="stylesheet" type="text/css" href="css/detalhes_ocorrencia_policial.css">
+    <meta charset="UTF-8"/>
 </head>
 <body>
 

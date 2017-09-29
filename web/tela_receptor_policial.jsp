@@ -22,7 +22,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/tabelas.css">
     <link rel="stylesheet" type="text/css" href="css/tela_receptor.css">
-    <title>Ocorrencias Policiais</title>
+    <title>Ocorrências Policiais</title>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <script type="text/javascript">

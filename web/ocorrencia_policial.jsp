@@ -35,8 +35,7 @@
 
     int codigo = OcorrenciaPolicialDAO.inserir(ocorrenciaPolicial);
     if(codigo > 0){
-        %>
-        <script>mensagemOcorrenciaEmitida()</script>
+
         response.sendRedirect("tela_usuario_escolher_ocorrencia.jsp");
     }else{
 
