@@ -7,11 +7,11 @@ CREATE TABLE IF NOT EXISTS receptores (
   login VARCHAR(25) UNIQUE,
   nome_completo VARCHAR(100) NOT NULL,
   senha VARCHAR(128) NOT NULL,
-  cpf VARCHAR(15) UNIQUE NOT NULL,
-  cep INT(8) NOT NULL,
+  cpf VARCHAR(50) UNIQUE NOT NULL,
+  cep VARCHAR(50) NOT NULL,
   cargo VARCHAR(20)NOT NULL,
   endereco VARCHAR(100) NOT NULL,
-  telefone_celular BIGINT(15),
+  telefone_celular VARCHAR(50),
   email VARCHAR(64) UNIQUE NOT NULL
 
 );
@@ -21,12 +21,12 @@ CREATE TABLE IF NOT EXISTS emissores (
   usuario VARCHAR(25) UNIQUE,
   senha VARCHAR(128) NOT NULL,
   nome VARCHAR(100)NOT NULL,
-  cpf VARCHAR(15) UNIQUE NOT NULL,
+  cpf VARCHAR(50) UNIQUE NOT NULL,
   rg BIGINT(7) UNIQUE NOT NULL,
   endereco VARCHAR(100)NOT NULL,
-  telefone_celular BIGINT(15)NOT NULL,
+  telefone_celular VARCHAR(50)NOT NULL,
   email VARCHAR(64) UNIQUE NOT NULL,
-  cep VARCHAR(10)NOT NULL,
+  cep VARCHAR(50)NOT NULL,
   trotes INT(2),
   data_nascimento DATE
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS ocorrencias_policiais (
   FOREIGN KEY (id_tipo_ocorrencias_policiais) REFERENCES tipo_ocorrencias_policiais(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
-  cep INT(8),
+  cep VARCHAR(50),
   rua VARCHAR(60)NOT NULL,
   numero_residencia INT(5),
   trote BOOLEAN
@@ -81,7 +81,7 @@ CREATE TABLE  IF NOT EXISTS  ocorrencias_medicas (
   FOREIGN KEY (id_tipo_ocorrencias_medicas) REFERENCES tipo_ocorrencias_medicas(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
-  cep INT(8),
+  cep VARCHAR(50),
   rua VARCHAR(60)NOT NULL,
   numero_residencia INT(5),
   trote BOOLEAN
@@ -98,7 +98,7 @@ CREATE TABLE  IF NOT EXISTS  ocorrencias_bombeiros(
   FOREIGN KEY (id_tipo_ocorrencias_bombeiros) REFERENCES tipo_ocorrencias_bombeiros(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
-  cep INT(8),
+  cep VARCHAR(50),
   rua VARCHAR(60)NOT NULL,
   numero_residencia INT(5),
   trote BOOLEAN
@@ -113,26 +113,26 @@ CREATE TABLE  IF NOT EXISTS  ocorrencias_defesa_civil(
   FOREIGN KEY (id_tipo_ocorrencias_defesa_civil) REFERENCES tipo_ocorrencias_defesa_civil(id),
   FOREIGN KEY (id_emissor) REFERENCES emissores(id),
 
-  cep INT(8),
+  cep VARCHAR(50),
   rua VARCHAR(60)NOT NULL,
   numero_residencia INT(5),
   trote BOOLEAN
 );
 
 INSERT INTO tipo_ocorrencias_policiais(tipo) VALUES
-  ("3 Assédio"),
-  ("3 Furto"),
-  ("3 Vandalismo"),
-  ("3 Perturbação à ordem pública"),
-  ("2 Assalto"),
-  ("2 Roubo"),
-  ("2 Agressão física"),
-  ("2 Violência doméstica"),
-  ("1 Homicídio"),
-  ("1 Latrocínio"),
-  ("1 Sequestro"),
-  ("1 Estupro"),
-  ("1 Abuso de menor");
+  ("Assédio"),
+  ("Furto"),
+  ("Vandalismo"),
+  ("Perturbação à ordem pública"),
+  ("Assalto"),
+  ("Roubo"),
+  ("Agressão física"),
+  ("Violência doméstica"),
+  ("Homicídio"),
+  ("Latrocínio"),
+  ("Sequestro"),
+  ("Estupro"),
+  ("Abuso de menor");
 
 INSERT INTO tipo_ocorrencias_medicas(tipo) VALUES
   ("Derrame"),
