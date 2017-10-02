@@ -35,6 +35,53 @@ $(function () {
         }
     });
 
+    $("#ocorrencia-defesa-cep").on("focusout", function (e) {
+        if ($(this).val().length > 0) {
+            $cep = $(this).val();
+            $posicao = $cep.indexOf(89);
+            if ($posicao !== 0) {
+                alert("CEP inválido");
+                $(this).val("");
+                $(this).focus();
+            }
+        }
+    });
+
+    $("#ocorrencia-medica-cep").on("focusout", function (e) {
+        if ($(this).val().length > 0) {
+            $cep = $(this).val();
+            $posicao = $cep.indexOf(89);
+            if ($posicao !== 0) {
+                alert("CEP inválido");
+                $(this).val("");
+                $(this).focus();
+            }
+        }
+    });
+    $("#ocorrencia-corpo_de_bombeiros-cep").on("focusout", function (e) {
+        if ($(this).val().length > 0) {
+            $cep = $(this).val();
+            $posicao = $cep.indexOf(89);
+            if ($posicao !== 0) {
+                alert("CEP inválido");
+                $(this).val("");
+                $(this).focus();
+            }
+        }
+    });
+
+
+    $("#receptor-cep").on("focusout", function (e) {
+        if ($(this).val().length > 0) {
+            $cep = $(this).val();
+            $posicao = $cep.indexOf(89);
+            if ($posicao !== 0) {
+                alert("CEP inválido");
+                $(this).val("");
+                $(this).focus();
+            }
+        }
+    });
     function mensagemOcorrenciaEmitida() {
         alert("Ocorrência emitida com sucesso");
     }
