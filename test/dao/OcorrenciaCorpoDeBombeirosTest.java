@@ -29,12 +29,12 @@ public class OcorrenciaCorpoDeBombeirosTest {
         emissor.setCpf("789520145654");
         emissor.setRg(Integer.parseInt("741025"));
         emissor.setEndereco("fijfijfjfi");
-        emissor.setCep(74102365);
-        emissor.setTelefone(Integer.parseInt("965874102"));
+        emissor.setCep("74102365");
+        emissor.setTelefone("965874102");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia baseOcorrenciaCorpoDeBombeiros = new BaseOcorrencia();
-        baseOcorrenciaCorpoDeBombeiros.setCep(789654142);
+        baseOcorrenciaCorpoDeBombeiros.setCep("789654142");
         baseOcorrenciaCorpoDeBombeiros.setNumeroResidencia(789);
         baseOcorrenciaCorpoDeBombeiros.setRua("shfefhre");
         baseOcorrenciaCorpoDeBombeiros.setBaseTipoOcorrencia(baseOcorrencia);
@@ -59,14 +59,14 @@ public class OcorrenciaCorpoDeBombeirosTest {
         emissor.setCpf("789520145654");
         emissor.setRg(Integer.parseInt("741025"));
         emissor.setEndereco("fijfijfjfi");
-        emissor.setCep(74102365);
-        emissor.setTelefone(Integer.parseInt("965874102"));
+        emissor.setCep("74102365");
+        emissor.setTelefone("965874102");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaCorpoDeBombeiros = new BaseOcorrencia();
         ocorrenciaCorpoDeBombeiros.setEmissor(emissor);
         ocorrenciaCorpoDeBombeiros.setBaseTipoOcorrencia(baseOcorrencia);
-        ocorrenciaCorpoDeBombeiros.setCep(7896541);
+        ocorrenciaCorpoDeBombeiros.setCep("7896541");
         ocorrenciaCorpoDeBombeiros.setNumeroResidencia(789);
         ocorrenciaCorpoDeBombeiros.setRua("uihjjfiw");
         ocorrenciaCorpoDeBombeiros.setId(OcorrenciaCorpoDeBombeirosDAO.inserir(ocorrenciaCorpoDeBombeiros));

@@ -28,12 +28,12 @@ public class OcorrenciaDefesaCivilTest {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep(89070-730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
-        ocorrenciaDefesaCivil.setCep(145444);
+        ocorrenciaDefesaCivil.setCep("145444");
         ocorrenciaDefesaCivil.setNumeroResidencia(1004);
         ocorrenciaDefesaCivil.setRua("Pqp ");
 
@@ -60,20 +60,20 @@ public class OcorrenciaDefesaCivilTest {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep(89070730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaDefesaCivil = new BaseOcorrencia();
         ocorrenciaDefesaCivil.setEmissor(emissor);
         ocorrenciaDefesaCivil.setBaseTipoOcorrencia(tipoOcorrenciaDefesaCivil);
-        ocorrenciaDefesaCivil.setCep(44545555);
+        ocorrenciaDefesaCivil.setCep("44545555");
         ocorrenciaDefesaCivil.setNumeroResidencia(1004);
         ocorrenciaDefesaCivil.setRua("Pqp ");
         ocorrenciaDefesaCivil.setId(OcorrenciaDefesaCivilDAO.inserir(ocorrenciaDefesaCivil));
         assertEquals(1, ocorrenciaDefesaCivil.getId());
 
-        ocorrenciaDefesaCivil.setCep(44444444);
+        ocorrenciaDefesaCivil.setCep("44444444");
         ocorrenciaDefesaCivil.setNumeroResidencia(104);
         ocorrenciaDefesaCivil.setRua("Pzxd");
         OcorrenciaDefesaCivilDAO.alterar(ocorrenciaDefesaCivil);

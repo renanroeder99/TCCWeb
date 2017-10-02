@@ -44,12 +44,12 @@ public class TesteOcorrenciaMedica {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep(89070730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
-        ocorrenciaMedica.setCep(145444);
+        ocorrenciaMedica.setCep("145444");
         ocorrenciaMedica.setNumeroResidencia(1004);
         ocorrenciaMedica.setRua("Pqp ");
 
@@ -76,20 +76,20 @@ public class TesteOcorrenciaMedica {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep(89070730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         BaseOcorrencia ocorrenciaMedica = new BaseOcorrencia();
         ocorrenciaMedica.setEmissor(emissor);
         ocorrenciaMedica.setBaseTipoOcorrencia(tipoOcorrenciaMedica);
-        ocorrenciaMedica.setCep(145444);
+        ocorrenciaMedica.setCep("145444");
         ocorrenciaMedica.setNumeroResidencia(1004);
         ocorrenciaMedica.setRua("Pqp ");
         ocorrenciaMedica.setId(OcorrenciaMedicaDAO.inserir(ocorrenciaMedica));
         assertEquals(1, ocorrenciaMedica.getId());
 
-        ocorrenciaMedica.setCep(12345678);
+        ocorrenciaMedica.setCep("12345678");
         ocorrenciaMedica.setNumeroResidencia(291);
         ocorrenciaMedica.setRua("Rua das Velhas com Cabelos Laranjas");
         OcorrenciaMedicaDAO.alterar(ocorrenciaMedica);

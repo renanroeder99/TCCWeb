@@ -33,7 +33,7 @@ public class TesteReceptor {
         administrador.setCpf("11333211254");
         administrador.setCargo("MED");
         administrador.setEndereco("Rua Alcebiades Reichert, 177");
-        administrador.setTelefone(Integer.parseInt("88385618"));
+        administrador.setTelefone("88385618");
         administrador.setEmail("felipecaz1113@gmail.com");
         administrador.setCep("80495574");
 
@@ -52,7 +52,7 @@ public class TesteReceptor {
         receptor.setEndereco("Rua asfopasfjioaopias");
         receptor.setEmail("eeey@ty");
         receptor.setCep("659896");
-        receptor.setTelefone(Integer.parseInt("993456564"));
+        receptor.setTelefone("993456564");
         receptor.setId(ReceptorDAO.cadastrar(receptor));
 
         assertEquals(1, receptor.getId());
@@ -80,7 +80,7 @@ public class TesteReceptor {
         receptor.setCpf("11333211254");
         receptor.setCargo("Vagabundo");
         receptor.setEndereco("Rua Alcebiades Reichert, 177");
-        receptor.setTelefone(Integer.parseInt("88385618"));
+        receptor.setTelefone("88385618");
         receptor.setEmail("felipecaz1113@gmail.com");
         receptor.setCep("80495574");
         receptor.setId(ReceptorDAO.cadastrar(receptor));
@@ -92,7 +92,7 @@ public class TesteReceptor {
         receptor.setCpf("15216223467");
         receptor.setCargo("MED");
         receptor.setEndereco("Rua Georg Backman, 436");
-        receptor.setTelefone(Integer.parseInt("96831219"));
+        receptor.setTelefone("96831219");
         receptor.setEmail("antonyhenriquevogel@gmail.com");
         receptor.setCep("66666666");
         ReceptorDAO.alterar(receptor);

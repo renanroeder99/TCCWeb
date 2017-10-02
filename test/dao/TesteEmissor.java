@@ -27,8 +27,8 @@ public class TesteEmissor {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884763"));
         emissor.setEndereco("Avenida Brasil do Ipiranga");
-        emissor.setCep(89070-730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         int codigoInserido = EmissorDAO.cadastrar(emissor);
         assertEquals(1, codigoInserido);
     }
@@ -43,8 +43,8 @@ public class TesteEmissor {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884999"));
         emissor.setEndereco("Avenida Ipiranga do Brasil");
-        emissor.setCep(89070730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         emissor.setId(EmissorDAO.cadastrar(emissor));
 
         assertEquals(1, emissor.getId());
@@ -55,8 +55,8 @@ public class TesteEmissor {
         emissor.setCpf("1122723594");
         emissor.setRg(Integer.parseInt("884"));
         emissor.setEndereco("Avenidas");
-        emissor.setCep(80707301);
-        emissor.setTelefone(Integer.parseInt("97916393"));
+        emissor.setCep("80707301");
+        emissor.setTelefone("97916393");
         emissor.setId(EmissorDAO.alterar(emissor));
 
         Emissor cadastroBD = EmissorDAO.buscarEmissorPorID(emissor.getId());
@@ -86,8 +86,8 @@ public class TesteEmissor {
         emissor.setCpf("11227235984");
         emissor.setRg(Integer.parseInt("5884"));
         emissor.setEndereco("Avenida");
-        emissor.setCep(89070730);
-        emissor.setTelefone(Integer.parseInt("97396393"));
+        emissor.setCep("89070730");
+        emissor.setTelefone("97396393");
         emissor.setId(EmissorDAO.cadastrar(emissor));
         EmissorDAO.excluir(emissor.getId());
         assertNull(EmissorDAO.buscarEmissorPorID(emissor.getId()));
