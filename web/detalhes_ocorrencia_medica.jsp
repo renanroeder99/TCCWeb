@@ -60,10 +60,11 @@
         <div class="email">
             <h4>Email:  <%=ocorrencia.getEmissor().getEmail()%> </h4>
         </div>
+        <a href="excluir_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
     </div>
 </div>
 
 
-<a href="excluir_ocorrencia_medica.jsp?id=<%=ocorrencia.getId()%>">Excluir a ocorrência</a>
+
 </body>
 </html>
