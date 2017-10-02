@@ -28,7 +28,7 @@
     receptor.setEmail(request.getParameter("receptor-email"));
     receptor.setConfirmarSenha(request.getParameter("receptor-confirmar-senha"));
     receptor.setSenha(request.getParameter("senha"));
-    receptor.setTelefone(Integer.parseInt(request.getParameter("receptor-telefone")));
+    receptor.setTelefone(request.getParameter("receptor-telefone")));
     receptor.setEndereco(request.getParameter("receptor-enderenco"));
     receptor.setCep(request.getParameter("receptor-cep"));
     receptor.setCargo(request.getParameter("receptor-cargo"));

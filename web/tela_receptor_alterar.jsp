@@ -17,6 +17,19 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
+    <script src="lib/jquery-3.2.1.min.js" type=""></script>
+    <script src="js/usuario-cadastrar.js"></script>
+    <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+            $("#receptor-telefone").mask("9999-9999");
+            $("#receptor-cep").mask("99999-999");
+            $("#receptor-cpf").mask("999.999.999-99");
+
+        });
+    </script>
 
 </head>
 <body>

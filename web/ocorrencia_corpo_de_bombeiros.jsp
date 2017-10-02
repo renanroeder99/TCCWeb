@@ -17,7 +17,7 @@
     Emissor emissor = (Emissor) session.getAttribute("emissor");
 
     baseOcorrenciaCorpoBombeiros.setRua(request.getParameter("ocorrencia-corpo_de_bombeiros-rua"));
-    baseOcorrenciaCorpoBombeiros.setCep(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-cep")));
+    baseOcorrenciaCorpoBombeiros.setCep(request.getParameter("ocorrencia-corpo_de_bombeiros-cep"));
     baseOcorrenciaCorpoBombeiros.setNumeroResidencia(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-numero-residencia")));
     baseOcorrenciaCorpoBombeiros.setBaseTipoOcorrencia(TipoOcorrenciaCorpoDeBombeirosDAO.buscarCBPorID(Integer.parseInt(request.getParameter("ocorrencia-corpo_de_bombeiros-tipo-ocorrencia"))));
     baseOcorrenciaCorpoBombeiros.setDescricao(request.getParameter("ocorrencia_corpo_de_bombeiros-descricao"));

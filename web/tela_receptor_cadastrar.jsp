@@ -17,7 +17,19 @@
         }
         Receptor receptorLogado = (Receptor) session.getAttribute("receptor");
     %>
+    <script src="lib/jquery-3.2.1.min.js" type=""></script>
+    <script src="js/usuario-cadastrar.js"></script>
     <meta charset="UTF-8"/>
+    <script src="js/jquery.mask.min.js" type=""></script>
+    <script>
+        jQuery(function($){
+
+            $("#receptor-telefone").mask("9999-9999");
+            $("#receptor-cep").mask("99999-999");
+            $("#receptor-cpf").mask("999.999.999-99");
+
+        });
+    </script>
 </head>
 <body>
 
@@ -33,7 +45,7 @@
                 </div>
 
                 <div class="input-div">
-                    <input id="receptor-cpf" name="receptor-cpf" type="CPF" placeholder="CPF" required="required"/>
+                    <input id="receptor-cpf" name="receptor-cpf" type="text" placeholder="CPF" required="required"/>
                 </div>
 
                 <div class="input-div">
@@ -47,7 +59,7 @@
                 </div>
 
                 <div class="input-div">
-                    <input id="receptor-telefone" name="receptor-telefone" type="number" placeholder="Telefone"
+                    <input id="receptor-telefone" name="receptor-telefone" type="text" placeholder="Telefone"
                            required="required"/>
                 </div>
 
@@ -58,7 +70,7 @@
                 </div>
 
                 <div class="input-div">
-                    <input id="receptor-cep" name="receptor-cep" type="number" placeholder="CEP" required="required"/>
+                    <input id="receptor-cep" name="receptor-cep" type="text" placeholder="CEP" required="required"/>
 
                 </div>
             </div>
