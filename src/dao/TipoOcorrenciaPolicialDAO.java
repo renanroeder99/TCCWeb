@@ -141,7 +141,7 @@ public class TipoOcorrenciaPolicialDAO {
                 ocorrenciaPolicial.setBaseTipoOcorrencia(TipoOcorrenciaPolicialDAO.buscarOPPorID(rs.getInt("id_tipo_ocorrencias_policiais")));
                 //Tipo de ocorrencia
                 ocorrenciaPolicial.setEmissor(EmissorDAO.buscarEmissorPorID(rs.getInt("id_emissor")));
-                ocorrenciaPolicial.setCep(rs.getInt("cep"));
+                ocorrenciaPolicial.setCep(rs.getString("cep"));
                 ocorrenciaPolicial.setRua(rs.getString("rua"));
                 ocorrenciaPolicial.setNumeroResidencia(rs.getInt("numero_residencia"));
                 tabelaOcorrenciaPolicial.add(ocorrenciaPolicial);

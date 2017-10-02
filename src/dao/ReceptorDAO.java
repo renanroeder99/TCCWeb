@@ -32,7 +32,7 @@ public class ReceptorDAO {
             ps.setString(3, cadastroAdministrador.getCpf());
             ps.setString(4, cadastroAdministrador.getCargo());
             ps.setString(5, cadastroAdministrador.getEndereco());
-            ps.setInt(6, cadastroAdministrador.getTelefone());
+            ps.setString(6, cadastroAdministrador.getTelefone());
             ps.setString(7, cadastroAdministrador.getEmail());
             ps.setString(8, cadastroAdministrador.getCep());
 
@@ -69,7 +69,7 @@ public class ReceptorDAO {
             ps.setString(3, cadastroAdministrador.getCpf());
             ps.setString(4, cadastroAdministrador.getCargo());
             ps.setString(5, cadastroAdministrador.getEndereco());
-            ps.setInt(6, cadastroAdministrador.getTelefone());
+            ps.setString(6, cadastroAdministrador.getTelefone());
             ps.setString(7, cadastroAdministrador.getEmail());
             ps.setString(8, cadastroAdministrador.getCep());
             ps.setInt(9, cadastroAdministrador.getId());
@@ -136,7 +136,7 @@ public class ReceptorDAO {
                 administrador.setCpf(rs.getString("cpf"));
                 administrador.setCargo(rs.getString("cargo"));
                 administrador.setEndereco(rs.getString("endereco"));
-                administrador.setTelefone(rs.getInt("telefone_celular"));
+                administrador.setTelefone(rs.getString("telefone_celular"));
                 administrador.setEmail(rs.getString("email"));
                 administrador.setCep(rs.getString("cep"));
             }
